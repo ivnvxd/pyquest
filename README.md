@@ -1,58 +1,75 @@
-# pyquest
+# PyQuest
 
 
 ## Table of contents
 
 ### [Part I. Data structures](#1-ds)
 
-1. Basic
-    - string
-    - number
-        - int
-        - float
-        - complex
-2. Built-in
-    - [list](#list)
-    - [tuple](#tuple)
-        - [namedtuple](#namedtuple)
-    - [dict](#dict)
-        - [defaultdict](#defaultdict)
+1. [Basic Data Types:](#basic-dt)
+    - [String](#string)
+    - [Number](#number)
+        - [Integer](#integer)
+        - [Float](#float)
+        - [Complex](#complex)
+    - [NoneType](#none)
+2. [Built-in Data Structures:](#built-in-ds)
+    - [List](#list)
+    - [Tuple](#tuple)
+        - [Named tuple](#namedtuple)
+    - [Dictionary](#dict)
+        - [DefaultDict](#defaultdict)
         - [OrderedDict](#ordereddict)
         - [Counter](#counter)
-        - [Hash calculation problem](#hash-calculation-problem)
-    - [set](#set)
-        - [frozenset](#frozenset)
-    - [array](#array)
-        - [bytes](#bytes)
-        - [bytearray](#bytearray)
-    - [deque](#deque)
-    - [queue](#queue)
-        - [lifoqueue](#lifoqueue)
-        - [priority queue](#priority-queue)
-    - [heap](#heap)
-    - [Mutable/Immutable](#mutableimmutable)
-3. Not present
-    - linked list
-    - binary tree
-    - B-tree
-    - red-black tree
-    - AVL tree
-    - trie
-4. Other
-    - enum
-    - range
-    - dataclass
-    - struct
-    - datetime
-        - constructors
-        - now
-        - timezone
-    - common data structures operations
+        - [Hash calculation problem](#hashcalc)
+    - [Set](#set)
+        - [Frozenset](#frozenset)
+    - [Array](#array)
+        - [Bytes](#bytes)
+        - [Bytearray](#bytearray)
+    - [Deque](#deque)
+    - [Queue](#queue)
+        - [LifoQueue](#lifoqueue)
+        - [PriorityQueue](#priorityqueue)
+    - [Heap queue (Heapq)](#heap)
+    - [Mutable/Immutable](#mutable-immutable)
+3. [User-defined Data Structures:](#user-defined-ds)
+    - [Linked List](#linkedlist)
+    - [Binary Tree](#binarytree)
+    - [B-tree](#btree)
+    - [Red-Black Tree](#redblacktree)
+    - [AVL Tree](#avltree)
+    - [Trie](#trie)
+4. [Other Data Types:](#other-dt)
+    - [Enum](#enum)
+    - [Range](#range)
+    - [Dataclass](#dataclass)
+    - [Struct](#struct)
+    - [Datetime](#datetime)
+        - [Constructors](#constructors)
+        - [Now](#now)
+        - [Timezone](#timezone)
+    - [Common data structures operations](#common-ds-operations)
 
 
-## Part I. Data Structures <a id="1-ds"></a>
+# Part I. Data Structures <a id="1-ds"></a>
 
-### list
+## Basic Data Types: <a id="basic-dt"></a>
+
+### String <a id="string"></a>
+
+### Number <a id="number"></a>
+
+#### Integer <a id="int"></a>
+
+#### Float <a id="float"></a>
+
+#### Comples <a id="complex"></a>
+
+### NoneType <a id="none"></a>
+
+## Built-in Data Structures: <a id="built-in-ds"></a>
+
+### List <a id="list"></a>
 
 A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.  
 
@@ -111,7 +128,7 @@ a.clear() # Clear list
     s
 
 
-### tuple
+### Tuple <a id="tuple"></a>
 
 A `tuple` is also a list, only immutable and hashable. A tuple containing the same data as a list takes less space:
 
@@ -128,9 +145,9 @@ print(f"Tuple: {b.__sizeof__()} bytes")
     Tuple: 64 bytes
 
 
-#### namedtuple
+#### Named tuple <a id="namedtuple"></a>
 
-According to the name, `namedtuple` has named fields.
+According to the name, `namedtuple` has named fields. It is not a separate data structure, but a factory function that returns a new tuple subclass.
 
 
 ```python
@@ -151,7 +168,7 @@ print("r._fields:", r._fields)
     r._fields: ('length', 'width')
 
 
-### dict
+### Dictionary <a id="dict"></a>
 
 _Dictionary_ is the second most commonly used data structure in Python. The `dict` is an implementation of a hash table, so we cannot take a non-hashable object as a key, such as a list (this is where tuple comes in handy). The key of the dictionary can be any immutable object: number, string, datetime or even function. Such objects have a method `__hash__()`, which uniquely associates the object to a number. With this number the dictionary looks for the value of the key.
 
@@ -211,7 +228,7 @@ d.clear() # Clearing dictionary
     dict comprehension: {'France': 'Croissant', 'Mexico': 'Taco', 'India': 'Samosa'}
 
 
-#### defaultdict
+#### DefaultDict <a id="defaultdict"></a>
 
 If you try to read from the normal dictionary a value of a key that is not there, a KeyError exception will be thrown (exceptions will be discussed below). `defaultdict` allows you not to write an exception handler, but simply treats reading a non-existent key as a command to write to that key and return the default value; for example, `defaultdict(int)` will return `0`.
 
@@ -232,7 +249,7 @@ dd = {} # "Regular" empty dictionary
     dd[5]: five
 
 
-#### OrderedDict
+#### OrderedDict <a id="ordereddict"></a>
 
 Python includes a specialized dict subclass that remembers the insertion order of keys added to it: `OrderedDict`.
 
@@ -253,7 +270,7 @@ for k, v in od.items():
     three 3
 
 
-#### Counter
+#### Counter <a id="counter"></a>
 
 The `Counter` counts the objects passed to it. Sometimes it is very convenient to just feed some list into the counter and immediately get the data structure with the counted elements.
 
@@ -291,7 +308,7 @@ print("d:", d)
     d: defaultdict(<class 'int'>, {'red': 1, 'white': 3, 'blue': 1, 'black': 2})
 
 
-#### Hash calculation problem
+#### Hash calculation problem <a id="hashcalc"></a>
 
 Any hash table, including a Python dictionary, must be able to solve the hash calculation problem. For this purpose the **open addressing** or **chaining** techniques are used. Python [uses](https://stackoverflow.com/questions/9010222/why-can-a-python-dict-have-multiple-keys-with-the-same-hash) open addressing.
 
@@ -310,7 +327,7 @@ If this address is busy, the interpreter checks (with `==`) the hash and the key
 
 Reading from the dictionary is done similarly, the interpreter starts searching from `addr` position and follows the same pseudo-random path until it reads the desired record.
 
-### set
+### Set <a id="set"></a>
 
 The third most common Python data structure. Sets were formerly somewhat reduced dictionaries, but over time their implementations began to diverge. However, a `set` is still a hash table with appropriate performance on different types of operations.
 
@@ -359,7 +376,7 @@ big_cities.clear() # Clears the set
     issuper: False
 
 
-#### frozenset
+#### Frozen set <a id="frozenset"></a>
 
 `frozenset` is the same set, only immutable and hashable. Reminds of the difference between a list and a tuple.
 
@@ -372,7 +389,7 @@ print("a:", a)
     a: frozenset({'Los Angeles', 'Ottawa', 'New-York'})
 
 
-### array
+### Array <a id="array"></a>
 
 An `array` in Python is not the default data structure of choice and is only used when structure size and processing speed become crucial. But, on the other hand, if you are looking at `NumPy` and `Pandas` (a bit below), arrays are your go to.
 
@@ -401,7 +418,7 @@ print("a1.index(-4):", a1.index(-4)) # Returns the index of the elements or thro
     a1.index(-4): 3
 
 
-#### bytes
+#### Bytes <a id="bytes"></a>
 
 
 ```python
@@ -451,7 +468,7 @@ print("b6:", b6)
     b6: b'\x05\n\x0f\x14'
 
 
-#### bytearray
+#### Bytearray <a id="bytearray"></a>
 
 
 ```python
@@ -487,7 +504,7 @@ print("b7:", b7)
     b7: b'\n\r\x10\x13\x16\x19\x1c\x1f"%'
 
 
-### deque
+### Deque <a id="deque"></a>
 
 The `deque` class implements a double-ended queue that supports adding and removing elements from either end in _O_(1) time (non-amortized). Because deques support adding and removing elements from either end equally well, they can serve both as queues and as stacks.
 
@@ -518,7 +535,7 @@ print("d:", d)
     d: deque([-1, 0, 1, 2, 3, 4, 5, 6], maxlen=1000)
 
 
-### Queue
+### Queue <a id="queue"></a>
 
 `Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads. 
 There is also `LifoQueueue` to implement LIFO and `PriorityQueueue` to implement priority queue.
@@ -551,7 +568,7 @@ print("q.queue:", q.queue)
     q.queue: deque(['repeat'])
 
 
-#### LifoQueue
+#### LifoQueue <a id="lifoqueue"></a>
 
 `LifoQueue` stores and retrieves elements in a last-in, first-out (LIFO) order. This means that the last element added to the queue will be the first one retrieved from it. LifoQueue is also sometimes called a "stack" because it behaves like a stack data structure.
 
@@ -575,7 +592,7 @@ print(q.get())  # get the first item that was added to the stack (1)
     1
 
 
-#### PriorityQueue
+#### PriorityQueue <a id="priorityqueue"></a>
 
 `PriorityQueue` allows elements to be retrieved in order of priority. When you add an element to a PriorityQueue, you assign it a priority value. The PriorityQueue uses this priority value to determine the order in which elements are retrieved. The element with the highest priority will be the first one retrieved from the queue. PriorityQueue is also sometimes called a "heap" because it is implemented using a heap data structure.
 
@@ -599,7 +616,7 @@ print(q.get()[1])  # get the item with highest priority (priority 3)
     High Priority
 
 
-### heap
+### Heap queue (Heapq) <a id="heap"></a>
 
 In Python, a heap is a binary tree data structure that is commonly used to implement a PriorityQueue. A heap is a complete binary tree where the parent node is always greater (or less) than its children, and the tree has the minimum or maximum element at the root node.
 
@@ -628,6 +645,10 @@ print("h:", m)
     h: [0, 1, 5, 2, 12, 211, 43, 79, 150]
     h: -10
 
+
+## User-defined Data Structures: <a id="user-defined-ds"></a>
+
+## Other Data Types: <a id="other-dt"></a>
 
 
 
