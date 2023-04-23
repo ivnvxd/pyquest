@@ -1,6 +1,6 @@
 ## Table of contents
 
-### Part I. Data structures
+### [Part I. Data structures](#1-ds)
 
 1. Basic
     - string
@@ -14,9 +14,9 @@
         - [namedtuple](#namedtuple)
     - [dict](#dict)
         - [defaultdict](#defaultdict)
-        - [OrderedDict](#OrderedDict)
-        - [Counter](#Counter)
-        - [Hash calculation problem](#Hash-calculation-problem)
+        - [OrderedDict](#ordereddict)
+        - [Counter](#counter)
+        - [Hash calculation problem](#hash-calculation-problem)
     - [set](#set)
         - [frozenset](#frozenset)
     - [array](#array)
@@ -27,7 +27,7 @@
         - [lifoqueue](#lifoqueue)
         - [priority queue](#priority-queue)
     - [heap](#heap)
-    - [Mutable/Immutable](#mutable-immutable)
+    - [Mutable/Immutable](#mutableimmutable)
 3. Not present
     - linked list
     - binary tree

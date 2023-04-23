@@ -18,7 +18,7 @@ for markdown_file in "${files_to_concatenate[@]}"; do
     echo -e "\n" >> "$output_file"
 done
 
-rm "01_data_structures.md" "1.bin"
+rm "01_data_structures.md" "bytes.bin"
 # rm "01_data_structures.md" "02.md"
 
 echo "Successfully combined Markdown files into '$output_file'"
