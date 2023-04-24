@@ -637,18 +637,80 @@ print("h:", h)
 
 m = heapq.heappop(h) # Retrieve the minimum item
 print("h:", h)
-print("h:", m)
+print("m:", m)
 ```
 
     h: [-10, 0, 5, 1, 12, 211, 43, 79]
     h: [-10, 0, 5, 1, 12, 211, 43, 79, 2, 150]
     h: [0, 1, 5, 2, 12, 211, 43, 79, 150]
-    h: -10
+    m: -10
 
+
+<!-- ### Mutable/Immutable <a id="mutable-immutable"></a> -->
 
 ## User-defined Data Structures: <a id="user-defined-ds"></a>
 
+Data structures that Python has no built-in implementation, but can nevertheless be very useful in a real project.
+
+### Linked List <a id="linkedlist"></a>
+
+A `linked list` ([Wiki](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)) is a data structure that consists of a sequence of nodes, where each node contains a value and a reference to the next node in the list. The first node in the list is called the `head` of the list, and the last node is called the `tail`. Linked lists can be used to implement various data structures, such as stacks and queues.
+
+Python does not have a built-in linked list data structure, but it can be implemented using a class to represent the nodes and their relationships. 
+
+### Binary Tree <a id="binarytree"></a>
+
+A `binary tree` ([Wiki](https://en.wikipedia.org/wiki/Binary_tree)) is a type of tree data structure in which each node can have at most two children, known as the `left child` and the `right child`. Each node contains a value, and the left child's value is less than the node's value, while the right child's value is greater than the node's value. Binary trees are often used to implement search and sorting algorithms, such as binary search.
+
+### B-tree <a id="btree"></a>
+
+A `B-tree` ([Wiki](https://en.wikipedia.org/wiki/B-tree)) is a type of self-balancing tree data structure that can store large amounts of data on disk or in memory. B-trees are commonly used in databases and file systems to store and retrieve large amounts of data quickly and efficiently.
+
+In a B-tree, each node can contain multiple keys and pointers to child nodes. The number of keys in a node is determined by a parameter called the "order" of the tree. Each node in the tree has at least `ceil(order/2)` keys and at most order keys.
+
+Python does not have a built-in B-tree data structure, but there are third-party libraries that provide implementations of B-trees, such as the `bintrees` module.
+
+### Red-Black Tree <a id="redblacktree"></a>
+
+A `Red-Black Tree` ([Wiki](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)) is a self-balancing binary search tree data structure. It is similar to a binary search tree but has additional properties that make it self-balancing, which means that the tree is always balanced, ensuring efficient searching, insertion, and deletion of elements.
+
+The Red-Black Tree is named after the color of its nodes, which can be either `red` or `black`. The nodes are structured in a way that ensures that the tree is always balanced, regardless of the order in which elements are inserted or deleted.
+
+In Python, a Red-Black Tree can be implemented using a class to represent the nodes and their relationships, and by implementing the necessary algorithms for searching, insertion, and deletion.
+
+### AVL Tree <a id="avltree"></a>
+
+`AVL Tree` ([Wiki](https://en.wikipedia.org/wiki/AVL_tree)) can be defined as height balanced binary search tree in which each node is associated with a balance factor which is calculated by subtracting the height of its right sub-tree from that of its left sub-tree.
+
+In AVL trees, insertion and deletion operations are slower than in red-black trees. But for lookup-intensive applications, AVL trees are faster than red–black trees because they are more strictly balanced.
+
+### Trie <a id="trie"></a>
+
+A `Trie` ([Wiki](https://en.wikipedia.org/wiki/Trie)) is a tree-like data structure that is used for efficient searching and retrieval of strings. It is also known as a `prefix tree`, because it can be used to efficiently search for all strings that have a given prefix.
+
+A Trie is made up of nodes that represent the characters of the strings being stored. Each node has multiple branches, one for each possible character in the alphabet, and each branch can lead to another node or to a leaf node that represents the end of a string.
+
+The Trie data structure is particularly useful when dealing with large sets of strings, as it allows for efficient searching, insertion, and deletion of strings.
+
 ## Other Data Types: <a id="other-dt"></a>
+
+### Enum <a id="enum"></a>
+
+### Range <a id="range"></a>
+
+### Dataclass <a id="dataclass"></a>
+
+### Struct <a id="struct"></a>
+
+### Datetime <a id="datetime"></a>
+
+#### Constructors <a id="constructors"></a>
+
+#### Now <a id="now"></a>
+
+#### Timezone <a id="timezone"></a>
+
+<!-- ### Common data structures operations <a id="common-ds-operations"></a> -->
 
 
 
