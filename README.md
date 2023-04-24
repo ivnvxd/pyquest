@@ -53,13 +53,21 @@
 
 # Part I. Data Structures <a id="1-ds"></a>
 
+Data structures in Python are objects or collections of objects that can hold and organize data in various ways. They provide a way to store and manipulate data, and can be used for a wide range of applications, from simple to complex.
+
+Python provides a rich set of built-in data structures, such as `lists`, `tuples`, `dictionaries`, and `sets`. These data structures can be used to hold various types of data, including `numbers`, `strings`, and other objects.
+
+Python also provides more specialized data structures, such as `arrays`, `heaps`, and `queues`, as well as libraries that provide more advanced data structures, such as `pandas` and `numpy`.
+
+Choosing the appropriate data structure for a particular application can have a significant impact on performance, readability, and ease of implementation. Understanding the strengths and weaknesses of different data structures is an important part of writing efficient and effective Python code.
+
 ## Basic Data Types: <a id="basic-dt"></a>
 
 ### String <a id="string"></a>
 
 In Python, a `string` is a sequence of characters enclosed in quotation marks (either single or double quotes). `Strings` are one of the built-in data types in Python and are used to represent text data.
 
-Python 3.x uses [`str`](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) objects to store textual data as immutable sequences of Unicode characters. Practically speaking, that means a `str` is an immutable array of characters. Oddly enough, it’s also a recursive data structure—each character in a string is itself a `str` object of length 1.
+Python 3.x uses [`str`](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) objects to store textual data as immutable sequences of Unicode characters. Practically speaking, that means a `str` is an immutable array of characters. Oddly enough, it’s also a recursive data structure — each character in a string is itself a `str` object of length 1.
 
 
 ```python
@@ -134,17 +142,48 @@ Integers are whole numbers that can be positive, negative, or zero. They are rep
 
 
 ```python
-m = 10
-n = 3
-o = m / n
-print("m:", m)
-print("n:", n)
-print("o:", o)
+a = 5
+b = 3
+
+c = a / b
+print("c:", c)
+
+# Bitwise operations
+d = a & b  # 0b0001
+e = a | b  # 0b0111
+f = a ^ b  # 0b0110
+print("d:", d)
+print("e:", e)
+print("f:", f)
+
+# Comparisons
+print(a > b)
+print(a < b)
+print(a == b)
+print(a != b)
+
+# Logical operations
+p = True
+q = False
+r = p and q
+s = p or q
+t = not p
+print("r:", r)
+print("s:", s)
+print("t:", t)
 ```
 
-    m: 10
-    n: 3
-    o: 3.3333333333333335
+    c: 1.6666666666666667
+    d: 1
+    e: 7
+    f: 6
+    True
+    False
+    False
+    True
+    r: False
+    s: True
+    t: False
 
 
 #### Float <a id="float"></a>
@@ -153,17 +192,26 @@ Floating-point numbers are decimal numbers that can also be positive, negative, 
 
 
 ```python
+import math
+
 x = 3.14
 y = -2.5
+
 z = x ** y
-print("x:", x)
-print("y:", y)
 print("z:", z)
+
+b = math.sin(x)
+c = math.exp(x)
+d = math.sqrt(x)
+print("b:", b)
+print("c:", c)
+print("d:", d)
 ```
 
-    x: 3.14
-    y: -2.5
     z: 0.05723687045956228
+    b: 0.0015926529164868282
+    c: 23.103866858722185
+    d: 1.772004514666935
 
 
 #### Complex <a id="complex"></a>
@@ -172,17 +220,34 @@ Complex numbers are numbers that have a real and an imaginary component. They ar
 
 
 ```python
-u = 2 + 3j
-v = -1j
-w = complex(4, 2)
-print("u:", u)
-print("v:", v)
-print("w:", w)
+import cmath
+
+# Comparisons
+z1 = 2 + 3j
+z2 = 2 + 4j
+a = z1 == z2
+b = z1 != z2
+print("a:", a)
+print("b:", b)
+
+# Mathematical functions
+z3 = -1 + 1j
+c = cmath.phase(z3)
+d = abs(z3)
+e = cmath.sqrt(z3)
+f = cmath.exp(z3)
+print("c:", c)
+print("d:", d)
+print("e:", e)
+print("f:", f)
 ```
 
-    u: (2+3j)
-    v: (-0-1j)
-    w: (4+2j)
+    a: False
+    b: True
+    c: 2.356194490192345
+    d: 1.4142135623730951
+    e: (0.45508986056222733+1.09868411346781j)
+    f: (0.19876611034641298+0.3095598756531122j)
 
 
 ### NoneType <a id="none"></a>
