@@ -77,6 +77,10 @@ name = "Alice"
 message = greeting + " " + name
 print("message:", message)
 
+# Assemble the string using the specified separator
+joined_string = ' '.join(["The", "quick", "brown", "fox"])
+print("joined_string:", joined_string)
+
 # Converting case
 sentence = "The quick brown fox jumps over the lazy dog"
 upper_sentence = sentence.upper()
@@ -98,6 +102,7 @@ print("new_sentence:", new_sentence)
 ```
 
     message: Hello Alice
+    joined_string: The quick brown fox
     upper_sentence: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
     lower_sentence: the quick brown fox jumps over the lazy dog
     index: 2
@@ -575,11 +580,11 @@ big_cities.clear() # Clears the set
 ```
 
     big_cities: {'Berlin', 'Barcelona', 'Tokyo', 'Paris'}
-    european_cities: {'Lisbon', 'Madrid', 'Paris', 'Rome', 'Berlin'}
-    union_cities: {'Madrid', 'Paris', 'Berlin', 'Barcelona', 'Lisbon', 'Tokyo', 'Rome'}
+    european_cities: {'Paris', 'Lisbon', 'Berlin', 'Madrid', 'Rome'}
+    union_cities: {'Tokyo', 'Lisbon', 'Barcelona', 'Rome', 'Paris', 'Berlin', 'Madrid'}
     intersected_cities: {'Berlin', 'Paris'}
     dif_cities: {'Barcelona', 'Tokyo'}
-    symdif_cities: {'Lisbon', 'Tokyo', 'Madrid', 'Rome', 'Barcelona'}
+    symdif_cities: {'Barcelona', 'Tokyo', 'Lisbon', 'Madrid', 'Rome'}
     issub: True
     issuper: False
 
@@ -594,7 +599,7 @@ a = frozenset({"New-York", "Los Angeles", "Ottawa"})
 print("a:", a)
 ```
 
-    a: frozenset({'Los Angeles', 'Ottawa', 'New-York'})
+    a: frozenset({'Los Angeles', 'New-York', 'Ottawa'})
 
 
 ### Array <a id="array"></a>
@@ -929,21 +934,251 @@ The Trie data structure is particularly useful when dealing with large sets of s
 
 ### Enum <a id="enum"></a>
 
+The `enum` module in Python provides a way to define named constants in a program. Enums are a way to represent a set of values as a named collection of symbolic constants. They make it easier to write more readable, self-documenting code and help avoid errors due to typos or invalid values.
+
+
+```python
+from enum import Enum
+
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+print("Color.RED:", Color.RED)    # Color.RED
+print("Color.BLUE:", Color.BLUE)   # Color.BLUE
+print("Color.GREEN:", Color.GREEN)  # Color.GREEN
+
+# Iterating over enums
+for color in Color:
+    print(color)
+
+# Accessing enum members by value
+print("Color(1):", Color(1))   # Color.RED
+print("Color(2):", Color(2))   # Color.GREEN
+print("Color(3):", Color(3))   # Color.BLUE
+
+list_of_colors = list(Color)
+color_names    = [e.name for e in Color]
+color_values   = [e.value for e in Color]
+
+print("list_of_colors:", list_of_colors)
+print("color_names:", color_names)
+print("color_values:", color_values)
+```
+
+    Color.RED: Color.RED
+    Color.BLUE: Color.BLUE
+    Color.GREEN: Color.GREEN
+    Color.RED
+    Color.GREEN
+    Color.BLUE
+    Color(1): Color.RED
+    Color(2): Color.GREEN
+    Color(3): Color.BLUE
+    list_of_colors: [<Color.RED: 1>, <Color.GREEN: 2>, <Color.BLUE: 3>]
+    color_names: ['RED', 'GREEN', 'BLUE']
+    color_values: [1, 2, 3]
+
+
 ### Range <a id="range"></a>
+
+In Python, `range()` is a built-in function that generates a sequence of numbers. `The range()` function is commonly used for iterating over a sequence of numbers, such as in a for loop.
+
+The `range()` function takes up to three arguments, in the form `range(start, stop, step)`. The `start` argument is the starting number of the sequence (inclusive), the `stop` argument is the ending number of the sequence (exclusive), and the `step` argument is the difference between each number in the sequence.
+
+
+```python
+r1: range = range(11) # Returns a sequence of numbers from 0 to 10
+r2: range = range(5, 21) # Returns a sequence of numbers from 5 to 20
+r3: range = range(20, 9, -2) # Returns the sequence of numbers from 20 to 10 in steps of 2
+
+print("To exclusive: ", end="")
+for i in r1:
+  print(f"{i} ", end="")
+
+print("\nFrom inclusive to exclusive: ", end="")
+for i in r2:
+  print(f"{i} ", end="")
+
+print("\nFrom inclusive to exclusive with step: ", end="")
+for i in r3:
+  print(f"{i} ", end="")
+
+print(f"\nFrom = {r3.start}")
+print(f"To = {r3.stop}")
+```
+
+    To exclusive: 0 1 2 3 4 5 6 7 8 9 10 
+    From inclusive to exclusive: 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+    From inclusive to exclusive with step: 20 18 16 14 12 10 
+    From = 20
+    To = 9
+
 
 ### Dataclass <a id="dataclass"></a>
 
+In Python, the `dataclass` decorator is a  shorthand way of creating classes that are primarily used for storing data, and can save time and reduce code duplication by automatically generating common methods such as `__init__()`, `__repr__()`, and `__eq__()`.
+
+Using the `dataclass` decorator, you can define a class with a concise syntax that specifies the fields of the class, their types, and any default values or other attributes. 
+
+There is a more advanced alternative called [attrs](https://pypi.org/project/attrs/).
+
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: float
+    y: float
+    z: float = 0.0
+
+# With a dataclass, you can create instances of the class using the normal syntax for calling a constructor:
+p1 = Point(1.0, 2.0)
+p2 = Point(3.0, 4.0, 5.0)
+
+print("p1:", p1.x, p1.y, p1.z)
+print("p2:", p2.x, p2.y, p2.z)
+```
+
+    p1: 1.0 2.0 0.0
+    p2: 3.0 4.0 5.0
+
+
+The dataclass decorator also generates other useful methods, such as `__repr__()`, which returns a string representation of the object, and `__eq__()`, which tests for equality between two objects of the same class.
+
+Dataclass can be made immutable with the directive `frozen=True`.
+
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class User:
+    name: str
+    account: int
+```
+
 ### Struct <a id="struct"></a>
+
+In Python, the `struct` module provides functions for packing and unpacking binary data. These functions allow you to convert data between Python objects and their binary representation, which is useful for working with binary data formats such as network protocols, file formats, and device drivers.
+
+Allows you to turn a Python `int` into, for example, a `short int` or a `long int`.
+
+
+```python
+from struct import pack, unpack, iter_unpack
+
+p = pack('if', 42, 3.14)
+print("pack:", p)
+
+u = b'*\x00\x00\x00\xcd\xcc\x0c@'
+values = unpack('if', u)
+print("unpack:", values)
+
+i = b'*\x00\x00\x00\xcd\xcc\x0c@\xa0\x0f\x00\x00\xcd\xcc\xcc?'
+for values in iter_unpack('if', i):
+    print("iter_unpack:", values)
+```
+
+    pack: b'*\x00\x00\x00\xc3\xf5H@'
+    unpack: (42, 2.200000047683716)
+    iter_unpack: (42, 2.200000047683716)
+    iter_unpack: (4000, 1.600000023841858)
+
 
 ### Datetime <a id="datetime"></a>
 
+In Python, the `datetime` module provides classes for working with dates and times. 
+
+The `datetime` class is the most commonly used class in the `datetime` module and represents a date and time together.
+
+The `datetime` module also provides several other classes for working with dates and times, such as `date`, `time`, and `timedelta`. These classes provide more fine-grained control over individual components of a date or time, such as the year, month, day, hour, minute, second, or microsecond.
+
 #### Constructors <a id="constructors"></a>
+
+The constructor creates a `datetime` object with the specified year, month, day, hour, minute, second, and microsecond. If any of these values are not specified, they default to 0.
+
+
+```python
+from datetime import date, time, datetime, timedelta
+
+d: date = date(year=1987, month=11, day=2)
+t: time  = time(hour=12, minute=30, second=0, microsecond=0, tzinfo=None, fold=0)
+dt: datetime = datetime(year=1987, month=11, day=2, hour=9, minute=30, second=0)
+td: timedelta = timedelta(weeks=1, days=2, hours=12, minutes=13, seconds=14)
+
+print("d:", d)
+print("t:", t)
+print("dt:", dt)
+print("td:", td)
+```
+
+    d: 1987-11-02
+    t: 12:30:00
+    dt: 1987-11-02 09:30:00
+    td: 9 days, 12:13:14
+
 
 #### Now <a id="now"></a>
 
+Get the current date or date/time.
+
+
+```python
+from datetime import date, datetime
+import pytz
+import time
+
+d: date  = date.today()
+dt1: datetime = datetime.today()
+dt2: datetime = datetime.utcnow()
+dt3: datetime = datetime.now(pytz.timezone('Europe/Budapest'))
+
+t1 = time.time()  # Unix epoch time
+t2 = time.ctime()
+
+print("d:", d)
+print("dt1:", dt1)
+print("dt2:", dt2)
+print("dt3:", dt3)
+print("t1:", t1)
+print("t2:", t2)
+
+```
+
+    d: 2023-04-26
+    dt1: 2023-04-26 16:27:24.190924
+    dt2: 2023-04-26 14:27:24.190933
+    dt3: 2023-04-26 16:27:24.190955+02:00
+    t1: 1682519244.190978
+    t2: Wed Apr 26 16:27:24 2023
+
+
 #### Timezone <a id="timezone"></a>
 
-<!-- ### Common data structures operations <a id="common-ds-operations"></a> -->
+The `timezone` class is used to represent a time zone and can be used to convert `datetime` objects between different time zones.
+
+
+```python
+import datetime
+import pytz
+
+# Create a datetime object representing April 15, 2022 at 3:30 PM in the US/Eastern time zone
+eastern = pytz.timezone('US/Eastern')
+dt = datetime.datetime(2022, 4, 15, 15, 30, tzinfo=eastern)
+print("dt:", dt)
+
+# Convert the datetime object to the UTC time zone
+utc = pytz.utc
+dt_utc = dt.astimezone(utc)
+print("dt_utc:", dt_utc)
+```
+
+    dt: 2022-04-15 15:30:00-04:56
+    dt_utc: 2022-04-15 20:26:00+00:00
+
 
 
 
