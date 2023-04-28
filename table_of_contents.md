@@ -1,6 +1,6 @@
 ## Table of contents
 
-### [Part I. Data structures](#1-ds)
+### [Part I. Data Structures and Data Types](#1-ds-and-dt)
 
 1. [Basic Data Types:](#basic-dt)
     - [String](#string)
@@ -17,7 +17,6 @@
         - [DefaultDict](#defaultdict)
         - [OrderedDict](#ordereddict)
         - [Counter](#counter)
-        - [Hash calculation problem](#hashcalc)
     - [Set](#set)
         - [Frozenset](#frozenset)
     - [Array](#array)
@@ -28,7 +27,6 @@
         - [LifoQueue](#lifoqueue)
         - [PriorityQueue](#priorityqueue)
     - [Heap queue (Heapq)](#heap)
-    - [Mutable/Immutable](#mutable-immutable)
 3. [User-defined Data Structures:](#user-defined-ds)
     - [Linked List](#linkedlist)
     - [Binary Tree](#binarytree)
@@ -45,4 +43,60 @@
         - [Constructors](#constructors)
         - [Now](#now)
         - [Timezone](#timezone)
-    - [Common data structures operations](#common-ds-operations)
+5. [General Data Structure Concepts](#general-ds-concepts)
+    - [Mutable/Immutable](#mutable-immutable)
+    - [Hash calculation problem](#hashcalc)
+    - Common data structures operations
+
+### Part II: Data Manipulation and Processing
+
+1. Basic Data Manipulation
+    - Slice
+    - Sorting
+    - any()/all()
+    - Basic Math operations
+        - sum(), count(), min(), max()
+        - Basic math
+        - Bit operations
+        - Bit count
+        - Fraction
+        - Euclidean distance
+2. Comprehensions
+    - List comprehension
+    - Dict comprehension
+    - Set comprehension
+3. String Operations
+    - lower(), upper(), capitalize(), title()
+    - strip()
+    - split()
+    - ord(), chr()
+4. Regular Expressions
+    - RegEx
+    - match
+5. Datetime
+    - Creating datetime variables
+    - Datetime conversion
+    - Datetime arithmetic
+6. Functional Programming
+    - Functools
+        - map
+        - filter
+        - reduce
+    - Bisect
+7. File Operations
+    - Files
+        - read
+        - write
+        - text/binary
+    - Serialization
+        - JSON
+        - Pickle
+        - Protocol Buffers
+    - Filesystem
+        - paths
+    - Structured Data Formats
+        - CSV
+        - Other structured data formats (e.g., XML, YAML)
+8. Data Encoding and Decoding
+    - base64
+    - Unicode

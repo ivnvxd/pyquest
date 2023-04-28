@@ -3,7 +3,7 @@
 
 ## Table of contents
 
-### [Part I. Data structures](#1-ds)
+### [Part I. Data Structures and Data Types](#1-ds-and-dt)
 
 1. [Basic Data Types:](#basic-dt)
     - [String](#string)
@@ -20,7 +20,6 @@
         - [DefaultDict](#defaultdict)
         - [OrderedDict](#ordereddict)
         - [Counter](#counter)
-        - [Hash calculation problem](#hashcalc)
     - [Set](#set)
         - [Frozenset](#frozenset)
     - [Array](#array)
@@ -31,7 +30,6 @@
         - [LifoQueue](#lifoqueue)
         - [PriorityQueue](#priorityqueue)
     - [Heap queue (Heapq)](#heap)
-    - [Mutable/Immutable](#mutable-immutable)
 3. [User-defined Data Structures:](#user-defined-ds)
     - [Linked List](#linkedlist)
     - [Binary Tree](#binarytree)
@@ -48,10 +46,66 @@
         - [Constructors](#constructors)
         - [Now](#now)
         - [Timezone](#timezone)
-    - [Common data structures operations](#common-ds-operations)
+5. [General Data Structure Concepts](#general-ds-concepts)
+    - [Mutable/Immutable](#mutable-immutable)
+    - [Hash calculation problem](#hashcalc)
+    - Common data structures operations
+
+### Part II: Data Manipulation and Processing
+
+1. Basic Data Manipulation
+    - Slice
+    - Sorting
+    - any()/all()
+    - Basic Math operations
+        - sum(), count(), min(), max()
+        - Basic math
+        - Bit operations
+        - Bit count
+        - Fraction
+        - Euclidean distance
+2. Comprehensions
+    - List comprehension
+    - Dict comprehension
+    - Set comprehension
+3. String Operations
+    - lower(), upper(), capitalize(), title()
+    - strip()
+    - split()
+    - ord(), chr()
+4. Regular Expressions
+    - RegEx
+    - match
+5. Datetime
+    - Creating datetime variables
+    - Datetime conversion
+    - Datetime arithmetic
+6. Functional Programming
+    - Functools
+        - map
+        - filter
+        - reduce
+    - Bisect
+7. File Operations
+    - Files
+        - read
+        - write
+        - text/binary
+    - Serialization
+        - JSON
+        - Pickle
+        - Protocol Buffers
+    - Filesystem
+        - paths
+    - Structured Data Formats
+        - CSV
+        - Other structured data formats (e.g., XML, YAML)
+8. Data Encoding and Decoding
+    - base64
+    - Unicode
 
 
-# Part I. Data Structures <a id="1-ds"></a>
+# Part I. Data Structures and Data Types <a id="1-ds-and-dt"></a>
 
 Data structures in Python are objects or collections of objects that can hold and organize data in various ways. They provide a way to store and manipulate data, and can be used for a wide range of applications, from simple to complex.
 
@@ -61,7 +115,7 @@ Python also provides more specialized data structures, such as `arrays`, `heaps`
 
 Choosing the appropriate data structure for a particular application can have a significant impact on performance, readability, and ease of implementation. Understanding the strengths and weaknesses of different data structures is an important part of writing efficient and effective Python code.
 
-## Basic Data Types: <a id="basic-dt"></a>
+## 1. Basic Data Types: <a id="basic-dt"></a>
 
 ### String <a id="string"></a>
 
@@ -280,7 +334,7 @@ greet("")
     Hello, stranger!
 
 
-## Built-in Data Structures: <a id="built-in-ds"></a>
+## 2. Built-in Data Structures: <a id="built-in-ds"></a>
 
 ### List <a id="list"></a>
 
@@ -520,25 +574,6 @@ print("d:", d)
 
     d: defaultdict(<class 'int'>, {'red': 1, 'white': 3, 'blue': 1, 'black': 2})
 
-
-#### Hash calculation problem <a id="hashcalc"></a>
-
-Any hash table, including a Python dictionary, must be able to solve the hash calculation problem. For this purpose the **open addressing** or **chaining** techniques are used. Python [uses](https://stackoverflow.com/questions/9010222/why-can-a-python-dict-have-multiple-keys-with-the-same-hash) open addressing.
-
-The new dictionary is initialized with 8 empty slots.
-The interpreter first tries to add the new entry at an address that depends on the hash of the key.
-
-```python
-addr = hash(key) & mask,
-```
-where
-```python
-mask = PyDictMINSIZE - 1
-```
-
-If this address is busy, the interpreter checks (with `==`) the hash and the key. If both match, then the record already exists. Then it starts probing for free slots, which is done in pseudo-random order (the order depends on the key value). A new record will be added to the first free address.
-
-Reading from the dictionary is done similarly, the interpreter starts searching from `addr` position and follows the same pseudo-random path until it reads the desired record.
 
 ### Set <a id="set"></a>
 
@@ -865,28 +900,7 @@ print("m:", m)
     m: -10
 
 
-### Mutable/Immutable <a id="mutable-immutable"></a>
-
-In Python, data structures and data types can be classified as either mutable or immutable.
-
-`Immutable` data types are those whose value cannot be changed once they are created. Examples of immutable data types in Python include: 
-- Strings;
-- Numbers (integers, floats, and complex numbers);
-- Tuples;
-- Frozen sets.
-
-When an operation is performed on an immutable object, a new object is created in memory, rather than modifying the existing object. This is because the original object cannot be modified due to its immutability.
-
-`Mutable` data types are those whose value can be changed after they are created. Examples of mutable data types in Python include:
-- Lists;
-- Dictionaries;
-- Sets.
-
-When an operation is performed on a mutable object, the object is modified in place, rather than creating a new object in memory. This is because mutable objects can be modified due to their mutability.
-
-For the User-defined Classes it purely depends upon the user to define the characteristics.
-
-## User-defined Data Structures: <a id="user-defined-ds"></a>
+## 3. User-defined Data Structures: <a id="user-defined-ds"></a>
 
 Data structures that Python has no built-in implementation, but can nevertheless be very useful in a real project.
 
@@ -930,7 +944,7 @@ A Trie is made up of nodes that represent the characters of the strings being st
 
 The Trie data structure is particularly useful when dealing with large sets of strings, as it allows for efficient searching, insertion, and deletion of strings.
 
-## Other Data Types: <a id="other-dt"></a>
+## 4. Other Data Types: <a id="other-dt"></a>
 
 ### Enum <a id="enum"></a>
 
@@ -1179,6 +1193,48 @@ print("dt_utc:", dt_utc)
     dt: 2022-04-15 15:30:00-04:56
     dt_utc: 2022-04-15 20:26:00+00:00
 
+
+## 5. General Data Structure Concepts <a id="general-ds-concepts"></a>
+
+### Mutable/Immutable <a id="mutable-immutable"></a>
+
+In Python, data structures and data types can be classified as either mutable or immutable.
+
+`Immutable` data types are those whose value cannot be changed once they are created. Examples of immutable data types in Python include: 
+- Strings;
+- Numbers (integers, floats, and complex numbers);
+- Tuples;
+- Frozen sets.
+
+When an operation is performed on an immutable object, a new object is created in memory, rather than modifying the existing object. This is because the original object cannot be modified due to its immutability.
+
+`Mutable` data types are those whose value can be changed after they are created. Examples of mutable data types in Python include:
+- Lists;
+- Dictionaries;
+- Sets.
+
+When an operation is performed on a mutable object, the object is modified in place, rather than creating a new object in memory. This is because mutable objects can be modified due to their mutability.
+
+For the User-defined Classes it purely depends upon the user to define the characteristics.
+
+### Hash calculation problem <a id="hashcalc"></a>
+
+Any hash table, including a Python dictionary, must be able to solve the hash calculation problem. For this purpose the **open addressing** or **chaining** techniques are used. Python [uses](https://stackoverflow.com/questions/9010222/why-can-a-python-dict-have-multiple-keys-with-the-same-hash) open addressing.
+
+The new dictionary is initialized with 8 empty slots.
+The interpreter first tries to add the new entry at an address that depends on the hash of the key.
+
+```python
+addr = hash(key) & mask,
+```
+where
+```python
+mask = PyDictMINSIZE - 1
+```
+
+If this address is busy, the interpreter checks (with `==`) the hash and the key. If both match, then the record already exists. Then it starts probing for free slots, which is done in pseudo-random order (the order depends on the key value). A new record will be added to the first free address.
+
+Reading from the dictionary is done similarly, the interpreter starts searching from `addr` position and follows the same pseudo-random path until it reads the desired record.
 
 
 
