@@ -1,9 +1,14 @@
 # PyQuest
 
 
+## Content
+
+- [Part I. Data Structures and Data Types](#toc-1-ds-and-dt)
+- [Part II: Data Manipulation and Processing](#toc-2-dm-and-processing)
+
 ## Table of contents
 
-### [Part I. Data Structures and Data Types](#1-ds-and-dt)
+### [Part I. Data Structures and Data Types](#1-ds-and-dt) <a id="toc-1-ds-and-dt"></a>
 
 1. [Basic Data Types:](#basic-dt)
     - [String](#string)
@@ -51,7 +56,7 @@
     - [Hash calculation problem](#hashcalc)
     - Common data structures operations
 
-### Part II: Data Manipulation and Processing
+### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 
 1. Basic Data Manipulation
     - Slice
