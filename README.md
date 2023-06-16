@@ -1242,5 +1242,57 @@ If this address is busy, the interpreter checks (with `==`) the hash and the key
 Reading from the dictionary is done similarly, the interpreter starts searching from `addr` position and follows the same pseudo-random path until it reads the desired record.
 
 
+# Part II. Data Manipulation and Processing <a id="2-dm-and-processing">
+
+## 1. Basic Data Manipulation <a id="basic-dm"></a>
+
+### Slice <a id="slice"></a>
+
+In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`. 
+
+`Slices` are defined using the colon (:) operator, with the syntax `start:stop:step`. The `start` parameter is the index of the first element to include in the slice, the `stop` parameter is the index of the first element to exclude from the slice, and the `step` parameter is the number of elements to skip between each included element.
+
+
+```python
+# Slicing a string
+s = "Hello, world!"
+
+print(s[0:5])
+print(s[7:])
+print(s[:5])
+print(s[::2])
+
+# Slicing a list
+lst = [1, 2, 3, 4, 5]
+
+print(lst[1:3])
+print(lst[::2])
+```
+
+    Hello
+    world!
+    Hello
+    Hlo ol!
+    [2, 3]
+    [1, 3, 5]
+
+
+The values of `start` and `stop` can be negative, which means that it is counting from the end of the structure. You can also use a negative `step` value.
+
+
+```python
+s = "Hello, world!"
+
+print(s[-6:])
+print(s[:-5])
+print(s[::-1])
+```
+
+    world!
+    Hello, w
+    !dlrow ,olleH
+
+
+
 
 
