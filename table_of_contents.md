@@ -7,14 +7,14 @@
 
 ### [Part I. Data Structures and Data Types](#1-ds-and-dt) <a id="toc-1-ds-and-dt"></a>
 
-1. [Basic Data Types:](#basic-dt)
+1. [Basic Data Types](#basic-dt)
     - [String](#string)
     - [Number](#number)
         - [Integer](#integer)
         - [Float](#float)
         - [Complex](#complex)
     - [NoneType](#none)
-2. [Built-in Data Structures:](#built-in-ds)
+2. [Built-in Data Structures](#built-in-ds)
     - [List](#list)
     - [Tuple](#tuple)
         - [Named tuple](#namedtuple)
@@ -32,14 +32,14 @@
         - [LifoQueue](#lifoqueue)
         - [PriorityQueue](#priorityqueue)
     - [Heap queue (Heapq)](#heap)
-3. [User-defined Data Structures:](#user-defined-ds)
+3. [User-defined Data Structures](#user-defined-ds)
     - [Linked List](#linkedlist)
     - [Binary Tree](#binarytree)
     - [B-tree](#btree)
     - [Red-Black Tree](#redblacktree)
     - [AVL Tree](#avltree)
     - [Trie](#trie)
-4. [Other Data Types:](#other-dt)
+4. [Other Data Types](#other-dt)
     - [Enum](#enum)
     - [Range](#range)
     - [Dataclass](#dataclass)
@@ -55,8 +55,8 @@
 
 ### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 
-1. Basic Data Manipulation
-    - Slice
+1. [Basic Data Manipulation](#basic-dm)
+    - [Slice](#slice)
     - Sorting
     - any()/all()
     - Basic Math operations

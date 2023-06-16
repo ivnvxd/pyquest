@@ -10,14 +10,14 @@
 
 ### [Part I. Data Structures and Data Types](#1-ds-and-dt) <a id="toc-1-ds-and-dt"></a>
 
-1. [Basic Data Types:](#basic-dt)
+1. [Basic Data Types](#basic-dt)
     - [String](#string)
     - [Number](#number)
         - [Integer](#integer)
         - [Float](#float)
         - [Complex](#complex)
     - [NoneType](#none)
-2. [Built-in Data Structures:](#built-in-ds)
+2. [Built-in Data Structures](#built-in-ds)
     - [List](#list)
     - [Tuple](#tuple)
         - [Named tuple](#namedtuple)
@@ -35,14 +35,14 @@
         - [LifoQueue](#lifoqueue)
         - [PriorityQueue](#priorityqueue)
     - [Heap queue (Heapq)](#heap)
-3. [User-defined Data Structures:](#user-defined-ds)
+3. [User-defined Data Structures](#user-defined-ds)
     - [Linked List](#linkedlist)
     - [Binary Tree](#binarytree)
     - [B-tree](#btree)
     - [Red-Black Tree](#redblacktree)
     - [AVL Tree](#avltree)
     - [Trie](#trie)
-4. [Other Data Types:](#other-dt)
+4. [Other Data Types](#other-dt)
     - [Enum](#enum)
     - [Range](#range)
     - [Dataclass](#dataclass)
@@ -58,8 +58,8 @@
 
 ### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 
-1. Basic Data Manipulation
-    - Slice
+1. [Basic Data Manipulation](#basic-dm)
+    - [Slice](#slice)
     - Sorting
     - any()/all()
     - Basic Math operations
@@ -120,7 +120,7 @@ Python also provides more specialized data structures, such as `arrays`, `heaps`
 
 Choosing the appropriate data structure for a particular application can have a significant impact on performance, readability, and ease of implementation. Understanding the strengths and weaknesses of different data structures is an important part of writing efficient and effective Python code.
 
-## 1. Basic Data Types: <a id="basic-dt"></a>
+## 1. Basic Data Types <a id="basic-dt"></a>
 
 ### String <a id="string"></a>
 
@@ -339,7 +339,7 @@ greet("")
     Hello, stranger!
 
 
-## 2. Built-in Data Structures: <a id="built-in-ds"></a>
+## 2. Built-in Data Structures <a id="built-in-ds"></a>
 
 ### List <a id="list"></a>
 
@@ -905,7 +905,7 @@ print("m:", m)
     m: -10
 
 
-## 3. User-defined Data Structures: <a id="user-defined-ds"></a>
+## 3. User-defined Data Structures <a id="user-defined-ds"></a>
 
 Data structures that Python has no built-in implementation, but can nevertheless be very useful in a real project.
 
@@ -949,7 +949,7 @@ A Trie is made up of nodes that represent the characters of the strings being st
 
 The Trie data structure is particularly useful when dealing with large sets of strings, as it allows for efficient searching, insertion, and deletion of strings.
 
-## 4. Other Data Types: <a id="other-dt"></a>
+## 4. Other Data Types <a id="other-dt"></a>
 
 ### Enum <a id="enum"></a>
 
