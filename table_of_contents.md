@@ -57,7 +57,7 @@
 
 1. [Basic Data Manipulation](#basic-dm)
     - [Slice](#slice)
-    - Sorting
+    - [Sorting](#sorting)
     - any()/all()
     - Basic Math operations
         - sum(), count(), min(), max()

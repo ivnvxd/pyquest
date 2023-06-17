@@ -60,7 +60,7 @@
 
 1. [Basic Data Manipulation](#basic-dm)
     - [Slice](#slice)
-    - Sorting
+    - [Sorting](#sorting)
     - any()/all()
     - Basic Math operations
         - sum(), count(), min(), max()
@@ -1257,24 +1257,32 @@ In Python, a `slice` is a way to extract a portion of a sequence, such as a `str
 # Slicing a string
 s = "Hello, world!"
 
-print(s[0:5])
-print(s[7:])
-print(s[:5])
-print(s[::2])
+s1 = s[0:5]
+s2 = s[7:]
+s3 = s[:5]
+s4 = s[::2]
+
+print("s1:", s1)
+print("s2:", s2)
+print("s3:", s3)
+print("s4:", s4)
 
 # Slicing a list
 lst = [1, 2, 3, 4, 5]
 
-print(lst[1:3])
-print(lst[::2])
+lst1 = lst[1:3]
+lst2 = lst[::2]
+
+print("lst1:", lst1)
+print("lst2:", lst2)
 ```
 
-    Hello
-    world!
-    Hello
-    Hlo ol!
-    [2, 3]
-    [1, 3, 5]
+    s1: Hello
+    s2: world!
+    s3: Hello
+    s4: Hlo ol!
+    lst1: [2, 3]
+    lst2: [1, 3, 5]
 
 
 The values of `start` and `stop` can be negative, which means that it is counting from the end of the structure. You can also use a negative `step` value.
@@ -1283,15 +1291,80 @@ The values of `start` and `stop` can be negative, which means that it is countin
 ```python
 s = "Hello, world!"
 
-print(s[-6:])
-print(s[:-5])
-print(s[::-1])
+s1 = s[-6:]
+s2 = s[:-5]
+s3 = s[::-1]
+
+print("s1:", s1)
+print("s2:", s2)
+print("s3:", s3)
 ```
 
-    world!
-    Hello, w
-    !dlrow ,olleH
+    s1: world!
+    s2: Hello, w
+    s3: !dlrow ,olleH
 
+
+### Sorting <a id="sorting"></a>
+
+In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`. 
+
+The `sort()` method sorts the list in-place, meaning it modifies the original list. It does not return a new list. The `sorted()` function, on the other hand, returns a new sorted list and leaves the original list unchanged.
+
+
+```python
+# Using sort()
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+lst.sort()
+print("lst:", lst)
+
+# Using sorted()
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+new_lst = sorted(lst)
+print("new_lst:", new_lst)
+print("lst:", lst)
+```
+
+    lst: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+    new_lst: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+    lst: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+
+Both `sort()` and `sorted()` can take a `reverse` parameter to sort the list in descending order.
+
+
+```python
+# Sorting in descending order
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+lst.sort(reverse=True)
+print("lst:", lst)
+
+new_lst = sorted(lst, reverse=True)
+print("new_lst:", new_lst)
+```
+
+    lst: [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]
+    new_lst: [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]
+
+
+Both `sort()` and `sorted()` can also take a `key` parameter, which is a function that takes an element as input and returns a value to use for sorting.
+
+
+```python
+# Sorting by length of strings
+lst = ["apple", "banana", "cherry", "date", "elderberry"]
+lst.sort(key=len)
+print("lst:", lst)
+
+new_lst = sorted(lst, key=len, reverse=True)
+print("new_lst:", new_lst)
+```
+
+    lst: ['date', 'apple', 'banana', 'cherry', 'elderberry']
+    new_lst: ['elderberry', 'banana', 'cherry', 'apple', 'date']
+
+
+Complex data structures can be sorted by `key=lambda el: el[1]` or even, for example, by `key=lambda el: (el[1], el[0])`.
 
 
 
