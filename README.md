@@ -61,7 +61,7 @@
 1. [Basic Data Manipulation](#basic-dm)
     - [Slice](#slice)
     - [Sorting](#sorting)
-    - any()/all()
+    - [any()/all()](#anyall)
     - Basic Math operations
         - sum(), count(), min(), max()
         - Basic math
@@ -1365,6 +1365,61 @@ print("new_lst:", new_lst)
 
 
 Complex data structures can be sorted by `key=lambda el: el[1]` or even, for example, by `key=lambda el: (el[1], el[0])`.
+
+### any()/all() <a id="anyall"></a>
+
+`all()` and `any()` are built-in functions that operate on iterable objects, such as lists, tuples, and sets.
+
+The `all()` function returns `True` if all elements in the iterable are `True`, and `False` otherwise. The `any()` function returns `True` if at least one element in the iterable is `True`, and `False` otherwise.
+
+
+```python
+# Using all()
+lst1 = [True, True, True]
+lst2 = [True, False, True]
+lst3 = [False, False, False]
+
+print("all(lst1):", all(lst1))
+print("all(lst2):", all(lst2))
+print("all(lst3):", all(lst3))
+
+# Using any()
+lst4 = [False, False, True]
+lst5 = [False, False, False]
+
+print("any(lst1):", any(lst1))
+print("any(lst4):", any(lst4))
+print("any(lst5):", any(lst5))
+```
+
+    all(lst1): True
+    all(lst2): False
+    all(lst3): False
+    any(lst1): True
+    any(lst4): True
+    any(lst5): False
+
+
+`all()` and `any()` can also be used with generator expressions, which are similar to list comprehensions but do not create a list in memory.
+
+
+```python
+# Using all() with a generator expression
+lst = [1, 2, 3, 4, 5]
+al = all(x > 0 for x in lst)
+print("al:", al)
+
+# Using any() with a generator expression
+lst = [0, 0, 0, 1, 0]
+an = any(x > 0 for x in lst)
+print("an:", an)
+```
+
+    al: True
+    an: True
+
+
+Note that `all()` and `any()` short-circuit, meaning they stop iterating through the iterable as soon as the result is determined. For example, if `all()` encounters a `False` element, it immediately returns `False` without checking the remaining elements.
 
 
 
