@@ -62,9 +62,9 @@
     - [Slice](#slice)
     - [Sorting](#sorting)
     - [any()/all()](#anyall)
-    - Basic Math operations
-        - sum(), count(), min(), max()
-        - Basic math
+    - [Basic Math operations](#basicmathoperations)
+        - [sum(), count(), min(), max()](#sumcountminmax)
+        - [Basic math](#basicmath)
         - Bit operations
         - Bit count
         - Fraction
@@ -1420,6 +1420,136 @@ print("an:", an)
 
 
 Note that `all()` and `any()` short-circuit, meaning they stop iterating through the iterable as soon as the result is determined. For example, if `all()` encounters a `False` element, it immediately returns `False` without checking the remaining elements.
+
+### Basic Math operations <a id="basicmathoperations"></a>
+
+#### sum(), count(), min(), max() <a id="sumcountminmax"></a>
+
+In Python, `sum()`, `count()`, `min()`, and `max()` are built-in functions that operate on iterable objects, such as lists, tuples, and sets.
+
+The `sum()` function returns the sum of all elements in the iterable. It can also take an optional `start` parameter, which is added to the sum of the iterable.
+
+
+```python
+lst = [1, 2, 3, 4, 5]
+s1 = sum(lst)
+print("s1:", s1)
+
+tpl = (1.5, 2.5, 3.5)
+s2 = sum(tpl, 1)
+print("s2:", s2)
+```
+
+    s1: 15
+    s2: 8.5
+
+
+The `count()` function returns the number of times a specified element appears in the iterable.
+
+
+```python
+lst = [1, 2, 3, 4, 5, 2]
+c1 = lst.count(2)
+print("c1:", c1)
+
+tpl = ("apple", "banana", "cherry", "banana")
+c2 = tpl.count("banana")
+print("c2:", c2)
+```
+
+    c1: 2
+    c2: 2
+
+
+The `min()` function returns the smallest element in the iterable. It can also take multiple arguments, in which case it returns the smallest argument.
+
+
+```python
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+m1 = min(lst)
+print("m1:", m1)
+
+tpl = ("apple", "banana", "cherry")
+m2 = min(tpl)
+print("m2:", m2)
+
+print("m3:", min(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5))
+```
+
+    m1: 1
+    m2: apple
+    m3: 1
+
+
+The `max()` function returns the largest element in the iterable. It can also take multiple arguments, in which case it returns the largest argument.
+
+
+```python
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+m1 = max(lst)
+print("m1:", m1)
+
+tpl = ("apple", "banana", "cherry")
+m2 = max(tpl)
+print("m2:", m2)
+
+print("m3:", max(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5))
+```
+
+    m1: 9
+    m2: cherry
+    m3: 9
+
+
+#### Basic math <a id="basicmath"></a>
+
+In Python, basic math operations include addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and exponentiation (`**`). These operators work on numeric data types, such as integers and floating-point numbers.
+
+
+```python
+a = 5
+b = 3
+
+# Addition
+c1 = a + b
+print("c1:", c1)
+
+# Subtraction
+c2 = a - b
+print("c2:", c2)
+
+# Multiplication
+c3 = a * b
+print("c3:", c3)
+
+# Division
+c4 = a / b
+print("c4:", c4)
+
+# Exponentiation
+c5 = a ** b
+print("c5:", c5)
+```
+
+    c1: 8
+    c2: 2
+    c3: 15
+    c4: 1.6666666666666667
+    c5: 125
+
+
+Note that division (`/`) always returns a floating-point number, even if both operands are integers. If you want to perform integer division, use the `//` operator instead.
+
+
+```python
+a = 5
+b = 3
+c = a // b
+print(c)
+```
+
+    1
+
 
 
 

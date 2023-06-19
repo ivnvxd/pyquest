@@ -59,9 +59,9 @@
     - [Slice](#slice)
     - [Sorting](#sorting)
     - [any()/all()](#anyall)
-    - Basic Math operations
-        - sum(), count(), min(), max()
-        - Basic math
+    - [Basic Math operations](#basicmathoperations)
+        - [sum(), count(), min(), max()](#sumcountminmax)
+        - [Basic math](#basicmath)
         - Bit operations
         - Bit count
         - Fraction
