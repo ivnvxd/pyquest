@@ -62,7 +62,7 @@
     - [Basic Math operations](#basicmathoperations)
         - [sum(), count(), min(), max()](#sumcountminmax)
         - [Basic math](#basicmath)
-        - Bit operations
+        - [Bit operations](#bitoperations)
         - Bit count
         - Fraction
         - Euclidean distance
