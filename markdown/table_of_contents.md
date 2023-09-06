@@ -2,6 +2,23 @@
 
 - [Part I. Data Structures and Data Types](#toc-1-ds-and-dt)
 - [Part II: Data Manipulation and Processing](#toc-2-dm-and-processing)
+- [Part III: Control Flow and Data Flows](#toc-3-cf-and-df)
+- [Part IV: File Handling, I/O, and Serialization](#toc-4-file-io-serialization)
+- [Part V: Exceptions and Error Handling](#toc-5-exceptions-and-errors)
+- [Part VI: Functional Programming](#toc-6-fp)
+- [Part VII: Python Standard Libraries](#toc-7-standart-libraries)
+- [Part VIII: Object-Oriented Programming](#toc-8-oop)
+- [Part IX: Python Language Fundamentals](#toc-9-language-fundamentals)
+- [Part X: Concurrency](#toc-10-concurrency)
+- [Part XI: Debugging and Testing](#toc-11-debugging-and-testing)
+- [Part XII: Common Practices](#toc-12-common-practices)
+- [Part XIII: Databases](#toc-13-databases)
+- [Part XIV: Networking and Web Development](#toc-14-web)
+- [Part XV: GUI Programming](#toc-15-gui)
+- [Part XVI: Python and Data Science](#toc-16-data-science)
+- [Part XVII: Software Architecture](#toc-17-architecture)
+- [Part XVIII: DevOps](#toc-18-devops)
+- [Part XIX: Algorithms](#toc-19-algorithms)
 
 ## Table of contents
 
@@ -75,7 +92,7 @@
     - RegEx
     - match
 
-### Part III: Control Flow and Data Flows
+### Part III: Control Flow and Data Flows <a id="toc-3-cf-and-df"></a>
 
 1. Conditional Statements
     - if, else, elif
@@ -97,7 +114,7 @@
     - enter/exit
     - contextlib
 
-### Part IV: File Handling, I/O, and Serialization
+### Part IV: File Handling, I/O, and Serialization <a id="toc-4-file-io-serialization"></a>
 
 1. File Operations
     - Opening a File
@@ -116,7 +133,7 @@
     - base64
     - Unicode
 
-### Part V: Exceptions and Error Handling
+### Part V: Exceptions and Error Handling <a id="toc-5-exceptions-and-errors"></a>
 
 1. Python Exceptions
     - Built-in Exceptions
@@ -129,7 +146,7 @@
     - assert statement
 4. User-Defined Exceptions
 
-### Part VI: Functional Programming
+### Part VI: Functional Programming <a id="toc-6-fp"></a>
 
 1. Lambda Functions
 2. Comprehensions
@@ -150,7 +167,7 @@
     - Generator expression
     - yield from
 
-### Part VII: Python Standard Libraries
+### Part VII: Python Standard Libraries <a id="toc-7-standart-libraries"></a>
 
 1. Math
 2. DateTime
@@ -161,7 +178,7 @@
 4. OS and Sys
 5. JSON, CSV
 
-### Part VIII: Object-Oriented Programming
+### Part VIII: Object-Oriented Programming <a id="toc-8-oop"></a>
 
 1. OOP Basics
     - Understanding Magic Methods
@@ -198,7 +215,7 @@
     - Creational, Structural, Behavioral Patterns
     - MVC, Singleton, Factory, Observer, etc.
 
-### Part IX: Language Skeleton
+### Part IX: Python Language Fundamentals <a id="toc-9-language-fundamentals"></a>
 
 1. Garbage Collection
     - Reference Counting
@@ -216,7 +233,7 @@
     - Operators overloading
     - Y Combinator
 
-### Part X: Concurrency
+### Part X: Concurrency <a id="toc-10-concurrency"></a>
 
 1. Multithreading
     - Basics of Multithreading
@@ -235,7 +252,7 @@
     - Conditions
     - Events
 
-### Part XI: Debugging and Testing
+### Part XI: Debugging and Testing <a id="toc-11-debugging-and-testing"></a>
 
 1. Debugging Python Code
     - PDB
@@ -247,7 +264,7 @@
     - Nose
     - Doctest
 
-### Part XII: Common Practices
+### Part XII: Common Practices <a id="toc-12-common-practices"></a>
 
 1. Logging
 2. Profiling
@@ -255,7 +272,7 @@
 4. User Input and Output
 5. Cryptography
 
-### Part XIII: Databases
+### Part XIII: Databases <a id="toc-13-databases"></a>
 
 1. Databases Basics
     - Relational Databases
@@ -271,7 +288,7 @@
     - SQLAlchemy
     - Django ORM
 
-### Part XIV: Networking and Web Development
+### Part XIV: Networking and Web Development <a id="toc-14-web"></a>
 
 1. HTTP
     - HTTP Basics
@@ -286,13 +303,13 @@
     - FastAPI
     - GraphQL
 
-### Part XV: GUI Programming
+### Part XV: GUI Programming <a id="toc-15-gui"></a>
 
 1. Tkinter
 2. PyQT
 3. wxPython
 
-### Part XVI: Python and Data Science
+### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
 
 1. NumPy
 2. Pandas
@@ -300,7 +317,7 @@
 4. SciPy
 5. Machine Learning with Scikit-Learn
 
-### Part XVII: Software Architecture
+### Part XVII: Software Architecture <a id="toc-17-architecture"></a>
 
 1. Principles
     - SOLID
@@ -324,7 +341,7 @@
     - System Design Basics
     - Designing for Scalability and Reliability
 
-### Part XVIII: DevOps
+### Part XVIII: DevOps <a id="toc-18-devops"></a>
 
 1. Git
     - Branching Models
@@ -343,7 +360,7 @@
     - Docker
     - Kubernetes
 
-### Part XIX: Algorithms
+### Part XIX: Algorithms <a id="toc-19-algorithms"></a>
 
 1. Time Complexity and Big O Notation
 2. Sorting Algorithms
