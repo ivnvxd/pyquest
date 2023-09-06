@@ -1,10 +1,37 @@
 # PyQuest
 
+Stay awhile and listen, my friend, for I have a tale to tell you about a **wonderful journey** to the land of Python. Many brave souls have traveled to this mystical realm of coding in hopes of *unraveling its secrets* and *mastering its magic*. Not all of them return unscathed, but with this trusted guide, you might just make it to the present day!
+
+These digital pages contain a collection of **wise lessons** and **cheat sheets** that illuminate your path. You'll start as a complete beginner, learning the basics of variables, data types, and data structures. Step-by-step you'll advance through functions, classes, concurrency, and more. The learning curve may feel steep at times, but fear not! With practice and perseverance, you'll soon be slinging code *like a pro*.
+
+This repository is your guide, but the journey is yours to take **on your own**. The examples are just seeds to be nurtured through your own experimentation. Run each code snippet, tweak and modify as you desire. There is no better teacher than *hands-on experience*. Follow your curiosity, even if only on unexpected tangents. The Python sphere is vast and amazing, full of packages and libraries for you to explore.
+
+Now comes the time for daring, for adventuring into the unknown. *Keep this manual close* and venture forth, brave coder. Your quest awaits.
+
+**Happy coding, adventurer!** 🐍🏰🔮
+
 
 ## Content
 
 - [Part I. Data Structures and Data Types](#toc-1-ds-and-dt)
 - [Part II: Data Manipulation and Processing](#toc-2-dm-and-processing)
+- [Part III: Control Flow and Data Flows](#toc-3-cf-and-df)
+- [Part IV: File Handling, I/O, and Serialization](#toc-4-file-io-serialization)
+- [Part V: Exceptions and Error Handling](#toc-5-exceptions-and-errors)
+- [Part VI: Functional Programming](#toc-6-fp)
+- [Part VII: Python Standard Libraries](#toc-7-standart-libraries)
+- [Part VIII: Object-Oriented Programming](#toc-8-oop)
+- [Part IX: Python Language Fundamentals](#toc-9-language-fundamentals)
+- [Part X: Concurrency](#toc-10-concurrency)
+- [Part XI: Debugging and Testing](#toc-11-debugging-and-testing)
+- [Part XII: Common Practices](#toc-12-common-practices)
+- [Part XIII: Databases](#toc-13-databases)
+- [Part XIV: Networking and Web Development](#toc-14-web)
+- [Part XV: GUI Programming](#toc-15-gui)
+- [Part XVI: Python and Data Science](#toc-16-data-science)
+- [Part XVII: Software Architecture](#toc-17-architecture)
+- [Part XVIII: DevOps](#toc-18-devops)
+- [Part XIX: Algorithms](#toc-19-algorithms)
 
 ## Table of contents
 
@@ -78,7 +105,7 @@
     - RegEx
     - match
 
-### Part III: Control Flow and Data Flows
+### Part III: Control Flow and Data Flows <a id="toc-3-cf-and-df"></a>
 
 1. Conditional Statements
     - if, else, elif
@@ -100,7 +127,7 @@
     - enter/exit
     - contextlib
 
-### Part IV: File Handling, I/O, and Serialization
+### Part IV: File Handling, I/O, and Serialization <a id="toc-4-file-io-serialization"></a>
 
 1. File Operations
     - Opening a File
@@ -119,7 +146,7 @@
     - base64
     - Unicode
 
-### Part V: Exceptions and Error Handling
+### Part V: Exceptions and Error Handling <a id="toc-5-exceptions-and-errors"></a>
 
 1. Python Exceptions
     - Built-in Exceptions
@@ -132,7 +159,7 @@
     - assert statement
 4. User-Defined Exceptions
 
-### Part VI: Functional Programming
+### Part VI: Functional Programming <a id="toc-6-fp"></a>
 
 1. Lambda Functions
 2. Comprehensions
@@ -153,7 +180,7 @@
     - Generator expression
     - yield from
 
-### Part VII: Python Standard Libraries
+### Part VII: Python Standard Libraries <a id="toc-7-standart-libraries"></a>
 
 1. Math
 2. DateTime
@@ -164,7 +191,7 @@
 4. OS and Sys
 5. JSON, CSV
 
-### Part VIII: Object-Oriented Programming
+### Part VIII: Object-Oriented Programming <a id="toc-8-oop"></a>
 
 1. OOP Basics
     - Understanding Magic Methods
@@ -201,7 +228,7 @@
     - Creational, Structural, Behavioral Patterns
     - MVC, Singleton, Factory, Observer, etc.
 
-### Part IX: Language Skeleton
+### Part IX: Python Language Fundamentals <a id="toc-9-language-fundamentals"></a>
 
 1. Garbage Collection
     - Reference Counting
@@ -219,7 +246,7 @@
     - Operators overloading
     - Y Combinator
 
-### Part X: Concurrency
+### Part X: Concurrency <a id="toc-10-concurrency"></a>
 
 1. Multithreading
     - Basics of Multithreading
@@ -238,7 +265,7 @@
     - Conditions
     - Events
 
-### Part XI: Debugging and Testing
+### Part XI: Debugging and Testing <a id="toc-11-debugging-and-testing"></a>
 
 1. Debugging Python Code
     - PDB
@@ -250,7 +277,7 @@
     - Nose
     - Doctest
 
-### Part XII: Common Practices
+### Part XII: Common Practices <a id="toc-12-common-practices"></a>
 
 1. Logging
 2. Profiling
@@ -258,7 +285,7 @@
 4. User Input and Output
 5. Cryptography
 
-### Part XIII: Databases
+### Part XIII: Databases <a id="toc-13-databases"></a>
 
 1. Databases Basics
     - Relational Databases
@@ -274,7 +301,7 @@
     - SQLAlchemy
     - Django ORM
 
-### Part XIV: Networking and Web Development
+### Part XIV: Networking and Web Development <a id="toc-14-web"></a>
 
 1. HTTP
     - HTTP Basics
@@ -289,13 +316,13 @@
     - FastAPI
     - GraphQL
 
-### Part XV: GUI Programming
+### Part XV: GUI Programming <a id="toc-15-gui"></a>
 
 1. Tkinter
 2. PyQT
 3. wxPython
 
-### Part XVI: Python and Data Science
+### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
 
 1. NumPy
 2. Pandas
@@ -303,7 +330,7 @@
 4. SciPy
 5. Machine Learning with Scikit-Learn
 
-### Part XVII: Software Architecture
+### Part XVII: Software Architecture <a id="toc-17-architecture"></a>
 
 1. Principles
     - SOLID
@@ -327,7 +354,7 @@
     - System Design Basics
     - Designing for Scalability and Reliability
 
-### Part XVIII: DevOps
+### Part XVIII: DevOps <a id="toc-18-devops"></a>
 
 1. Git
     - Branching Models
@@ -346,7 +373,7 @@
     - Docker
     - Kubernetes
 
-### Part XIX: Algorithms
+### Part XIX: Algorithms <a id="toc-19-algorithms"></a>
 
 1. Time Complexity and Big O Notation
 2. Sorting Algorithms
@@ -594,7 +621,7 @@ def greet(name): # Defining a function that returns None
     return None
 
 greet("Alice")
-greet("") 
+greet("")
 ```
 
     Hello, Alice!
@@ -605,7 +632,7 @@ greet("")
 
 ### List <a id="list"></a>
 
-A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.  
+A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.
 
 A `list` is an ordered mutable collection of objects. Important thing about a `list` is that items in a `list` need not be of the same type. The internal structure of a `list` is an `array` (more precisely, a vector) of pointers, i.e. the `list` is a dynamic `array`.
 
@@ -1058,7 +1085,7 @@ print("d:", d)
 
 ### Queue <a id="queue"></a>
 
-`Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads. 
+`Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads.
 There is also `LifoQueueue` to implement LIFO and `PriorityQueueue` to implement priority queue.
 
 
@@ -1141,7 +1168,7 @@ print(q.get()[1])  # get the item with highest priority (priority 3)
 
 In Python, a `heap` is a binary tree data structure that is commonly used to implement a PriorityQueue. A `heap` is a complete binary tree where the parent node is always greater (or less) than its children, and the tree has the minimum or maximum element at the root node.
 
-Python's `heapq` module provides the min heap (the smallest value always lies at the root) functions for working with heaps in a list. The heapq module can be used to create a heap, add elements to it, remove elements from it, and so on. 
+Python's `heapq` module provides the min heap (the smallest value always lies at the root) functions for working with heaps in a list. The heapq module can be used to create a heap, add elements to it, remove elements from it, and so on.
 If you need a max heap, with the maximum value at the root, you can use the advice from [Stackoverflow](https://stackoverflow.com/questions/2501457/what-do-i-use-for-a-max-heap-implementation-in-python).
 
 
@@ -1175,7 +1202,7 @@ Data structures that Python has no built-in implementation, but can nevertheless
 
 A `linked list` ([Wiki](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)) is a data structure that consists of a sequence of nodes, where each node contains a value and a reference to the next node in the list. The first node in the list is called the `head` of the list, and the last node is called the `tail`. Linked lists can be used to implement various data structures, such as stacks and queues.
 
-Python does not have a built-in linked list data structure, but it can be implemented using a class to represent the nodes and their relationships. 
+Python does not have a built-in linked list data structure, but it can be implemented using a class to represent the nodes and their relationships.
 
 ### Binary Tree <a id="binarytree"></a>
 
@@ -1290,9 +1317,9 @@ print(f"\nFrom = {r3.start}")
 print(f"To = {r3.stop}")
 ```
 
-    To exclusive: 0 1 2 3 4 5 6 7 8 9 10 
-    From inclusive to exclusive: 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
-    From inclusive to exclusive with step: 20 18 16 14 12 10 
+    To exclusive: 0 1 2 3 4 5 6 7 8 9 10
+    From inclusive to exclusive: 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+    From inclusive to exclusive with step: 20 18 16 14 12 10
     From = 20
     To = 9
 
@@ -1301,7 +1328,7 @@ print(f"To = {r3.stop}")
 
 In Python, the `dataclass` decorator is a  shorthand way of creating classes that are primarily used for storing data, and can save time and reduce code duplication by automatically generating common methods such as `__init__()`, `__repr__()`, and `__eq__()`.
 
-Using the `dataclass` decorator, you can define a class with a concise syntax that specifies the fields of the class, their types, and any default values or other attributes. 
+Using the `dataclass` decorator, you can define a class with a concise syntax that specifies the fields of the class, their types, and any default values or other attributes.
 
 There is a more advanced alternative called [attrs](https://pypi.org/project/attrs/).
 
@@ -1371,7 +1398,7 @@ for values in iter_unpack('if', i):
 
 ### Datetime <a id="datetime"></a>
 
-In Python, the `datetime` module provides classes for working with dates and times. 
+In Python, the `datetime` module provides classes for working with dates and times.
 
 The `datetime` class is the most commonly used class in the `datetime` module and represents a date and time together.
 
@@ -1467,7 +1494,7 @@ print("dt_utc:", dt_utc)
 
 In Python, data structures and data types can be classified as either mutable or immutable.
 
-`Immutable` data types are those whose value cannot be changed once they are created. Examples of immutable data types in Python include: 
+`Immutable` data types are those whose value cannot be changed once they are created. Examples of immutable data types in Python include:
 - Strings;
 - Numbers (integers, floats, and complex numbers);
 - Tuples;
@@ -1510,7 +1537,7 @@ Reading from the dictionary is done similarly, the interpreter starts searching 
 
 ### Slice <a id="slice"></a>
 
-In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`. 
+In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`.
 
 `Slices` are defined using the colon (:) operator, with the syntax `start:stop:step`. The `start` parameter is the index of the first element to include in the slice, the `stop` parameter is the index of the first element to exclude from the slice, and the `step` parameter is the number of elements to skip between each included element.
 
@@ -1569,7 +1596,7 @@ print("s3:", s3)
 
 ### Sorting <a id="sorting"></a>
 
-In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`. 
+In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`.
 
 The `sort()` method sorts the list in-place, meaning it modifies the original list. It does not return a new list. The `sorted()` function, on the other hand, returns a new sorted list and leaves the original list unchanged.
 
