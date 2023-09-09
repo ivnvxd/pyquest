@@ -93,14 +93,14 @@ Now comes the time for daring, for adventuring into the unknown. *Keep this manu
         - [sum(), count(), min(), max()](#sumcountminmax)
         - [Basic math](#basicmath)
         - [Bit operations](#bitoperations)
-        - Bit count
-        - Fraction
-        - Euclidean distance
-2. String Operations
-    - lower(), upper(), capitalize(), title()
-    - strip()
-    - split()
-    - ord(), chr()
+        - [Bit count](#bitcount)
+        - [Fraction](#fraction)
+        - [Euclidean distance](#euclideandistance)
+2. [String Operations](#string-operations)
+    - [lower(), upper(), capitalize(), title()](#loweruppercapitalizetitle)
+    - [strip()](#strip)
+    - [split()](#split)
+    - [ord(), chr()](#ordchr)
 3. Regular Expressions
     - RegEx
     - match
@@ -621,7 +621,7 @@ def greet(name): # Defining a function that returns None
     return None
 
 greet("Alice")
-greet("")
+greet("") 
 ```
 
     Hello, Alice!
@@ -632,7 +632,7 @@ greet("")
 
 ### List <a id="list"></a>
 
-A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.
+A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.  
 
 A `list` is an ordered mutable collection of objects. Important thing about a `list` is that items in a `list` need not be of the same type. The internal structure of a `list` is an `array` (more precisely, a vector) of pointers, i.e. the `list` is a dynamic `array`.
 
@@ -1085,7 +1085,7 @@ print("d:", d)
 
 ### Queue <a id="queue"></a>
 
-`Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads.
+`Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads. 
 There is also `LifoQueueue` to implement LIFO and `PriorityQueueue` to implement priority queue.
 
 
@@ -1168,7 +1168,7 @@ print(q.get()[1])  # get the item with highest priority (priority 3)
 
 In Python, a `heap` is a binary tree data structure that is commonly used to implement a PriorityQueue. A `heap` is a complete binary tree where the parent node is always greater (or less) than its children, and the tree has the minimum or maximum element at the root node.
 
-Python's `heapq` module provides the min heap (the smallest value always lies at the root) functions for working with heaps in a list. The heapq module can be used to create a heap, add elements to it, remove elements from it, and so on.
+Python's `heapq` module provides the min heap (the smallest value always lies at the root) functions for working with heaps in a list. The heapq module can be used to create a heap, add elements to it, remove elements from it, and so on. 
 If you need a max heap, with the maximum value at the root, you can use the advice from [Stackoverflow](https://stackoverflow.com/questions/2501457/what-do-i-use-for-a-max-heap-implementation-in-python).
 
 
@@ -1202,7 +1202,7 @@ Data structures that Python has no built-in implementation, but can nevertheless
 
 A `linked list` ([Wiki](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)) is a data structure that consists of a sequence of nodes, where each node contains a value and a reference to the next node in the list. The first node in the list is called the `head` of the list, and the last node is called the `tail`. Linked lists can be used to implement various data structures, such as stacks and queues.
 
-Python does not have a built-in linked list data structure, but it can be implemented using a class to represent the nodes and their relationships.
+Python does not have a built-in linked list data structure, but it can be implemented using a class to represent the nodes and their relationships. 
 
 ### Binary Tree <a id="binarytree"></a>
 
@@ -1317,9 +1317,9 @@ print(f"\nFrom = {r3.start}")
 print(f"To = {r3.stop}")
 ```
 
-    To exclusive: 0 1 2 3 4 5 6 7 8 9 10
-    From inclusive to exclusive: 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-    From inclusive to exclusive with step: 20 18 16 14 12 10
+    To exclusive: 0 1 2 3 4 5 6 7 8 9 10 
+    From inclusive to exclusive: 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+    From inclusive to exclusive with step: 20 18 16 14 12 10 
     From = 20
     To = 9
 
@@ -1328,7 +1328,7 @@ print(f"To = {r3.stop}")
 
 In Python, the `dataclass` decorator is a  shorthand way of creating classes that are primarily used for storing data, and can save time and reduce code duplication by automatically generating common methods such as `__init__()`, `__repr__()`, and `__eq__()`.
 
-Using the `dataclass` decorator, you can define a class with a concise syntax that specifies the fields of the class, their types, and any default values or other attributes.
+Using the `dataclass` decorator, you can define a class with a concise syntax that specifies the fields of the class, their types, and any default values or other attributes. 
 
 There is a more advanced alternative called [attrs](https://pypi.org/project/attrs/).
 
@@ -1398,7 +1398,7 @@ for values in iter_unpack('if', i):
 
 ### Datetime <a id="datetime"></a>
 
-In Python, the `datetime` module provides classes for working with dates and times.
+In Python, the `datetime` module provides classes for working with dates and times. 
 
 The `datetime` class is the most commonly used class in the `datetime` module and represents a date and time together.
 
@@ -1494,7 +1494,7 @@ print("dt_utc:", dt_utc)
 
 In Python, data structures and data types can be classified as either mutable or immutable.
 
-`Immutable` data types are those whose value cannot be changed once they are created. Examples of immutable data types in Python include:
+`Immutable` data types are those whose value cannot be changed once they are created. Examples of immutable data types in Python include: 
 - Strings;
 - Numbers (integers, floats, and complex numbers);
 - Tuples;
@@ -1537,7 +1537,7 @@ Reading from the dictionary is done similarly, the interpreter starts searching 
 
 ### Slice <a id="slice"></a>
 
-In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`.
+In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`. 
 
 `Slices` are defined using the colon (:) operator, with the syntax `start:stop:step`. The `start` parameter is the index of the first element to include in the slice, the `stop` parameter is the index of the first element to exclude from the slice, and the `step` parameter is the number of elements to skip between each included element.
 
@@ -1596,7 +1596,7 @@ print("s3:", s3)
 
 ### Sorting <a id="sorting"></a>
 
-In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`.
+In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`. 
 
 The `sort()` method sorts the list in-place, meaning it modifies the original list. It does not return a new list. The `sorted()` function, on the other hand, returns a new sorted list and leaves the original list unchanged.
 
@@ -1889,6 +1889,193 @@ print("c6:", c6)
     c4: -0b1011
     c5: 0b101000
     c6: 0b10
+
+
+#### Bit count <a id="bitcount"></a>
+
+Bit count refers to the number of set bits (bits with a value of 1) in a binary representation of an integer. One way to count the number of set bits in Python is to use the `bin()` function to convert the integer to a binary string, and then use the `count()` method to count the number of '1' characters in the string.
+
+
+```python
+num = 10
+binary = bin(num)[2:]  # remove the '0b' prefix
+count = binary.count('1')
+print("count:", count)
+```
+
+    count: 2
+
+
+#### Fraction <a id="fraction"></a>
+
+Fractions can be represented using the `fractions` module. The `Fraction` class in this module represents a rational number as a numerator and a denominator. The `Fraction` class can be initialized with a numerator and denominator, or with a string representation of a fraction.
+
+
+```python
+from fractions import Fraction
+
+frac = Fraction(3, 4)
+print("frac:", frac)
+```
+
+    frac: 3/4
+
+
+The `Fraction` class also provides various methods for performing arithmetic operations on fractions, such as addition, subtraction, multiplication, and division.
+
+Note that the `Fraction` class automatically simplifies fractions to their lowest terms, so the fraction `5/4` in the example above is automatically simplified to `1 1/4`.
+
+
+```python
+from fractions import Fraction
+
+frac1 = Fraction(3, 4)
+frac2 = Fraction(1, 2)
+
+sum_frac = frac1 + frac2
+print("sum_frac:", sum_frac)
+
+diff_frac = frac1 - frac2
+print("diff_frac:", diff_frac)
+
+prod_frac = frac1 * frac2
+print("prod_frac:", prod_frac)
+
+quot_frac = frac1 / frac2
+print("quot_frac:", quot_frac)
+```
+
+    sum_frac: 5/4
+    diff_frac: 1/4
+    prod_frac: 3/8
+    quot_frac: 3/2
+
+
+#### Euclidean distance <a id="euclideandistance"></a>
+
+The Euclidean distance between two points in n-dimensional space can be calculated using the `distance` function from the `scipy.spatial` module.
+
+The `distance` function can also be used to calculate other types of distances, such as Manhattan distance and Chebyshev distance, by passing different parameters to the function.
+
+
+```python
+from scipy.spatial import distance
+
+point1 = (1, 2, 3)
+point2 = (4, 5, 6)
+
+euclidean_dist = distance.euclidean(point1, point2)
+print("euclidean_dist:", euclidean_dist)
+```
+
+    euclidean_dist: 5.196152422706632
+
+
+## 2. String Operations <a id="string-operations"></a>
+
+### lower(), upper(), capitalize(), title() <a id="loweruppercapitalizetitle"></a>
+
+GitHub Copilot: In Python, strings have several built-in methods for modifying their case and capitalization.
+
+- `lower()`: This method returns a new string with all the characters in lowercase.
+- `upper()`: This method returns a new string with all the characters in uppercase.
+- `capitalize()`: This method returns a new string with the first character in uppercase and the rest in lowercase.
+- `title()`: This method returns a new string with the first character of each word in uppercase and the rest in lowercase.
+
+
+```python
+string = "Hello, World!"
+
+lower_string = string.lower()
+print("lower_string:", lower_string)
+
+upper_string = string.upper()
+print("upper_string:", upper_string)
+
+string = "hello, world!"
+
+cap_string = string.capitalize()
+print("cap_string:", cap_string)
+
+title_string = string.title()
+print("title_string:", title_string)
+```
+
+    lower_string: hello, world!
+    upper_string: HELLO, WORLD!
+    cap_string: Hello, world!
+    title_string: Hello, World!
+
+
+#### strip() <a id="strip"></a>
+
+`strip()` method is used to remove leading and trailing whitespace characters (spaces, tabs, and newlines) from a string.
+
+The `strip()` method can also be used to remove specific characters from the beginning and end of a string by passing a string argument to the method. This argument specifies the characters to be removed. Note that the order of the characters in the argument does not matter.
+
+
+```python
+string = "   hello, world!   \n"
+stripped_string_1 = string.strip()
+print("stripped_string_1:", stripped_string_1)
+
+string = "+++hello, world!---"
+stripped_string_2 = string.strip('+-')
+print("stripped_string_2:", stripped_string_2)
+```
+
+    stripped_string_1: hello, world!
+    stripped_string_2: hello, world!
+
+
+#### split() <a id="split"></a>
+
+The `split()` method is used to split a string into a list of substrings based on a specified delimiter. By default, the delimiter is whitespace characters (spaces, tabs, and newlines), but a different delimiter can be specified as an argument to the method. 
+
+The `split()` method can also be used to split a string into a list of substrings based on a specified maximum number of splits. This is done by passing a second argument to the method, which specifies the maximum number of splits to perform.
+
+
+```python
+string = "hello world!"
+split_string_1 = string.split()
+print("split_string_1:", split_string_1)
+
+string = "hello,world!"
+split_string_2 = string.split(',')
+print("split_string_2:", split_string_2)
+
+string = "hello,world,how,are,you?"
+split_string_3 = string.split(',', 2)
+print("split_string_3:", split_string_3)
+```
+
+    split_string_1: ['hello', 'world!']
+    split_string_2: ['hello', 'world!']
+    split_string_3: ['hello', 'world', 'how,are,you?']
+
+
+#### ord(), chr() <a id="ordchr"></a>
+
+GitHub Copilot: In Python, the `ord()` and `chr()` functions are used to convert between characters and their corresponding ASCII codes. 
+
+- The `ord()` function takes a single character as an argument and returns its corresponding ASCII code as an integer.
+- The `chr()` function takes an integer ASCII code as an argument and returns the corresponding character as a string.
+
+Note that the `ord()` and `chr()` functions only work with ASCII characters and codes. For Unicode characters and codes, the `ord()` and `chr()` functions may not work as expected.
+
+
+```python
+char = 'A'
+
+ascii_code = ord(char)
+print("ascii_code:", ascii_code)
+
+char = chr(ascii_code + 1)
+print("char:", char)
+```
+
+    ascii_code: 65
+    char: B
 
 
 

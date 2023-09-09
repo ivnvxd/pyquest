@@ -80,14 +80,14 @@
         - [sum(), count(), min(), max()](#sumcountminmax)
         - [Basic math](#basicmath)
         - [Bit operations](#bitoperations)
-        - Bit count
-        - Fraction
-        - Euclidean distance
-2. String Operations
-    - lower(), upper(), capitalize(), title()
-    - strip()
-    - split()
-    - ord(), chr()
+        - [Bit count](#bitcount)
+        - [Fraction](#fraction)
+        - [Euclidean distance](#euclideandistance)
+2. [String Operations](#string-operations)
+    - [lower(), upper(), capitalize(), title()](#loweruppercapitalizetitle)
+    - [strip()](#strip)
+    - [split()](#split)
+    - [ord(), chr()](#ordchr)
 3. Regular Expressions
     - RegEx
     - match

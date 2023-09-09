@@ -357,3 +357,190 @@ print("c6:", c6)
     c5: 0b101000
     c6: 0b10
 
+
+#### Bit count <a id="bitcount"></a>
+
+Bit count refers to the number of set bits (bits with a value of 1) in a binary representation of an integer. One way to count the number of set bits in Python is to use the `bin()` function to convert the integer to a binary string, and then use the `count()` method to count the number of '1' characters in the string.
+
+
+```python
+num = 10
+binary = bin(num)[2:]  # remove the '0b' prefix
+count = binary.count('1')
+print("count:", count)
+```
+
+    count: 2
+
+
+#### Fraction <a id="fraction"></a>
+
+Fractions can be represented using the `fractions` module. The `Fraction` class in this module represents a rational number as a numerator and a denominator. The `Fraction` class can be initialized with a numerator and denominator, or with a string representation of a fraction.
+
+
+```python
+from fractions import Fraction
+
+frac = Fraction(3, 4)
+print("frac:", frac)
+```
+
+    frac: 3/4
+
+
+The `Fraction` class also provides various methods for performing arithmetic operations on fractions, such as addition, subtraction, multiplication, and division.
+
+Note that the `Fraction` class automatically simplifies fractions to their lowest terms, so the fraction `5/4` in the example above is automatically simplified to `1 1/4`.
+
+
+```python
+from fractions import Fraction
+
+frac1 = Fraction(3, 4)
+frac2 = Fraction(1, 2)
+
+sum_frac = frac1 + frac2
+print("sum_frac:", sum_frac)
+
+diff_frac = frac1 - frac2
+print("diff_frac:", diff_frac)
+
+prod_frac = frac1 * frac2
+print("prod_frac:", prod_frac)
+
+quot_frac = frac1 / frac2
+print("quot_frac:", quot_frac)
+```
+
+    sum_frac: 5/4
+    diff_frac: 1/4
+    prod_frac: 3/8
+    quot_frac: 3/2
+
+
+#### Euclidean distance <a id="euclideandistance"></a>
+
+The Euclidean distance between two points in n-dimensional space can be calculated using the `distance` function from the `scipy.spatial` module.
+
+The `distance` function can also be used to calculate other types of distances, such as Manhattan distance and Chebyshev distance, by passing different parameters to the function.
+
+
+```python
+from scipy.spatial import distance
+
+point1 = (1, 2, 3)
+point2 = (4, 5, 6)
+
+euclidean_dist = distance.euclidean(point1, point2)
+print("euclidean_dist:", euclidean_dist)
+```
+
+    euclidean_dist: 5.196152422706632
+
+
+## 2. String Operations <a id="string-operations"></a>
+
+### lower(), upper(), capitalize(), title() <a id="loweruppercapitalizetitle"></a>
+
+GitHub Copilot: In Python, strings have several built-in methods for modifying their case and capitalization.
+
+- `lower()`: This method returns a new string with all the characters in lowercase.
+- `upper()`: This method returns a new string with all the characters in uppercase.
+- `capitalize()`: This method returns a new string with the first character in uppercase and the rest in lowercase.
+- `title()`: This method returns a new string with the first character of each word in uppercase and the rest in lowercase.
+
+
+```python
+string = "Hello, World!"
+
+lower_string = string.lower()
+print("lower_string:", lower_string)
+
+upper_string = string.upper()
+print("upper_string:", upper_string)
+
+string = "hello, world!"
+
+cap_string = string.capitalize()
+print("cap_string:", cap_string)
+
+title_string = string.title()
+print("title_string:", title_string)
+```
+
+    lower_string: hello, world!
+    upper_string: HELLO, WORLD!
+    cap_string: Hello, world!
+    title_string: Hello, World!
+
+
+#### strip() <a id="strip"></a>
+
+`strip()` method is used to remove leading and trailing whitespace characters (spaces, tabs, and newlines) from a string.
+
+The `strip()` method can also be used to remove specific characters from the beginning and end of a string by passing a string argument to the method. This argument specifies the characters to be removed. Note that the order of the characters in the argument does not matter.
+
+
+```python
+string = "   hello, world!   \n"
+stripped_string_1 = string.strip()
+print("stripped_string_1:", stripped_string_1)
+
+string = "+++hello, world!---"
+stripped_string_2 = string.strip('+-')
+print("stripped_string_2:", stripped_string_2)
+```
+
+    stripped_string_1: hello, world!
+    stripped_string_2: hello, world!
+
+
+#### split() <a id="split"></a>
+
+The `split()` method is used to split a string into a list of substrings based on a specified delimiter. By default, the delimiter is whitespace characters (spaces, tabs, and newlines), but a different delimiter can be specified as an argument to the method. 
+
+The `split()` method can also be used to split a string into a list of substrings based on a specified maximum number of splits. This is done by passing a second argument to the method, which specifies the maximum number of splits to perform.
+
+
+```python
+string = "hello world!"
+split_string_1 = string.split()
+print("split_string_1:", split_string_1)
+
+string = "hello,world!"
+split_string_2 = string.split(',')
+print("split_string_2:", split_string_2)
+
+string = "hello,world,how,are,you?"
+split_string_3 = string.split(',', 2)
+print("split_string_3:", split_string_3)
+```
+
+    split_string_1: ['hello', 'world!']
+    split_string_2: ['hello', 'world!']
+    split_string_3: ['hello', 'world', 'how,are,you?']
+
+
+#### ord(), chr() <a id="ordchr"></a>
+
+GitHub Copilot: In Python, the `ord()` and `chr()` functions are used to convert between characters and their corresponding ASCII codes. 
+
+- The `ord()` function takes a single character as an argument and returns its corresponding ASCII code as an integer.
+- The `chr()` function takes an integer ASCII code as an argument and returns the corresponding character as a string.
+
+Note that the `ord()` and `chr()` functions only work with ASCII characters and codes. For Unicode characters and codes, the `ord()` and `chr()` functions may not work as expected.
+
+
+```python
+char = 'A'
+
+ascii_code = ord(char)
+print("ascii_code:", ascii_code)
+
+char = chr(ascii_code + 1)
+print("char:", char)
+```
+
+    ascii_code: 65
+    char: B
+
