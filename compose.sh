@@ -2,6 +2,7 @@
 
 jupyter nbconvert --to markdown "01_data_structures_and_data_types.ipynb" --output "markdown/01_data_structures_and_data_types.md"
 jupyter nbconvert --to markdown "02_data_manipulation_and_processing.ipynb" --output "markdown/02_data_manipulation_and_processing.md"
+jupyter nbconvert --to markdown "03_control_flow_and_data_flows.ipynb" --output "markdown/03_control_flow_and_data_flows.md"
 
 output_file="README.md"
 : > "$output_file"
@@ -9,8 +10,9 @@ output_file="README.md"
 files_to_concatenate=(
     "markdown/intro.md"
     "markdown/table_of_contents.md"
-    "markdown/01_data_structures_and_data_types.md" 
+    "markdown/01_data_structures_and_data_types.md"
     "markdown/02_data_manipulation_and_processing.md"
+    "markdown/03_control_flow_and_data_flows.md"
     "markdown/outro.md"
 )
 

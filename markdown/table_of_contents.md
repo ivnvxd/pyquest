@@ -92,27 +92,29 @@
     - [RegEx](#regex)
     - [match](#match)
 
-### Part III: Control Flow and Data Flows <a id="toc-3-cf-and-df"></a>
+### [Part III: Control Flow and Data Flows](#3-cf-and-df) <a id="toc-3-cf-and-df"></a>
 
-1. Conditional Statements
-    - if, else, elif
-    - Nested conditions
-2. Loops
-    - for loop
-    - while loop
-    - Nested loops
-3. Loop Control Statements
-    - break
-    - continue
-    - pass
-4. Itertools
-    - Infinite iterators
-    - Finite iterators
-    - Combinatorics
-5. Enumerate Function
-6. Context Managers
-    - enter/exit
-    - contextlib
+1. [Conditional Statements](#conditional-statements)
+    - [if, else, elif](#if-else-elif)
+    - [Nested conditions](#nested-conditions)
+2. [Loops](#loops)
+    - [for loop](#for-loop)
+    - [range](#range)
+    - [while loop](#while-loop)
+    - [Nested loops](#nested-loops)
+3. [Loop Control Statements](#loop-control-statements)
+    - [break](#break)
+    - [continue](#continue)
+    - [pass](#pass)
+4. [Itertools](#itertools)
+    - [Infinite iterators](#infinite-iterators)
+    - [Finite iterators](#finite-iterators)
+    - [Combinatorics](#combinatorics)
+5. [enumerate()](#enumerate)
+6. [zip()](#zip)
+7. [Context Managers](#context-managers)
+    - [enter/exit](#enter-exit)
+    - [contextlib](#contextlib)
 
 ### Part IV: File Handling, I/O, and Serialization <a id="toc-4-file-io-serialization"></a>
 
@@ -384,3 +386,9 @@
     - Recursion
     - Dynamic Programming
     - Greedy Algorithms
+
+### [Outro](#c-outro)
+
+### [Sources](#c-sources)
+
+### [License](#c-license)
