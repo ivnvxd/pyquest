@@ -474,7 +474,7 @@ print("title_string:", title_string)
     title_string: Hello, World!
 
 
-#### strip() <a id="strip"></a>
+### strip() <a id="strip"></a>
 
 `strip()` method is used to remove leading and trailing whitespace characters (spaces, tabs, and newlines) from a string.
 
@@ -495,7 +495,7 @@ print("stripped_string_2:", stripped_string_2)
     stripped_string_2: hello, world!
 
 
-#### split() <a id="split"></a>
+### split() <a id="split"></a>
 
 The `split()` method is used to split a string into a list of substrings based on a specified delimiter. By default, the delimiter is whitespace characters (spaces, tabs, and newlines), but a different delimiter can be specified as an argument to the method. 
 
@@ -521,7 +521,7 @@ print("split_string_3:", split_string_3)
     split_string_3: ['hello', 'world', 'how,are,you?']
 
 
-#### ord(), chr() <a id="ordchr"></a>
+### ord(), chr() <a id="ordchr"></a>
 
 GitHub Copilot: In Python, the `ord()` and `chr()` functions are used to convert between characters and their corresponding ASCII codes. 
 
@@ -543,4 +543,122 @@ print("char:", char)
 
     ascii_code: 65
     char: B
+
+
+## 3. Regular Expressions <a id="regular-expressions"></a>
+
+### RegEx <a id="regex"></a>
+
+Regular expressions (often abbreviated as "`RegEx`") are sequences of characters that define a search pattern. This pattern can be used to match strings or parts of strings. Python's `re` module provides functions to work with regular expressions.
+
+1. Basic Patterns:
+
+- `.`: Matches any character except a newline.
+- `^`: Matches the start of the string.
+- `$`: Matches the end of the string.
+- `*`: Matches 0 or more repetitions of the preceding character or group.
+- `+`: Matches 1 or more repetitions of the preceding character or group.
+- `?`: Matches 0 or 1 repetition of the preceding character or group.
+- `\d`: Matches any decimal digit; equivalent to [0-9].
+- `\D`: Matches any non-digit character.
+- `\w`: Matches any alphanumeric character or underscore; equivalent to [a-zA-Z0-9_].
+- `\W`: Matches any non-alphanumeric character.
+- `\s`: Matches any whitespace character.
+- `\S`: Matches any non-whitespace character.
+
+2. Functions in the re module:
+
+- `search()`: Searches for a match to the pattern anywhere in the string. Returns a match object if found, otherwise returns None.
+- `findall()`: Returns all non-overlapping matches of the pattern in the string as a list of strings.
+- `finditer()`: Returns an iterator yielding match objects for all non-overlapping matches of the pattern in the string.
+- `sub()`: Replaces one or many matches with a string.
+- `split()`: Splits the source string by the occurrences of the pattern.
+
+
+```python
+import re
+
+# Search for the word "Python" in the given string
+result = re.search(r'Python', 'Learning Python is fun!')
+if result:
+    print(f"Match found at index {result.start()} to {result.end()}.")
+else:
+    print("Match not found!")
+
+# Extract all email addresses from the given string
+text = "Contact us at contact@mywebsite.com or at support@mywebsite.com"
+pattern = r'[\w\.-]+@[\w\.-]+'
+print("findall:", re.findall(pattern, text))
+
+# Find all words that are exactly 3 characters long
+text = "The cat and the hat sat on the mat."
+pattern = r'\b\w{3}\b'
+for match in re.finditer(pattern, text):
+    print(f"Found word: {match.group()} at position {match.start()}-{match.end()}.")
+
+# Replace all occurrences of "apple" or "orange" with "fruit"
+text = "I have two apples and three oranges."
+pattern = r'apple|orange'
+print("sub:", re.sub(pattern, 'fruit', text))
+
+# Split a string by any number (e.g., "3a5b2c" -> ['a', 'b', 'c'])
+text = "3a5b2c"
+pattern = r'\d'
+print("split:", re.split(pattern, text))
+```
+
+    Match found at index 9 to 15.
+    findall: ['contact@mywebsite.com', 'support@mywebsite.com']
+    Found word: The at position 0-3.
+    Found word: cat at position 4-7.
+    Found word: and at position 8-11.
+    Found word: the at position 12-15.
+    Found word: hat at position 16-19.
+    Found word: sat at position 20-23.
+    Found word: the at position 27-30.
+    Found word: mat at position 31-34.
+    sub: I have two fruits and three fruits.
+    split: ['', 'a', 'b', 'c']
+
+
+### match() <a id="match"></a>
+
+The `match()` function is used to match a regular expression pattern at the beginning of a string. The `match()` function returns a `Match` object if the pattern matches the beginning of the string, or `None` if there is no match.
+
+Note that the `match()` function only matches patterns at the beginning of the string. If you want to match a pattern anywhere in the string, you should use the `search()` function instead.
+
+
+```python
+import re
+
+string = "The quick brown fox jumps over the lazy dog."
+pattern = r"(\w+) (\w+)"
+
+match = re.match(pattern, string)
+
+group = match.group()  # Returns the entire match
+print("group:", group)
+
+group_1 = match.group(1)  # Returns the first parenthesized subgroup
+print("group(1):", group_1)
+
+groups = match.groups()  # Returns a tuple containing all the subgroups
+print("groups:", groups)
+
+start = match.start()  # Returns the start position of the match
+print("start:", start)
+
+end = match.end()  # Returns the end position of the match
+print("end:", end)
+
+tuple = match.span()  # Returns a tuple containing the (start, end) positions of the match
+print("tuple:", tuple)
+```
+
+    group: The quick
+    group(1): The
+    groups: ('The', 'quick')
+    start: 0
+    end: 9
+    tuple: (0, 9)
 

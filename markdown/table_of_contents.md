@@ -88,9 +88,9 @@
     - [strip()](#strip)
     - [split()](#split)
     - [ord(), chr()](#ordchr)
-3. Regular Expressions
-    - RegEx
-    - match
+3. [Regular Expressions](#regular-expressions)
+    - [RegEx](#regex)
+    - [match](#match)
 
 ### Part III: Control Flow and Data Flows <a id="toc-3-cf-and-df"></a>
 
