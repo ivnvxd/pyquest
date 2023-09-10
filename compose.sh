@@ -25,7 +25,7 @@ done
 #     "bytes.bin" \
 #     "02_data_manipulation_and_processing.md"
 
-rm "bytes.bin"
+# rm "bytes.bin"
 
 
 echo "Successfully combined Markdown files into '$output_file'"
