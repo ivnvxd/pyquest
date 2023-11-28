@@ -16,6 +16,8 @@ As you continue on your path, may you always find the *courage* to tackle new ch
 - [Awesome Python](https://github.com/vinta/awesome-python)
 - [Hitchhiker's Guide to Python](https://docs.python-guide.org/)
 - [Python Core](https://github.com/amaargiru/pycore)
+- [Tech Interview Handbook](https://github.com/yangshun/tech-interview-handbook)
+- [Dev Mentor](https://chat.openai.com/g/g-Wjnn7QXmE-dev-mentor)
 
 ## License <a id="c-license"></a>
 
