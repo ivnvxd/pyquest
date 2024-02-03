@@ -135,18 +135,18 @@
     - [base64](#base64)
     - [Unicode](#unicode)
 
-### Part V: Exceptions and Error Handling <a id="toc-5-exceptions-and-errors"></a>
+### [Part V: Exceptions and Error Handling](#5-exceptions-and-errors) <a id="toc-5-exceptions-and-errors"></a>
 
-1. Python Exceptions
-    - Built-in Exceptions
-    - Exception hierarchy
-2. Handling Exceptions
-    - try, except, finally blocks
-    - Catching multiple exceptions
-3. Raising Exceptions
-    - raise statement
-    - assert statement
-4. User-Defined Exceptions
+1. [Python Exceptions](#python-exceptions)
+    - [Built-in Exceptions](#built-in-exceptions)
+    - [Exception hierarchy](#exception-hierarchy)
+2. [Handling Exceptions](#handling-exceptions)
+    - [try, except, else, finally blocks](#try-except-else-finally-blocks)
+    - [Catching multiple exceptions](#catching-multiple-exceptions)
+3. [Raising Exceptions](#raising-exceptions)
+    - [raise statement](#raise-statement)
+    - [assert statement](#assert-statement)
+4. [User-Defined Exceptions](#user-defined-exceptions)
 
 ### Part VI: Functional Programming <a id="toc-6-fp"></a>
 
