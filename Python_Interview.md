@@ -120,4 +120,3 @@
 
 #### Soft Skills and Problem-Solving Abilities
 - [Communication skills, teamwork, problem-solving methodologies](python_interview/Communication_skills_teamwork_problem-solving_methodologies.md)
-

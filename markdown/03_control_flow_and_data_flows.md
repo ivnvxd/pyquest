@@ -147,7 +147,7 @@ The `range()` function is used to generate a sequence of numbers. The `range()` 
 ```python
 for i in range(5):  # Will iterate over numbers from 0 to 4
     print(i)
-    
+
 print("------")
 
 for i in range(1, 5):  # Will iterate over numbers from 1 to 4
@@ -320,20 +320,22 @@ for i in count(10, 3):
 
 print("\ncycle:", end=" ")
 counter = 0
-for item in cycle('XYZ'):
+for item in cycle("XYZ"):
     if counter > 7:
         break
     print(item, end=", ")
     counter += 1
 
 print("\nrepeat:", end=" ")
-for item in repeat('A', 5):
+for item in repeat("A", 5):
     print(item, end=", ")
 ```
 
     count: 10, 13, 16, 19, 22, 25, 
     cycle: X, Y, Z, X, Y, Z, X, Y, 
     repeat: A, A, A, A, A, 
+
+
 
 #### Finite iterators <a id="finite-iterators"></a>
 
@@ -359,18 +361,18 @@ from itertools import accumulate, chain, groupby, islice, zip_longest
 print("accumulate :", list(accumulate([1, 2, 3, 4])))
 
 # Using chain()
-print("chain :", list(chain('ABC', 'DEF')))
+print("chain :", list(chain("ABC", "DEF")))
 
 # Using groupby()
 print("groupby:", end=" ")
-for key, group in groupby('AABBCCAA'):
+for key, group in groupby("AABBCCAA"):
     print(key, list(group))
 
 # Using islice()
-print("islice :", list(islice('ABCDEFG', 2, 5)))
+print("islice :", list(islice("ABCDEFG", 2, 5)))
 
 # Using zip_longest()
-print("zip_longest :", list(zip_longest('AB', '12345', fillvalue='x')))
+print("zip_longest :", list(zip_longest("AB", "12345", fillvalue="x")))
 ```
 
     accumulate : [1, 3, 6, 10]
@@ -401,9 +403,9 @@ Combinatoric functions can be useful when you need to generate all possible comb
 
 
 ```python
-from itertools import product, combinations, permutations, combinations_with_replacement
+from itertools import combinations, combinations_with_replacement, permutations, product
 
-list1 = ['a', 'b', 'c']
+list1 = ["a", "b", "c"]
 list2 = [1, 2]
 
 print("product:", list(product(list1, list2)))
@@ -447,7 +449,7 @@ The `zip()` function is useful when you need to combine two or more iterables in
 
 
 ```python
-list1 = ['a', 'b', 'c']
+list1 = ["a", "b", "c"]
 list2 = [1, 2, 3]
 
 print("zip:", list(zip(list1, list2)))
@@ -478,14 +480,15 @@ The primary mechanism for using context managers is the with statement. The cont
 ```python
 class MyContextManager:
     def __enter__(self):
-        print('Entering context')
+        print("Entering context")
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        print('Exiting context')
+        print("Exiting context")
+
 
 with MyContextManager() as cm:
-    print('Inside context')
+    print("Inside context")
 ```
 
     Entering context
@@ -557,14 +560,16 @@ These are just a few of the utilities provided by the contextlib module. They si
 ```python
 from contextlib import contextmanager
 
+
 @contextmanager
 def my_context_manager():
-    print('Entering context')
+    print("Entering context")
     yield
-    print('Exiting context')
+    print("Exiting context")
+
 
 with my_context_manager():
-    print('Inside context')
+    print("Inside context")
 ```
 
     Entering context
@@ -582,14 +587,14 @@ from contextlib import closing
 from urllib.request import urlopen
 
 lines = []
-with closing(urlopen('https://www.google.com')) as page:
+with closing(urlopen("https://www.google.com")) as page:
     for line in page:
         lines.append(line)
 
 print(len(lines))
 ```
 
-    18
+    17
 
 
 
@@ -598,18 +603,18 @@ import os
 from contextlib import suppress
 
 with suppress(FileNotFoundError):
-    os.remove('somefile.tmp')
+    os.remove("somefile.tmp")
 # This code will suppress a FileNotFoundError if the file doesn't exist.
 ```
 
 
 ```python
-from contextlib import redirect_stdout
 import io
+from contextlib import redirect_stdout
 
 f = io.StringIO()
 with redirect_stdout(f):
-    print('This will be written to f instead of stdout')
+    print("This will be written to f instead of stdout")
 print(f.getvalue())
 ```
 
@@ -621,7 +626,7 @@ print(f.getvalue())
 ```python
 from contextlib import ExitStack
 
-filenames = ['examples/sample.txt', 'examples/sample copy.txt']
+filenames = ["examples/sample.txt", "examples/sample copy.txt"]
 with ExitStack() as stack:
     files = [stack.enter_context(open(fname)) for fname in filenames]
     # All files will be properly closed at the end of the with block

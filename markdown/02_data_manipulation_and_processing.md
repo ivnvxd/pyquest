@@ -1,8 +1,8 @@
-# Part II. Data Manipulation and Processing <a id="2-dm-and-processing">
+## Part II. Data Manipulation and Processing <a id="2-dm-and-processing">
 
-## 1. Basic Data Manipulation <a id="basic-dm"></a>
+### 1. Basic Data Manipulation <a id="basic-dm"></a>
 
-### Slice <a id="slice"></a>
+#### Slice <a id="slice"></a>
 
 In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`. 
 
@@ -61,7 +61,7 @@ print("s3:", s3)
     s3: !dlrow ,olleH
 
 
-### Sorting <a id="sorting"></a>
+#### Sorting <a id="sorting"></a>
 
 In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`. 
 
@@ -122,7 +122,7 @@ print("new_lst:", new_lst)
 
 Complex data structures can be sorted by `key=lambda el: el[1]` or even, for example, by `key=lambda el: (el[1], el[0])`.
 
-### any()/all() <a id="anyall"></a>
+#### any()/all() <a id="anyall"></a>
 
 `all()` and `any()` are built-in functions that operate on iterable objects, such as lists, tuples, and sets.
 
@@ -177,9 +177,9 @@ print("an:", an)
 
 Note that `all()` and `any()` short-circuit, meaning they stop iterating through the iterable as soon as the result is determined. For example, if `all()` encounters a `False` element, it immediately returns `False` without checking the remaining elements.
 
-### Basic Math operations <a id="basicmathoperations"></a>
+#### Basic Math operations <a id="basicmathoperations"></a>
 
-#### sum(), count(), min(), max() <a id="sumcountminmax"></a>
+##### sum(), count(), min(), max() <a id="sumcountminmax"></a>
 
 In Python, `sum()`, `count()`, `min()`, and `max()` are built-in functions that operate on iterable objects, such as lists, tuples, and sets.
 
@@ -257,7 +257,7 @@ print("m3:", max(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5))
     m3: 9
 
 
-#### Basic math <a id="basicmath"></a>
+##### Basic math <a id="basicmath"></a>
 
 In Python, basic math operations include addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and exponentiation (`**`). These operators work on numeric data types, such as integers and floating-point numbers.
 
@@ -283,7 +283,7 @@ c4 = a / b
 print("c4:", c4)
 
 # Exponentiation
-c5 = a ** b
+c5 = a**b
 print("c5:", c5)
 ```
 
@@ -307,7 +307,7 @@ print("c:", c)
     c: 1
 
 
-#### Bit operations <a id="bitoperations"></a>
+##### Bit operations <a id="bitoperations"></a>
 
 Bit operations are used to manipulate individual bits in binary numbers. Bitwise operators work on integers at the binary level, and are used to perform operations such as shifting bits left or right, setting or clearing individual bits, and performing logical operations on bits.
 
@@ -358,7 +358,7 @@ print("c6:", c6)
     c6: 0b10
 
 
-#### Bit count <a id="bitcount"></a>
+##### Bit count <a id="bitcount"></a>
 
 Bit count refers to the number of set bits (bits with a value of 1) in a binary representation of an integer. One way to count the number of set bits in Python is to use the `bin()` function to convert the integer to a binary string, and then use the `count()` method to count the number of '1' characters in the string.
 
@@ -366,14 +366,14 @@ Bit count refers to the number of set bits (bits with a value of 1) in a binary 
 ```python
 num = 10
 binary = bin(num)[2:]  # remove the '0b' prefix
-count = binary.count('1')
+count = binary.count("1")
 print("count:", count)
 ```
 
     count: 2
 
 
-#### Fraction <a id="fraction"></a>
+##### Fraction <a id="fraction"></a>
 
 Fractions can be represented using the `fractions` module. The `Fraction` class in this module represents a rational number as a numerator and a denominator. The `Fraction` class can be initialized with a numerator and denominator, or with a string representation of a fraction.
 
@@ -418,7 +418,7 @@ print("quot_frac:", quot_frac)
     quot_frac: 3/2
 
 
-#### Euclidean distance <a id="euclideandistance"></a>
+##### Euclidean distance <a id="euclideandistance"></a>
 
 The Euclidean distance between two points in n-dimensional space can be calculated using the `distance` function from the `scipy.spatial` module.
 
@@ -438,9 +438,9 @@ print("euclidean_dist:", euclidean_dist)
     euclidean_dist: 5.196152422706632
 
 
-## 2. String Operations <a id="string-operations"></a>
+### 2. String Operations <a id="string-operations"></a>
 
-### lower(), upper(), capitalize(), title() <a id="loweruppercapitalizetitle"></a>
+#### lower(), upper(), capitalize(), title() <a id="loweruppercapitalizetitle"></a>
 
 GitHub Copilot: In Python, strings have several built-in methods for modifying their case and capitalization.
 
@@ -474,7 +474,7 @@ print("title_string:", title_string)
     title_string: Hello, World!
 
 
-### strip() <a id="strip"></a>
+#### strip() <a id="strip"></a>
 
 `strip()` method is used to remove leading and trailing whitespace characters (spaces, tabs, and newlines) from a string.
 
@@ -487,7 +487,7 @@ stripped_string_1 = string.strip()
 print("stripped_string_1:", stripped_string_1)
 
 string = "+++hello, world!---"
-stripped_string_2 = string.strip('+-')
+stripped_string_2 = string.strip("+-")
 print("stripped_string_2:", stripped_string_2)
 ```
 
@@ -495,7 +495,7 @@ print("stripped_string_2:", stripped_string_2)
     stripped_string_2: hello, world!
 
 
-### split() <a id="split"></a>
+#### split() <a id="split"></a>
 
 The `split()` method is used to split a string into a list of substrings based on a specified delimiter. By default, the delimiter is whitespace characters (spaces, tabs, and newlines), but a different delimiter can be specified as an argument to the method. 
 
@@ -508,11 +508,11 @@ split_string_1 = string.split()
 print("split_string_1:", split_string_1)
 
 string = "hello,world!"
-split_string_2 = string.split(',')
+split_string_2 = string.split(",")
 print("split_string_2:", split_string_2)
 
 string = "hello,world,how,are,you?"
-split_string_3 = string.split(',', 2)
+split_string_3 = string.split(",", 2)
 print("split_string_3:", split_string_3)
 ```
 
@@ -521,7 +521,7 @@ print("split_string_3:", split_string_3)
     split_string_3: ['hello', 'world', 'how,are,you?']
 
 
-### ord(), chr() <a id="ordchr"></a>
+#### ord(), chr() <a id="ordchr"></a>
 
 GitHub Copilot: In Python, the `ord()` and `chr()` functions are used to convert between characters and their corresponding ASCII codes. 
 
@@ -532,7 +532,7 @@ Note that the `ord()` and `chr()` functions only work with ASCII characters and 
 
 
 ```python
-char = 'A'
+char = "A"
 
 ascii_code = ord(char)
 print("ascii_code:", ascii_code)
@@ -545,9 +545,9 @@ print("char:", char)
     char: B
 
 
-## 3. Regular Expressions <a id="regular-expressions"></a>
+### 3. Regular Expressions <a id="regular-expressions"></a>
 
-### RegEx <a id="regex"></a>
+#### RegEx <a id="regex"></a>
 
 Regular expressions (often abbreviated as "`RegEx`") are sequences of characters that define a search pattern. This pattern can be used to match strings or parts of strings. Python's `re` module provides functions to work with regular expressions.
 
@@ -579,7 +579,7 @@ Regular expressions (often abbreviated as "`RegEx`") are sequences of characters
 import re
 
 # Search for the word "Python" in the given string
-result = re.search(r'Python', 'Learning Python is fun!')
+result = re.search(r"Python", "Learning Python is fun!")
 if result:
     print(f"Match found at index {result.start()} to {result.end()}.")
 else:
@@ -587,23 +587,23 @@ else:
 
 # Extract all email addresses from the given string
 text = "Contact us at contact@mywebsite.com or at support@mywebsite.com"
-pattern = r'[\w\.-]+@[\w\.-]+'
+pattern = r"[\w\.-]+@[\w\.-]+"
 print("findall:", re.findall(pattern, text))
 
 # Find all words that are exactly 3 characters long
 text = "The cat and the hat sat on the mat."
-pattern = r'\b\w{3}\b'
+pattern = r"\b\w{3}\b"
 for match in re.finditer(pattern, text):
     print(f"Found word: {match.group()} at position {match.start()}-{match.end()}.")
 
 # Replace all occurrences of "apple" or "orange" with "fruit"
 text = "I have two apples and three oranges."
-pattern = r'apple|orange'
-print("sub:", re.sub(pattern, 'fruit', text))
+pattern = r"apple|orange"
+print("sub:", re.sub(pattern, "fruit", text))
 
 # Split a string by any number (e.g., "3a5b2c" -> ['a', 'b', 'c'])
 text = "3a5b2c"
-pattern = r'\d'
+pattern = r"\d"
 print("split:", re.split(pattern, text))
 ```
 
@@ -621,7 +621,7 @@ print("split:", re.split(pattern, text))
     split: ['', 'a', 'b', 'c']
 
 
-### match() <a id="match"></a>
+#### match() <a id="match"></a>
 
 The `match()` function is used to match a regular expression pattern at the beginning of a string. The `match()` function returns a `Match` object if the pattern matches the beginning of the string, or `None` if there is no match.
 
@@ -651,7 +651,9 @@ print("start:", start)
 end = match.end()  # Returns the end position of the match
 print("end:", end)
 
-tuple = match.span()  # Returns a tuple containing the (start, end) positions of the match
+tuple = (
+    match.span()
+)  # Returns a tuple containing the (start, end) positions of the match
 print("tuple:", tuple)
 ```
 

@@ -1,4 +1,4 @@
-# Part I. Data Structures and Data Types <a id="1-ds-and-dt"></a>
+## Part I. Data Structures and Data Types <a id="1-ds-and-dt"></a>
 
 Data structures in Python are objects or collections of objects that can hold and organize data in various ways. They provide a way to store and manipulate data, and can be used for a wide range of applications, from simple to complex.
 
@@ -8,9 +8,9 @@ Python also provides more specialized data structures, such as `arrays`, `heaps`
 
 Choosing the appropriate data structure for a particular application can have a significant impact on performance, readability, and ease of implementation. Understanding the strengths and weaknesses of different data structures is an important part of writing efficient and effective Python code.
 
-## 1. Basic Data Types <a id="basic-dt"></a>
+### 1. Basic Data Types <a id="basic-dt"></a>
 
-### String <a id="string"></a>
+#### String <a id="string"></a>
 
 In Python, a `string` is a sequence of characters enclosed in quotation marks (either single or double quotes). `Strings` are one of the built-in data types in Python and are used to represent text data.
 
@@ -25,7 +25,7 @@ message = greeting + " " + name
 print("message:", message)
 
 # Assemble the string using the specified separator
-joined_string = ' '.join(["The", "quick", "brown", "fox"])
+joined_string = " ".join(["The", "quick", "brown", "fox"])
 print("joined_string:", joined_string)
 
 # Converting case
@@ -57,7 +57,7 @@ print("new_sentence:", new_sentence)
     new_sentence: The quick red fox jumps over the lazy dog
 
 
-### Number <a id="number"></a>
+#### Number <a id="number"></a>
 
 In Python, there are three built-in numeric data types: `integers`, `floating-point` numbers, and `complex` numbers.
 
@@ -66,19 +66,19 @@ It is also possible to convert between numeric data types in Python using built-
 
 ```python
 a = 3.5
-b = int(a) # Converting a floating-point number to an integer
+b = int(a)  # Converting a floating-point number to an integer
 print("b:", b)
 
 s = "123"
-i = int(s) # Converting a string to an integer
+i = int(s)  # Converting a string to an integer
 print("i:", i)
 
 c = 5
-d = float(c) # Converting an integer to a floating-point number
+d = float(c)  # Converting an integer to a floating-point number
 print("d:", d)
 
 t = "3.14"
-f = float(t) # Converting a string to a floating-point number
+f = float(t)  # Converting a string to a floating-point number
 print("f:", f)
 ```
 
@@ -88,7 +88,7 @@ print("f:", f)
     f: 3.14
 
 
-#### Integer <a id="int"></a>
+##### Integer <a id="int"></a>
 
 Integers are whole numbers that can be positive, negative, or zero. They are represented by the `int` class in Python.
 
@@ -138,7 +138,7 @@ print("t:", t)
     t: False
 
 
-#### Float <a id="float"></a>
+##### Float <a id="float"></a>
 
 Floating-point numbers are decimal numbers that can also be positive, negative, or zero. They are represented by the `float` class in Python.
 
@@ -149,7 +149,7 @@ import math
 x = 3.14
 y = -2.5
 
-z = x ** y
+z = x**y
 print("z:", z)
 
 b = math.sin(x)
@@ -166,7 +166,7 @@ print("d:", d)
     d: 1.772004514666935
 
 
-#### Complex <a id="complex"></a>
+##### Complex <a id="complex"></a>
 
 Complex numbers are numbers that have a real and an imaginary component. They are represented by the `complex` class in Python. Complex numbers are created by using the `j` or `J` suffix to indicate the imaginary component.
 
@@ -202,7 +202,7 @@ print("f:", f)
     f: (0.19876611034641298+0.3095598756531122j)
 
 
-### NoneType <a id="none"></a>
+#### NoneType <a id="none"></a>
 
 In Python, `None` is a special value that represents the absence of a value or the absence of a meaningful value. It is often used to indicate that a variable or function does not return any useful value.
 
@@ -210,26 +210,28 @@ In Python, `None` is a special value that represents the absence of a value or t
 
 
 ```python
-x = None # Initializing a variable with None
+x = None  # Initializing a variable with None
 
-def greet(name): # Defining a function that returns None
+
+def greet(name):  # Defining a function that returns None
     if name:
         print(f"Hello, {name}!")
     else:
         print("Hello, stranger!")
     return None
 
+
 greet("Alice")
-greet("") 
+greet("")
 ```
 
     Hello, Alice!
     Hello, stranger!
 
 
-## 2. Built-in Data Structures <a id="built-in-ds"></a>
+### 2. Built-in Data Structures <a id="built-in-ds"></a>
 
-### List <a id="list"></a>
+#### List <a id="list"></a>
 
 A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.  
 
@@ -237,12 +239,12 @@ A `list` is an ordered mutable collection of objects. Important thing about a `l
 
 
 ```python
-a = [] # Create an empty list
+a = []  # Create an empty list
 
 a: list[int] = [10, 20]
 b: list[int] = [30, 40]
-a.append(50) # Add a value at the end of the list
-b.insert(1, 60) # Insert value at specific index
+a.append(50)  # Add a value at the end of the list
+b.insert(1, 60)  # Insert value at specific index
 print("List a:", a)
 print("List b:", b)
 
@@ -254,8 +256,8 @@ b = list(reversed(a))  # reversed() returns an iterator, not a list
 print("Reversed a:", a)
 print("Reversed b:", b)
 
-b = sorted(a) # Returns a new sorted list
-a.sort() # Modifies the original list and returns nothing
+b = sorted(a)  # Returns a new sorted list
+a.sort()  # Modifies the original list and returns nothing
 print("Sorted a:", a)
 print("Sorted b:", b)
 
@@ -265,13 +267,19 @@ print(list_of_chars)
 list_of_words: list = s.split()
 print(list_of_words)
 
-i: int = list_of_chars.index("i") # Returns the index of the first occurrence of the item searched for or throws a ValueError exception
+i: int = list_of_chars.index(
+    "i"
+)  # Returns the index of the first occurrence of the item searched for or throws a ValueError exception
 print(i)
-list_of_chars.remove("i") # Removes the first occurrence of the searched element or throws a ValueError exception
-e = list_of_chars.pop(9) # Removes and returns the value located at the index. pop() (with no argument) will remove and return the last item in the list
+list_of_chars.remove(
+    "i"
+)  # Removes the first occurrence of the searched element or throws a ValueError exception
+e = list_of_chars.pop(
+    9
+)  # Removes and returns the value located at the index. pop() (with no argument) will remove and return the last item in the list
 print(list_of_chars)
 print(e)
-a.clear() # Clear list
+a.clear()  # Clear list
 ```
 
     List a: [10, 20, 50]
@@ -288,7 +296,7 @@ a.clear() # Clear list
     s
 
 
-### Tuple <a id="tuple"></a>
+#### Tuple <a id="tuple"></a>
 
 A `tuple` is also a list, only immutable and hashable. A `tuple` containing the same data as a `list` takes less space:
 
@@ -305,7 +313,7 @@ print(f"Tuple: {b.__sizeof__()} bytes")
     Tuple: 64 bytes
 
 
-#### Named tuple <a id="namedtuple"></a>
+##### Named tuple <a id="namedtuple"></a>
 
 According to the name, `namedtuple` has named fields. It is not a separate data structure, but a factory function that returns a new `tuple` subclass.
 
@@ -313,8 +321,8 @@ According to the name, `namedtuple` has named fields. It is not a separate data 
 ```python
 from collections import namedtuple
 
-rectangle = namedtuple('rectangle', 'length width')
-r = rectangle(length = 1, width = 2)
+rectangle = namedtuple("rectangle", "length width")
+r = rectangle(length=1, width=2)
 
 print("r:", r)
 print("r.lengt:", r.length)
@@ -328,7 +336,7 @@ print("r._fields:", r._fields)
     r._fields: ('length', 'width')
 
 
-### Dictionary <a id="dict"></a>
+#### Dictionary <a id="dict"></a>
 
 _Dictionary_ is the second most commonly used data structure in Python. The `dict` is an implementation of a hash table, so we cannot take a non-hashable object as a key, such as a `list` (this is where `tuple` comes in handy). The key of the dictionary can be any immutable object: number, string, datetime or even function. Such objects have a method `__hash__()`, which uniquely associates the object to a number. With this number the dictionary looks for the value of the key.
 
@@ -336,17 +344,21 @@ _Dictionary_ is the second most commonly used data structure in Python. The `dic
 
 
 ```python
-d = {} # Create an empty dictionary
+d = {}  # Create an empty dictionary
 
-d: dict[str, str] = {"France": "Croissant", "Mexico": "Taco", "India": "Naan"} # Direct dictionary creation
+d: dict[str, str] = {
+    "France": "Croissant",
+    "Mexico": "Taco",
+    "India": "Naan",
+}  # Direct dictionary creation
 
 k = ["France", "Mexico", "India"]
 v = ["Croissant", "Taco", "Naan"]
 d = dict(zip(k, v))  # create a dictionary from two collections using zip()
 
-k = d.keys() # Key collection. Reflects changes in the main dictionary
-v = d.values() # Value collection. Also reflects changes in main dictionary
-k_v = d.items() # Key-value tuples, which also reflect changes in the main dictionary
+k = d.keys()  # Key collection. Reflects changes in the main dictionary
+v = d.values()  # Value collection. Also reflects changes in main dictionary
+k_v = d.items()  # Key-value tuples, which also reflect changes in the main dictionary
 
 print("d:", d)
 print("d.keys():", k)
@@ -355,25 +367,31 @@ print("d.items():", k_v)
 
 print(f"Mapping: {k.mapping['France']}")
 
-d.update({"India": "Samosa"}) # Adding a value. If the key matches, the old value will be overwritten
+d.update(
+    {"India": "Samosa"}
+)  # Adding a value. If the key matches, the old value will be overwritten
 print(f"Replace item: {d}")
 
-c = d["India"] # Read value
+c = d["India"]  # Read value
 print(f"Read item: {c}")
 
 try:
-    v = d.pop("Brazil") # Delete value or raise KeyError exception
+    v = d.pop("Brazil")  # Delete value or raise KeyError exception
 except KeyError:
     print("Dictionary key doesn't exist")
 
 # Examples of dict comprehension (more on comprehension below)
-b = {k: v for k, v in d.items() if "o" in k}  # Will return a new dictionary, filtered by key value
+b = {
+    k: v for k, v in d.items() if "o" in k
+}  # Will return a new dictionary, filtered by key value
 print("dict comprehension:", b)
 
-c = {k: v for k, v in d.items() if len(v) >= 4} # Returns a new dictionary, filtered by value length
+c = {
+    k: v for k, v in d.items() if len(v) >= 4
+}  # Returns a new dictionary, filtered by value length
 print("dict comprehension:", c)
 
-d.clear() # Clearing dictionary
+d.clear()  # Clearing dictionary
 ```
 
     d: {'France': 'Croissant', 'Mexico': 'Taco', 'India': 'Naan'}
@@ -388,7 +406,7 @@ d.clear() # Clearing dictionary
     dict comprehension: {'France': 'Croissant', 'Mexico': 'Taco', 'India': 'Samosa'}
 
 
-#### DefaultDict <a id="defaultdict"></a>
+##### DefaultDict <a id="defaultdict"></a>
 
 If you try to read from the normal dictionary a value of a key that is not there, a KeyError exception will be thrown (exceptions will be discussed below). `defaultdict` allows you not to write an exception handler, but simply treats reading a non-existent key as a command to write to that key and return the default value; for example, `defaultdict(int)` will return `0`.
 
@@ -397,11 +415,11 @@ If you try to read from the normal dictionary a value of a key that is not there
 from collections import defaultdict
 
 dd = defaultdict(int)
-print("dd[10]:", dd[10]) # Print int, the default value: zero will be printed
+print("dd[10]:", dd[10])  # Print int, the default value: zero will be printed
 dd[5] = "five"
 print("dd[5]:", dd[5])
 
-dd = {} # "Regular" empty dictionary
+dd = {}  # "Regular" empty dictionary
 # print(dd[10]) # will throw a KeyError exception
 ```
 
@@ -409,7 +427,7 @@ dd = {} # "Regular" empty dictionary
     dd[5]: five
 
 
-#### OrderedDict <a id="ordereddict"></a>
+##### OrderedDict <a id="ordereddict"></a>
 
 Python includes a specialized `dict` subclass that remembers the insertion order of keys added to it: `OrderedDict`.
 
@@ -430,7 +448,7 @@ for k, v in od.items():
     three 3
 
 
-#### Counter <a id="counter"></a>
+##### Counter <a id="counter"></a>
 
 The `Counter` counts the objects passed to it. Sometimes it is very convenient to just feed some list into the counter and immediately get the data structure with the counted elements.
 
@@ -468,7 +486,7 @@ print("d:", d)
     d: defaultdict(<class 'int'>, {'red': 1, 'white': 3, 'blue': 1, 'black': 2})
 
 
-### Set <a id="set"></a>
+#### Set <a id="set"></a>
 
 The third most common Python data structure. `Sets` were formerly somewhat reduced `dictionaries`, but over time their implementations began to diverge. However, a `set` is still a hash table with appropriate performance on different types of operations.
 
@@ -477,19 +495,19 @@ The third most common Python data structure. `Sets` were formerly somewhat reduc
 big_cities: set["str"] = {"Paris", "Berlin", "Tokyo"}
 european_cities: set["str"] = {"Paris", "Berlin", "Madrid"}
 
-big_cities |= {"Barcelona"} # add value (or add())
-european_cities |= {"Lisbon", "Rome"} # Add sets (or update())
+big_cities |= {"Barcelona"}  # add value (or add())
+european_cities |= {"Lisbon", "Rome"}  # Add sets (or update())
 
 print("big_cities:", big_cities)
 print("european_cities:", european_cities)
 
-union_cities: set["str"] = big_cities | european_cities # Or union()
-intersected_cities: set["str"] = big_cities & european_cities # Or intersection()
-dif_cities: set["str"] = big_cities - european_cities # Or difference()
-symdif_cities: set["str"] = big_cities ^ european_cities # Or symmetric_difference()
+union_cities: set["str"] = big_cities | european_cities  # Or union()
+intersected_cities: set["str"] = big_cities & european_cities  # Or intersection()
+dif_cities: set["str"] = big_cities - european_cities  # Or difference()
+symdif_cities: set["str"] = big_cities ^ european_cities  # Or symmetric_difference()
 
-issub: bool = big_cities <= union_cities # Or issubset()
-issuper: bool = european_cities >= dif_cities # Or issuperset()
+issub: bool = big_cities <= union_cities  # Or issubset()
+issuper: bool = european_cities >= dif_cities  # Or issuperset()
 
 print("union_cities:", union_cities)
 print("intersected_cities:", intersected_cities)
@@ -501,23 +519,23 @@ print("issuper:", issuper)
 
 big_cities.add("Moscow")
 
-big_cities.remove("Paris") # Deletes value if present or throws KeyError
-big_cities.discard("Berlin") # Deletes value without throwing KeyError
-big_cities.pop() # Returns and deletes a random value (order in set undefined) or discards KeyError
-big_cities.clear() # Clears the set
+big_cities.remove("Paris")  # Deletes value if present or throws KeyError
+big_cities.discard("Berlin")  # Deletes value without throwing KeyError
+big_cities.pop()  # Returns and deletes a random value (order in set undefined) or discards KeyError
+big_cities.clear()  # Clears the set
 ```
 
-    big_cities: {'Berlin', 'Barcelona', 'Tokyo', 'Paris'}
-    european_cities: {'Paris', 'Lisbon', 'Berlin', 'Madrid', 'Rome'}
-    union_cities: {'Tokyo', 'Lisbon', 'Barcelona', 'Rome', 'Paris', 'Berlin', 'Madrid'}
-    intersected_cities: {'Berlin', 'Paris'}
-    dif_cities: {'Barcelona', 'Tokyo'}
-    symdif_cities: {'Barcelona', 'Tokyo', 'Lisbon', 'Madrid', 'Rome'}
+    big_cities: {'Paris', 'Berlin', 'Tokyo', 'Barcelona'}
+    european_cities: {'Rome', 'Lisbon', 'Madrid', 'Berlin', 'Paris'}
+    union_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris', 'Tokyo', 'Barcelona'}
+    intersected_cities: {'Paris', 'Berlin'}
+    dif_cities: {'Tokyo', 'Barcelona'}
+    symdif_cities: {'Rome', 'Lisbon', 'Madrid', 'Tokyo', 'Barcelona'}
     issub: True
     issuper: False
 
 
-#### Frozen set <a id="frozenset"></a>
+##### Frozen set <a id="frozenset"></a>
 
 `frozenset` is the same set, only immutable and hashable. Reminds of the difference between a `list` and a `tuple`.
 
@@ -527,10 +545,10 @@ a = frozenset({"New-York", "Los Angeles", "Ottawa"})
 print("a:", a)
 ```
 
-    a: frozenset({'Los Angeles', 'New-York', 'Ottawa'})
+    a: frozenset({'Ottawa', 'New-York', 'Los Angeles'})
 
 
-### Array <a id="array"></a>
+#### Array <a id="array"></a>
 
 An `array` in Python is not the default data structure of choice and is only used when structure size and processing speed become crucial. But, on the other hand, if you are looking at `NumPy` and `Pandas` (a bit below), arrays are your go to.
 
@@ -550,7 +568,9 @@ print("a1:", a1)
 print("a2[0]:", a2[0])
 print("b:", b)
 
-print("a1.index(-4):", a1.index(-4)) # Returns the index of the elements or throws a ValueError
+print(
+    "a1.index(-4):", a1.index(-4)
+)  # Returns the index of the elements or throws a ValueError
 ```
 
     a1: array('l', [1, 2, 3, -4])
@@ -559,18 +579,20 @@ print("a1.index(-4):", a1.index(-4)) # Returns the index of the elements or thro
     a1.index(-4): 3
 
 
-#### Bytes <a id="bytes"></a>
+##### Bytes <a id="bytes"></a>
 
 [`bytes`](https://docs.python.org/3/library/stdtypes.html#bytes-objects) objects are immutable sequences of single bytes, or integers in the range 0 ≤ _x_ ≤ 255. Conceptually, `bytes` objects are similar to `str` objects, and you can also think of them as immutable arrays of bytes.
 
 
 ```python
 # Creation
-b1 = bytes([5, 10, 15, 20]) # Integers must be between 0 and 255
-b2 = "The Bytes".encode('utf-8')
-b3 = (-4096).to_bytes(4, byteorder='little', signed=True) # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
-b4 = bytes.fromhex('DEADBEEF') # Hex values can be separated by spaces for readability
-b5 = bytes(range(10,40,3))
+b1 = bytes([5, 10, 15, 20])  # Integers must be between 0 and 255
+b2 = "The Bytes".encode("utf-8")
+b3 = (-4096).to_bytes(
+    4, byteorder="little", signed=True
+)  # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
+b4 = bytes.fromhex("DEADBEEF")  # Hex values can be separated by spaces for readability
+b5 = bytes(range(10, 40, 3))
 
 print("b1:", b1)
 print("b2:", b2)
@@ -580,8 +602,10 @@ print("b5:", b5)
 
 # Transformation
 c: list = list(b"\x01\x02\x03\x04\x05\x06")
-s: str = b'The Bytes'.decode("utf-8")
-b: int = int.from_bytes(b"\xfc\x00", byteorder='little', signed=False) # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
+s: str = b"The Bytes".decode("utf-8")
+b: int = int.from_bytes(
+    b"\xfc\x00", byteorder="little", signed=False
+)  # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
 s2: str = b"\xfc\x00\x00\x00\x00\x01".hex(" ")
 
 print("c:", c)
@@ -589,14 +613,13 @@ print("s:", s)
 print("b:", b)
 print("s2:", s2)
 
-with open("bytes.bin", "wb") as file: # Write byte to file
-     file.write(b1)
+with open("examples/bytes.bin", "wb") as file:  # Write byte to file
+    file.write(b1)
 
-with open("bytes.bin", "rb") as file: # Read from file
-     b6 = file.read()
+with open("examples/bytes.bin", "rb") as file:  # Read from file
+    b6 = file.read()
 
 print("b6:", b6)
-
 ```
 
     b1: b'\x05\n\x0f\x14'
@@ -611,7 +634,7 @@ print("b6:", b6)
     b6: b'\x05\n\x0f\x14'
 
 
-#### Bytearray <a id="bytearray"></a>
+##### Bytearray <a id="bytearray"></a>
 
 The [`bytearray`](https://docs.python.org/3.1/library/functions.html#bytearray) type is a mutable sequence of integers in the range 0 ≤ _x_ ≤ 255. The `bytearray` object is closely related to the `bytes` object, with the main difference being that a `bytearray` can be modified freely—you can overwrite elements, remove existing elements, or add new ones. The `bytearray` object will grow and shrink accordingly.
 
@@ -621,7 +644,7 @@ A `bytearray` can be converted back into immutable `bytes` objects, but this inv
 ```python
 # Creation
 ba1 = bytearray([1, 2, 3, 4])  # Create a bytearray from a list of integers
-b2 = "The Bytes".encode('utf-8')
+b2 = "The Bytes".encode("utf-8")
 ba2 = bytearray(b2)  # Create a bytearray from a bytes object
 
 print("ba1:", ba1)
@@ -651,7 +674,7 @@ print("b7:", b7)
     b7: b'\n\r\x10\x13\x16\x19\x1c\x1f"%'
 
 
-### Deque <a id="deque"></a>
+#### Deque <a id="deque"></a>
 
 The `deque` class implements a double-ended queue that supports adding and removing elements from either end in _O_(1) time (non-amortized). Because deques support adding and removing elements from either end equally well, they can serve both as `queues` and as `stacks`.
 
@@ -660,10 +683,13 @@ Python’s `deque` objects are implemented as doubly-linked lists. This gives th
 
 ```python
 from collections import deque
+
 d = deque([1, 2, 3, 4], maxlen=1000)
 
 d.append(5)  # Add element to the right side of the deque
-d.appendleft(0)  # Add element to the left side of the deque by appending elements from iterable
+d.appendleft(
+    0
+)  # Add element to the left side of the deque by appending elements from iterable
 
 d.extend([6, 7])  # Extend the right side of the deque
 d.extendleft([-1, -2])  # Extend the left side of the deque
@@ -682,7 +708,7 @@ print("d:", d)
     d: deque([-1, 0, 1, 2, 3, 4, 5, 6], maxlen=1000)
 
 
-### Queue <a id="queue"></a>
+#### Queue <a id="queue"></a>
 
 `Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads. 
 There is also `LifoQueueue` to implement LIFO and `PriorityQueueue` to implement priority queue.
@@ -694,14 +720,16 @@ from queue import Queue
 q = Queue(maxsize=1000)
 
 q.put("eat", block=True, timeout=10)
-q.put("sleep") # By default block=True, timeout=None
+q.put("sleep")  # By default block=True, timeout=None
 q.put("code")
-q.put_nowait("repeat") # Equivalent to put("repeat", block=False). If a free slot is not immediately available, a queue.Full exception will be thrown
+q.put_nowait(
+    "repeat"
+)  # Equivalent to put("repeat", block=False). If a free slot is not immediately available, a queue.Full exception will be thrown
 print("q.queue:", q.queue)
 
-a = q.get(block=True, timeout=10) # Remove and return element from FIFO
-b = q.get() # By default block=True, timeout=None
-c = q.get_nowait() # Equivalent to get(False)
+a = q.get(block=True, timeout=10)  # Remove and return element from FIFO
+b = q.get()  # By default block=True, timeout=None
+c = q.get_nowait()  # Equivalent to get(False)
 print("a:", a)
 print("b:", b)
 print("c:", c)
@@ -715,7 +743,7 @@ print("q.queue:", q.queue)
     q.queue: deque(['repeat'])
 
 
-#### LifoQueue <a id="lifoqueue"></a>
+##### LifoQueue <a id="lifoqueue"></a>
 
 `LifoQueue` stores and retrieves elements in a last-in, first-out (LIFO) order. This means that the last element added to the queue will be the first one retrieved from it. LifoQueue is also sometimes called a "`stack`" because it behaves like a stack data structure.
 
@@ -739,7 +767,7 @@ print(q.get())  # get the first item that was added to the stack (1)
     1
 
 
-#### PriorityQueue <a id="priorityqueue"></a>
+##### PriorityQueue <a id="priorityqueue"></a>
 
 `PriorityQueue` allows elements to be retrieved in order of priority. When you add an element to a PriorityQueue, you assign it a priority value. The PriorityQueue uses this priority value to determine the order in which elements are retrieved. The element with the highest priority will be the first one retrieved from the queue. PriorityQueue is also sometimes called a "`heap`" because it is implemented using a heap data structure.
 
@@ -763,7 +791,7 @@ print(q.get()[1])  # get the item with highest priority (priority 3)
     High Priority
 
 
-### Heap queue (Heapq) <a id="heap"></a>
+#### Heap queue (Heapq) <a id="heap"></a>
 
 In Python, a `heap` is a binary tree data structure that is commonly used to implement a PriorityQueue. A `heap` is a complete binary tree where the parent node is always greater (or less) than its children, and the tree has the minimum or maximum element at the root node.
 
@@ -775,14 +803,14 @@ If you need a max heap, with the maximum value at the root, you can use the advi
 import heapq
 
 h = [211, 1, 43, 79, 12, 5, -10, 0]
-heapq.heapify(h) # Turn the list into a heap
+heapq.heapify(h)  # Turn the list into a heap
 print("h:", h)
 
-heapq.heappush(h, 2) # Add item
+heapq.heappush(h, 2)  # Add item
 heapq.heappush(h, 150)
 print("h:", h)
 
-m = heapq.heappop(h) # Retrieve the minimum item
+m = heapq.heappop(h)  # Retrieve the minimum item
 print("h:", h)
 print("m:", m)
 ```
@@ -793,21 +821,21 @@ print("m:", m)
     m: -10
 
 
-## 3. User-defined Data Structures <a id="user-defined-ds"></a>
+### 3. User-defined Data Structures <a id="user-defined-ds"></a>
 
 Data structures that Python has no built-in implementation, but can nevertheless be very useful in a real project.
 
-### Linked List <a id="linkedlist"></a>
+#### Linked List <a id="linkedlist"></a>
 
 A `linked list` ([Wiki](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)) is a data structure that consists of a sequence of nodes, where each node contains a value and a reference to the next node in the list. The first node in the list is called the `head` of the list, and the last node is called the `tail`. Linked lists can be used to implement various data structures, such as stacks and queues.
 
 Python does not have a built-in linked list data structure, but it can be implemented using a class to represent the nodes and their relationships. 
 
-### Binary Tree <a id="binarytree"></a>
+#### Binary Tree <a id="binarytree"></a>
 
 A `binary tree` ([Wiki](https://en.wikipedia.org/wiki/Binary_tree)) is a type of tree data structure in which each node can have at most two children, known as the `left child` and the `right child`. Each node contains a value, and the left child's value is less than the node's value, while the right child's value is greater than the node's value. Binary trees are often used to implement search and sorting algorithms, such as binary search.
 
-### B-tree <a id="btree"></a>
+#### B-tree <a id="btree"></a>
 
 A `B-tree` ([Wiki](https://en.wikipedia.org/wiki/B-tree)) is a type of self-balancing tree data structure that can store large amounts of data on disk or in memory. B-trees are commonly used in databases and file systems to store and retrieve large amounts of data quickly and efficiently.
 
@@ -815,7 +843,7 @@ In a B-tree, each node can contain multiple keys and pointers to child nodes. Th
 
 Python does not have a built-in B-tree data structure, but there are third-party libraries that provide implementations of B-trees, such as the `bintrees` module.
 
-### Red-Black Tree <a id="redblacktree"></a>
+#### Red-Black Tree <a id="redblacktree"></a>
 
 A `Red-Black Tree` ([Wiki](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)) is a self-balancing binary search tree data structure. It is similar to a binary search tree but has additional properties that make it self-balancing, which means that the tree is always balanced, ensuring efficient searching, insertion, and deletion of elements.
 
@@ -823,13 +851,13 @@ The Red-Black Tree is named after the color of its nodes, which can be either `r
 
 In Python, a Red-Black Tree can be implemented using a class to represent the nodes and their relationships, and by implementing the necessary algorithms for searching, insertion, and deletion.
 
-### AVL Tree <a id="avltree"></a>
+#### AVL Tree <a id="avltree"></a>
 
 `AVL Tree` ([Wiki](https://en.wikipedia.org/wiki/AVL_tree)) can be defined as height balanced binary search tree in which each node is associated with a balance factor which is calculated by subtracting the height of its right sub-tree from that of its left sub-tree.
 
 In AVL trees, insertion and deletion operations are slower than in red-black trees. But for lookup-intensive applications, AVL trees are faster than red–black trees because they are more strictly balanced.
 
-### Trie <a id="trie"></a>
+#### Trie <a id="trie"></a>
 
 A `Trie` ([Wiki](https://en.wikipedia.org/wiki/Trie)) is a tree-like data structure that is used for efficient searching and retrieval of strings. It is also known as a `prefix tree`, because it can be used to efficiently search for all strings that have a given prefix.
 
@@ -837,9 +865,9 @@ A Trie is made up of nodes that represent the characters of the strings being st
 
 The Trie data structure is particularly useful when dealing with large sets of strings, as it allows for efficient searching, insertion, and deletion of strings.
 
-## 4. Other Data Types <a id="other-dt"></a>
+### 4. Other Data Types <a id="other-dt"></a>
 
-### Enum <a id="enum"></a>
+#### Enum <a id="enum"></a>
 
 The `enum` module in Python provides a way to define named constants in a program. Enums are a way to represent a set of values as a named collection of symbolic constants. They make it easier to write more readable, self-documenting code and help avoid errors due to typos or invalid values.
 
@@ -847,13 +875,15 @@ The `enum` module in Python provides a way to define named constants in a progra
 ```python
 from enum import Enum
 
+
 class Color(Enum):
     RED = 1
     GREEN = 2
     BLUE = 3
 
-print("Color.RED:", Color.RED)    # Color.RED
-print("Color.BLUE:", Color.BLUE)   # Color.BLUE
+
+print("Color.RED:", Color.RED)  # Color.RED
+print("Color.BLUE:", Color.BLUE)  # Color.BLUE
 print("Color.GREEN:", Color.GREEN)  # Color.GREEN
 
 # Iterating over enums
@@ -861,13 +891,13 @@ for color in Color:
     print(color)
 
 # Accessing enum members by value
-print("Color(1):", Color(1))   # Color.RED
-print("Color(2):", Color(2))   # Color.GREEN
-print("Color(3):", Color(3))   # Color.BLUE
+print("Color(1):", Color(1))  # Color.RED
+print("Color(2):", Color(2))  # Color.GREEN
+print("Color(3):", Color(3))  # Color.BLUE
 
 list_of_colors = list(Color)
-color_names    = [e.name for e in Color]
-color_values   = [e.value for e in Color]
+color_names = [e.name for e in Color]
+color_values = [e.value for e in Color]
 
 print("list_of_colors:", list_of_colors)
 print("color_names:", color_names)
@@ -888,7 +918,7 @@ print("color_values:", color_values)
     color_values: [1, 2, 3]
 
 
-### Range <a id="range"></a>
+#### Range <a id="range"></a>
 
 In Python, `range()` is a built-in function that generates a sequence of numbers. `The range()` function is commonly used for iterating over a sequence of numbers, such as in a for loop.
 
@@ -896,21 +926,23 @@ The `range()` function takes up to three arguments, in the form `range(start, st
 
 
 ```python
-r1: range = range(11) # Returns a sequence of numbers from 0 to 10
-r2: range = range(5, 21) # Returns a sequence of numbers from 5 to 20
-r3: range = range(20, 9, -2) # Returns the sequence of numbers from 20 to 10 in steps of 2
+r1: range = range(11)  # Returns a sequence of numbers from 0 to 10
+r2: range = range(5, 21)  # Returns a sequence of numbers from 5 to 20
+r3: range = range(
+    20, 9, -2
+)  # Returns the sequence of numbers from 20 to 10 in steps of 2
 
 print("To exclusive: ", end="")
 for i in r1:
-  print(f"{i} ", end="")
+    print(f"{i} ", end="")
 
 print("\nFrom inclusive to exclusive: ", end="")
 for i in r2:
-  print(f"{i} ", end="")
+    print(f"{i} ", end="")
 
 print("\nFrom inclusive to exclusive with step: ", end="")
 for i in r3:
-  print(f"{i} ", end="")
+    print(f"{i} ", end="")
 
 print(f"\nFrom = {r3.start}")
 print(f"To = {r3.stop}")
@@ -923,7 +955,7 @@ print(f"To = {r3.stop}")
     To = 9
 
 
-### Dataclass <a id="dataclass"></a>
+#### Dataclass <a id="dataclass"></a>
 
 In Python, the `dataclass` decorator is a  shorthand way of creating classes that are primarily used for storing data, and can save time and reduce code duplication by automatically generating common methods such as `__init__()`, `__repr__()`, and `__eq__()`.
 
@@ -935,11 +967,13 @@ There is a more advanced alternative called [attrs](https://pypi.org/project/att
 ```python
 from dataclasses import dataclass
 
+
 @dataclass
 class Point:
     x: float
     y: float
     z: float = 0.0
+
 
 # With a dataclass, you can create instances of the class using the normal syntax for calling a constructor:
 p1 = Point(1.0, 2.0)
@@ -961,13 +995,14 @@ Dataclass can be made immutable with the directive `frozen=True`.
 ```python
 from dataclasses import dataclass
 
+
 @dataclass(frozen=True)
 class User:
     name: str
     account: int
 ```
 
-### Struct <a id="struct"></a>
+#### Struct <a id="struct"></a>
 
 In Python, the `struct` module provides functions for packing and unpacking binary data. These functions allow you to convert data between Python objects and their binary representation, which is useful for working with binary data formats such as network protocols, file formats, and device drivers.
 
@@ -975,17 +1010,17 @@ Allows you to turn a Python `int` into, for example, a `short int` or a `long in
 
 
 ```python
-from struct import pack, unpack, iter_unpack
+from struct import iter_unpack, pack, unpack
 
-p = pack('if', 42, 3.14)
+p = pack("if", 42, 3.14)
 print("pack:", p)
 
-u = b'*\x00\x00\x00\xcd\xcc\x0c@'
-values = unpack('if', u)
+u = b"*\x00\x00\x00\xcd\xcc\x0c@"
+values = unpack("if", u)
 print("unpack:", values)
 
-i = b'*\x00\x00\x00\xcd\xcc\x0c@\xa0\x0f\x00\x00\xcd\xcc\xcc?'
-for values in iter_unpack('if', i):
+i = b"*\x00\x00\x00\xcd\xcc\x0c@\xa0\x0f\x00\x00\xcd\xcc\xcc?"
+for values in iter_unpack("if", i):
     print("iter_unpack:", values)
 ```
 
@@ -995,7 +1030,7 @@ for values in iter_unpack('if', i):
     iter_unpack: (4000, 1.600000023841858)
 
 
-### Datetime <a id="datetime"></a>
+#### Datetime <a id="datetime"></a>
 
 In Python, the `datetime` module provides classes for working with dates and times. 
 
@@ -1003,16 +1038,16 @@ The `datetime` class is the most commonly used class in the `datetime` module an
 
 The `datetime` module also provides several other classes for working with dates and times, such as `date`, `time`, and `timedelta`. These classes provide more fine-grained control over individual components of a date or time, such as the year, month, day, hour, minute, second, or microsecond.
 
-#### Constructors <a id="constructors"></a>
+##### Constructors <a id="constructors"></a>
 
 The constructor creates a `datetime` object with the specified year, month, day, hour, minute, second, and microsecond. If any of these values are not specified, they default to 0.
 
 
 ```python
-from datetime import date, time, datetime, timedelta
+from datetime import date, datetime, time, timedelta
 
 d: date = date(year=1987, month=11, day=2)
-t: time  = time(hour=12, minute=30, second=0, microsecond=0, tzinfo=None, fold=0)
+t: time = time(hour=12, minute=30, second=0, microsecond=0, tzinfo=None, fold=0)
 dt: datetime = datetime(year=1987, month=11, day=2, hour=9, minute=30, second=0)
 td: timedelta = timedelta(weeks=1, days=2, hours=12, minutes=13, seconds=14)
 
@@ -1028,20 +1063,21 @@ print("td:", td)
     td: 9 days, 12:13:14
 
 
-#### Now <a id="now"></a>
+##### Now <a id="now"></a>
 
 Get the current date or date/time.
 
 
 ```python
-from datetime import date, datetime
-import pytz
 import time
+from datetime import date, datetime
 
-d: date  = date.today()
+import pytz
+
+d: date = date.today()
 dt1: datetime = datetime.today()
 dt2: datetime = datetime.utcnow()
-dt3: datetime = datetime.now(pytz.timezone('Europe/Budapest'))
+dt3: datetime = datetime.now(pytz.timezone("Europe/Budapest"))
 
 t1 = time.time()  # Unix epoch time
 t2 = time.ctime()
@@ -1052,28 +1088,36 @@ print("dt2:", dt2)
 print("dt3:", dt3)
 print("t1:", t1)
 print("t2:", t2)
-
 ```
 
-    d: 2023-04-26
-    dt1: 2023-04-26 16:27:24.190924
-    dt2: 2023-04-26 14:27:24.190933
-    dt3: 2023-04-26 16:27:24.190955+02:00
-    t1: 1682519244.190978
-    t2: Wed Apr 26 16:27:24 2023
+
+    ---------------------------------------------------------------------------
+
+    ModuleNotFoundError                       Traceback (most recent call last)
+
+    Cell In[31], line 4
+          1 import time
+          2 from datetime import date, datetime
+    ----> 4 import pytz
+          6 d: date = date.today()
+          7 dt1: datetime = datetime.today()
 
 
-#### Timezone <a id="timezone"></a>
+    ModuleNotFoundError: No module named 'pytz'
+
+
+##### Timezone <a id="timezone"></a>
 
 The `timezone` class is used to represent a time zone and can be used to convert `datetime` objects between different time zones.
 
 
 ```python
 import datetime
+
 import pytz
 
 # Create a datetime object representing April 15, 2022 at 3:30 PM in the US/Eastern time zone
-eastern = pytz.timezone('US/Eastern')
+eastern = pytz.timezone("US/Eastern")
 dt = datetime.datetime(2022, 4, 15, 15, 30, tzinfo=eastern)
 print("dt:", dt)
 
@@ -1087,9 +1131,9 @@ print("dt_utc:", dt_utc)
     dt_utc: 2022-04-15 20:26:00+00:00
 
 
-## 5. General Data Structure Concepts <a id="general-ds-concepts"></a>
+### 5. General Data Structure Concepts <a id="general-ds-concepts"></a>
 
-### Mutable/Immutable <a id="mutable-immutable"></a>
+#### Mutable/Immutable <a id="mutable-immutable"></a>
 
 In Python, data structures and data types can be classified as either mutable or immutable.
 
@@ -1110,7 +1154,7 @@ When an operation is performed on a mutable object, the object is modified in pl
 
 For the User-defined Classes it purely depends upon the user to define the characteristics.
 
-### Hash calculation problem <a id="hashcalc"></a>
+#### Hash calculation problem <a id="hashcalc"></a>
 
 Any hash table, including a Python dictionary, must be able to solve the hash calculation problem. For this purpose the **open addressing** or **chaining** techniques are used. Python [uses](https://stackoverflow.com/questions/9010222/why-can-a-python-dict-have-multiple-keys-with-the-same-hash) open addressing.
 
