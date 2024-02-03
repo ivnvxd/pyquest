@@ -116,24 +116,24 @@
     - [enter/exit](#enter-exit)
     - [contextlib](#contextlib)
 
-### Part IV: File Handling, I/O, and Serialization <a id="toc-4-file-io-serialization"></a>
+### [Part IV: File Handling, I/O, and Serialization](#4-file-io-serialization) <a id="toc-4-file-io-serialization"></a>
 
-1. File Operations
-    - Opening a File
-    - Reading from a File
-    - Writing to a File
-    - Closing a File
-2. Working with Directories
-3. Serialization
-    - Pickling and Unpickling
-4. Structured Data Formats
-    - JSON
-    - YAML
-    - CSV
-    - XML
-5. Data Encoding and Decoding
-    - base64
-    - Unicode
+1. [File Operations](#file-operations)
+    - [Opening a File](#opening-a-file)
+    - [Reading from a File](#reading-from-a-file)
+    - [Writing to a File](#writing-to-a-file)
+    - [Closing a File](#closing-a-file)
+2. [Working with Directories](#working-with-directories)
+3. [Serialization](#serialization)
+    - [Pickling and Unpickling](#pickling-and-unpickling)
+4. [Structured Data Formats](#structured-data-formats)
+    - [JSON](#json)
+    - [YAML](#yaml)
+    - [CSV](#csv)
+    - [XML](#xml)
+5. [Data Encoding and Decoding](#data-encoding-and-decoding)
+    - [base64](#base64)
+    - [Unicode](#unicode)
 
 ### Part V: Exceptions and Error Handling <a id="toc-5-exceptions-and-errors"></a>
 

@@ -88,7 +88,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 5. [General Data Structure Concepts](#general-ds-concepts)
     - [Mutable/Immutable](#mutable-immutable)
     - [Hash calculation problem](#hashcalc)
-    - Common data structures operations
+    <!-- - Common data structures operations -->
 
 ### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 
@@ -136,24 +136,24 @@ By the way, if you're preparing for a job interview, check out this list of cruc
     - [enter/exit](#enter-exit)
     - [contextlib](#contextlib)
 
-### Part IV: File Handling, I/O, and Serialization <a id="toc-4-file-io-serialization"></a>
+### [Part IV: File Handling, I/O, and Serialization](#4-file-io-serialization) <a id="toc-4-file-io-serialization"></a>
 
-1. File Operations
-    - Opening a File
-    - Reading from a File
-    - Writing to a File
-    - Closing a File
-2. Working with Directories
-3. Serialization
-    - Pickling and Unpickling
-4. Structured Data Formats
-    - JSON
-    - YAML
-    - CSV
-    - XML
-5. Data Encoding and Decoding
-    - base64
-    - Unicode
+1. [File Operations](#file-operations)
+    - [Opening a File](#opening-a-file)
+    - [Reading from a File](#reading-from-a-file)
+    - [Writing to a File](#writing-to-a-file)
+    - [Closing a File](#closing-a-file)
+2. [Working with Directories](#working-with-directories)
+3. [Serialization](#serialization)
+    - [Pickling and Unpickling](#pickling-and-unpickling)
+4. [Structured Data Formats](#structured-data-formats)
+    - [JSON](#json)
+    - [YAML](#yaml)
+    - [CSV](#csv)
+    - [XML](#xml)
+5. [Data Encoding and Decoding](#data-encoding-and-decoding)
+    - [base64](#base64)
+    - [Unicode](#unicode)
 
 ### Part V: Exceptions and Error Handling <a id="toc-5-exceptions-and-errors"></a>
 
@@ -441,7 +441,7 @@ message = greeting + " " + name
 print("message:", message)
 
 # Assemble the string using the specified separator
-joined_string = ' '.join(["The", "quick", "brown", "fox"])
+joined_string = " ".join(["The", "quick", "brown", "fox"])
 print("joined_string:", joined_string)
 
 # Converting case
@@ -482,19 +482,19 @@ It is also possible to convert between numeric data types in Python using built-
 
 ```python
 a = 3.5
-b = int(a) # Converting a floating-point number to an integer
+b = int(a)  # Converting a floating-point number to an integer
 print("b:", b)
 
 s = "123"
-i = int(s) # Converting a string to an integer
+i = int(s)  # Converting a string to an integer
 print("i:", i)
 
 c = 5
-d = float(c) # Converting an integer to a floating-point number
+d = float(c)  # Converting an integer to a floating-point number
 print("d:", d)
 
 t = "3.14"
-f = float(t) # Converting a string to a floating-point number
+f = float(t)  # Converting a string to a floating-point number
 print("f:", f)
 ```
 
@@ -565,7 +565,7 @@ import math
 x = 3.14
 y = -2.5
 
-z = x ** y
+z = x**y
 print("z:", z)
 
 b = math.sin(x)
@@ -626,17 +626,19 @@ In Python, `None` is a special value that represents the absence of a value or t
 
 
 ```python
-x = None # Initializing a variable with None
+x = None  # Initializing a variable with None
 
-def greet(name): # Defining a function that returns None
+
+def greet(name):  # Defining a function that returns None
     if name:
         print(f"Hello, {name}!")
     else:
         print("Hello, stranger!")
     return None
 
+
 greet("Alice")
-greet("") 
+greet("")
 ```
 
     Hello, Alice!
@@ -653,12 +655,12 @@ A `list` is an ordered mutable collection of objects. Important thing about a `l
 
 
 ```python
-a = [] # Create an empty list
+a = []  # Create an empty list
 
 a: list[int] = [10, 20]
 b: list[int] = [30, 40]
-a.append(50) # Add a value at the end of the list
-b.insert(1, 60) # Insert value at specific index
+a.append(50)  # Add a value at the end of the list
+b.insert(1, 60)  # Insert value at specific index
 print("List a:", a)
 print("List b:", b)
 
@@ -670,8 +672,8 @@ b = list(reversed(a))  # reversed() returns an iterator, not a list
 print("Reversed a:", a)
 print("Reversed b:", b)
 
-b = sorted(a) # Returns a new sorted list
-a.sort() # Modifies the original list and returns nothing
+b = sorted(a)  # Returns a new sorted list
+a.sort()  # Modifies the original list and returns nothing
 print("Sorted a:", a)
 print("Sorted b:", b)
 
@@ -681,13 +683,19 @@ print(list_of_chars)
 list_of_words: list = s.split()
 print(list_of_words)
 
-i: int = list_of_chars.index("i") # Returns the index of the first occurrence of the item searched for or throws a ValueError exception
+i: int = list_of_chars.index(
+    "i"
+)  # Returns the index of the first occurrence of the item searched for or throws a ValueError exception
 print(i)
-list_of_chars.remove("i") # Removes the first occurrence of the searched element or throws a ValueError exception
-e = list_of_chars.pop(9) # Removes and returns the value located at the index. pop() (with no argument) will remove and return the last item in the list
+list_of_chars.remove(
+    "i"
+)  # Removes the first occurrence of the searched element or throws a ValueError exception
+e = list_of_chars.pop(
+    9
+)  # Removes and returns the value located at the index. pop() (with no argument) will remove and return the last item in the list
 print(list_of_chars)
 print(e)
-a.clear() # Clear list
+a.clear()  # Clear list
 ```
 
     List a: [10, 20, 50]
@@ -729,8 +737,8 @@ According to the name, `namedtuple` has named fields. It is not a separate data 
 ```python
 from collections import namedtuple
 
-rectangle = namedtuple('rectangle', 'length width')
-r = rectangle(length = 1, width = 2)
+rectangle = namedtuple("rectangle", "length width")
+r = rectangle(length=1, width=2)
 
 print("r:", r)
 print("r.lengt:", r.length)
@@ -752,17 +760,21 @@ _Dictionary_ is the second most commonly used data structure in Python. The `dic
 
 
 ```python
-d = {} # Create an empty dictionary
+d = {}  # Create an empty dictionary
 
-d: dict[str, str] = {"France": "Croissant", "Mexico": "Taco", "India": "Naan"} # Direct dictionary creation
+d: dict[str, str] = {
+    "France": "Croissant",
+    "Mexico": "Taco",
+    "India": "Naan",
+}  # Direct dictionary creation
 
 k = ["France", "Mexico", "India"]
 v = ["Croissant", "Taco", "Naan"]
 d = dict(zip(k, v))  # create a dictionary from two collections using zip()
 
-k = d.keys() # Key collection. Reflects changes in the main dictionary
-v = d.values() # Value collection. Also reflects changes in main dictionary
-k_v = d.items() # Key-value tuples, which also reflect changes in the main dictionary
+k = d.keys()  # Key collection. Reflects changes in the main dictionary
+v = d.values()  # Value collection. Also reflects changes in main dictionary
+k_v = d.items()  # Key-value tuples, which also reflect changes in the main dictionary
 
 print("d:", d)
 print("d.keys():", k)
@@ -771,25 +783,31 @@ print("d.items():", k_v)
 
 print(f"Mapping: {k.mapping['France']}")
 
-d.update({"India": "Samosa"}) # Adding a value. If the key matches, the old value will be overwritten
+d.update(
+    {"India": "Samosa"}
+)  # Adding a value. If the key matches, the old value will be overwritten
 print(f"Replace item: {d}")
 
-c = d["India"] # Read value
+c = d["India"]  # Read value
 print(f"Read item: {c}")
 
 try:
-    v = d.pop("Brazil") # Delete value or raise KeyError exception
+    v = d.pop("Brazil")  # Delete value or raise KeyError exception
 except KeyError:
     print("Dictionary key doesn't exist")
 
 # Examples of dict comprehension (more on comprehension below)
-b = {k: v for k, v in d.items() if "o" in k}  # Will return a new dictionary, filtered by key value
+b = {
+    k: v for k, v in d.items() if "o" in k
+}  # Will return a new dictionary, filtered by key value
 print("dict comprehension:", b)
 
-c = {k: v for k, v in d.items() if len(v) >= 4} # Returns a new dictionary, filtered by value length
+c = {
+    k: v for k, v in d.items() if len(v) >= 4
+}  # Returns a new dictionary, filtered by value length
 print("dict comprehension:", c)
 
-d.clear() # Clearing dictionary
+d.clear()  # Clearing dictionary
 ```
 
     d: {'France': 'Croissant', 'Mexico': 'Taco', 'India': 'Naan'}
@@ -813,11 +831,11 @@ If you try to read from the normal dictionary a value of a key that is not there
 from collections import defaultdict
 
 dd = defaultdict(int)
-print("dd[10]:", dd[10]) # Print int, the default value: zero will be printed
+print("dd[10]:", dd[10])  # Print int, the default value: zero will be printed
 dd[5] = "five"
 print("dd[5]:", dd[5])
 
-dd = {} # "Regular" empty dictionary
+dd = {}  # "Regular" empty dictionary
 # print(dd[10]) # will throw a KeyError exception
 ```
 
@@ -893,19 +911,19 @@ The third most common Python data structure. `Sets` were formerly somewhat reduc
 big_cities: set["str"] = {"Paris", "Berlin", "Tokyo"}
 european_cities: set["str"] = {"Paris", "Berlin", "Madrid"}
 
-big_cities |= {"Barcelona"} # add value (or add())
-european_cities |= {"Lisbon", "Rome"} # Add sets (or update())
+big_cities |= {"Barcelona"}  # add value (or add())
+european_cities |= {"Lisbon", "Rome"}  # Add sets (or update())
 
 print("big_cities:", big_cities)
 print("european_cities:", european_cities)
 
-union_cities: set["str"] = big_cities | european_cities # Or union()
-intersected_cities: set["str"] = big_cities & european_cities # Or intersection()
-dif_cities: set["str"] = big_cities - european_cities # Or difference()
-symdif_cities: set["str"] = big_cities ^ european_cities # Or symmetric_difference()
+union_cities: set["str"] = big_cities | european_cities  # Or union()
+intersected_cities: set["str"] = big_cities & european_cities  # Or intersection()
+dif_cities: set["str"] = big_cities - european_cities  # Or difference()
+symdif_cities: set["str"] = big_cities ^ european_cities  # Or symmetric_difference()
 
-issub: bool = big_cities <= union_cities # Or issubset()
-issuper: bool = european_cities >= dif_cities # Or issuperset()
+issub: bool = big_cities <= union_cities  # Or issubset()
+issuper: bool = european_cities >= dif_cities  # Or issuperset()
 
 print("union_cities:", union_cities)
 print("intersected_cities:", intersected_cities)
@@ -917,18 +935,18 @@ print("issuper:", issuper)
 
 big_cities.add("Moscow")
 
-big_cities.remove("Paris") # Deletes value if present or throws KeyError
-big_cities.discard("Berlin") # Deletes value without throwing KeyError
-big_cities.pop() # Returns and deletes a random value (order in set undefined) or discards KeyError
-big_cities.clear() # Clears the set
+big_cities.remove("Paris")  # Deletes value if present or throws KeyError
+big_cities.discard("Berlin")  # Deletes value without throwing KeyError
+big_cities.pop()  # Returns and deletes a random value (order in set undefined) or discards KeyError
+big_cities.clear()  # Clears the set
 ```
 
-    big_cities: {'Berlin', 'Barcelona', 'Paris', 'Tokyo'}
-    european_cities: {'Berlin', 'Lisbon', 'Paris', 'Madrid', 'Rome'}
-    union_cities: {'Madrid', 'Tokyo', 'Berlin', 'Lisbon', 'Paris', 'Rome', 'Barcelona'}
-    intersected_cities: {'Berlin', 'Paris'}
-    dif_cities: {'Barcelona', 'Tokyo'}
-    symdif_cities: {'Lisbon', 'Madrid', 'Tokyo', 'Rome', 'Barcelona'}
+    big_cities: {'Paris', 'Berlin', 'Tokyo', 'Barcelona'}
+    european_cities: {'Rome', 'Lisbon', 'Madrid', 'Berlin', 'Paris'}
+    union_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris', 'Tokyo', 'Barcelona'}
+    intersected_cities: {'Paris', 'Berlin'}
+    dif_cities: {'Tokyo', 'Barcelona'}
+    symdif_cities: {'Rome', 'Lisbon', 'Madrid', 'Tokyo', 'Barcelona'}
     issub: True
     issuper: False
 
@@ -943,7 +961,7 @@ a = frozenset({"New-York", "Los Angeles", "Ottawa"})
 print("a:", a)
 ```
 
-    a: frozenset({'New-York', 'Los Angeles', 'Ottawa'})
+    a: frozenset({'Ottawa', 'New-York', 'Los Angeles'})
 
 
 #### Array <a id="array"></a>
@@ -966,7 +984,9 @@ print("a1:", a1)
 print("a2[0]:", a2[0])
 print("b:", b)
 
-print("a1.index(-4):", a1.index(-4)) # Returns the index of the elements or throws a ValueError
+print(
+    "a1.index(-4):", a1.index(-4)
+)  # Returns the index of the elements or throws a ValueError
 ```
 
     a1: array('l', [1, 2, 3, -4])
@@ -982,11 +1002,13 @@ print("a1.index(-4):", a1.index(-4)) # Returns the index of the elements or thro
 
 ```python
 # Creation
-b1 = bytes([5, 10, 15, 20]) # Integers must be between 0 and 255
-b2 = "The Bytes".encode('utf-8')
-b3 = (-4096).to_bytes(4, byteorder='little', signed=True) # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
-b4 = bytes.fromhex('DEADBEEF') # Hex values can be separated by spaces for readability
-b5 = bytes(range(10,40,3))
+b1 = bytes([5, 10, 15, 20])  # Integers must be between 0 and 255
+b2 = "The Bytes".encode("utf-8")
+b3 = (-4096).to_bytes(
+    4, byteorder="little", signed=True
+)  # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
+b4 = bytes.fromhex("DEADBEEF")  # Hex values can be separated by spaces for readability
+b5 = bytes(range(10, 40, 3))
 
 print("b1:", b1)
 print("b2:", b2)
@@ -996,8 +1018,10 @@ print("b5:", b5)
 
 # Transformation
 c: list = list(b"\x01\x02\x03\x04\x05\x06")
-s: str = b'The Bytes'.decode("utf-8")
-b: int = int.from_bytes(b"\xfc\x00", byteorder='little', signed=False) # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
+s: str = b"The Bytes".decode("utf-8")
+b: int = int.from_bytes(
+    b"\xfc\x00", byteorder="little", signed=False
+)  # byteorder = "big"/"little"/"sys.byteorder", signed = False/True
 s2: str = b"\xfc\x00\x00\x00\x00\x01".hex(" ")
 
 print("c:", c)
@@ -1005,14 +1029,13 @@ print("s:", s)
 print("b:", b)
 print("s2:", s2)
 
-with open("examples/bytes.bin", "wb") as file: # Write byte to file
-     file.write(b1)
+with open("examples/bytes.bin", "wb") as file:  # Write byte to file
+    file.write(b1)
 
-with open("examples/bytes.bin", "rb") as file: # Read from file
-     b6 = file.read()
+with open("examples/bytes.bin", "rb") as file:  # Read from file
+    b6 = file.read()
 
 print("b6:", b6)
-
 ```
 
     b1: b'\x05\n\x0f\x14'
@@ -1037,7 +1060,7 @@ A `bytearray` can be converted back into immutable `bytes` objects, but this inv
 ```python
 # Creation
 ba1 = bytearray([1, 2, 3, 4])  # Create a bytearray from a list of integers
-b2 = "The Bytes".encode('utf-8')
+b2 = "The Bytes".encode("utf-8")
 ba2 = bytearray(b2)  # Create a bytearray from a bytes object
 
 print("ba1:", ba1)
@@ -1076,10 +1099,13 @@ Python’s `deque` objects are implemented as doubly-linked lists. This gives th
 
 ```python
 from collections import deque
+
 d = deque([1, 2, 3, 4], maxlen=1000)
 
 d.append(5)  # Add element to the right side of the deque
-d.appendleft(0)  # Add element to the left side of the deque by appending elements from iterable
+d.appendleft(
+    0
+)  # Add element to the left side of the deque by appending elements from iterable
 
 d.extend([6, 7])  # Extend the right side of the deque
 d.extendleft([-1, -2])  # Extend the left side of the deque
@@ -1110,14 +1136,16 @@ from queue import Queue
 q = Queue(maxsize=1000)
 
 q.put("eat", block=True, timeout=10)
-q.put("sleep") # By default block=True, timeout=None
+q.put("sleep")  # By default block=True, timeout=None
 q.put("code")
-q.put_nowait("repeat") # Equivalent to put("repeat", block=False). If a free slot is not immediately available, a queue.Full exception will be thrown
+q.put_nowait(
+    "repeat"
+)  # Equivalent to put("repeat", block=False). If a free slot is not immediately available, a queue.Full exception will be thrown
 print("q.queue:", q.queue)
 
-a = q.get(block=True, timeout=10) # Remove and return element from FIFO
-b = q.get() # By default block=True, timeout=None
-c = q.get_nowait() # Equivalent to get(False)
+a = q.get(block=True, timeout=10)  # Remove and return element from FIFO
+b = q.get()  # By default block=True, timeout=None
+c = q.get_nowait()  # Equivalent to get(False)
 print("a:", a)
 print("b:", b)
 print("c:", c)
@@ -1191,14 +1219,14 @@ If you need a max heap, with the maximum value at the root, you can use the advi
 import heapq
 
 h = [211, 1, 43, 79, 12, 5, -10, 0]
-heapq.heapify(h) # Turn the list into a heap
+heapq.heapify(h)  # Turn the list into a heap
 print("h:", h)
 
-heapq.heappush(h, 2) # Add item
+heapq.heappush(h, 2)  # Add item
 heapq.heappush(h, 150)
 print("h:", h)
 
-m = heapq.heappop(h) # Retrieve the minimum item
+m = heapq.heappop(h)  # Retrieve the minimum item
 print("h:", h)
 print("m:", m)
 ```
@@ -1263,13 +1291,15 @@ The `enum` module in Python provides a way to define named constants in a progra
 ```python
 from enum import Enum
 
+
 class Color(Enum):
     RED = 1
     GREEN = 2
     BLUE = 3
 
-print("Color.RED:", Color.RED)    # Color.RED
-print("Color.BLUE:", Color.BLUE)   # Color.BLUE
+
+print("Color.RED:", Color.RED)  # Color.RED
+print("Color.BLUE:", Color.BLUE)  # Color.BLUE
 print("Color.GREEN:", Color.GREEN)  # Color.GREEN
 
 # Iterating over enums
@@ -1277,13 +1307,13 @@ for color in Color:
     print(color)
 
 # Accessing enum members by value
-print("Color(1):", Color(1))   # Color.RED
-print("Color(2):", Color(2))   # Color.GREEN
-print("Color(3):", Color(3))   # Color.BLUE
+print("Color(1):", Color(1))  # Color.RED
+print("Color(2):", Color(2))  # Color.GREEN
+print("Color(3):", Color(3))  # Color.BLUE
 
 list_of_colors = list(Color)
-color_names    = [e.name for e in Color]
-color_values   = [e.value for e in Color]
+color_names = [e.name for e in Color]
+color_values = [e.value for e in Color]
 
 print("list_of_colors:", list_of_colors)
 print("color_names:", color_names)
@@ -1312,21 +1342,23 @@ The `range()` function takes up to three arguments, in the form `range(start, st
 
 
 ```python
-r1: range = range(11) # Returns a sequence of numbers from 0 to 10
-r2: range = range(5, 21) # Returns a sequence of numbers from 5 to 20
-r3: range = range(20, 9, -2) # Returns the sequence of numbers from 20 to 10 in steps of 2
+r1: range = range(11)  # Returns a sequence of numbers from 0 to 10
+r2: range = range(5, 21)  # Returns a sequence of numbers from 5 to 20
+r3: range = range(
+    20, 9, -2
+)  # Returns the sequence of numbers from 20 to 10 in steps of 2
 
 print("To exclusive: ", end="")
 for i in r1:
-  print(f"{i} ", end="")
+    print(f"{i} ", end="")
 
 print("\nFrom inclusive to exclusive: ", end="")
 for i in r2:
-  print(f"{i} ", end="")
+    print(f"{i} ", end="")
 
 print("\nFrom inclusive to exclusive with step: ", end="")
 for i in r3:
-  print(f"{i} ", end="")
+    print(f"{i} ", end="")
 
 print(f"\nFrom = {r3.start}")
 print(f"To = {r3.stop}")
@@ -1351,11 +1383,13 @@ There is a more advanced alternative called [attrs](https://pypi.org/project/att
 ```python
 from dataclasses import dataclass
 
+
 @dataclass
 class Point:
     x: float
     y: float
     z: float = 0.0
+
 
 # With a dataclass, you can create instances of the class using the normal syntax for calling a constructor:
 p1 = Point(1.0, 2.0)
@@ -1377,6 +1411,7 @@ Dataclass can be made immutable with the directive `frozen=True`.
 ```python
 from dataclasses import dataclass
 
+
 @dataclass(frozen=True)
 class User:
     name: str
@@ -1391,17 +1426,17 @@ Allows you to turn a Python `int` into, for example, a `short int` or a `long in
 
 
 ```python
-from struct import pack, unpack, iter_unpack
+from struct import iter_unpack, pack, unpack
 
-p = pack('if', 42, 3.14)
+p = pack("if", 42, 3.14)
 print("pack:", p)
 
-u = b'*\x00\x00\x00\xcd\xcc\x0c@'
-values = unpack('if', u)
+u = b"*\x00\x00\x00\xcd\xcc\x0c@"
+values = unpack("if", u)
 print("unpack:", values)
 
-i = b'*\x00\x00\x00\xcd\xcc\x0c@\xa0\x0f\x00\x00\xcd\xcc\xcc?'
-for values in iter_unpack('if', i):
+i = b"*\x00\x00\x00\xcd\xcc\x0c@\xa0\x0f\x00\x00\xcd\xcc\xcc?"
+for values in iter_unpack("if", i):
     print("iter_unpack:", values)
 ```
 
@@ -1425,10 +1460,10 @@ The constructor creates a `datetime` object with the specified year, month, day,
 
 
 ```python
-from datetime import date, time, datetime, timedelta
+from datetime import date, datetime, time, timedelta
 
 d: date = date(year=1987, month=11, day=2)
-t: time  = time(hour=12, minute=30, second=0, microsecond=0, tzinfo=None, fold=0)
+t: time = time(hour=12, minute=30, second=0, microsecond=0, tzinfo=None, fold=0)
 dt: datetime = datetime(year=1987, month=11, day=2, hour=9, minute=30, second=0)
 td: timedelta = timedelta(weeks=1, days=2, hours=12, minutes=13, seconds=14)
 
@@ -1450,14 +1485,15 @@ Get the current date or date/time.
 
 
 ```python
-from datetime import date, datetime
-import pytz
 import time
+from datetime import date, datetime
 
-d: date  = date.today()
+import pytz
+
+d: date = date.today()
 dt1: datetime = datetime.today()
 dt2: datetime = datetime.utcnow()
-dt3: datetime = datetime.now(pytz.timezone('Europe/Budapest'))
+dt3: datetime = datetime.now(pytz.timezone("Europe/Budapest"))
 
 t1 = time.time()  # Unix epoch time
 t2 = time.ctime()
@@ -1468,7 +1504,6 @@ print("dt2:", dt2)
 print("dt3:", dt3)
 print("t1:", t1)
 print("t2:", t2)
-
 ```
 
 
@@ -1476,11 +1511,12 @@ print("t2:", t2)
 
     ModuleNotFoundError                       Traceback (most recent call last)
 
-    Cell In[62], line 2
-          1 from datetime import date, datetime
-    ----> 2 import pytz
-          3 import time
-          5 d: date  = date.today()
+    Cell In[31], line 4
+          1 import time
+          2 from datetime import date, datetime
+    ----> 4 import pytz
+          6 d: date = date.today()
+          7 dt1: datetime = datetime.today()
 
 
     ModuleNotFoundError: No module named 'pytz'
@@ -1493,10 +1529,11 @@ The `timezone` class is used to represent a time zone and can be used to convert
 
 ```python
 import datetime
+
 import pytz
 
 # Create a datetime object representing April 15, 2022 at 3:30 PM in the US/Eastern time zone
-eastern = pytz.timezone('US/Eastern')
+eastern = pytz.timezone("US/Eastern")
 dt = datetime.datetime(2022, 4, 15, 15, 30, tzinfo=eastern)
 print("dt:", dt)
 
@@ -1838,7 +1875,7 @@ c4 = a / b
 print("c4:", c4)
 
 # Exponentiation
-c5 = a ** b
+c5 = a**b
 print("c5:", c5)
 ```
 
@@ -1921,7 +1958,7 @@ Bit count refers to the number of set bits (bits with a value of 1) in a binary 
 ```python
 num = 10
 binary = bin(num)[2:]  # remove the '0b' prefix
-count = binary.count('1')
+count = binary.count("1")
 print("count:", count)
 ```
 
@@ -2042,7 +2079,7 @@ stripped_string_1 = string.strip()
 print("stripped_string_1:", stripped_string_1)
 
 string = "+++hello, world!---"
-stripped_string_2 = string.strip('+-')
+stripped_string_2 = string.strip("+-")
 print("stripped_string_2:", stripped_string_2)
 ```
 
@@ -2063,11 +2100,11 @@ split_string_1 = string.split()
 print("split_string_1:", split_string_1)
 
 string = "hello,world!"
-split_string_2 = string.split(',')
+split_string_2 = string.split(",")
 print("split_string_2:", split_string_2)
 
 string = "hello,world,how,are,you?"
-split_string_3 = string.split(',', 2)
+split_string_3 = string.split(",", 2)
 print("split_string_3:", split_string_3)
 ```
 
@@ -2087,7 +2124,7 @@ Note that the `ord()` and `chr()` functions only work with ASCII characters and 
 
 
 ```python
-char = 'A'
+char = "A"
 
 ascii_code = ord(char)
 print("ascii_code:", ascii_code)
@@ -2134,7 +2171,7 @@ Regular expressions (often abbreviated as "`RegEx`") are sequences of characters
 import re
 
 # Search for the word "Python" in the given string
-result = re.search(r'Python', 'Learning Python is fun!')
+result = re.search(r"Python", "Learning Python is fun!")
 if result:
     print(f"Match found at index {result.start()} to {result.end()}.")
 else:
@@ -2142,23 +2179,23 @@ else:
 
 # Extract all email addresses from the given string
 text = "Contact us at contact@mywebsite.com or at support@mywebsite.com"
-pattern = r'[\w\.-]+@[\w\.-]+'
+pattern = r"[\w\.-]+@[\w\.-]+"
 print("findall:", re.findall(pattern, text))
 
 # Find all words that are exactly 3 characters long
 text = "The cat and the hat sat on the mat."
-pattern = r'\b\w{3}\b'
+pattern = r"\b\w{3}\b"
 for match in re.finditer(pattern, text):
     print(f"Found word: {match.group()} at position {match.start()}-{match.end()}.")
 
 # Replace all occurrences of "apple" or "orange" with "fruit"
 text = "I have two apples and three oranges."
-pattern = r'apple|orange'
-print("sub:", re.sub(pattern, 'fruit', text))
+pattern = r"apple|orange"
+print("sub:", re.sub(pattern, "fruit", text))
 
 # Split a string by any number (e.g., "3a5b2c" -> ['a', 'b', 'c'])
 text = "3a5b2c"
-pattern = r'\d'
+pattern = r"\d"
 print("split:", re.split(pattern, text))
 ```
 
@@ -2206,7 +2243,9 @@ print("start:", start)
 end = match.end()  # Returns the end position of the match
 print("end:", end)
 
-tuple = match.span()  # Returns a tuple containing the (start, end) positions of the match
+tuple = (
+    match.span()
+)  # Returns a tuple containing the (start, end) positions of the match
 print("tuple:", tuple)
 ```
 
@@ -2368,7 +2407,7 @@ The `range()` function is used to generate a sequence of numbers. The `range()` 
 ```python
 for i in range(5):  # Will iterate over numbers from 0 to 4
     print(i)
-    
+
 print("------")
 
 for i in range(1, 5):  # Will iterate over numbers from 1 to 4
@@ -2541,14 +2580,14 @@ for i in count(10, 3):
 
 print("\ncycle:", end=" ")
 counter = 0
-for item in cycle('XYZ'):
+for item in cycle("XYZ"):
     if counter > 7:
         break
     print(item, end=", ")
     counter += 1
 
 print("\nrepeat:", end=" ")
-for item in repeat('A', 5):
+for item in repeat("A", 5):
     print(item, end=", ")
 ```
 
@@ -2582,18 +2621,18 @@ from itertools import accumulate, chain, groupby, islice, zip_longest
 print("accumulate :", list(accumulate([1, 2, 3, 4])))
 
 # Using chain()
-print("chain :", list(chain('ABC', 'DEF')))
+print("chain :", list(chain("ABC", "DEF")))
 
 # Using groupby()
 print("groupby:", end=" ")
-for key, group in groupby('AABBCCAA'):
+for key, group in groupby("AABBCCAA"):
     print(key, list(group))
 
 # Using islice()
-print("islice :", list(islice('ABCDEFG', 2, 5)))
+print("islice :", list(islice("ABCDEFG", 2, 5)))
 
 # Using zip_longest()
-print("zip_longest :", list(zip_longest('AB', '12345', fillvalue='x')))
+print("zip_longest :", list(zip_longest("AB", "12345", fillvalue="x")))
 ```
 
     accumulate : [1, 3, 6, 10]
@@ -2624,9 +2663,9 @@ Combinatoric functions can be useful when you need to generate all possible comb
 
 
 ```python
-from itertools import product, combinations, permutations, combinations_with_replacement
+from itertools import combinations, combinations_with_replacement, permutations, product
 
-list1 = ['a', 'b', 'c']
+list1 = ["a", "b", "c"]
 list2 = [1, 2]
 
 print("product:", list(product(list1, list2)))
@@ -2670,7 +2709,7 @@ The `zip()` function is useful when you need to combine two or more iterables in
 
 
 ```python
-list1 = ['a', 'b', 'c']
+list1 = ["a", "b", "c"]
 list2 = [1, 2, 3]
 
 print("zip:", list(zip(list1, list2)))
@@ -2701,14 +2740,15 @@ The primary mechanism for using context managers is the with statement. The cont
 ```python
 class MyContextManager:
     def __enter__(self):
-        print('Entering context')
+        print("Entering context")
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        print('Exiting context')
+        print("Exiting context")
+
 
 with MyContextManager() as cm:
-    print('Inside context')
+    print("Inside context")
 ```
 
     Entering context
@@ -2780,14 +2820,16 @@ These are just a few of the utilities provided by the contextlib module. They si
 ```python
 from contextlib import contextmanager
 
+
 @contextmanager
 def my_context_manager():
-    print('Entering context')
+    print("Entering context")
     yield
-    print('Exiting context')
+    print("Exiting context")
+
 
 with my_context_manager():
-    print('Inside context')
+    print("Inside context")
 ```
 
     Entering context
@@ -2805,14 +2847,14 @@ from contextlib import closing
 from urllib.request import urlopen
 
 lines = []
-with closing(urlopen('https://www.google.com')) as page:
+with closing(urlopen("https://www.google.com")) as page:
     for line in page:
         lines.append(line)
 
 print(len(lines))
 ```
 
-    18
+    17
 
 
 
@@ -2821,18 +2863,18 @@ import os
 from contextlib import suppress
 
 with suppress(FileNotFoundError):
-    os.remove('somefile.tmp')
+    os.remove("somefile.tmp")
 # This code will suppress a FileNotFoundError if the file doesn't exist.
 ```
 
 
 ```python
-from contextlib import redirect_stdout
 import io
+from contextlib import redirect_stdout
 
 f = io.StringIO()
 with redirect_stdout(f):
-    print('This will be written to f instead of stdout')
+    print("This will be written to f instead of stdout")
 print(f.getvalue())
 ```
 
@@ -2844,11 +2886,423 @@ print(f.getvalue())
 ```python
 from contextlib import ExitStack
 
-filenames = ['examples/sample.txt', 'examples/sample copy.txt']
+filenames = ["examples/sample.txt", "examples/sample copy.txt"]
 with ExitStack() as stack:
     files = [stack.enter_context(open(fname)) for fname in filenames]
     # All files will be properly closed at the end of the with block
 ```
+
+
+## Part IV: File Handling, I/O, and Serialization <a id="4-file-io-serialization"></a>
+
+### 1. File Operations <a id="file-operations"></a>
+
+File operations in Python are crucial for reading from and writing to files on your computer. These operations allow your programs to save data permanently, work with configuration files, or read data from existing files for processing. 
+
+Python makes file operations straightforward through its built-in functions and methods. The most common operations involve opening a file, reading from it, writing to it, and closing it.
+
+#### Opening a File <a id="opening-a-file"></a>
+
+Use the `open(file_name, mode)` function to open a file. It returns a file object and takes two main parameters: the `file_name` and the `mode` ('r' for reading, 'w' for writing, 'a' for appending, and 'b' for binary mode).
+
+#### Reading from a File <a id="reading-from-a-file"></a>
+
+Once a file is opened in read mode ('r'), you can use methods like `.read()`, `.readline()`, or `.readlines()` to read its content.
+
+- `.read(size)` reads size bytes, or if size is omitted or negative, it reads the entire file.
+- `.readline()` reads a single line from the file.
+- `.readlines()` reads all the lines in a file and returns them as a list.
+
+#### Writing to a File <a id="writing-to-a-file"></a>
+
+Opening a file in write ('w') or append ('a') mode allows you to write or add content to the file. Use `.write(string)` to write the specified string to the file. For writing multiple lines, `.writelines(list)` can be used.
+
+- `.write(string)` writes the string to the file.
+- `.writelines(sequence)` writes a sequence of strings to the file.
+
+#### Closing a File <a id="closing-a-file"></a>
+
+After finishing with a file, it's crucial to close it using the .close() method to free up system resources. Failure to close files can lead to memory leaks and other resource issues.
+
+
+```python
+# Step 1: Read from the original file
+names = []  # List to hold names
+with open("examples/names.txt", "r") as file_reader:
+    for line in file_reader:
+        # Strip newline characters and add to list
+        names.append(line.strip())
+        print(line.strip())
+
+# Step 2: Data manipulation
+new_name = "Diana"
+if new_name not in names:  # Avoid duplicate
+    names.append(new_name)
+
+# Step 3: Write to a new file
+with open("examples/updated_names.txt", "w") as file_writer:
+    for name in names:
+        file_writer.write(name + "\n")  # Add newline to put each name on a new line
+
+print("------")
+
+# Check the new file
+with open("examples/updated_names.txt", "r") as file_reader:
+    for line in file_reader:
+        print(line.strip())
+
+# The 'with' statement automatically handles file closing.
+```
+
+    Alice
+    Bob
+    Charlie
+    ------
+    Alice
+    Bob
+    Charlie
+    Diana
+
+
+### 2. Working with Directories <a id="working-with-directories"></a>
+
+Working with directories in Python involves managing folders on your file system. This includes tasks such as creating, listing, renaming, and removing directories. The os module in Python provides a portable way of using operating system-dependent functionality like navigating and manipulating the file system.
+
+Key Functions in the os module for Directories:
+- `os.listdir(path)`: Lists all files and directories in the specified path.
+- `os.mkdir(path)`: Creates a directory at the specified path. Raises an error if the directory already exists.
+- `os.makedirs(path)`: Similar to os.mkdir, but also creates all intermediate-level directories needed to contain the leaf directory.
+- `os.rmdir(path)`: Removes the specified directory. The directory must be empty.
+- `os.removedirs(path)`: Removes directories recursively. It removes leaf directory and all empty intermediate ones.
+- `os.rename(src, dst)`: Renames a file or directory from src to dst.
+
+
+```python
+import os
+
+# Create a new directory
+os.mkdir("new_directory")
+
+# Create a directory and intermediate directories
+os.makedirs("new_directory/intermediate_directory")
+
+# List contents of the current directory
+contents = os.listdir("examples/")
+print("Directory contents:", contents)
+
+# Rename the directory
+os.rename("new_directory", "renamed_directory")
+
+# Remove a directory (must be empty)
+os.rmdir("renamed_directory/intermediate_directory")
+
+# Remove the now empty parent directory
+os.rmdir("renamed_directory")
+```
+
+    Directory contents: ['names.txt', 'example.csv', 'data.pickle', 'person.json', 'updated_names.txt', 'sample copy.txt', 'bytes.bin', 'sample.txt']
+
+
+### 3. Serialization <a id="serialization"></a>
+
+Serialization in Python refers to the process of converting a Python object into a byte stream (a sequence of bytes) that can be saved to a file or transmitted over a network. This byte stream can then be deserialized back into a Python object. This process is crucial for saving complex data structures, like lists and dictionaries, to a file or sending them over a network for distributed computing tasks.
+
+#### Pickling and Unpickling <a id="pickling-and-unpickling"></a>
+
+The most common serialization technique in Python is using the pickle module. "Pickling" is the act of serializing an object, and "unpickling" is the process of deserializing the byte stream back into an object.
+
+- **Pickling**: Convert a Python object into a byte stream.
+- **Unpickling**: Convert a byte stream back into a Python object.
+
+Be cautious when unpickling objects from an untrusted source. Since pickle can execute arbitrary code, it may pose a security risk.
+
+
+```python
+import pickle
+
+# Define a sample dictionary
+data = {"key": "value", "list": [1, 2, 3, 4, 5]}
+
+# Pickling: Serializing the Python object to a byte stream
+with open("examples/data.pickle", "wb") as file:
+    pickle.dump(data, file)
+
+# Unpickling: Deserializing the byte stream back to a Python object
+with open("examples/data.pickle", "rb") as file:
+    loaded_data = pickle.load(file)
+
+print("Loaded data:", loaded_data)
+```
+
+    Loaded data: {'key': 'value', 'list': [1, 2, 3, 4, 5]}
+
+
+### 4. Structured Data Formats <a id="structured-data-formats"></a>
+
+Structured data formats organize and store data in a way that is easily readable by both humans and computers. These formats are essential for data interchange between different applications, systems, or programming languages. Python supports several structured data formats, including JSON, YAML, CSV, and XML, each serving different needs and use cases.
+
+- **JSON (JavaScript Object Notation)**: Widely used for web APIs and config files. Features: Lightweight, text-based, language-independent.
+- **YAML (YAML Ain't Markup Language)**: Common for configuration files, more readable for humans than JSON. Features: Supports complex data structures, more flexible and readable.
+- **CSV (Comma-Separated Values)**: Data exchange format for spreadsheets or databases. Features: Simple format, each line is a data record, fields separated by commas.
+- **XML (eXtensible Markup Language)**: General purpose, structured document format with custom tags. Features: Hierarchical structure, self-descriptive tags, supports metadata.
+
+#### JSON <a id="json"></a>
+
+**JSON** (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate. It's widely used for web APIs and configuration files.
+
+Key Features:
+- **Text-based**: JSON is purely text, which can be sent anywhere that text can be sent.
+- **Human-readable**: Its structure is simple, making it easy for humans to read and write.
+- **Hierarchical**: JSON can represent multiple levels of nested data, allowing complex data structures to be efficiently represented.
+
+Python's built-in `json` module provides functions to work with JSON data. Key functions include:
+- `json.dumps(obj)`: Serializes obj to a JSON-formatted str.
+- `json.loads(s)`: Deserializes s (a str, bytes or bytearray instance containing a JSON document) to a Python object.
+- `json.dump(obj, file)`: Serializes obj as a JSON formatted stream to file.
+- `json.load(file)`: Deserializes file to a Python object.
+
+
+```python
+import json
+
+person = {"name": "Alice", "age": 30, "city": "London", "hasPets": False}
+
+# Serialize the dictionary to a JSON string
+person_json = json.dumps(person)
+print("JSON representation:", person_json)
+
+# Deserialize the JSON back into a Python dictionary
+person_dict = json.loads(person_json)
+print("Back to Python dictionary:", person_dict)
+
+# Writing JSON to a file
+with open("examples/person.json", "w") as file:
+    json.dump(person, file)
+
+# Reading JSON from a file
+with open("examples/person.json", "r") as file:
+    person_read = json.load(file)
+    print("Read from file:", person_read)
+```
+
+    JSON representation: {"name": "Alice", "age": 30, "city": "London", "hasPets": false}
+    Back to Python dictionary: {'name': 'Alice', 'age': 30, 'city': 'London', 'hasPets': False}
+    Read from file: {'name': 'Alice', 'age': 30, 'city': 'London', 'hasPets': False}
+
+
+#### YAML <a id="yaml"></a>
+
+**YAML** (YAML Ain't Markup Language) is a human-readable data serialization standard that can be used in conjunction with all programming languages and is often used for configuration files. It is particularly known for its easy readability and its ability to represent hierarchical data structures. YAML is a superset of JSON, which means JSON files are also valid YAML files.
+
+Key Features:
+- **Human-Readable**: Designed to be easy for humans to read and write.
+- **Hierarchical Data Structure**: Supports complex data structures including lists, associative arrays, and scalars.
+- **Cross-Language**: YAML can be used with any programming language that has a YAML library.
+- **Indentation**: Uses indentation to represent hierarchy, similar to how Python uses indentation to represent code blocks.
+
+To work with YAML in Python, you typically use the `PyYAML` library, which is not included in the standard library and needs to be installed separately using a package manager like `pip`.
+
+
+```python
+# pip install PyYAML (if not already installed)
+
+import yaml
+
+# YAML string
+yaml_str = """
+name: John Doe
+age: 30
+married: true
+children:
+  - name: Jane Doe
+    age: 10
+"""
+
+# Load YAML string into Python dictionary
+data = yaml.safe_load(yaml_str)
+print("Loaded YAML to Python object:", data)
+
+# Convert Python dictionary back into YAML string
+yaml_out = yaml.dump(data)
+print("Python object back to YAML:\n", yaml_out)
+```
+
+    Loaded YAML to Python object: {'name': 'John Doe', 'age': 30, 'married': True, 'children': [{'name': 'Jane Doe', 'age': 10}]}
+    Python object back to YAML:
+     age: 30
+    children:
+    - age: 10
+      name: Jane Doe
+    married: true
+    name: John Doe
+    
+
+
+#### CSV <a id="csv"></a>
+
+**CSV** (Comma-Separated Values) format is a simple file format used to store tabular data, such as a database or spreadsheet. Each line in a CSV file corresponds to a row in the table, and each field (or cell) in that row is separated by a comma.
+
+Key Features:
+- **Simplicity**: CSV files are easy to read and write by both humans and machines.
+- **Compatibility**: Can be imported to and exported from programs that store data in tables, such as Excel or Google Sheets.
+- **Flexibility**: Supports text data and numbers, making it versatile for various use cases.
+
+Python provides a built-in `csv` module to easily deal with CSV files. This module presents functions to read, write, and manipulate data in CSV format.
+
+
+```python
+import csv
+
+# Writing to a CSV file
+with open("examples/example.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["name", "age", "city"])
+    writer.writerow(["Alice", "30", "New York"])
+    writer.writerow(["Bob", "25", "Los Angeles"])
+
+# Reading from a CSV file
+with open("examples/example.csv", "r") as file:
+    reader = csv.reader(file)
+    print("Using csv.reader:")
+    for row in reader:
+        print(row)
+
+# Using DictReader for more intuitive access by column names
+with open("examples/example.csv", "r") as file:
+    reader = csv.DictReader(file)
+    print("Using DictReader:")
+    for row in reader:
+        print(row["name"], row["age"], row["city"])
+```
+
+    Using csv.reader:
+    ['name', 'age', 'city']
+    ['Alice', '30', 'New York']
+    ['Bob', '25', 'Los Angeles']
+    Using DictReader:
+    Alice 30 New York
+    Bob 25 Los Angeles
+
+
+#### XML <a id="xml"></a>
+
+**XML** (eXtensible Markup Language) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. It is widely used for representing structured data in web services, configuration files, and data interchange between different systems.
+
+Key Features:
+- **Structured Data**: XML represents data in a hierarchical structure, which is flexible and can represent complex data relationships.
+- **Self-descriptive**: XML documents can be self-descriptive, meaning the tags used in the documents can describe the data itself.
+- **Widely Supported**: XML is a standard format supported by a multitude of tools and libraries across various programming languages.
+
+Python's built-in `xml` module provides functions to work with XML data. The `ElementTree` module in the `xml` package provides a simple and lightweight way to work with XML data. It allows you to create, parse, and manipulate XML documents.
+
+
+```python
+import xml.etree.ElementTree as ET
+
+# Sample XML data
+xml_data = """<?xml version="1.0"?>
+<library>
+    <book>
+        <title>Python Programming</title>
+        <author>John Doe</author>
+    </book>
+    <book>
+        <title>Learning XML</title>
+        <author>Jane Smith</author>
+    </book>
+</library>"""
+
+# Parsing XML data
+root = ET.fromstring(xml_data)
+
+# Finding all 'book' elements
+for book in root.findall("book"):
+    title = book.find("title").text
+    author = book.find("author").text
+    print(f"Title: {title}, Author: {author}")
+
+# Creating a new XML element
+new_book = ET.Element("book")
+new_title = ET.SubElement(new_book, "title")
+new_title.text = "New Book Title"
+new_author = ET.SubElement(new_book, "author")
+new_author.text = "New Author Name"
+
+# Adding the new book to the library
+root.append(new_book)
+
+# Converting the modified XML back to a string
+new_xml = ET.tostring(root, encoding="unicode")
+print("new_xml:", new_xml)
+```
+
+    Title: Python Programming, Author: John Doe
+    Title: Learning XML, Author: Jane Smith
+    new_xml: <library>
+        <book>
+            <title>Python Programming</title>
+            <author>John Doe</author>
+        </book>
+        <book>
+            <title>Learning XML</title>
+            <author>Jane Smith</author>
+        </book>
+    <book><title>New Book Title</title><author>New Author Name</author></book></library>
+
+
+### 5. Data Encoding and Decoding <a id="data-encoding-and-decoding"></a>
+
+Data encoding and decoding involve the processes of transforming data into a different format using a scheme that is understood by both the sender and receiver. This transformation is essential for data storage, transmission, or communication between different systems. Encoding converts data from a source format into a format suitable for transmission or storage, while decoding reverses the process, converting the encoded data back into its original format.
+
+#### base64 <a id="base64"></a>
+
+Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format by translating it into a radix-64 representation. It is commonly used in email and HTML to encode binary files like images or documents to attach or embed them in textual mediums.
+
+Python's built-in `base64` module provides functions to encode and decode data using the base64 encoding scheme.
+
+
+```python
+import base64
+
+# Original data
+data = "Python is fun!"
+
+# Encoding data
+encoded_data = base64.b64encode(data.encode())
+print(f"Encoded data: {encoded_data}")
+
+# Decoding data
+decoded_data = base64.b64decode(encoded_data).decode()
+print(f"Decoded data: {decoded_data}")
+```
+
+    Encoded data: b'UHl0aG9uIGlzIGZ1biE='
+    Decoded data: Python is fun!
+
+
+#### Unicode <a id="unicode"></a>
+
+Unicode is a computing industry standard designed to consistently encode, represent, and handle text expressed in most of the world's writing systems. In Python, strings are stored as Unicode by default.
+
+Python's built-in `str` type is used to represent Unicode strings, and the `encode()` and `decode()` methods are used to convert between Unicode and byte strings.
+
+
+```python
+# Unicode string
+text = "Pythön is interesting!"
+
+# Encoding: Convert to UTF-8 bytes
+encoded_text = text.encode("utf-8")
+print(f"Encoded text: {encoded_text}")
+
+# Decoding: Convert back to Unicode
+decoded_text = encoded_text.decode("utf-8")
+print(f"Decoded text: {decoded_text}")
+```
+
+    Encoded text: b'Pyth\xc3\xb6n is interesting!'
+    Decoded text: Pythön is interesting!
+
 
 
 ## Outro <a id="c-outro"></a>
