@@ -6,7 +6,7 @@
 - [Part IV: File Handling, I/O, and Serialization](#toc-4-file-io-serialization)
 - [Part V: Exceptions and Error Handling](#toc-5-exceptions-and-errors)
 - [Part VI: Functional Programming](#toc-6-fp)
-- [Part VII: Python Standard Libraries](#toc-7-standart-libraries)
+- [Part VII: Python Standard Libraries](#toc-7-standard-libraries)
 - [Part VIII: Object-Oriented Programming](#toc-8-oop)
 - [Part IX: Python Language Fundamentals](#toc-9-language-fundamentals)
 - [Part X: Concurrency](#toc-10-concurrency)
@@ -68,7 +68,7 @@
 5. [General Data Structure Concepts](#general-ds-concepts)
     - [Mutable/Immutable](#mutable-immutable)
     - [Hash calculation problem](#hashcalc)
-    <!-- - Common data structures operations -->
+    <!-- TODO: - [Common data structures operations](#common-data-structures-operations) -->
 
 ### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 
@@ -115,6 +115,9 @@
 7. [Context Managers](#context-managers)
     - [enter/exit](#enter-exit)
     - [contextlib](#contextlib)
+<!-- TODO: 8. [Recursion](#recursion)
+    - [Recursion vs Iteration](#recursion-vs-iteration)
+    - [Tail Recursion](#tail-recursion) -->
 
 ### [Part IV: File Handling, I/O, and Serialization](#4-file-io-serialization) <a id="toc-4-file-io-serialization"></a>
 
@@ -148,28 +151,33 @@
     - [assert statement](#assert-statement)
 4. [User-Defined Exceptions](#user-defined-exceptions)
 
-### Part VI: Functional Programming <a id="toc-6-fp"></a>
+### [Part VI: Functional Programming](#6-fp) <a id="toc-6-fp"></a>
 
-1. Lambda Functions
-2. Comprehensions
-    - List comprehension
-    - Dict comprehension
-    - Set comprehension
-3. Functools
-    - map
-    - filter
-    - reduce
-4. Bisect
-5. Decorators
-    - Decorator
-    - LRU Cache
-    - Parametrized decorator
-6. Generators
-    - yield
-    - Generator expression
-    - yield from
+1. [Lambda Functions](#lambda-functions)
+2. [Comprehensions](#comprehensions)
+    - [List comprehension](#list-comprehension)
+    - [Dict comprehension](#dict-comprehension)
+    - [Set comprehension](#set-comprehension)
+3. [Functools](#functools)
+    - [map](#map)
+    - [filter](#filter)
+    - [reduce](#reduce)
+4. [Bisect](#bisect)
+    - [bisect_left, bisect_right](#bisect-left-right)
+    - [insort_left, insort_right](#insort-left-right)
+5. [Decorators](#decorators)
+    - [Decorator](#decorator)
+    - [Parametrized decorator](#parametrized-decorator)
+    - [functools.wraps](#functools-wraps)
+    - [LRU Cache](#lru-cache)
+6. [Generators](#generators)
+    - [yield](#yield)
+    - [Generator expression](#generator-expression)
+    - [yield from](#yield-from)
+7. [Iterators](#iterators)
+    - [Building an iterator](#building-iterator)
 
-### Part VII: Python Standard Libraries <a id="toc-7-standart-libraries"></a>
+### Part VII: Python Standard Libraries <a id="toc-7-standard-libraries"></a>
 
 1. Math
 2. DateTime
@@ -178,7 +186,6 @@
     - Datetime arithmetic
 3. Collections
 4. OS and Sys
-5. JSON, CSV
 
 ### Part VIII: Object-Oriented Programming <a id="toc-8-oop"></a>
 
@@ -265,6 +272,7 @@
     - Pytest
     - Nose
     - Doctest
+4. Test-Driven Development
 
 ### Part XII: Common Practices <a id="toc-12-common-practices"></a>
 
@@ -273,6 +281,7 @@
 3. Random Number Generation
 4. User Input and Output
 5. Cryptography
+6. Data Compression
 
 ### Part XIII: Databases <a id="toc-13-databases"></a>
 
@@ -295,15 +304,27 @@
 1. HTTP
     - HTTP Basics
     - HTTP Methods
-2. Frameworks
+2. Web Frameworks
     - Django
     - Flask
+    - FastAPI
 3. API
     - REST API
     - Authentication
     - JWT
-    - FastAPI
     - GraphQL
+4. RPC
+    - XML-RPC
+    - JSON-RPC
+    - gRPC
+5. Web Scraping
+    - Beautiful Soup
+6. Websockets
+7. Web Servers
+    - WSGI
+    - ASGI
+    - Gunicorn
+    - Nginx
 
 ### Part XV: GUI Programming <a id="toc-15-gui"></a>
 
@@ -342,6 +363,9 @@
 5. System Design
     - System Design Basics
     - Designing for Scalability and Reliability
+6. Refactoring
+    - Code Smells
+    - Refactoring Techniques
 
 ### Part XVIII: DevOps <a id="toc-18-devops"></a>
 
@@ -361,6 +385,18 @@
 5. Containers
     - Docker
     - Kubernetes
+6. Cloud
+    - AWS
+    - Azure
+    - GCP
+    - DigitalOcean
+7. Infrastructure as Code
+    - Terraform
+    - Ansible
+8. Monitoring
+    - Prometheus
+    - Grafana
+    - ELK Stack
 
 ### Part XIX: Algorithms <a id="toc-19-algorithms"></a>
 
