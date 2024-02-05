@@ -6,6 +6,7 @@ jupyter nbconvert --to markdown "03_control_flow_and_data_flows.ipynb" --output 
 jupyter nbconvert --to markdown "04_file_handling_io_serialization.ipynb" --output "markdown/04_file_handling_io_serialization.md"
 jupyter nbconvert --to markdown "05_exceptions_and_errors.ipynb" --output "markdown/05_exceptions_and_errors.md"
 jupyter nbconvert --to markdown "06_functional_programming.ipynb" --output "markdown/06_functional_programming.md"
+jupyter nbconvert --to markdown "07_standard_library.ipynb" --output "markdown/07_standard_library.md"
 
 output_file="README.md"
 : > "$output_file"
@@ -19,6 +20,7 @@ files_to_concatenate=(
     "markdown/04_file_handling_io_serialization.md"
     "markdown/05_exceptions_and_errors.md"
     "markdown/06_functional_programming.md"
+    "markdown/07_standard_library.md"
     "markdown/outro.md"
 )
 

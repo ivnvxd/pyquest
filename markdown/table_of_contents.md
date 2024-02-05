@@ -177,15 +177,23 @@
 7. [Iterators](#iterators)
     - [Building an iterator](#building-iterator)
 
-### Part VII: Python Standard Libraries <a id="toc-7-standard-libraries"></a>
+### [Part VII: Python Standard Libraries](#7-standard-libraries) <a id="toc-7-standard-libraries"></a>
 
-1. Math
-2. DateTime
-    - Creating datetime variables
-    - Datetime conversion
-    - Datetime arithmetic
-3. Collections
-4. OS and Sys
+1. [Math](#math)
+2. [DateTime](#datetime)
+    - [Creating datetime variables](#creating-datetime-variables)
+    - [Datetime conversion](#datetime-conversion)
+    - [Datetime arithmetic](#datetime-arithmetic)
+    - [Timezones](#timezones)
+3. [Collections](#collections)
+    - [Counter](#counter)
+    - [DefaultDict](#defaultdict)
+    - [OrderedDict](#ordereddict)
+    - [NamedTuple](#namedtuple)
+    - [Deque](#deque)
+4. [OS and Sys](#os-and-sys)
+    - [OS Module](#os-module)
+    - [Sys Module](#sys-module)
 
 ### Part VIII: Object-Oriented Programming <a id="toc-8-oop"></a>
 
