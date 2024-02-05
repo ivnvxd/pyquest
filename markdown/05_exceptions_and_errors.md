@@ -91,7 +91,7 @@ finally:
     print("This always executes.")
 ```
 
-    Everything went well. The result is 1.0.
+    Attempted to divide by zero.
     This always executes.
 
 

@@ -525,7 +525,7 @@ big_cities.pop()  # Returns and deletes a random value (order in set undefined) 
 big_cities.clear()  # Clears the set
 ```
 
-    big_cities: {'Paris', 'Berlin', 'Tokyo', 'Barcelona'}
+    big_cities: {'Paris', 'Tokyo', 'Berlin', 'Barcelona'}
     european_cities: {'Rome', 'Lisbon', 'Madrid', 'Berlin', 'Paris'}
     union_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris', 'Tokyo', 'Barcelona'}
     intersected_cities: {'Paris', 'Berlin'}
@@ -1095,7 +1095,7 @@ print("t2:", t2)
 
     ModuleNotFoundError                       Traceback (most recent call last)
 
-    Cell In[31], line 4
+    Cell In[93], line 4
           1 import time
           2 from datetime import date, datetime
     ----> 4 import pytz
