@@ -664,3 +664,45 @@ print("tuple:", tuple)
     end: 9
     tuple: (0, 9)
 
+
+### 4. Data Copying <a id="data-copying"></a>
+
+Data copying is the process of creating a new copy of an existing data structure. In Python, data copying can be done using the `copy` module, the `copy()` method, or the `deepcopy()` method.
+
+#### Shallow Copy <a id="shallow-copy"></a>
+
+A shallow copy creates a new object but does not create copies of the objects found within the original object. Instead, it just copies the references to those objects. So, if the original object contains any mutable objects, changes made to these mutable objects in the copied object will reflect in the original object as well.
+
+
+```python
+import copy
+
+original_list = [1, 2, [3, 4]]
+shallow_copied_list = copy.copy(original_list)
+
+# Modifying the nested list in the shallow copy also affects the original
+shallow_copied_list[2][0] = "Changed"
+print(original_list)
+```
+
+    [1, 2, ['Changed', 4]]
+
+
+#### Deep Copy <a id="deep-copy"></a>
+
+A deep copy creates a new object and recursively copies all objects found within the original object. Thus, changes made to any level of the copied object will not affect the original object.
+
+
+```python
+import copy
+
+original_list = [1, 2, [3, 4]]
+deep_copied_list = copy.deepcopy(original_list)
+
+# Modifying the nested list in the deep copy does not affect the original
+deep_copied_list[2][0] = "Changed"
+print(original_list)
+```
+
+    [1, 2, [3, 4]]
+
