@@ -91,6 +91,9 @@
 3. [Regular Expressions](#regular-expressions)
     - [RegEx](#regex)
     - [match](#match)
+4. [Data Copying](#data-copying)
+    - [Shallow Copy](#shallow-copy)
+    - [Deep Copy](#deep-copy)
 
 ### [Part III: Control Flow and Data Flows](#3-cf-and-df) <a id="toc-3-cf-and-df"></a>
 
@@ -195,42 +198,56 @@
     - [OS Module](#os-module)
     - [Sys Module](#sys-module)
 
-### Part VIII: Object-Oriented Programming <a id="toc-8-oop"></a>
+### [Part VIII: Object-Oriented Programming](#toc-8-oop) <a id="toc-8-oop"></a>
 
-1. OOP Basics
-    - Understanding Magic Methods
-    - init, repr, str Methods
-    - Property Decorator
-    - Static Methods
-    - Class Methods
-    - Slots
-2. OOP Principles
-    - Inheritance
-    - Encapsulation
-    - Polymorphism
-    - Abstraction
-3. Duck Typing
-    - Introduction to Duck Types
-    - Iterable, Comparable, Hashable, Sortable, Callable Duck Types
-    - Context Manager Duck Type
-4. Iterable Duck Types
-    - Iterable, Collection, Sequence Types
-5. Object Copying
-    - Shallow Copy
-    - Deep Copy
-6. Inheritance
-    - Single Inheritance
-    - Multiple Inheritance
-    - Abstract Methods
-    - Method Resolution Order
-    - Inheritance with Slots
-7. Metaprogramming
-    - Meta classes
-    - ABC Meta Class
-    - Class Registries
-8. Design Patterns
-    - Creational, Structural, Behavioral Patterns
-    - MVC, Singleton, Factory, Observer, etc.
+1. [OOP Fundamentals](#oop-fundamentals)
+    - [Classes and Objects](#classes-and-objects)
+        - [Creating Classes and Objects](#creating-classes-and-objects)
+        - [\_\_init\_\_, \_\_repr\_\_, and \_\_str\_\_ Methods](#init-repr-str-methods)
+        - [Instance Members](#class-members)
+        - [Class Methods](#class-methods)
+        - [Static Methods](#static-methods)
+        - [Property Decorator](#property-decorator)
+2. [Core OOP Principles](#core-oop-principles)
+    - [Encapsulation](#encapsulation)
+        - [Private and Protected Attributes](#private-and-protected-attributes)
+    - [Inheritance](#inheritance)
+        - [Single and Multiple Inheritance](#single-and-multiple-inheritance)
+        - [super()](#super)
+        - [Method Resolution Order (MRO)](#method-resolution-order)
+    - [Polymorphism](#polymorphism)
+        - [Method Overriding](#method-overriding)
+        - [Operator Overloading](#operator-overloading)
+    - [Abstraction](#abstraction)
+        - [Abstract Base Classes (ABCs)](#abstract-base-classes)
+3. [Advanced OOP Features](#advanced-oop-features)
+    - [Magic Methods](#magic-methods)
+    - [Duck Typing](#duck-typing)
+    - [Protocols](#protocols)
+        - [Iterable, Comparable, Hashable, Callable Protocols](#iterable-comparable-hashable-callable-protocols)
+        - [Context Manager Protocol](#context-manager-protocol)
+4. [Metaprogramming](#metaprogramming)
+    - [Metaclasses](#metaclasses)
+    - [Decorators](#oop-decorators)
+5. [Design Patterns in OOP](#design-patterns-in-oop)
+    - [Creational Patterns](#creational-patterns)
+        - [Singleton](#singleton-pattern)
+        - [Factory Method](#factory-method-pattern)
+        - [Abstract Factory](#abstract-factory-pattern)
+        - [Builder](#builder-pattern)
+        - [Prototype](#prototype-pattern)
+    - [Structural Patterns](#structural-patterns)
+        - [Adapter (Wrapper)](#adapter-pattern)
+        - [Bridge](#bridge-pattern)
+        - [Composite](#composite-pattern)
+        - [Decorator](#decorator-pattern)
+        - [Facade](#facade-pattern)
+    - [Behavioral Patterns](#behavioral-patterns)
+        - [Observer](#observer-pattern)
+        - [Strategy](#strategy-pattern)
+        - [Command](#command-pattern)
+        - [State](#state-pattern)
+        - [Chain of Responsibility](#chain-of-responsibility-pattern)
 
 ### Part IX: Python Language Fundamentals <a id="toc-9-language-fundamentals"></a>
 
