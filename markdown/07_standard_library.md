@@ -64,7 +64,7 @@ print(f"cos(π/4) = {math.cos(angle)}")
     cos(π/4) = 0.7071067811865476
 
 
-### 2. DateTime <a id="datetime"></a>
+### 2. DateTime <a id="library-datetime"></a>
 
 The `datetime` module in Python provides classes for manipulating dates and times in both simple and complex ways. It offers functions to perform operations such as parsing dates from strings, formatting dates to strings, handling time zones, and arithmetic operations on dates.
 
@@ -132,7 +132,7 @@ print(delta)
     14 days, 0:00:00
 
 
-#### Timezones <a id="timezones"></a>
+#### Timezones <a id="datetime-timezones"></a>
 
 `datetime` objects can be made "aware" by attaching a timezone information. This is crucial for correctly handling time conversions and arithmetic across different time zones.
 
@@ -156,7 +156,7 @@ print(dt)
 
 The `collections` module in Python provides specialized container datatypes, supplementing the built-in containers like `dict`, `list`, `set`, and `tuple`. It offers alternative containers with additional functionality or optimizations for different use cases.
 
-#### Counter <a id="counter"></a>
+#### Counter <a id="collections-counter"></a>
 
 A `Counter` is a subclass of `dict` that is used to count hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values.
 
@@ -201,7 +201,7 @@ print("Subtract counts:", fruit_count)
     Subtract counts: Counter({'banana': 3, 'apple': 2, 'orange': 2, 'grape': 1})
 
 
-#### defaultdict <a id="defaultdict"></a>
+#### defaultdict <a id="collections-defaultdict"></a>
 
 The `defaultdict` is similar to the standard `dict`, but it provides a default value for the dictionary being queried for keys that aren't present in the dictionary.
 
@@ -232,7 +232,7 @@ print("Int:", dd_int)
     Int: defaultdict(<class 'int'>, {'red': 2, 'blue': 3, 'green': 1})
 
 
-#### OrderedDict <a id="ordereddict"></a>
+#### OrderedDict <a id="collections-ordereddict"></a>
 
 An `OrderedDict` is a dictionary subclass that remembers the order in which its contents are added, even if a new entry overwrites an existing entry. From Python 3.7 onwards, the built-in `dict` type maintains insertion order by default, making `OrderedDict` less essential.
 
@@ -254,7 +254,7 @@ for key, value in od.items():
     pear 1
 
 
-#### namedtuple <a id="namedtuple"></a>
+#### namedtuple <a id="collections-namedtuple"></a>
 
 A `namedtuple` generates class factories for creating tuple subclasses with named fields. They can be used anywhere regular tuples are used, and they add the ability to access fields by name instead of position index.
 
@@ -288,7 +288,7 @@ print("New Alice:", new_alice)
     New Alice: Person(name='Alice', age=31)
 
 
-#### deque <a id="deque"></a>
+#### deque <a id="collections-deque"></a>
 
 A `deque` (double-ended queue) in Python, provided by the `collections` module, is a thread-safe, memory-efficient list-like container that supports fast appends and pops from either end. `deque` is optimized for quick insertion and deletion from both the front and the back, making it an ideal choice for queues and breadth-first tree searches where elements are frequently added and removed.
 
