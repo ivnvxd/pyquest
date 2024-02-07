@@ -129,18 +129,21 @@ By the way, if you're preparing for a job interview, check out this list of cruc
     - [break](#break)
     - [continue](#continue)
     - [pass](#pass)
-4. [Itertools](#itertools)
+4. [Functions](#functions)
+    - [*args and **kwargs](#args-kwargs)
+    - [Closures](#closures)
+5. [Itertools](#itertools)
     - [Infinite iterators](#infinite-iterators)
     - [Finite iterators](#finite-iterators)
     - [Combinatorics](#combinatorics)
-5. [enumerate()](#enumerate)
-6. [zip()](#zip)
-7. [Context Managers](#context-managers)
+6. [enumerate()](#enumerate)
+7. [zip()](#zip)
+8. [Recursion](#recursion)
+    - [Recursion vs Iteration](#recursion-vs-iteration)
+    - [Tail Recursion](#tail-recursion)
+9. [Context Managers](#context-managers)
     - [enter/exit](#enter-exit)
     - [contextlib](#contextlib)
-<!-- TODO: 8. [Recursion](#recursion)
-    - [Recursion vs Iteration](#recursion-vs-iteration)
-    - [Tail Recursion](#tail-recursion) -->
 
 ### [Part IV: File Handling, I/O, and Serialization](#4-file-io-serialization) <a id="toc-4-file-io-serialization"></a>
 
@@ -200,20 +203,20 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 7. [Iterators](#iterators)
     - [Building an iterator](#building-iterator)
 
-### [Part VII: Python Standard Libraries](#7-standard-libraries) <a id="toc-7-standard-libraries"></a>
+### [Part VII: Python Standard Library](#7-standard-library) <a id="toc-7-standard-library"></a>
 
 1. [Math](#math)
-2. [DateTime](#datetime)
+2. [DateTime](#library-datetime)
     - [Creating datetime variables](#creating-datetime-variables)
     - [Datetime conversion](#datetime-conversion)
     - [Datetime arithmetic](#datetime-arithmetic)
-    - [Timezones](#timezones)
+    - [Timezones](#datetime-timezones)
 3. [Collections](#collections)
-    - [Counter](#counter)
-    - [DefaultDict](#defaultdict)
-    - [OrderedDict](#ordereddict)
-    - [NamedTuple](#namedtuple)
-    - [Deque](#deque)
+    - [Counter](#collections-counter)
+    - [DefaultDict](#collections-defaultdict)
+    - [OrderedDict](#collections-ordereddict)
+    - [NamedTuple](#collections-namedtuple)
+    - [Deque](#collections-deque)
 4. [OS and Sys](#os-and-sys)
     - [OS Module](#os-module)
     - [Sys Module](#sys-module)
@@ -274,17 +277,17 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 1. Garbage Collection
     - Reference Counting
     - GC Debug and objgraph
-    - PyPy Garbage Collection
+    - Cyclic References
 2. Typing
     - Static and Dynamic Typing
     - Protocols
-3. Introspection
-    - Variables, Attributes, Parameters
+    - Type Hints
+3. Memory Management
+    - Memory Allocation
+    - Memory Profiling
+    - Memory Leaks
 4. Miscellaneous
     - Global Interpreter Lock (GIL)
-    - -args and --kwargs
-    - Closures
-    - Operators overloading
     - Y Combinator
 
 ### Part X: Concurrency <a id="toc-10-concurrency"></a>
@@ -376,6 +379,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 1. Tkinter
 2. PyQT
 3. wxPython
+4. Kivy
 
 ### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
 
@@ -384,6 +388,8 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 3. Matplotlib
 4. SciPy
 5. Machine Learning with Scikit-Learn
+6. Deep Learning with TensorFlow and Keras
+7. Data Analysis with Jupyter Notebook
 
 ### Part XVII: Software Architecture <a id="toc-17-architecture"></a>
 
@@ -2656,7 +2662,94 @@ for i in range(10):
     9
 
 
-### 4. Itertools <a id="itertools"></a>
+### 4. Functions <a id="functions"></a>
+
+Functions are a way to organize your code into reusable blocks of code. Functions allow you to break your code into smaller, more manageable pieces, and can be used to perform a specific task or calculation. Functions can take parameters as input, and can return a value as output.
+
+
+```python
+# Define the function
+def add_numbers(a, b):
+    return a + b
+
+
+# Call the function
+result = add_numbers(5, 3)
+print(result)  # 8
+```
+
+    8
+
+
+#### *args and **kwargs <a id="args-kwargs"></a>
+
+In Python, `*args` and `**kwargs` are used to pass a variable number of arguments to a function.
+
+- `*args` is used to pass a non-keyworded, variable-length argument list. The syntax is to use the asterisk (`*`) before the parameter name. The function receives the arguments as a tuple.
+- `**kwargs` allows you to pass keyworded, variable-length arguments. The double asterisk (`**`) is used before the parameter name, and the function receives the arguments as a dictionary.
+
+
+```python
+# Using *args to capture variable number of arguments
+def print_args(*args):
+    for arg in args:
+        print(arg)
+
+
+print_args("Hello", "world", "Python", 3.7)
+
+print("------")
+
+
+# Using **kwargs to capture variable number of keyword arguments
+def print_kwargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+
+print_kwargs(name="John", age=30, language="Python")
+```
+
+    Hello
+    world
+    Python
+    3.7
+    ------
+    name: John
+    age: 30
+    language: Python
+
+
+#### Closures <a id="closures"></a>
+
+Closures in Python refer to a programming concept where a function is dynamically generated by another function, and the inner function has access to the variables that were in the local scope of the outer function when the inner function was created. This allows the inner function to remember and access those variables even after the outer function has finished executing, effectively providing a way to keep some form of state.
+
+
+```python
+def outer_function(msg):
+    # This is the outer enclosing function
+
+    def inner_function():
+        # This is the inner function that forms a closure
+        # It 'remembers' the value of msg from the enclosing scope
+        print(msg)
+
+    return inner_function  # Return the inner function
+
+
+# Create a closure
+my_closure = outer_function("Hello, world!")
+
+# Call the closure
+my_closure()
+```
+
+    Hello, world!
+
+
+### 5. Itertools <a id="itertools"></a>
+
+The `itertools` module in Python provides a collection of tools for handling iterators. An iterator is an object that represents a stream of data. The `itertools` module provides a collection of tools for working with iterators, including functions for creating, combining, and iterating over iterators.
 
 #### Infinite iterators <a id="infinite-iterators"></a>
 
@@ -2697,8 +2790,6 @@ for item in repeat("A", 5):
     count: 10, 13, 16, 19, 22, 25, 
     cycle: X, Y, Z, X, Y, Z, X, Y, 
     repeat: A, A, A, A, A, 
-
-
 
 #### Finite iterators <a id="finite-iterators"></a>
 
@@ -2783,7 +2874,7 @@ print("combinations_with_replacement:", list(combinations_with_replacement(list1
     combinations_with_replacement: [('a', 'a'), ('a', 'b'), ('a', 'c'), ('b', 'b'), ('b', 'c'), ('c', 'c')]
 
 
-### 5. enumerate() <a id="enumerate"></a>
+### 6. enumerate() <a id="enumerate"></a>
 
 The `enumerate()` function is used to add a counter to an iterable object. The `enumerate()` function returns an enumerate object that contains tuples of the index and item in the iterable object.
 
@@ -2802,7 +2893,7 @@ for i, fruit in enumerate(fruits):
     2 cherry
 
 
-### 6. zip() <a id="zip"></a>
+### 7. zip() <a id="zip"></a>
 
 `zip()` is a built-in function that takes two or more iterables as arguments and returns an iterator that generates tuples containing the corresponding elements from each iterable. The resulting iterator stops when the shortest input iterable is exhausted.
 
@@ -2821,7 +2912,87 @@ print("zip:", list(zip(list1, list2)))
     zip: [('a', 1), ('b', 2), ('c', 3)]
 
 
-### 7. Context Managers <a id="context-managers"></a>
+### 8. Recursion <a id="recursion"></a>
+
+Recursion is a programming technique where a function calls itself to solve a problem. Recursion is a powerful tool that can be used to solve complex problems by breaking them down into smaller, more manageable subproblems. Recursion can be especially useful when working with data structures such as trees and graphs.
+
+Key components of a recursive function include:
+- **Base Case**: A condition that stops the recursion. Without a base case, a recursive function would continue to call itself indefinitely, leading to a stack overflow error.
+- **Recursive Case**: The part of the function where it calls itself but with a subset of the original problem.
+
+
+```python
+def factorial(n):
+    # Base case: if n is 0, return 1
+    if n == 0:
+        return 1
+    # Recursive case: n! = n * (n-1)!
+    else:
+        return n * factorial(n - 1)
+
+
+# Example usage
+print(factorial(5))  # Output: 120
+```
+
+    120
+
+
+#### Recursion vs Iteration <a id="recursion-vs-iteration"></a>
+
+Recursion is often preferred for problems that naturally fit recursive patterns, such as traversing trees, solving mathematical puzzles (e.g., Fibonacci sequence), or when the problem is easier to solve by dividing it into smaller problems of the same type.
+
+Iteration is preferred for simple repetitive tasks that do not require backtracking or when you want to avoid the overhead of multiple function calls. Iterative solutions are usually more efficient in terms of execution time and memory usage because they don't incur the overhead of multiple function calls and stack usage.
+
+
+```python
+# Recursive approach
+def factorial_recursive(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial_recursive(n - 1)
+
+
+# Iterative approach
+def factorial_iterative(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+
+# Example
+print(factorial_recursive(5))  # Output: 120
+print(factorial_iterative(5))  # Output: 120
+```
+
+    120
+    120
+
+
+#### Tail Recursion <a id="tail-recursion"></a>
+
+Tail recursion is a special form of recursion where the recursive call is the last operation in the function. In tail-recursive functions, the result of the current recursive call is passed directly to the next recursive call, without any additional computation. This allows the compiler to optimize the function by reusing the current stack frame for the next recursive call, which can reduce the memory overhead of the recursion.
+
+However, it's important to note that while tail recursion is a powerful concept, **Python does not officially support tail call optimization**. This means that even if you write a function in a tail-recursive style in Python, it will not benefit from the potential stack optimization, and deep recursion can still lead to a stack overflow error.
+
+
+```python
+def factorial(n, accumulator=1):
+    if n == 0:
+        return accumulator
+    else:
+        return factorial(n - 1, n * accumulator)
+
+
+print(factorial(5))  # Output: 120
+```
+
+    120
+
+
+### 9. Context Managers <a id="context-managers"></a>
 
 #### enter/exit <a id="enter-exit"></a>
 
@@ -4164,7 +4335,7 @@ print(f"cos(π/4) = {math.cos(angle)}")
     cos(π/4) = 0.7071067811865476
 
 
-### 2. DateTime <a id="datetime"></a>
+### 2. DateTime <a id="library-datetime"></a>
 
 The `datetime` module in Python provides classes for manipulating dates and times in both simple and complex ways. It offers functions to perform operations such as parsing dates from strings, formatting dates to strings, handling time zones, and arithmetic operations on dates.
 
@@ -4232,7 +4403,7 @@ print(delta)
     14 days, 0:00:00
 
 
-#### Timezones <a id="timezones"></a>
+#### Timezones <a id="datetime-timezones"></a>
 
 `datetime` objects can be made "aware" by attaching a timezone information. This is crucial for correctly handling time conversions and arithmetic across different time zones.
 
@@ -4256,7 +4427,7 @@ print(dt)
 
 The `collections` module in Python provides specialized container datatypes, supplementing the built-in containers like `dict`, `list`, `set`, and `tuple`. It offers alternative containers with additional functionality or optimizations for different use cases.
 
-#### Counter <a id="counter"></a>
+#### Counter <a id="collections-counter"></a>
 
 A `Counter` is a subclass of `dict` that is used to count hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values.
 
@@ -4301,7 +4472,7 @@ print("Subtract counts:", fruit_count)
     Subtract counts: Counter({'banana': 3, 'apple': 2, 'orange': 2, 'grape': 1})
 
 
-#### defaultdict <a id="defaultdict"></a>
+#### defaultdict <a id="collections-defaultdict"></a>
 
 The `defaultdict` is similar to the standard `dict`, but it provides a default value for the dictionary being queried for keys that aren't present in the dictionary.
 
@@ -4332,7 +4503,7 @@ print("Int:", dd_int)
     Int: defaultdict(<class 'int'>, {'red': 2, 'blue': 3, 'green': 1})
 
 
-#### OrderedDict <a id="ordereddict"></a>
+#### OrderedDict <a id="collections-ordereddict"></a>
 
 An `OrderedDict` is a dictionary subclass that remembers the order in which its contents are added, even if a new entry overwrites an existing entry. From Python 3.7 onwards, the built-in `dict` type maintains insertion order by default, making `OrderedDict` less essential.
 
@@ -4354,7 +4525,7 @@ for key, value in od.items():
     pear 1
 
 
-#### namedtuple <a id="namedtuple"></a>
+#### namedtuple <a id="collections-namedtuple"></a>
 
 A `namedtuple` generates class factories for creating tuple subclasses with named fields. They can be used anywhere regular tuples are used, and they add the ability to access fields by name instead of position index.
 
@@ -4388,7 +4559,7 @@ print("New Alice:", new_alice)
     New Alice: Person(name='Alice', age=31)
 
 
-#### deque <a id="deque"></a>
+#### deque <a id="collections-deque"></a>
 
 A `deque` (double-ended queue) in Python, provided by the `collections` module, is a thread-safe, memory-efficient list-like container that supports fast appends and pops from either end. `deque` is optimized for quick insertion and deletion from both the front and the back, making it an ideal choice for queues and breadth-first tree searches where elements are frequently added and removed.
 
@@ -4502,16 +4673,16 @@ print(f"Python version: {sys.version}")
 # sys.exit(1)
 
 # Print the Python path
-print(f"Python Path: {sys.path}")
+print(f"Python Path: {sys.path[0]}")
 
 # Print platform information
 print(f"Platform: {sys.platform}")
 ```
 
     Script name: /Users/ve/Library/Python/3.11/lib/python/site-packages/ipykernel_launcher.py
-    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-467361oDBZVQgvOX8.json
+    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-46736wZsZ5kApPuGq.json
     Python version: 3.11.7 (main, Dec  4 2023, 18:10:11) [Clang 15.0.0 (clang-1500.1.0.2.5)]
-    Python Path: ['/Users/ve/dev/src/projects/pyquest', '/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '', '/Users/ve/Library/Python/3.11/lib/python/site-packages', '/opt/homebrew/lib/python3.11/site-packages']
+    Python Path: /Users/ve/dev/src/projects/pyquest
     Platform: darwin
 
 

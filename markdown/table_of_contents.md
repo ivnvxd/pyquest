@@ -109,18 +109,21 @@
     - [break](#break)
     - [continue](#continue)
     - [pass](#pass)
-4. [Itertools](#itertools)
+4. [Functions](#functions)
+    - [*args and **kwargs](#args-kwargs)
+    - [Closures](#closures)
+5. [Itertools](#itertools)
     - [Infinite iterators](#infinite-iterators)
     - [Finite iterators](#finite-iterators)
     - [Combinatorics](#combinatorics)
-5. [enumerate()](#enumerate)
-6. [zip()](#zip)
-7. [Context Managers](#context-managers)
+6. [enumerate()](#enumerate)
+7. [zip()](#zip)
+8. [Recursion](#recursion)
+    - [Recursion vs Iteration](#recursion-vs-iteration)
+    - [Tail Recursion](#tail-recursion)
+9. [Context Managers](#context-managers)
     - [enter/exit](#enter-exit)
     - [contextlib](#contextlib)
-<!-- TODO: 8. [Recursion](#recursion)
-    - [Recursion vs Iteration](#recursion-vs-iteration)
-    - [Tail Recursion](#tail-recursion) -->
 
 ### [Part IV: File Handling, I/O, and Serialization](#4-file-io-serialization) <a id="toc-4-file-io-serialization"></a>
 
@@ -180,20 +183,20 @@
 7. [Iterators](#iterators)
     - [Building an iterator](#building-iterator)
 
-### [Part VII: Python Standard Libraries](#7-standard-libraries) <a id="toc-7-standard-libraries"></a>
+### [Part VII: Python Standard Library](#7-standard-library) <a id="toc-7-standard-library"></a>
 
 1. [Math](#math)
-2. [DateTime](#datetime)
+2. [DateTime](#library-datetime)
     - [Creating datetime variables](#creating-datetime-variables)
     - [Datetime conversion](#datetime-conversion)
     - [Datetime arithmetic](#datetime-arithmetic)
-    - [Timezones](#timezones)
+    - [Timezones](#datetime-timezones)
 3. [Collections](#collections)
-    - [Counter](#counter)
-    - [DefaultDict](#defaultdict)
-    - [OrderedDict](#ordereddict)
-    - [NamedTuple](#namedtuple)
-    - [Deque](#deque)
+    - [Counter](#collections-counter)
+    - [DefaultDict](#collections-defaultdict)
+    - [OrderedDict](#collections-ordereddict)
+    - [NamedTuple](#collections-namedtuple)
+    - [Deque](#collections-deque)
 4. [OS and Sys](#os-and-sys)
     - [OS Module](#os-module)
     - [Sys Module](#sys-module)
@@ -254,17 +257,17 @@
 1. Garbage Collection
     - Reference Counting
     - GC Debug and objgraph
-    - PyPy Garbage Collection
+    - Cyclic References
 2. Typing
     - Static and Dynamic Typing
     - Protocols
-3. Introspection
-    - Variables, Attributes, Parameters
+    - Type Hints
+3. Memory Management
+    - Memory Allocation
+    - Memory Profiling
+    - Memory Leaks
 4. Miscellaneous
     - Global Interpreter Lock (GIL)
-    - -args and --kwargs
-    - Closures
-    - Operators overloading
     - Y Combinator
 
 ### Part X: Concurrency <a id="toc-10-concurrency"></a>
@@ -356,6 +359,7 @@
 1. Tkinter
 2. PyQT
 3. wxPython
+4. Kivy
 
 ### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
 
@@ -364,6 +368,8 @@
 3. Matplotlib
 4. SciPy
 5. Machine Learning with Scikit-Learn
+6. Deep Learning with TensorFlow and Keras
+7. Data Analysis with Jupyter Notebook
 
 ### Part XVII: Software Architecture <a id="toc-17-architecture"></a>
 
