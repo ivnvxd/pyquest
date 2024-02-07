@@ -402,15 +402,15 @@ print(f"Python version: {sys.version}")
 # sys.exit(1)
 
 # Print the Python path
-print(f"Python Path: {sys.path}")
+print(f"Python Path: {sys.path[0]}")
 
 # Print platform information
 print(f"Platform: {sys.platform}")
 ```
 
     Script name: /Users/ve/Library/Python/3.11/lib/python/site-packages/ipykernel_launcher.py
-    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-467361oDBZVQgvOX8.json
+    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-46736wZsZ5kApPuGq.json
     Python version: 3.11.7 (main, Dec  4 2023, 18:10:11) [Clang 15.0.0 (clang-1500.1.0.2.5)]
-    Python Path: ['/Users/ve/dev/src/projects/pyquest', '/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '', '/Users/ve/Library/Python/3.11/lib/python/site-packages', '/opt/homebrew/lib/python3.11/site-packages']
+    Python Path: /Users/ve/dev/src/projects/pyquest
     Platform: darwin
 
