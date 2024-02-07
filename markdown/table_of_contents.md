@@ -252,23 +252,31 @@
         - [State](#state-pattern)
         - [Chain of Responsibility](#chain-of-responsibility-pattern)
 
-### Part IX: Python Language Fundamentals <a id="toc-9-language-fundamentals"></a>
+### Part IX: Python Language Internals <a id="toc-9-language-internals"></a>
 
-1. Garbage Collection
-    - Reference Counting
-    - GC Debug and objgraph
-    - Cyclic References
-2. Typing
-    - Static and Dynamic Typing
-    - Protocols
-    - Type Hints
-3. Memory Management
-    - Memory Allocation
-    - Memory Profiling
-    - Memory Leaks
-4. Miscellaneous
-    - Global Interpreter Lock (GIL)
-    - Y Combinator
+1. [Namespaces and Scope](#namespaces-and-scope)
+    - [Global and Local Variables](#global-and-local-variables)
+    - [Modules and Packages](#modules-and-packages)
+    - [Built-in Names](#built-in-names)
+    - [LEGB Rule](#legb-rule)
+2. [Typing](#typing)
+    - [Type Hints](#type-hints)
+    - [Type Checking](#type-checking)
+        - [Dynamic Type Checking](#dynamic-type-checking)
+        - [Static Type Checking](#static-type-checking)
+    - [Protocols](#protocols)
+3. [Python Compilation](#python-compilation)
+    - [Python Interpreter](#python-interpreter)
+    - [Bytecode](#bytecode)
+    - [Python Virtual Machine](#python-virtual-machine)
+4. [Memory Management](#memory-management)
+    - [Heap and Stack](#heap-and-stack)
+    - [Memory Allocation](#memory-allocation)
+    - [Garbage Collection](#garbage-collection)
+        - [Reference Counting](#reference-counting)
+        - [GC debug and objgraph](#gc-debug-objgraph)
+5. [Global Interpreter Lock (GIL)](#gil)
+6. [Introspection](#introspection)
 
 ### Part X: Concurrency <a id="toc-10-concurrency"></a>
 
