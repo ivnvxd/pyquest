@@ -272,7 +272,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
         - [State](#state-pattern)
         - [Chain of Responsibility](#chain-of-responsibility-pattern)
 
-### Part IX: Python Language Internals <a id="toc-9-language-internals"></a>
+### [Part IX: Python Language Internals](#9-language-internals) <a id="toc-9-language-internals"></a>
 
 1. [Namespaces and Scope](#namespaces-and-scope)
     - [Global and Local Variables](#global-and-local-variables)
@@ -1022,12 +1022,12 @@ big_cities.pop()  # Returns and deletes a random value (order in set undefined) 
 big_cities.clear()  # Clears the set
 ```
 
-    big_cities: {'Paris', 'Tokyo', 'Berlin', 'Barcelona'}
-    european_cities: {'Rome', 'Lisbon', 'Madrid', 'Berlin', 'Paris'}
-    union_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris', 'Tokyo', 'Barcelona'}
-    intersected_cities: {'Paris', 'Berlin'}
-    dif_cities: {'Tokyo', 'Barcelona'}
-    symdif_cities: {'Rome', 'Lisbon', 'Madrid', 'Tokyo', 'Barcelona'}
+    big_cities: {'Berlin', 'Paris', 'Barcelona', 'Tokyo'}
+    european_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris'}
+    union_cities: {'Lisbon', 'Rome', 'Barcelona', 'Berlin', 'Paris', 'Tokyo', 'Madrid'}
+    intersected_cities: {'Berlin', 'Paris'}
+    dif_cities: {'Barcelona', 'Tokyo'}
+    symdif_cities: {'Lisbon', 'Rome', 'Barcelona', 'Tokyo', 'Madrid'}
     issub: True
     issuper: False
 
@@ -1042,7 +1042,7 @@ a = frozenset({"New-York", "Los Angeles", "Ottawa"})
 print("a:", a)
 ```
 
-    a: frozenset({'Ottawa', 'New-York', 'Los Angeles'})
+    a: frozenset({'Ottawa', 'Los Angeles', 'New-York'})
 
 
 #### Array <a id="array"></a>
@@ -1110,10 +1110,10 @@ print("s:", s)
 print("b:", b)
 print("s2:", s2)
 
-with open("examples/bytes.bin", "wb") as file:  # Write byte to file
+with open("../examples/bytes.bin", "wb") as file:  # Write byte to file
     file.write(b1)
 
-with open("examples/bytes.bin", "rb") as file:  # Read from file
+with open("../examples/bytes.bin", "rb") as file:  # Read from file
     b6 = file.read()
 
 print("b6:", b6)
@@ -1562,14 +1562,14 @@ print("td:", td)
 
 ##### Now <a id="now"></a>
 
-Get the current date or date/time.
+Get the current date or date/time. The `now()` method returns the current date and time as a `datetime` object.
 
 
 ```python
 import time
 from datetime import date, datetime
 
-import pytz
+import pytz  # pip install pytz
 
 d: date = date.today()
 dt1: datetime = datetime.today()
@@ -1587,20 +1587,12 @@ print("t1:", t1)
 print("t2:", t2)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    Cell In[93], line 4
-          1 import time
-          2 from datetime import date, datetime
-    ----> 4 import pytz
-          6 d: date = date.today()
-          7 dt1: datetime = datetime.today()
-
-
-    ModuleNotFoundError: No module named 'pytz'
+    d: 2024-02-08
+    dt1: 2024-02-08 17:15:36.720736
+    dt2: 2024-02-08 16:15:36.720756
+    dt3: 2024-02-08 17:15:36.720812+01:00
+    t1: 1707408936.720871
+    t2: Thu Feb  8 17:15:36 2024
 
 
 ##### Timezone <a id="timezone"></a>
@@ -3049,18 +3041,18 @@ Here, the `open()` function returns a file object, and its `__enter__` method is
 
 ```python
 # Without context manager
-file = open("examples/sample.txt", "r")
+file = open("../examples/sample.txt", "r")
 content = file.read()
 print("without:", content)
 file.close()
 
 # With context manager
-with open("examples/sample copy.txt", "r") as file:
+with open("../examples/sample copy.txt", "r") as file:
     content = file.read()
     print("with:", content)
 ```
 
-    without: Hello, World!
+    without: Hello again, world!
     with: Hello, copy World!
 
 
@@ -3174,7 +3166,7 @@ print(f.getvalue())
 ```python
 from contextlib import ExitStack
 
-filenames = ["examples/sample.txt", "examples/sample copy.txt"]
+filenames = ["../examples/sample.txt", "../examples/sample copy.txt"]
 with ExitStack() as stack:
     files = [stack.enter_context(open(fname)) for fname in filenames]
     # All files will be properly closed at the end of the with block
@@ -3216,7 +3208,7 @@ After finishing with a file, it's crucial to close it using the .close() method 
 ```python
 # Step 1: Read from the original file
 names = []  # List to hold names
-with open("examples/names.txt", "r") as file_reader:
+with open("../examples/names.txt", "r") as file_reader:
     for line in file_reader:
         # Strip newline characters and add to list
         names.append(line.strip())
@@ -3228,14 +3220,14 @@ if new_name not in names:  # Avoid duplicate
     names.append(new_name)
 
 # Step 3: Write to a new file
-with open("examples/updated_names.txt", "w") as file_writer:
+with open("../examples/updated_names.txt", "w") as file_writer:
     for name in names:
         file_writer.write(name + "\n")  # Add newline to put each name on a new line
 
 print("------")
 
 # Check the new file
-with open("examples/updated_names.txt", "r") as file_reader:
+with open("../examples/updated_names.txt", "r") as file_reader:
     for line in file_reader:
         print(line.strip())
 
@@ -3275,7 +3267,7 @@ os.mkdir("new_directory")
 os.makedirs("new_directory/intermediate_directory")
 
 # List contents of the current directory
-contents = os.listdir("examples/")
+contents = os.listdir("../examples/")
 print("Directory contents:", contents)
 
 # Rename the directory
@@ -3288,7 +3280,7 @@ os.rmdir("renamed_directory/intermediate_directory")
 os.rmdir("renamed_directory")
 ```
 
-    Directory contents: ['names.txt', 'example.csv', 'data.pickle', 'person.json', 'updated_names.txt', 'sample copy.txt', 'bytes.bin', 'sample.txt']
+    Directory contents: ['names.txt', 'example.csv', 'data.pickle', 'person.json', 'sample-graph.png', 'updated_names.txt', 'sample copy.txt', 'bytes.bin', 'sample.txt']
 
 
 ### 3. Serialization <a id="serialization"></a>
@@ -3312,11 +3304,11 @@ import pickle
 data = {"key": "value", "list": [1, 2, 3, 4, 5]}
 
 # Pickling: Serializing the Python object to a byte stream
-with open("examples/data.pickle", "wb") as file:
+with open("../examples/data.pickle", "wb") as file:
     pickle.dump(data, file)
 
 # Unpickling: Deserializing the byte stream back to a Python object
-with open("examples/data.pickle", "rb") as file:
+with open("../examples/data.pickle", "rb") as file:
     loaded_data = pickle.load(file)
 
 print("Loaded data:", loaded_data)
@@ -3364,11 +3356,11 @@ person_dict = json.loads(person_json)
 print("Back to Python dictionary:", person_dict)
 
 # Writing JSON to a file
-with open("examples/person.json", "w") as file:
+with open("../examples/person.json", "w") as file:
     json.dump(person, file)
 
 # Reading JSON from a file
-with open("examples/person.json", "r") as file:
+with open("../examples/person.json", "r") as file:
     person_read = json.load(file)
     print("Read from file:", person_read)
 ```
@@ -3442,21 +3434,21 @@ Python provides a built-in `csv` module to easily deal with CSV files. This modu
 import csv
 
 # Writing to a CSV file
-with open("examples/example.csv", "w", newline="") as file:
+with open("../examples/example.csv", "w", newline="") as file:
     writer = csv.writer(file)
     writer.writerow(["name", "age", "city"])
     writer.writerow(["Alice", "30", "New York"])
     writer.writerow(["Bob", "25", "Los Angeles"])
 
 # Reading from a CSV file
-with open("examples/example.csv", "r") as file:
+with open("../examples/example.csv", "r") as file:
     reader = csv.reader(file)
     print("Using csv.reader:")
     for row in reader:
         print(row)
 
 # Using DictReader for more intuitive access by column names
-with open("examples/example.csv", "r") as file:
+with open("../examples/example.csv", "r") as file:
     reader = csv.DictReader(file)
     print("Using DictReader:")
     for row in reader:
@@ -4621,13 +4613,13 @@ The `os` module provides a portable way of using operating system-dependent func
 import os
 
 # Change the current working directory
-os.chdir("examples")
+os.chdir("../examples")
 print(f"Changed working directory to: {os.getcwd()}")
 
 # Example: Displaying the current directory's contents using the system's shell command
 os.system("ls")
 
-os.chdir("..")
+os.chdir("../jupyter")
 
 # Setting and removing environment variable
 os.environ["MY_VAR"] = "value"
@@ -4658,12 +4650,13 @@ print(f"Path: {path}, Filename: {filename}")
     names.txt
     person.json
     sample copy.txt
+    sample-graph.png
     sample.txt
     updated_names.txt
     value
-    Current process ID: 912
+    Current process ID: 56837
     Joined path: directory/subdirectory/file.txt
-    Absolute path: /Users/ve/dev/src/projects/pyquest/my_file.txt
+    Absolute path: /Users/ve/dev/src/projects/pyquest/jupyter/my_file.txt
     Path: /path/to, Filename: my_file.txt
 
 
@@ -4694,9 +4687,9 @@ print(f"Platform: {sys.platform}")
 ```
 
     Script name: /Users/ve/Library/Python/3.11/lib/python/site-packages/ipykernel_launcher.py
-    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-46736wZsZ5kApPuGq.json
+    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-17416NNPh28h1PEDp.json
     Python version: 3.11.7 (main, Dec  4 2023, 18:10:11) [Clang 15.0.0 (clang-1500.1.0.2.5)]
-    Python Path: /Users/ve/dev/src/projects/pyquest
+    Python Path: /Users/ve/dev/src/projects/pyquest/jupyter
     Platform: darwin
 
 
@@ -5421,7 +5414,7 @@ class FileOpener:
 
 
 # Using the FileOpener class
-with FileOpener("examples/sample.txt", "w") as file:
+with FileOpener("../examples/sample.txt", "w") as file:
     file.write("Hello, world!")
 # The file is automatically closed after the with block
 ```
@@ -5443,7 +5436,7 @@ def open_file(name, mode):
 
 
 # Usage
-with open_file("examples/sample.txt", "w") as f:
+with open_file("../examples/sample.txt", "w") as f:
     f.write("Hello again, world!")
 ```
 
@@ -5550,7 +5543,7 @@ s = Singleton.getInstance()
 print(s)  # <__main__.Singleton object at 0x7f8b5a3c5e50>
 ```
 
-    <__main__.Singleton object at 0x105dd2bd0>
+    <__main__.Singleton object at 0x107c9cb50>
 
 
 ##### Factory Method <a id="factory-method-pattern"></a>
@@ -6588,7 +6581,7 @@ gc.collect()
 print("Uncollectable objects:", gc.garbage[:1])
 
 # Using objgraph to show a reference chain that keeps objects alive
-objgraph.show_refs([a], filename="examples/sample-graph.png")
+objgraph.show_refs([a], filename="../examples/sample-graph.png")
 ```
 
     Uncollectable objects: []
@@ -6715,9 +6708,9 @@ print("All threads have finished execution.")
     Worker 0 is starting
     Worker 1 is starting
     Worker 2 is starting
+    Worker 0 is finishedWorker 2 is finished
+    
     Worker 1 is finished
-    Worker 0 is finished
-    Worker 2 is finished
     All threads have finished execution.
 
 
@@ -7165,6 +7158,8 @@ setter_thread.join()
 
     Waiting for the event to be set, timeout 2
     Waiting before setting the event.
+
+
     Event is set.Doing the work after the event is set.
     
 
@@ -7268,13 +7263,13 @@ for thread in threads:
     Thread 2 is trying to access the resource...
     Thread 3 is trying to access the resource...
     Thread 4 is trying to access the resource...
-    Thread 0 is releasing the resource.Thread 1 is releasing the resource.
-    
+    Thread 1 is releasing the resource.Thread 0 is releasing the resource.
     Thread 2 has accessed the resource.
     Thread 3 has accessed the resource.
-    Thread 3 is releasing the resource.Thread 4 has accessed the resource.
     
-    Thread 2 is releasing the resource.
+    Thread 2 is releasing the resource.Thread 4 has accessed the resource.
+    
+    Thread 3 is releasing the resource.
     Thread 4 is releasing the resource.
 
 

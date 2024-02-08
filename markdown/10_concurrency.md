@@ -61,9 +61,9 @@ print("All threads have finished execution.")
     Worker 0 is starting
     Worker 1 is starting
     Worker 2 is starting
+    Worker 0 is finishedWorker 2 is finished
+    
     Worker 1 is finished
-    Worker 0 is finished
-    Worker 2 is finished
     All threads have finished execution.
 
 
@@ -511,6 +511,8 @@ setter_thread.join()
 
     Waiting for the event to be set, timeout 2
     Waiting before setting the event.
+
+
     Event is set.Doing the work after the event is set.
     
 
@@ -614,13 +616,13 @@ for thread in threads:
     Thread 2 is trying to access the resource...
     Thread 3 is trying to access the resource...
     Thread 4 is trying to access the resource...
-    Thread 0 is releasing the resource.Thread 1 is releasing the resource.
-    
+    Thread 1 is releasing the resource.Thread 0 is releasing the resource.
     Thread 2 has accessed the resource.
     Thread 3 has accessed the resource.
-    Thread 3 is releasing the resource.Thread 4 has accessed the resource.
     
-    Thread 2 is releasing the resource.
+    Thread 2 is releasing the resource.Thread 4 has accessed the resource.
+    
+    Thread 3 is releasing the resource.
     Thread 4 is releasing the resource.
 
 

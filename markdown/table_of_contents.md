@@ -252,7 +252,7 @@
         - [State](#state-pattern)
         - [Chain of Responsibility](#chain-of-responsibility-pattern)
 
-### Part IX: Python Language Internals <a id="toc-9-language-internals"></a>
+### [Part IX: Python Language Internals](#9-language-internals) <a id="toc-9-language-internals"></a>
 
 1. [Namespaces and Scope](#namespaces-and-scope)
     - [Global and Local Variables](#global-and-local-variables)

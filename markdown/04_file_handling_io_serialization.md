@@ -33,7 +33,7 @@ After finishing with a file, it's crucial to close it using the .close() method 
 ```python
 # Step 1: Read from the original file
 names = []  # List to hold names
-with open("examples/names.txt", "r") as file_reader:
+with open("../examples/names.txt", "r") as file_reader:
     for line in file_reader:
         # Strip newline characters and add to list
         names.append(line.strip())
@@ -45,14 +45,14 @@ if new_name not in names:  # Avoid duplicate
     names.append(new_name)
 
 # Step 3: Write to a new file
-with open("examples/updated_names.txt", "w") as file_writer:
+with open("../examples/updated_names.txt", "w") as file_writer:
     for name in names:
         file_writer.write(name + "\n")  # Add newline to put each name on a new line
 
 print("------")
 
 # Check the new file
-with open("examples/updated_names.txt", "r") as file_reader:
+with open("../examples/updated_names.txt", "r") as file_reader:
     for line in file_reader:
         print(line.strip())
 
@@ -92,7 +92,7 @@ os.mkdir("new_directory")
 os.makedirs("new_directory/intermediate_directory")
 
 # List contents of the current directory
-contents = os.listdir("examples/")
+contents = os.listdir("../examples/")
 print("Directory contents:", contents)
 
 # Rename the directory
@@ -105,7 +105,7 @@ os.rmdir("renamed_directory/intermediate_directory")
 os.rmdir("renamed_directory")
 ```
 
-    Directory contents: ['names.txt', 'example.csv', 'data.pickle', 'person.json', 'updated_names.txt', 'sample copy.txt', 'bytes.bin', 'sample.txt']
+    Directory contents: ['names.txt', 'example.csv', 'data.pickle', 'person.json', 'sample-graph.png', 'updated_names.txt', 'sample copy.txt', 'bytes.bin', 'sample.txt']
 
 
 ### 3. Serialization <a id="serialization"></a>
@@ -129,11 +129,11 @@ import pickle
 data = {"key": "value", "list": [1, 2, 3, 4, 5]}
 
 # Pickling: Serializing the Python object to a byte stream
-with open("examples/data.pickle", "wb") as file:
+with open("../examples/data.pickle", "wb") as file:
     pickle.dump(data, file)
 
 # Unpickling: Deserializing the byte stream back to a Python object
-with open("examples/data.pickle", "rb") as file:
+with open("../examples/data.pickle", "rb") as file:
     loaded_data = pickle.load(file)
 
 print("Loaded data:", loaded_data)
@@ -181,11 +181,11 @@ person_dict = json.loads(person_json)
 print("Back to Python dictionary:", person_dict)
 
 # Writing JSON to a file
-with open("examples/person.json", "w") as file:
+with open("../examples/person.json", "w") as file:
     json.dump(person, file)
 
 # Reading JSON from a file
-with open("examples/person.json", "r") as file:
+with open("../examples/person.json", "r") as file:
     person_read = json.load(file)
     print("Read from file:", person_read)
 ```
@@ -259,21 +259,21 @@ Python provides a built-in `csv` module to easily deal with CSV files. This modu
 import csv
 
 # Writing to a CSV file
-with open("examples/example.csv", "w", newline="") as file:
+with open("../examples/example.csv", "w", newline="") as file:
     writer = csv.writer(file)
     writer.writerow(["name", "age", "city"])
     writer.writerow(["Alice", "30", "New York"])
     writer.writerow(["Bob", "25", "Los Angeles"])
 
 # Reading from a CSV file
-with open("examples/example.csv", "r") as file:
+with open("../examples/example.csv", "r") as file:
     reader = csv.reader(file)
     print("Using csv.reader:")
     for row in reader:
         print(row)
 
 # Using DictReader for more intuitive access by column names
-with open("examples/example.csv", "r") as file:
+with open("../examples/example.csv", "r") as file:
     reader = csv.DictReader(file)
     print("Using DictReader:")
     for row in reader:

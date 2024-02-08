@@ -666,18 +666,18 @@ Here, the `open()` function returns a file object, and its `__enter__` method is
 
 ```python
 # Without context manager
-file = open("examples/sample.txt", "r")
+file = open("../examples/sample.txt", "r")
 content = file.read()
 print("without:", content)
 file.close()
 
 # With context manager
-with open("examples/sample copy.txt", "r") as file:
+with open("../examples/sample copy.txt", "r") as file:
     content = file.read()
     print("with:", content)
 ```
 
-    without: Hello, World!
+    without: Hello again, world!
     with: Hello, copy World!
 
 
@@ -791,7 +791,7 @@ print(f.getvalue())
 ```python
 from contextlib import ExitStack
 
-filenames = ["examples/sample.txt", "examples/sample copy.txt"]
+filenames = ["../examples/sample.txt", "../examples/sample copy.txt"]
 with ExitStack() as stack:
     files = [stack.enter_context(open(fname)) for fname in filenames]
     # All files will be properly closed at the end of the with block

@@ -525,12 +525,12 @@ big_cities.pop()  # Returns and deletes a random value (order in set undefined) 
 big_cities.clear()  # Clears the set
 ```
 
-    big_cities: {'Paris', 'Tokyo', 'Berlin', 'Barcelona'}
-    european_cities: {'Rome', 'Lisbon', 'Madrid', 'Berlin', 'Paris'}
-    union_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris', 'Tokyo', 'Barcelona'}
-    intersected_cities: {'Paris', 'Berlin'}
-    dif_cities: {'Tokyo', 'Barcelona'}
-    symdif_cities: {'Rome', 'Lisbon', 'Madrid', 'Tokyo', 'Barcelona'}
+    big_cities: {'Berlin', 'Paris', 'Barcelona', 'Tokyo'}
+    european_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris'}
+    union_cities: {'Lisbon', 'Rome', 'Barcelona', 'Berlin', 'Paris', 'Tokyo', 'Madrid'}
+    intersected_cities: {'Berlin', 'Paris'}
+    dif_cities: {'Barcelona', 'Tokyo'}
+    symdif_cities: {'Lisbon', 'Rome', 'Barcelona', 'Tokyo', 'Madrid'}
     issub: True
     issuper: False
 
@@ -545,7 +545,7 @@ a = frozenset({"New-York", "Los Angeles", "Ottawa"})
 print("a:", a)
 ```
 
-    a: frozenset({'Ottawa', 'New-York', 'Los Angeles'})
+    a: frozenset({'Ottawa', 'Los Angeles', 'New-York'})
 
 
 #### Array <a id="array"></a>
@@ -613,10 +613,10 @@ print("s:", s)
 print("b:", b)
 print("s2:", s2)
 
-with open("examples/bytes.bin", "wb") as file:  # Write byte to file
+with open("../examples/bytes.bin", "wb") as file:  # Write byte to file
     file.write(b1)
 
-with open("examples/bytes.bin", "rb") as file:  # Read from file
+with open("../examples/bytes.bin", "rb") as file:  # Read from file
     b6 = file.read()
 
 print("b6:", b6)
@@ -1065,14 +1065,14 @@ print("td:", td)
 
 ##### Now <a id="now"></a>
 
-Get the current date or date/time.
+Get the current date or date/time. The `now()` method returns the current date and time as a `datetime` object.
 
 
 ```python
 import time
 from datetime import date, datetime
 
-import pytz
+import pytz  # pip install pytz
 
 d: date = date.today()
 dt1: datetime = datetime.today()
@@ -1090,20 +1090,12 @@ print("t1:", t1)
 print("t2:", t2)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    Cell In[93], line 4
-          1 import time
-          2 from datetime import date, datetime
-    ----> 4 import pytz
-          6 d: date = date.today()
-          7 dt1: datetime = datetime.today()
-
-
-    ModuleNotFoundError: No module named 'pytz'
+    d: 2024-02-08
+    dt1: 2024-02-08 17:15:36.720736
+    dt2: 2024-02-08 16:15:36.720756
+    dt3: 2024-02-08 17:15:36.720812+01:00
+    t1: 1707408936.720871
+    t2: Thu Feb  8 17:15:36 2024
 
 
 ##### Timezone <a id="timezone"></a>

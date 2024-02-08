@@ -415,7 +415,7 @@ gc.collect()
 print("Uncollectable objects:", gc.garbage[:1])
 
 # Using objgraph to show a reference chain that keeps objects alive
-objgraph.show_refs([a], filename="examples/sample-graph.png")
+objgraph.show_refs([a], filename="../examples/sample-graph.png")
 ```
 
     Uncollectable objects: []

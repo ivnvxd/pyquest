@@ -336,13 +336,13 @@ The `os` module provides a portable way of using operating system-dependent func
 import os
 
 # Change the current working directory
-os.chdir("examples")
+os.chdir("../examples")
 print(f"Changed working directory to: {os.getcwd()}")
 
 # Example: Displaying the current directory's contents using the system's shell command
 os.system("ls")
 
-os.chdir("..")
+os.chdir("../jupyter")
 
 # Setting and removing environment variable
 os.environ["MY_VAR"] = "value"
@@ -373,12 +373,13 @@ print(f"Path: {path}, Filename: {filename}")
     names.txt
     person.json
     sample copy.txt
+    sample-graph.png
     sample.txt
     updated_names.txt
     value
-    Current process ID: 912
+    Current process ID: 56837
     Joined path: directory/subdirectory/file.txt
-    Absolute path: /Users/ve/dev/src/projects/pyquest/my_file.txt
+    Absolute path: /Users/ve/dev/src/projects/pyquest/jupyter/my_file.txt
     Path: /path/to, Filename: my_file.txt
 
 
@@ -409,8 +410,8 @@ print(f"Platform: {sys.platform}")
 ```
 
     Script name: /Users/ve/Library/Python/3.11/lib/python/site-packages/ipykernel_launcher.py
-    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-46736wZsZ5kApPuGq.json
+    First argument: --f=/Users/ve/Library/Jupyter/runtime/kernel-v2-17416NNPh28h1PEDp.json
     Python version: 3.11.7 (main, Dec  4 2023, 18:10:11) [Clang 15.0.0 (clang-1500.1.0.2.5)]
-    Python Path: /Users/ve/dev/src/projects/pyquest
+    Python Path: /Users/ve/dev/src/projects/pyquest/jupyter
     Platform: darwin
 

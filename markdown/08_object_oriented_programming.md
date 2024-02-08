@@ -718,7 +718,7 @@ class FileOpener:
 
 
 # Using the FileOpener class
-with FileOpener("examples/sample.txt", "w") as file:
+with FileOpener("../examples/sample.txt", "w") as file:
     file.write("Hello, world!")
 # The file is automatically closed after the with block
 ```
@@ -740,7 +740,7 @@ def open_file(name, mode):
 
 
 # Usage
-with open_file("examples/sample.txt", "w") as f:
+with open_file("../examples/sample.txt", "w") as f:
     f.write("Hello again, world!")
 ```
 
@@ -847,7 +847,7 @@ s = Singleton.getInstance()
 print(s)  # <__main__.Singleton object at 0x7f8b5a3c5e50>
 ```
 
-    <__main__.Singleton object at 0x105dd2bd0>
+    <__main__.Singleton object at 0x107c9cb50>
 
 
 ##### Factory Method <a id="factory-method-pattern"></a>
