@@ -221,13 +221,13 @@ print(add("10", 20))
 
     TypeError                                 Traceback (most recent call last)
 
-    Cell In[43], line 10
+    Cell In[5], line 10
           7 print(add(10, 20))
           9 # This raises a TypeError at runtime
     ---> 10 print(add("10", 20))
 
 
-    Cell In[43], line 3, in add(a, b)
+    Cell In[5], line 3, in add(a, b)
           2 def add(a, b):
     ----> 3     return a + b
 
@@ -423,24 +423,7 @@ objgraph.show_refs([a], filename="examples/sample-graph.png")
     Image generated as examples/sample-graph.png
 
 
-### 5. Global Interpreter Lock (GIL) <a id="gil"></a>
-
-The Global Interpreter Lock (GIL) is a mechanism in the CPython interpreter (the standard Python implementation) that ensures only one thread executes Python bytecode at a time. This lock is necessary because CPython's memory management is not thread-safe.
-
-Purpose of the GIL:
-- **Simplifies CPython Implementation**: The GIL makes the CPython implementation simpler and the memory management model easier to understand and implement since it removes the need for adding locks to data structures to ensure thread safety.
-- **Performance in Single-threaded Programs**: For single-threaded programs, the GIL is beneficial because it eliminates the overhead associated with locking and unlocking data structures. This can make single-threaded programs run faster.
-
-Impact of the GIL:
-- **Concurrency**: The GIL prevents true multi-core concurrency with threads. Even if a program is running on a multi-core processor, only one thread can execute Python bytecode at a time. This can lead to performance bottlenecks in CPU-bound and multi-threaded programs.
-- **I/O-bound Multi-threading**: The GIL is less of an issue for I/O-bound multi-threaded programs. Python can release the GIL while waiting for I/O operations, allowing other threads to run Python code in the meantime.
-
-Workarounds and Solutions:
-- **Multi-processing**: Instead of using threads, Python programs can use multiple processes to achieve parallelism. The `multiprocessing` module allows a Python program to fully utilize multiple cores by running separate Python interpreters in separate processes, each with its own GIL and memory space.
-- **Alternative Implementations**: Python implementations other than CPython, such as Jython, IronPython, and PyPy, don't have a GIL and can achieve true parallelism using threads. PyPy, for example, uses a Just-In-Time compiler and doesn't rely on a GIL for thread safety.
-- **Using Extensions**: CPU-bound tasks can be offloaded to extensions written in languages like C or C++, which can manage their own threads outside of Python's GIL.
-
-### 6. Introspection <a id="introspection"></a>
+### 5. Introspection <a id="introspection"></a>
 
 Introspection is the ability of a program to examine and analyze its own structure, properties, and state. In Python, introspection is a powerful feature that allows you to inspect and manipulate objects at runtime, providing a high level of flexibility and control over the code.
 
