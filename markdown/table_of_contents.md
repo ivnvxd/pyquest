@@ -275,27 +275,33 @@
     - [Garbage Collection](#garbage-collection)
         - [Reference Counting](#reference-counting)
         - [GC debug and objgraph](#gc-debug-objgraph)
-5. [Global Interpreter Lock (GIL)](#gil)
-6. [Introspection](#introspection)
+5. [Introspection](#introspection)
 
-### Part X: Concurrency <a id="toc-10-concurrency"></a>
+### [Part X: Concurrency](#10-concurrency) <a id="toc-10-concurrency"></a>
 
-1. Multithreading
-    - Basics of Multithreading
-    - Thread Synchronization
-    - Thread Communication
-2. Multiprocessing
-    - Process Creation and Synchronization
-    - Interprocess Communication
-3. Asyncio
-    - Basics of Asyncio
-    - Tasks and Coroutines
-    - Event Loops
-4. Synchronization
-    - Locks
-    - Semaphores
-    - Conditions
-    - Events
+1. [CPU Bound vs I/O Bound](#cpu-bound-vs-io-bound)
+2. [Multithreading](#multithreading)
+    - [Thread Management](#thread-management)
+    - [Daemon Threads](#daemon-threads)
+    - [Global Interpreter Lock (GIL)](#gil)
+3. [Multiprocessing](#multiprocessing)
+    - [Process Management](#process-management)
+    - [Pool](#pool)
+    - [Process Communication](#process-communication)
+        - [Pipes](#multiprocessing-pipes)
+        - [Queues](#multiprocessing-queues)
+4. [Asyncio](#asyncio)
+    - [Coroutines](#coroutines)
+    - [async/await](#async-await)
+    - [Event Loop](#event-loop)
+5. [Synchronization](#synchronization)
+    - [Lock](#lock)
+    - [Event](#event)
+    - [Condition](#condition)
+    - [Semaphore](#semaphore)
+    - [Deadlock](#deadlock)
+6. [Parallelism](#parallelism)
+    - [Parallelism vs Concurrency](#parallelism-vs-concurrency)
 
 ### Part XI: Debugging and Testing <a id="toc-11-debugging-and-testing"></a>
 

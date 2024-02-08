@@ -9,6 +9,7 @@ jupyter nbconvert --to markdown "06_functional_programming.ipynb" --output "mark
 jupyter nbconvert --to markdown "07_standard_library.ipynb" --output "markdown/07_standard_library.md"
 jupyter nbconvert --to markdown "08_object_oriented_programming.ipynb" --output "markdown/08_object_oriented_programming.md"
 jupyter nbconvert --to markdown "09_python_language_interntals.ipynb" --output "markdown/09_python_language_interntals.md"
+jupyter nbconvert --to markdown "10_concurrency.ipynb" --output "markdown/10_concurrency.md"
 
 output_file="README.md"
 : > "$output_file"
@@ -25,6 +26,7 @@ files_to_concatenate=(
     "markdown/07_standard_library.md"
     "markdown/08_object_oriented_programming.md"
     "markdown/09_python_language_interntals.md"
+    "markdown/10_concurrency.md"
     "markdown/outro.md"
 )
 
