@@ -305,16 +305,19 @@
 
 ### Part XI: Debugging and Testing <a id="toc-11-debugging-and-testing"></a>
 
-1. Debugging Python Code
-    - PDB
-    - Debugging Techniques
-2. Unit Testing with Python
-    - Unittest library
-3. Python Testing Frameworks
-    - Pytest
-    - Nose
-    - Doctest
-4. Test-Driven Development
+1. [Debugging](#debugging)
+    - [Debugging Techniques](#debugging-techniques)
+    - [pdb](#pdb)
+2. [Testing](#testing)
+    - [Unit Testing](#unit-testing)
+    - [Integration Testing](#integration-testing)
+    - [Functional Testing](#functional-testing)
+    - [Mocking](#mocking)
+3. [Test Driven Development (TDD)](#tdd)
+4. [Python Testing Frameworks](#testing-frameworks)
+    - [unittest](#unittest)
+    - [pytest](#pytest)
+    - [doctest](#doctest)
 
 ### Part XII: Common Practices <a id="toc-12-common-practices"></a>
 
