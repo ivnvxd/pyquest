@@ -321,12 +321,28 @@
 
 ### Part XII: Common Practices <a id="toc-12-common-practices"></a>
 
-1. Logging
-2. Profiling
-3. Random Number Generation
-4. User Input and Output
-5. Cryptography
-6. Data Compression
+1. [Logging](#logging)
+    - [Logging Levels](#logging-levels)
+    - [Logging Handlers](#logging-handlers)
+    - [Logging Formatters](#logging-formatters)
+2. [Code Style](#code-style)
+    - [PEP 8](#pep-8)
+    - [Docstrings](#docstrings)
+    - [Type Annotations](#type-annotations)
+    - [Linting](#linting)
+    - [Code Formatters](#code-formatters)
+3. [Environment Management](#environment-management)
+    - [Virtual Environments](#virtual-environments)
+    - [Dependency Management](#dependency-management)
+    - [Package Management](#package-management)
+    - [Environment Variables](#environment-variables)
+4. [Profiling](#code-profiling)
+    - [Memory Profiling](#memory-profiling)
+    - [Performance Profiling](#performance-profiling)
+    - [Profiling Tools](#profiling-tools)
+5. [Code Review](#code-review)
+    - [Code Review Tools](#code-review-tools)
+    - [Code Review Best Practices](#code-review-best-practices)
 
 ### Part XIII: Databases <a id="toc-13-databases"></a>
 
