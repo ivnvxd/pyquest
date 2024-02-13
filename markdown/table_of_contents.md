@@ -334,15 +334,17 @@
 3. [Environment Management](#environment-management)
     - [Virtual Environments](#virtual-environments)
     - [Dependency Management](#dependency-management)
-    - [Package Management](#package-management)
     - [Environment Variables](#environment-variables)
+        - [dotenv](#dotenv)
 4. [Profiling](#code-profiling)
+    - [Time Profiling (Performance Profiling)](#performance-profiling)
     - [Memory Profiling](#memory-profiling)
-    - [Performance Profiling](#performance-profiling)
     - [Profiling Tools](#profiling-tools)
+        - [Performance Profiling Tools](#performance-profiling-tools)
+        - [Memory Profiling Tools](#memory-profiling-tools)
 5. [Code Review](#code-review)
-    - [Code Review Tools](#code-review-tools)
     - [Code Review Best Practices](#code-review-best-practices)
+    - [Code Review Tools](#code-review-tools)
 
 ### Part XIII: Databases <a id="toc-13-databases"></a>
 
