@@ -11,7 +11,6 @@ jupyter nbconvert --to markdown "jupyter/08_object_oriented_programming.ipynb" -
 jupyter nbconvert --to markdown "jupyter/09_python_language_interntals.ipynb" --output "../markdown/09_python_language_interntals.md"
 jupyter nbconvert --to markdown "jupyter/10_concurrency.ipynb" --output "../markdown/10_concurrency.md"
 jupyter nbconvert --to markdown "jupyter/11_debugging_and_testing.ipynb" --output "../markdown/11_debugging_and_testing.md"
-jupyter nbconvert --to markdown "jupyter/12_common_practices.ipynb" --output "../markdown/12_common_practices.md"
 
 output_file="README.md"
 : > "$output_file"
@@ -30,7 +29,6 @@ files_to_concatenate=(
     "markdown/09_python_language_interntals.md"
     "markdown/10_concurrency.md"
     "markdown/11_debugging_and_testing.md"
-    "markdown/12_common_practices.md"
     "markdown/outro.md"
 )
 
