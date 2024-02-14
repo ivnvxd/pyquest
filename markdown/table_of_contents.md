@@ -346,21 +346,29 @@
     - [Code Review Best Practices](#code-review-best-practices)
     - [Code Review Tools](#code-review-tools)
 
-### Part XIII: Databases <a id="toc-13-databases"></a>
+### [Part XIII: Databases](#13-databases) <a id="toc-13-databases"></a>
 
-1. Databases Basics
-    - Relational Databases
-    - ACID Properties
-2. SQL
-    - SQLite
-    - MySQL
-    - PostgreSQL
-3. NoSQL
-    - Redis
-    - MongoDB
-4. ORM
-    - SQLAlchemy
-    - Django ORM
+1. [Databases Basics](#databases-basics)
+    - [Database Types](#database-types)
+    - [Database Models](#database-models)
+    - [ACID](#acid)
+2. [SQL](#sql)
+    - [SQLite](#sqlite)
+    - [PostgreSQL](#postgresql)
+    - [MySQL](#mysql)
+3. [NoSQL](#nosql)
+    - [MongoDB](#mongodb)
+    - [Redis](#redis)
+    - [Cassandra](#cassandra)
+4. [ORM (Object-Relational Mapping)](#orm)
+    - [SQLAlchemy](#sqlalchemy)
+    - [Django ORM](#django-orm)
+5. [Database Design](#database-design)
+    - [Normalization](#normalization)
+    - [Indexing](#indexing)
+6. [Messaging Systems](#messaging-systems)
+    - [RabbitMQ](#rabbitmq)
+    - [Apache Kafka](#apache-kafka)
 
 ### Part XIV: Networking and Web Development <a id="toc-14-web"></a>
 
