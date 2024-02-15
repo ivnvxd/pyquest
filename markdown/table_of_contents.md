@@ -419,14 +419,13 @@
     - [Basic HTML, CSS, and JavaScript](#basic-html-css-js)
     - [Frontend Frameworks](#frontend-frameworks)
 
-### Part XV: GUI Programming <a id="toc-15-gui"></a>
+### [Part XV: GUI Programming](#15-gui) <a id="toc-15-gui"></a>
 
-1. Tkinter
-2. PyQT
-3. wxPython
-4. Kivy
-5. PyGTK
-6. PySimpleGUI
+1. [Tkinter](#tkinter)
+2. [PyQT](#pyqt)
+3. [wxPython](#wxpython)
+4. [Kivy](#kivy)
+5. [PySimpleGUI](#pysimplegui)
 
 ### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
 
