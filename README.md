@@ -323,7 +323,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 6. [Parallelism](#parallelism)
     - [Parallelism vs Concurrency](#parallelism-vs-concurrency)
 
-### Part XI: Debugging and Testing <a id="toc-11-debugging-and-testing"></a>
+### [Part XI: Debugging and Testing](#11-debugging-and-testing) <a id="toc-11-debugging-and-testing"></a>
 
 1. [Debugging](#debugging)
     - [Debugging Techniques](#debugging-techniques)
@@ -339,7 +339,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
     - [pytest](#pytest)
     - [doctest](#doctest)
 
-### Part XII: Common Practices <a id="toc-12-common-practices"></a>
+### [Part XII: Common Practices](#12-common-practices) <a id="toc-12-common-practices"></a>
 
 1. [Logging](#logging)
     - [Logging Levels](#logging-levels)
