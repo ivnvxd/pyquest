@@ -15,6 +15,7 @@ jupyter nbconvert --to markdown "jupyter/12_common_practices.ipynb" --output "..
 jupyter nbconvert --to markdown "jupyter/13_databases.ipynb" --output "../markdown/13_databases.md"
 jupyter nbconvert --to markdown "jupyter/14_networking_and_web.ipynb" --output "../markdown/14_networking_and_web.md"
 jupyter nbconvert --to markdown "jupyter/15_gui_programming.ipynb" --output "../markdown/15_gui_programming.md"
+jupyter nbconvert --to markdown "jupyter/16_data_science.ipynb" --output "../markdown/16_data_science.md"
 
 output_file="README.md"
 : > "$output_file"
@@ -37,6 +38,7 @@ files_to_concatenate=(
     "markdown/13_databases.md"
     "markdown/14_networking_and_web.md"
     "markdown/15_gui_programming.md"
+    "markdown/16_data_science.md"
     "markdown/outro.md"
 )
 

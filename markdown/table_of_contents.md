@@ -427,15 +427,16 @@
 4. [Kivy](#kivy)
 5. [PySimpleGUI](#pysimplegui)
 
-### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
+### [Part XVI: Python and Data Science](#16-data-science) <a id="toc-16-data-science"></a>
 
-1. NumPy
-2. Pandas
-3. Matplotlib
-4. SciPy
-5. Machine Learning with Scikit-Learn
-6. Deep Learning with TensorFlow and Keras
-7. Data Analysis with Jupyter Notebook
+1. [NumPy](#numpy)
+2. [Pandas](#pandas)
+3. [Matplotlib](#matplotlib)
+4. [SciPy](#scipy)
+5. [Scikit-Learn](#scikit-learn)
+6. [TensorFlow and Keras](#tensorflow-keras)
+7. [PyTorch](#pytorch)
+7. [Jupyter Notebook](#jupyter-notebook)
 
 ### Part XVII: Software Architecture <a id="toc-17-architecture"></a>
 
