@@ -370,32 +370,54 @@
     - [RabbitMQ](#rabbitmq)
     - [Apache Kafka](#apache-kafka)
 
-### Part XIV: Networking and Web Development <a id="toc-14-web"></a>
+### [Part XIV: Networking and Web Development](#14-web) <a id="toc-14-web"></a>
 
-1. HTTP
-    - HTTP Basics
-    - HTTP Methods
-2. Web Frameworks
-    - Django
-    - Flask
-    - FastAPI
-3. API
-    - REST API
-    - Authentication
-    - JWT
-    - GraphQL
-4. RPC
-    - XML-RPC
-    - JSON-RPC
-    - gRPC
-5. Web Scraping
-    - Beautiful Soup
-6. Websockets
-7. Web Servers
-    - WSGI
-    - ASGI
-    - Gunicorn
-    - Nginx
+1. [HTTP](#http)
+    - [HTTP Basics](#http-basics)
+    - [HTTP Methods](#http-methods)
+    - [HTTP Status Codes](#http-status-codes)
+    - [Cookies and Sessions](#cookies-and-sessions)
+    - [HTTPS and Security](#https-and-security)
+2. [Web Frameworks](#web-frameworks)
+    - [Django](#django)
+    - [Flask](#flask)
+    - [FastAPI](#fastapi)
+3. [APIs](#apis)
+    - [REST API](#rest-api)
+        - [OpenAPI (Swagger)](#openapi)
+    - [Authentication](#authentication)
+        - [JWT](#jwt)
+        - [OAuth](#oauth)
+    - [GraphQL](#graphql)
+4. [RPC (Remote Procedure Call)](#rpc)
+    - [XML-RPC and JSON-RPC](#xml-rpc-and-json-rpc)
+    - [gRPC](#grpc)
+5. [Web Servers](#web-servers)
+    - [WSGI and ASGI](#wsgi-and-asgi)
+    - [Reverse Proxy](#reverse-proxy)
+    - [Load Balancing](#load-balancing)
+    - [Caching](#caching)
+    - [Common Web Servers](#common-web-servers)
+        - [Nginx](#nginx)
+        - [Gunicorn](#gunicorn)
+        - [Caddy](#caddy)
+        - [Apache](#apache)
+6. [Real-Time Communication](#real-time-communication)
+    - [WebRTC (Web Real-Time Communication)](#webrtc)
+    - [WebSocket](#websocket)
+7. [Web Scraping](#web-scraping)
+    - [Beautiful Soup](#beautiful-soup)
+    - [Scrapy](#scrapy)
+    - [Selenium](#selenium)
+8. [Security](#web-security)
+    - [Cross-Site Scripting (XSS)](#xss)
+    - [Cross-Site Request Forgery (CSRF)](#csrf)
+    - [SQL Injection](#sql-injection)
+    - [Clickjacking](#clickjacking)
+    - [Content Security Policy (CSP)](#csp)
+9. [Frontend Development](#frontend-development)
+    - [Basic HTML, CSS, and JavaScript](#basic-html-css-js)
+    - [Frontend Frameworks](#frontend-frameworks)
 
 ### Part XV: GUI Programming <a id="toc-15-gui"></a>
 
@@ -403,6 +425,8 @@
 2. PyQT
 3. wxPython
 4. Kivy
+5. PyGTK
+6. PySimpleGUI
 
 ### Part XVI: Python and Data Science <a id="toc-16-data-science"></a>
 

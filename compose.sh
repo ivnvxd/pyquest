@@ -13,6 +13,7 @@ jupyter nbconvert --to markdown "jupyter/10_concurrency.ipynb" --output "../mark
 jupyter nbconvert --to markdown "jupyter/11_debugging_and_testing.ipynb" --output "../markdown/11_debugging_and_testing.md"
 jupyter nbconvert --to markdown "jupyter/12_common_practices.ipynb" --output "../markdown/12_common_practices.md"
 jupyter nbconvert --to markdown "jupyter/13_databases.ipynb" --output "../markdown/13_databases.md"
+jupyter nbconvert --to markdown "jupyter/14_networking_and_web.ipynb" --output "../markdown/14_networking_and_web.md"
 
 output_file="README.md"
 : > "$output_file"
@@ -33,6 +34,7 @@ files_to_concatenate=(
     "markdown/11_debugging_and_testing.md"
     "markdown/12_common_practices.md"
     "markdown/13_databases.md"
+    "markdown/14_networking_and_web.md"
     "markdown/outro.md"
 )
 
