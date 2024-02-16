@@ -438,32 +438,36 @@
 7. [PyTorch](#pytorch)
 7. [Jupyter Notebook](#jupyter-notebook)
 
-### Part XVII: Software Architecture <a id="toc-17-architecture"></a>
+### [Part XVII: Software Architecture](#17-architecture) <a id="toc-17-architecture"></a>
 
-1. Principles
-    - SOLID
-    - DRY
-    - KISS
-    - YAGNI
-2. Paradigms
-    - Procedural
-    - Structured
-    - Object-oriented
-    - Functional
-3. Architecture styles:
-    - Monolithic
-    - Microservice
-    - Layered
-    - Event-Driven
-4. Microservices
-    - Microservices Basics
-    - Communication
-5. System Design
-    - System Design Basics
-    - Designing for Scalability and Reliability
-6. Refactoring
-    - Code Smells
-    - Refactoring Techniques
+1. [Principles](#principles)
+    - [SOLID](#solid)
+        - [Single Responsibility Principle](#srp)
+        - [Open/Closed Principle](#ocp)
+        - [Liskov Substitution Principle](#lsp)
+        - [Interface Segregation Principle](#isp)
+        - [Dependency Inversion Principle](#dip)
+    - [DRY](#dry)
+    - [KISS](#kiss)
+    - [YAGNI](#yagni)
+2. [Programming Paradigms](#programming-paradigms)
+    - [Procedural](#procedural)
+    - [Structured](#structured)
+    - [Object-oriented](#object-oriented)
+    - [Functional](#functional)
+3. [Architecture Styles](#architecture-styles)
+    - [Monolithic](#monolithic)
+    - [Microservice](#microservice)
+    - [Layered](#layered)
+    - [Event-Driven](#event-driven)
+    - [Serverless](#serverless)
+4. [System Design](#system-design)
+    - [Scalability](#scalability)
+    - [Reliability](#reliability)
+    - [Availability](#availability)
+    - [Performance](#performance)
+    - [Security](#security)
+5. [Domain-Driven Design](#domain-driven-design)
 
 ### Part XVIII: DevOps <a id="toc-18-devops"></a>
 
