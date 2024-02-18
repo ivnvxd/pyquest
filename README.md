@@ -26,9 +26,9 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 - [Part IV: File Handling, I/O, and Serialization](#toc-4-file-io-serialization)
 - [Part V: Exceptions and Error Handling](#toc-5-exceptions-and-errors)
 - [Part VI: Functional Programming](#toc-6-fp)
-- [Part VII: Python Standard Libraries](#toc-7-standard-libraries)
+- [Part VII: Python Standard Libraries](#toc-7-standard-library)
 - [Part VIII: Object-Oriented Programming](#toc-8-oop)
-- [Part IX: Python Language Fundamentals](#toc-9-language-fundamentals)
+- [Part IX: Python Language Fundamentals](#toc-9-language-internals)
 - [Part X: Concurrency](#toc-10-concurrency)
 - [Part XI: Debugging and Testing](#toc-11-debugging-and-testing)
 - [Part XII: Common Practices](#toc-12-common-practices)
@@ -47,7 +47,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 1. [Basic Data Types](#basic-dt)
     - [String](#string)
     - [Number](#number)
-        - [Integer](#integer)
+        - [Integer](#int)
         - [Float](#float)
         - [Complex](#complex)
     - [NoneType](#none)
@@ -227,7 +227,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
     - [Classes and Objects](#classes-and-objects)
         - [Creating Classes and Objects](#creating-classes-and-objects)
         - [\_\_init\_\_, \_\_repr\_\_, and \_\_str\_\_ Methods](#init-repr-str-methods)
-        - [Instance Members](#class-members)
+        - [Instance Members](#instance-members)
         - [Class Methods](#class-methods)
         - [Static Methods](#static-methods)
         - [Property Decorator](#property-decorator)
@@ -388,7 +388,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
     - [Indexing](#indexing)
 6. [Messaging Systems](#messaging-systems)
     - [RabbitMQ](#rabbitmq)
-    - [Apache Kafka](#apache-kafka)
+    - [Apache Kafka](#kafka)
 
 ### [Part XIV: Networking and Web Development](#14-web) <a id="toc-14-web"></a>
 
@@ -456,7 +456,7 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 5. [Scikit-Learn](#scikit-learn)
 6. [TensorFlow and Keras](#tensorflow-keras)
 7. [PyTorch](#pytorch)
-7. [Jupyter Notebook](#jupyter-notebook)
+8. [Jupyter Notebook](#jupyter-notebook)
 
 ### [Part XVII: Software Architecture](#17-architecture) <a id="toc-17-architecture"></a>
 
@@ -5392,7 +5392,7 @@ make_it_quack(duck)  # Quack, quack!
     Quack, quack!
 
 
-##### Iterable, Comparable, Hashable, Callable Protocols <a id="iterable-comparable-sortable-callable-protocols"></a>
+##### Iterable, Comparable, Hashable, Callable Protocols <a id="iterable-comparable-hashable-callable-protocols"></a>
 
 **Iterable Protocol**
 

@@ -628,7 +628,7 @@ make_it_quack(duck)  # Quack, quack!
     Quack, quack!
 
 
-##### Iterable, Comparable, Hashable, Callable Protocols <a id="iterable-comparable-sortable-callable-protocols"></a>
+##### Iterable, Comparable, Hashable, Callable Protocols <a id="iterable-comparable-hashable-callable-protocols"></a>
 
 **Iterable Protocol**
 
