@@ -469,36 +469,47 @@
     - [Security](#security)
 5. [Domain-Driven Design](#domain-driven-design)
 
-### Part XVIII: DevOps <a id="toc-18-devops"></a>
+### [Part XVIII: DevOps](#18-devops) <a id="toc-18-devops"></a>
 
-1. Git
-    - Branching Models
-    - Git Tools
-    - GitHub Features
-2. Linux
-    - Basic Commands
-    - Shell Scripting
-3. Development Lifecycle
-    - SDLC Models
-    - Agile and Scrum
-4. CI/CD
-    - CI/CD Pipeline
-    - Jenkins, Travis CI, GitLab CI
-5. Containers
-    - Docker
-    - Kubernetes
-6. Cloud
-    - AWS
-    - Azure
-    - GCP
-    - DigitalOcean
-7. Infrastructure as Code
-    - Terraform
-    - Ansible
-8. Monitoring
-    - Prometheus
-    - Grafana
-    - ELK Stack
+1. [Git](#git)
+    - [Git Tools](#git-tools)
+    - [Branching Models](#branching-models)
+    - [Git Best Practices](#git-best-practices)
+2. [Linux](#linux)
+    - [Basic Commands](#basic-commands)
+    - [File System Hierarchy](#file-system-hierarchy)
+    - [Shell Scripting](#shell-scripting)
+3. [Development Lifecycle](#development-lifecycle)
+    - [SDLC Models](#sdlc-models)
+    - [Agile](#agile)
+    - [Waterfall](#waterfall)
+4. [CI/CD](#cicd)
+    - [Continuous Integration](#continuous-integration)
+        - [Continuous Delivery](#continuous-delivery)
+    - [Continuous Deployment](#continuous-deployment)
+    - [CI/CD Pipeline](#cicd-pipeline)
+    - [CI/CD Tools](#cicd-tools)
+        - [Jenkins](#jenkins)
+        - [Travis CI](#travis-ci)
+        - [GitLab CI](#gitlab-ci)
+        - [GitHub Actions](#github-actions)
+5. [Containers](#containers)
+    - [Docker](#docker)
+        - [Docker Compose](#docker-compose)
+        - [Docker Swarm](#docker-swarm)
+    - [Kubernetes](#kubernetes)
+6. [Cloud](#cloud)
+    - [AWS](#aws)
+    - [Azure](#azure)
+    - [GCP](#gcp)
+    - [DigitalOcean](#digitalocean)
+7. [Infrastructure as Code](#infrastructure-as-code)
+    - [Terraform](#terraform)
+    - [Ansible](#ansible)
+8. [Monitoring](#monitoring)
+    - [Prometheus](#prometheus)
+    - [Grafana](#grafana)
+    - [ELK Stack](#elk-stack)
 
 ### Part XIX: Algorithms <a id="toc-19-algorithms"></a>
 
