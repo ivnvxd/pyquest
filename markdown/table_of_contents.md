@@ -511,30 +511,36 @@
     - [Grafana](#grafana)
     - [ELK Stack](#elk-stack)
 
-### Part XIX: Algorithms <a id="toc-19-algorithms"></a>
+### [Part XIX: Algorithms](#19-algorithms) <a id="toc-19-algorithms"></a>
 
-1. Time Complexity and Big O Notation
-2. Sorting Algorithms
-    - Bubble
-    - Selection
-    - Insertion
-    - Quick
-    - Merge
-    - Heap
-    - Radix
-3. Searching Algorithms
-    - Linear, Binary
-    - Depth-First Search
-    - Breadth-First Search
-    - Dijkstra's
-    - Bellman-Ford
-4. Graph Algorithms
-5. Problem Solving Methods
-    - Two Pointers
-    - Divide and Conquer
-    - Recursion
-    - Dynamic Programming
-    - Greedy Algorithms
+1. [Time Complexity and Big O Notation](#time-complexity-and-big-o-notation)
+    - [Time Complexity](#time-complexity)
+    - [Big O Notation](#big-o-notation)
+    - [Common Data Structure Time Complexities](#common-data-structure-time-complexities)
+2. [Sorting Algorithms](#sorting-algorithms)
+    - [Bubble](#bubble)
+    - [Insertion](#insertion)
+    - [Selection](#selection)
+    - [Quick](#quick)
+    - [Merge](#merge)
+    - [Heap](#heap)
+    - [Counting](#counting)
+    - [Radix](#radix)
+    - [Common Sorting Algorithms Time Complexities](#common-sorting-algorithms-time-complexities)
+3. [Searching Algorithms](#searching-algorithms)
+    - [Linear](#linear)
+    - [Binary](#binary)
+4. [Graph Algorithms](#graph-algorithms)
+    - [Depth-First Search](#depth-first-search)
+    - [Breadth-First Search](#breadth-first-search)
+    - [Dijkstra's](#dijkstras)
+    - [Bellman-Ford](#bellman-ford)
+5. [Problem Solving Methods](#problem-solving-methods)
+    - [Two Pointers](#two-pointers)
+    - [Divide and Conquer](#divide-and-conquer)
+    - [Recursion](#recursion)
+    - [Dynamic Programming](#dynamic-programming)
+    - [Greedy Algorithms](#greedy-algorithms)
 
 ### [Outro](#c-outro)
 
