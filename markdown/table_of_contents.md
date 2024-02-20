@@ -68,7 +68,6 @@
 5. [General Data Structure Concepts](#general-ds-concepts)
     - [Mutable/Immutable](#mutable-immutable)
     - [Hash calculation problem](#hashcalc)
-    <!-- TODO: - [Common data structures operations](#common-data-structures-operations) -->
 
 ### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 

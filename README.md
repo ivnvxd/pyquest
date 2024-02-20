@@ -88,7 +88,6 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 5. [General Data Structure Concepts](#general-ds-concepts)
     - [Mutable/Immutable](#mutable-immutable)
     - [Hash calculation problem](#hashcalc)
-    <!-- TODO: - [Common data structures operations](#common-data-structures-operations) -->
 
 ### [Part II: Data Manipulation and Processing](#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
 
@@ -584,11 +583,15 @@ Choosing the appropriate data structure for a particular application can have a 
 
 ### 1. Basic Data Types <a id="basic-dt"></a>
 
+Python has a number of built-in data types that are used to represent different kinds of data. These data types include `integers`, `floating-point numbers`, `complex numbers`, `strings`, `booleans`, and `None`.
+
 #### String <a id="string"></a>
 
 In Python, a `string` is a sequence of characters enclosed in quotation marks (either single or double quotes). `Strings` are one of the built-in data types in Python and are used to represent text data.
 
 Python 3.x uses [`str`](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) objects to store textual data as immutable sequences of Unicode characters. Practically speaking, that means a `str` is an immutable array of characters. Oddly enough, it’s also a recursive data structure — each character in a string is itself a `str` object of length 1.
+
+Strings can be created using single quotes, double quotes, or triple quotes. Triple quotes are used to create multi-line strings.
 
 
 ```python
@@ -635,6 +638,10 @@ print("new_sentence:", new_sentence)
 
 In Python, there are three built-in numeric data types: `integers`, `floating-point` numbers, and `complex` numbers.
 
+- `Integers` are whole numbers, such as 1, 2, 3, 4, and so on. They can be positive or negative, but they cannot have a fractional part.
+- `Floating-point` numbers are numbers with a fractional part, such as 3.14, 2.718, and so on. They can be positive or negative.
+- `Complex` numbers are numbers with a real part and an imaginary part, such as 3 + 4j, 2 - 5j, and so on.
+
 It is also possible to convert between numeric data types in Python using built-in functions. For example, the `int()` function can be used to convert a floating-point number or a string to an integer, and the `float()` function can be used to convert an integer or a string to a floating-point number.
 
 
@@ -665,6 +672,8 @@ print("f:", f)
 ##### Integer <a id="int"></a>
 
 Integers are whole numbers that can be positive, negative, or zero. They are represented by the `int` class in Python.
+
+In Python, integers can be created using the `int()` constructor, or by simply writing a sequence of digits without a decimal point. For example, `123`, `-456`, and `0` are all integers.
 
 
 ```python
@@ -716,6 +725,8 @@ print("t:", t)
 
 Floating-point numbers are decimal numbers that can also be positive, negative, or zero. They are represented by the `float` class in Python.
 
+Floating-point numbers can be created using the `float()` constructor, or by writing a sequence of digits with a decimal point. For example, `3.14`, `-2.718`, and `0.0` are all floating-point numbers.
+
 
 ```python
 import math
@@ -742,7 +753,9 @@ print("d:", d)
 
 ##### Complex <a id="complex"></a>
 
-Complex numbers are numbers that have a real and an imaginary component. They are represented by the `complex` class in Python. Complex numbers are created by using the `j` or `J` suffix to indicate the imaginary component.
+Complex numbers are numbers that have a real and an imaginary component. They are represented by the `complex` class in Python. 
+
+Complex numbers are created by using the `j` or `J` suffix to indicate the imaginary component. For example, `3 + 4j` and `2 - 5J` are both complex numbers.
 
 
 ```python
@@ -807,9 +820,16 @@ greet("")
 
 #### List <a id="list"></a>
 
-A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.  
+A `list` is the most versatile and popular data structure in Python which can be written as a list of comma-separated values (items) between square brackets.
 
 A `list` is an ordered mutable collection of objects. Important thing about a `list` is that items in a `list` need not be of the same type. The internal structure of a `list` is an `array` (more precisely, a vector) of pointers, i.e. the `list` is a dynamic `array`.
+
+_Properties of a List:_
+
+- `Ordered`: Lists are ordered collections, which means that the items in a list have a specific order, and that order will not change unless the list is modified.
+- `Mutable`: Lists are mutable, which means that the items in a list can be changed after the list is created.
+- `Heterogeneous`: Lists can contain items of different types, including other lists.
+- `Dynamic`: Lists can grow and shrink in size as needed.
 
 
 ```python
@@ -872,7 +892,16 @@ a.clear()  # Clear list
 
 #### Tuple <a id="tuple"></a>
 
-A `tuple` is also a list, only immutable and hashable. A `tuple` containing the same data as a `list` takes less space:
+A `tuple` is also a list, only immutable and hashable. A `tuple` containing the same data as a `list` takes less space.
+
+A `tuple` is an ordered immutable collection of objects. Important thing about a `tuple` is that items in a `tuple` need not be of the same type. The internal structure of a `tuple` is an `array` (more precisely, a vector) of pointers, i.e. the `tuple` is a static `array`.
+
+_Properties of a Tuple:_
+
+- `Ordered`: Tuples are ordered collections, which means that the items in a tuple have a specific order, and that order will not change unless the tuple is modified.
+- `Immutable`: Tuples are immutable, which means that the items in a tuple cannot be changed after the tuple is created.
+- `Heterogeneous`: Tuples can contain items of different types, including other tuples.
+- `Static`: Tuples have a fixed size and cannot be resized after they are created.
 
 
 ```python
@@ -915,6 +944,15 @@ print("r._fields:", r._fields)
 _Dictionary_ is the second most commonly used data structure in Python. The `dict` is an implementation of a hash table, so we cannot take a non-hashable object as a key, such as a `list` (this is where `tuple` comes in handy). The key of the dictionary can be any immutable object: number, string, datetime or even function. Such objects have a method `__hash__()`, which uniquely associates the object to a number. With this number the dictionary looks for the value of the key.
 
 `Lists`, `dictionaries` and `sets` (which we will consider below) are mutable and have no hash method; an attempt to substitute them into the dictionary will result in an error.
+
+A `dictionary` is an unordered mutable collection of objects. The internal structure of a `dictionary` is a hash table, i.e. the `dictionary` is a dynamic `array` of pointers to key-value pairs.
+
+_Properties of a Dictionary:_
+
+- `Unordered`: Dictionaries are unordered collections, which means that the items in a dictionary do not have a specific order, and that order may change when the dictionary is modified.
+- `Mutable`: Dictionaries are mutable, which means that the items in a dictionary can be changed after the dictionary is created.
+- `Heterogeneous`: Dictionaries can contain items of different types, including other dictionaries.
+- `Dynamic`: Dictionaries can grow and shrink in size as needed.
 
 
 ```python
@@ -1003,7 +1041,7 @@ dd = {}  # "Regular" empty dictionary
 
 ##### OrderedDict <a id="ordereddict"></a>
 
-Python includes a specialized `dict` subclass that remembers the insertion order of keys added to it: `OrderedDict`.
+Python includes a specialized `dict` subclass that remembers the insertion order of keys added to it: `OrderedDict`. This class is useful when you want to preserve the order of items in a dictionary.
 
 
 ```python
@@ -1024,7 +1062,26 @@ for k, v in od.items():
 
 ##### Counter <a id="counter"></a>
 
-The `Counter` counts the objects passed to it. Sometimes it is very convenient to just feed some list into the counter and immediately get the data structure with the counted elements.
+The `Counter` counts the objects passed to it. Sometimes it is very convenient to just feed some list into the counter and immediately get the data structure with the counted elements. The `Counter` is a subclass of `dict`.
+
+_Properties of a Counter:_
+
+- `Unordered`: Counters are unordered collections, which means that the items in a Counter do not have a specific order, and that order may change when the Counter is modified.
+- `Mutable`: Counters are mutable, which means that the items in a Counter can be changed after the Counter is created.
+- `Heterogeneous`: Counters can contain items of different types, including other Counters.
+- `Dynamic`: Counters can grow and shrink in size as needed.
+
+_Most Common Methods of a Counter:_
+
+- `elements()`: Returns an iterator over elements repeating each as many times as its count.
+- `most_common([n])`: Returns a list of the n most common elements and their counts from the most common to the least.
+- `values()`: Returns an iterator over the values repeating each as many times as its count.
+- `items()`: Returns a view of the Counter items.
+- `keys()`: Returns a view of the Counter keys.
+- `subtract([iterable-or-mapping])`: Elements are subtracted from an iterable or from another mapping (or counter). Like `dict.update()` but subtracts counts instead of replacing them. Both inputs and outputs may be zero or negative.
+- `clear()`: Removes all elements from the Counter.
+- `copy()`: Returns a shallow copy of the Counter.
+- `get([key], [default])`: Returns the count of the element. The default value is 0.
 
 
 ```python
@@ -1036,10 +1093,13 @@ print("c:", c)
 
 c["42"] += 1
 print(f"After shopping: {c}")
+
+print("Most common:", c.most_common(1))
 ```
 
     c: Counter({'38': 2, '40': 2, '36': 1, '39': 1, '42': 1})
     After shopping: Counter({'38': 2, '40': 2, '42': 2, '36': 1, '39': 1})
+    Most common: [('38', 2)]
 
 
 Explaining how `Counter()` works with `defaultdict()`:
@@ -1063,6 +1123,15 @@ print("d:", d)
 #### Set <a id="set"></a>
 
 The third most common Python data structure. `Sets` were formerly somewhat reduced `dictionaries`, but over time their implementations began to diverge. However, a `set` is still a hash table with appropriate performance on different types of operations.
+
+A `set` is an unordered mutable collection of objects. The internal structure of a `set` is a hash table, i.e. the `set` is a dynamic `array` of pointers to unique objects.
+
+_Properties of a Set:_
+
+- `Unordered`: Sets are unordered collections, which means that the items in a set do not have a specific order, and that order may change when the set is modified.
+- `Mutable`: Sets are mutable, which means that the items in a set can be changed after the set is created.
+- `Heterogeneous`: Sets can contain items of different types, including other sets.
+- `Dynamic`: Sets can grow and shrink in size as needed.
 
 
 ```python
@@ -1099,19 +1168,19 @@ big_cities.pop()  # Returns and deletes a random value (order in set undefined) 
 big_cities.clear()  # Clears the set
 ```
 
-    big_cities: {'Berlin', 'Paris', 'Barcelona', 'Tokyo'}
-    european_cities: {'Lisbon', 'Rome', 'Madrid', 'Berlin', 'Paris'}
-    union_cities: {'Lisbon', 'Rome', 'Barcelona', 'Berlin', 'Paris', 'Tokyo', 'Madrid'}
-    intersected_cities: {'Berlin', 'Paris'}
-    dif_cities: {'Barcelona', 'Tokyo'}
-    symdif_cities: {'Lisbon', 'Rome', 'Barcelona', 'Tokyo', 'Madrid'}
+    big_cities: {'Tokyo', 'Paris', 'Barcelona', 'Berlin'}
+    european_cities: {'Lisbon', 'Berlin', 'Madrid', 'Paris', 'Rome'}
+    union_cities: {'Tokyo', 'Madrid', 'Barcelona', 'Lisbon', 'Berlin', 'Paris', 'Rome'}
+    intersected_cities: {'Paris', 'Berlin'}
+    dif_cities: {'Tokyo', 'Barcelona'}
+    symdif_cities: {'Tokyo', 'Barcelona', 'Lisbon', 'Madrid', 'Rome'}
     issub: True
     issuper: False
 
 
 ##### Frozen set <a id="frozenset"></a>
 
-`frozenset` is the same set, only immutable and hashable. Reminds of the difference between a `list` and a `tuple`.
+`frozenset` is the same set, only immutable and hashable. Reminds of the difference between a `list` and a `tuple`. A `frozenset` containing the same data as a `set` takes less space.
 
 
 ```python
@@ -1129,6 +1198,13 @@ An `array` in Python is not the default data structure of choice and is only use
 An `array` stores variables of a certain type, so unlike a `list`, it doesn't require you to create a new object for each new variable and wins over a `list` in size and access speed. You could say it's a thin wrapper over C arrays.
 
 You should distinguish between an `array` ("simple" array), `bytes` (an immutable array containing only bytes, the legacy str of Python 2), and `bytearray` (a mutable byte array).
+
+_Properties of an Array:_
+
+- `Ordered`: Arrays are ordered collections, which means that the items in an array have a specific order, and that order will not change unless the array is modified.
+- `Mutable`: Arrays are mutable, which means that the items in an array can be changed after the array is created.
+- `Homogeneous`: Arrays can contain items of the same type, and the type of the items in an array is determined when the array is created.
+- `Static`: Arrays have a fixed size and cannot be resized after they are created.
 
 
 ```python
@@ -1155,7 +1231,9 @@ print(
 
 ##### Bytes <a id="bytes"></a>
 
-[`bytes`](https://docs.python.org/3/library/stdtypes.html#bytes-objects) objects are immutable sequences of single bytes, or integers in the range 0 ≤ _x_ ≤ 255. Conceptually, `bytes` objects are similar to `str` objects, and you can also think of them as immutable arrays of bytes.
+[`bytes`](https://docs.python.org/3/library/stdtypes.html#bytes-objects) objects are immutable sequences of single bytes, or integers in the range 0 ≤ _x_ ≤ 255. Conceptually, `bytes` objects are similar to `str` objects, and you can also think of them as immutable arrays of bytes. However, `bytes` objects are not the same as `str` objects, and you cannot use a `bytes` object as a string.
+
+`bytes` objects can be created using the `bytes()` constructor, or by writing a sequence of bytes in hexadecimal notation. For example, `b'hello'` and `bytes.fromhex('68656c6c6f')` are both `bytes` objects.
 
 
 ```python
@@ -1212,7 +1290,7 @@ print("b6:", b6)
 
 The [`bytearray`](https://docs.python.org/3.1/library/functions.html#bytearray) type is a mutable sequence of integers in the range 0 ≤ _x_ ≤ 255. The `bytearray` object is closely related to the `bytes` object, with the main difference being that a `bytearray` can be modified freely—you can overwrite elements, remove existing elements, or add new ones. The `bytearray` object will grow and shrink accordingly.
 
-A `bytearray` can be converted back into immutable `bytes` objects, but this involves copying the stored data in full—a slow operation taking _O_(_n_) time:
+A `bytearray` can be converted back into immutable `bytes` objects, but this involves copying the stored data in full—a slow operation taking _O(n)_ time. This is why `bytearray` objects are not as efficient as `bytes` objects for read-only data.
 
 
 ```python
@@ -1250,9 +1328,16 @@ print("b7:", b7)
 
 #### Deque <a id="deque"></a>
 
-The `deque` class implements a double-ended queue that supports adding and removing elements from either end in _O_(1) time (non-amortized). Because deques support adding and removing elements from either end equally well, they can serve both as `queues` and as `stacks`.
+The `deque` class implements a double-ended queue that supports adding and removing elements from either end in _O(1)_ time (non-amortized). Because deques support adding and removing elements from either end equally well, they can serve both as `queues` and as `stacks`.
 
 Python’s `deque` objects are implemented as doubly-linked lists. This gives them excellent and consistent performance for inserting and deleting elements, but poor _O_(_n_) performance for randomly accessing elements in the middle of the stack.
+
+_Properties of a Deque:_
+
+- `Ordered`: Deques are ordered collections, which means that the items in a deque have a specific order, and that order will not change unless the deque is modified.
+- `Mutable`: Deques are mutable, which means that the items in a deque can be changed after the deque is created.
+- `Heterogeneous`: Deques can contain items of different types, including other deques.
+- `Dynamic`: Deques can grow and shrink in size as needed.
 
 
 ```python
@@ -1286,6 +1371,13 @@ print("d:", d)
 
 `Queue` implements FIFO with multiple data providers and multiple consumers. It can be particularly useful for multithreading, allowing information to be exchanged correctly between threads. 
 There is also `LifoQueueue` to implement LIFO and `PriorityQueueue` to implement priority queue.
+
+_Properties of a Queue:_
+
+- `Ordered`: Queues are ordered collections, which means that the items in a queue have a specific order, and that order will not change unless the queue is modified.
+- `Mutable`: Queues are mutable, which means that the items in a queue can be changed after the queue is created.
+- `Heterogeneous`: Queues can contain items of different types, including other queues.
+- `Dynamic`: Queues can grow and shrink in size as needed.
 
 
 ```python
@@ -1321,6 +1413,8 @@ print("q.queue:", q.queue)
 
 `LifoQueue` stores and retrieves elements in a last-in, first-out (LIFO) order. This means that the last element added to the queue will be the first one retrieved from it. LifoQueue is also sometimes called a "`stack`" because it behaves like a stack data structure.
 
+`LifoQueue` is a subclass of `Queue` and inherits all of its methods. The only difference is that `LifoQueue` uses a last-in, first-out ordering, while `Queue` uses a first-in, first-out ordering.
+
 
 ```python
 from queue import LifoQueue
@@ -1344,6 +1438,8 @@ print(q.get())  # get the first item that was added to the stack (1)
 ##### PriorityQueue <a id="priorityqueue"></a>
 
 `PriorityQueue` allows elements to be retrieved in order of priority. When you add an element to a PriorityQueue, you assign it a priority value. The PriorityQueue uses this priority value to determine the order in which elements are retrieved. The element with the highest priority will be the first one retrieved from the queue. PriorityQueue is also sometimes called a "`heap`" because it is implemented using a heap data structure.
+
+`PriorityQueue` is a subclass of `Queue` and inherits all of its methods. The only difference is that `PriorityQueue` uses a priority ordering, while `Queue` uses a first-in, first-out ordering.
 
 
 ```python
@@ -1371,6 +1467,13 @@ In Python, a `heap` is a binary tree data structure that is commonly used to imp
 
 Python's `heapq` module provides the min heap (the smallest value always lies at the root) functions for working with heaps in a list. The heapq module can be used to create a heap, add elements to it, remove elements from it, and so on. 
 If you need a max heap, with the maximum value at the root, you can use the advice from [Stackoverflow](https://stackoverflow.com/questions/2501457/what-do-i-use-for-a-max-heap-implementation-in-python).
+
+_Properties of a Heap:_
+
+- `Ordered`: Heaps are ordered collections, which means that the items in a heap have a specific order, and that order will not change unless the heap is modified.
+- `Mutable`: Heaps are mutable, which means that the items in a heap can be changed after the heap is created.
+- `Heterogeneous`: Heaps can contain items of different types, including other heaps.
+- `Dynamic`: Heaps can grow and shrink in size as needed.
 
 
 ```python
@@ -1445,6 +1548,8 @@ The Trie data structure is particularly useful when dealing with large sets of s
 
 The `enum` module in Python provides a way to define named constants in a program. Enums are a way to represent a set of values as a named collection of symbolic constants. They make it easier to write more readable, self-documenting code and help avoid errors due to typos or invalid values.
 
+Enums are defined using the `Enum` class, which is a metaclass that allows you to define new enumeration types. Each enumeration type is defined as a class that inherits from `Enum`, and each member of the enumeration is defined as a class attribute.
+
 
 ```python
 from enum import Enum
@@ -1497,6 +1602,8 @@ print("color_values:", color_values)
 In Python, `range()` is a built-in function that generates a sequence of numbers. `The range()` function is commonly used for iterating over a sequence of numbers, such as in a for loop.
 
 The `range()` function takes up to three arguments, in the form `range(start, stop, step)`. The `start` argument is the starting number of the sequence (inclusive), the `stop` argument is the ending number of the sequence (exclusive), and the `step` argument is the difference between each number in the sequence.
+
+The `range()` function returns a range object, which is an immutable sequence of numbers. The range object can be converted to a list using the `list()` constructor, or it can be iterated over directly in a for loop.
 
 
 ```python
@@ -1664,12 +1771,12 @@ print("t1:", t1)
 print("t2:", t2)
 ```
 
-    d: 2024-02-08
-    dt1: 2024-02-08 17:15:36.720736
-    dt2: 2024-02-08 16:15:36.720756
-    dt3: 2024-02-08 17:15:36.720812+01:00
-    t1: 1707408936.720871
-    t2: Thu Feb  8 17:15:36 2024
+    d: 2024-02-20
+    dt1: 2024-02-20 18:29:13.968926
+    dt2: 2024-02-20 17:29:13.968943
+    dt3: 2024-02-20 18:29:13.985428+01:00
+    t1: 1708450153.985877
+    t2: Tue Feb 20 18:29:13 2024
 
 
 ##### Timezone <a id="timezone"></a>
