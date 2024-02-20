@@ -538,10 +538,12 @@
     - [Bellman-Ford Algorithm](#bellman-ford)
 5. [Problem Solving Methods](#problem-solving-methods)
     - [Two Pointers](#two-pointers)
+    - [Sliding Window](#sliding-window)
     - [Divide and Conquer](#divide-and-conquer)
     - [Recursion](#recursion)
     - [Dynamic Programming](#dynamic-programming)
     - [Greedy Algorithms](#greedy-algorithms)
+    - [Backtracking](#backtracking)
 
 ### [Outro](#c-outro)
 
