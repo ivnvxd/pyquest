@@ -69,7 +69,7 @@
     - [Mutable/Immutable](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/01_data_structures_and_data_types.ipynb#mutable-immutable)
     - [Hash calculation problem](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/01_data_structures_and_data_types.ipynb#hashcalc)
 
-### [Part II: Data Manipulation and Processing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/02_data_manipulation_and_processing.ipynb#2-dm-and-processing) <a id="toc-2-dm-and-processing"></a>
+### [Part II: Data Manipulation and Processing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/02_data_manipulation_and_processing.ipynb) <a id="toc-2-dm-and-processing"></a>
 
 1. [Basic Data Manipulation](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/02_data_manipulation_and_processing.ipynb#basic-dm)
     - [Slice](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/02_data_manipulation_and_processing.ipynb#slice)
@@ -94,7 +94,7 @@
     - [Shallow Copy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/02_data_manipulation_and_processing.ipynb#shallow-copy)
     - [Deep Copy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/02_data_manipulation_and_processing.ipynb#deep-copy)
 
-### [Part III: Control Flow and Data Flows](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/03_control_flow_and_data_flows.ipynb#3-cf-and-df) <a id="toc-3-cf-and-df"></a>
+### [Part III: Control Flow and Data Flows](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/03_control_flow_and_data_flows.ipynb) <a id="toc-3-cf-and-df"></a>
 
 1. [Conditional Statements](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/03_control_flow_and_data_flows.ipynb#conditional-statements)
     - [if, else, elif](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/03_control_flow_and_data_flows.ipynb#if-else-elif)
@@ -124,24 +124,26 @@
     - [enter/exit](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/03_control_flow_and_data_flows.ipynb#enter-exit)
     - [contextlib](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/03_control_flow_and_data_flows.ipynb#contextlib)
 
-### [Part IV: File Handling, I/O, and Serialization](#4-file-io-serialization) <a id="toc-4-file-io-serialization"></a>
+### [Part IV: File Handling, I/O, and Serialization](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb) <a id="toc-4-file-io-serialization"></a>
 
-1. [File Operations](#file-operations)
-    - [Opening a File](#opening-a-file)
-    - [Reading from a File](#reading-from-a-file)
-    - [Writing to a File](#writing-to-a-file)
-    - [Closing a File](#closing-a-file)
-2. [Working with Directories](#working-with-directories)
-3. [Serialization](#serialization)
-    - [Pickling and Unpickling](#pickling-and-unpickling)
-4. [Structured Data Formats](#structured-data-formats)
-    - [JSON](#json)
-    - [YAML](#yaml)
-    - [CSV](#csv)
-    - [XML](#xml)
-5. [Data Encoding and Decoding](#data-encoding-and-decoding)
-    - [base64](#base64)
-    - [Unicode](#unicode)
+1. [File Operations](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#file-operations)
+    - [Opening a File](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#opening-a-file)
+    - [Reading from a File](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#reading-from-a-file)
+    - [Writing to a File](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#writing-to-a-file)
+    - [Closing a File](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#closing-a-file)
+2. [Working with Directories](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#working-with-directories)
+    - [os.path](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#os-path)
+    - [pathlib](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#pathlib)
+3. [Serialization](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#serialization)
+    - [Pickling and Unpickling](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#pickling-and-unpickling)
+4. [Structured Data Formats](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#structured-data-formats)
+    - [JSON](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#json)
+    - [YAML](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#yaml)
+    - [CSV](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#csv)
+    - [XML](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#xml)
+5. [Data Encoding and Decoding](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#data-encoding-and-decoding)
+    - [base64](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#base64)
+    - [Unicode](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#unicode)
 
 ### [Part V: Exceptions and Error Handling](#5-exceptions-and-errors) <a id="toc-5-exceptions-and-errors"></a>
 
