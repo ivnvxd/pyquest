@@ -1,12 +1,37 @@
-## Part II. Data Manipulation and Processing <a id="2-dm-and-processing">
+# Part II. Data Manipulation and Processing <a id="2-dm-and-processing">
 
-### 1. Basic Data Manipulation <a id="basic-dm"></a>
+1. [Basic Data Manipulation](#basic-dm)
+    - [Slice](#slice)
+    - [Sorting](#sorting)
+    - [any()/all()](#anyall)
+    - [Basic Math operations](#basicmathoperations)
+        - [sum(), count(), min(), max()](#sumcountminmax)
+        - [Basic math](#basicmath)
+        - [Bit operations](#bitoperations)
+        - [Bit count](#bitcount)
+        - [Fraction](#fraction)
+        - [Euclidean distance](#euclideandistance)
+2. [String Operations](#string-operations)
+    - [lower(), upper(), capitalize(), title()](#loweruppercapitalizetitle)
+    - [strip()](#strip)
+    - [split()](#split)
+    - [ord(), chr()](#ordchr)
+3. [Regular Expressions](#regular-expressions)
+    - [RegEx](#regex)
+    - [match](#match)
+4. [Data Copying](#data-copying)
+    - [Shallow Copy](#shallow-copy)
+    - [Deep Copy](#deep-copy)
 
-#### Slice <a id="slice"></a>
+## 1. Basic Data Manipulation <a id="basic-dm"></a>
+
+### Slice <a id="slice"></a>
 
 In Python, a `slice` is a way to extract a portion of a sequence, such as a `string`, `list`, or `tuple`. 
 
 `Slices` are defined using the colon (:) operator, with the syntax `start:stop:step`. The `start` parameter is the index of the first element to include in the slice, the `stop` parameter is the index of the first element to exclude from the slice, and the `step` parameter is the number of elements to skip between each included element.
+
+`Slices` can be used to extract a portion of a sequence, to create a copy of a sequence, or to modify a sequence in place.
 
 
 ```python
@@ -61,7 +86,7 @@ print("s3:", s3)
     s3: !dlrow ,olleH
 
 
-#### Sorting <a id="sorting"></a>
+### Sorting <a id="sorting"></a>
 
 In Python, sorting is the process of arranging elements in a specific order. Python provides two built-in functions for sorting: `sort()` and `sorted()`. 
 
@@ -128,6 +153,8 @@ Complex data structures can be sorted by `key=lambda el: el[1]` or even, for exa
 
 The `all()` function returns `True` if all elements in the iterable are `True`, and `False` otherwise. The `any()` function returns `True` if at least one element in the iterable is `True`, and `False` otherwise.
 
+`all()` and `any()` can be used to check if all or any elements in a list meet a certain condition.
+
 
 ```python
 # Using all()
@@ -156,7 +183,7 @@ print("any(lst5):", any(lst5))
     any(lst5): False
 
 
-`all()` and `any()` can also be used with generator expressions, which are similar to list comprehensions but do not create a list in memory.
+`all()` and `any()` can also be used with generator expressions, which are similar to list comprehensions but do not create a list in memory. Instead, they generate elements one at a time. This can be useful when working with large datasets.
 
 
 ```python
@@ -175,15 +202,17 @@ print("an:", an)
     an: True
 
 
-Note that `all()` and `any()` short-circuit, meaning they stop iterating through the iterable as soon as the result is determined. For example, if `all()` encounters a `False` element, it immediately returns `False` without checking the remaining elements.
+Note that `all()` and `any()` short-circuit, meaning they stop iterating through the iterable as soon as the result is determined. For example, if `all()` encounters a `False` element, it immediately returns `False` without checking the remaining elements. 
 
-#### Basic Math operations <a id="basicmathoperations"></a>
+Similarly, if `any()` encounters a `True` element, it immediately returns `True` without checking the remaining elements.
 
-##### sum(), count(), min(), max() <a id="sumcountminmax"></a>
+### Basic Math operations <a id="basicmathoperations"></a>
+
+#### sum(), count(), min(), max() <a id="sumcountminmax"></a>
 
 In Python, `sum()`, `count()`, `min()`, and `max()` are built-in functions that operate on iterable objects, such as lists, tuples, and sets.
 
-The `sum()` function returns the sum of all elements in the iterable. It can also take an optional `start` parameter, which is added to the sum of the iterable.
+The `sum()` function returns the sum of all elements in the iterable. It can also take an optional `start` parameter, which is added to the sum of the iterable. If the iterable is empty, the `start` parameter is returned.
 
 
 ```python
@@ -200,7 +229,7 @@ print("s2:", s2)
     s2: 8.5
 
 
-The `count()` function returns the number of times a specified element appears in the iterable.
+The `count()` function returns the number of times a specified element appears in the iterable. It can be used with lists, tuples, and sets.
 
 
 ```python
@@ -257,9 +286,11 @@ print("m3:", max(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5))
     m3: 9
 
 
-##### Basic math <a id="basicmath"></a>
+#### Basic math <a id="basicmath"></a>
 
 In Python, basic math operations include addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and exponentiation (`**`). These operators work on numeric data types, such as integers and floating-point numbers.
+
+Python also provides the `//` operator for floor division, which returns the largest integer less than or equal to the result of the division. The `%` operator is used for the modulo operation, which returns the remainder of the division.
 
 
 ```python
@@ -307,7 +338,7 @@ print("c:", c)
     c: 1
 
 
-##### Bit operations <a id="bitoperations"></a>
+#### Bit operations <a id="bitoperations"></a>
 
 Bit operations are used to manipulate individual bits in binary numbers. Bitwise operators work on integers at the binary level, and are used to perform operations such as shifting bits left or right, setting or clearing individual bits, and performing logical operations on bits.
 
@@ -358,7 +389,7 @@ print("c6:", c6)
     c6: 0b10
 
 
-##### Bit count <a id="bitcount"></a>
+#### Bit count <a id="bitcount"></a>
 
 Bit count refers to the number of set bits (bits with a value of 1) in a binary representation of an integer. One way to count the number of set bits in Python is to use the `bin()` function to convert the integer to a binary string, and then use the `count()` method to count the number of '1' characters in the string.
 
@@ -373,9 +404,11 @@ print("count:", count)
     count: 2
 
 
-##### Fraction <a id="fraction"></a>
+#### Fraction <a id="fraction"></a>
 
 Fractions can be represented using the `fractions` module. The `Fraction` class in this module represents a rational number as a numerator and a denominator. The `Fraction` class can be initialized with a numerator and denominator, or with a string representation of a fraction.
+
+The `Fraction` class provides methods for performing arithmetic operations on fractions, such as addition, subtraction, multiplication, and division. It also provides methods for comparing fractions, such as `==`, `<`, and `>`.
 
 
 ```python
@@ -418,7 +451,7 @@ print("quot_frac:", quot_frac)
     quot_frac: 3/2
 
 
-##### Euclidean distance <a id="euclideandistance"></a>
+#### Euclidean distance <a id="euclideandistance"></a>
 
 The Euclidean distance between two points in n-dimensional space can be calculated using the `distance` function from the `scipy.spatial` module.
 
@@ -438,11 +471,11 @@ print("euclidean_dist:", euclidean_dist)
     euclidean_dist: 5.196152422706632
 
 
-### 2. String Operations <a id="string-operations"></a>
+## 2. String Operations <a id="string-operations"></a>
 
-#### lower(), upper(), capitalize(), title() <a id="loweruppercapitalizetitle"></a>
+### lower(), upper(), capitalize(), title() <a id="loweruppercapitalizetitle"></a>
 
-GitHub Copilot: In Python, strings have several built-in methods for modifying their case and capitalization.
+In Python, strings have several built-in methods for modifying their case and capitalization. Some of the most commonly used methods include:
 
 - `lower()`: This method returns a new string with all the characters in lowercase.
 - `upper()`: This method returns a new string with all the characters in uppercase.
@@ -474,9 +507,9 @@ print("title_string:", title_string)
     title_string: Hello, World!
 
 
-#### strip() <a id="strip"></a>
+### strip() <a id="strip"></a>
 
-`strip()` method is used to remove leading and trailing whitespace characters (spaces, tabs, and newlines) from a string.
+`strip()` method is used to remove leading and trailing whitespace characters (spaces, tabs, and newlines) from a string. The `strip()` method does not modify the original string; it returns a new string with the leading and trailing whitespace removed.
 
 The `strip()` method can also be used to remove specific characters from the beginning and end of a string by passing a string argument to the method. This argument specifies the characters to be removed. Note that the order of the characters in the argument does not matter.
 
@@ -495,11 +528,11 @@ print("stripped_string_2:", stripped_string_2)
     stripped_string_2: hello, world!
 
 
-#### split() <a id="split"></a>
+### split() <a id="split"></a>
 
-The `split()` method is used to split a string into a list of substrings based on a specified delimiter. By default, the delimiter is whitespace characters (spaces, tabs, and newlines), but a different delimiter can be specified as an argument to the method. 
+The `split()` method is used to split a string into a list of substrings based on a specified delimiter. By default, the delimiter is whitespace characters (spaces, tabs, and newlines), but a different delimiter can be specified as an argument to the method. The `split()` method does not modify the original string; it returns a new list of substrings.
 
-The `split()` method can also be used to split a string into a list of substrings based on a specified maximum number of splits. This is done by passing a second argument to the method, which specifies the maximum number of splits to perform.
+The `split()` method can also be used to split a string into a list of substrings based on a specified maximum number of splits. This is done by passing a second argument to the method, which specifies the maximum number of splits to perform. If the second argument is not specified, the `split()` method performs as many splits as possible.
 
 
 ```python
@@ -521,14 +554,14 @@ print("split_string_3:", split_string_3)
     split_string_3: ['hello', 'world', 'how,are,you?']
 
 
-#### ord(), chr() <a id="ordchr"></a>
+### ord(), chr() <a id="ordchr"></a>
 
-GitHub Copilot: In Python, the `ord()` and `chr()` functions are used to convert between characters and their corresponding ASCII codes. 
+In Python, the `ord()` and `chr()` functions are used to convert between characters and their corresponding ASCII codes. 
 
 - The `ord()` function takes a single character as an argument and returns its corresponding ASCII code as an integer.
 - The `chr()` function takes an integer ASCII code as an argument and returns the corresponding character as a string.
 
-Note that the `ord()` and `chr()` functions only work with ASCII characters and codes. For Unicode characters and codes, the `ord()` and `chr()` functions may not work as expected.
+Note that the `ord()` and `chr()` functions only work with ASCII characters and codes. For Unicode characters and codes, the `ord()` and `chr()` functions may not work as expected. For Unicode characters, the `ord()` function returns the Unicode code point of the character, and the `chr()` function returns the character corresponding to the Unicode code point.
 
 
 ```python
@@ -545,11 +578,13 @@ print("char:", char)
     char: B
 
 
-### 3. Regular Expressions <a id="regular-expressions"></a>
+## 3. Regular Expressions <a id="regular-expressions"></a>
 
-#### RegEx <a id="regex"></a>
+### RegEx <a id="regex"></a>
 
 Regular expressions (often abbreviated as "`RegEx`") are sequences of characters that define a search pattern. This pattern can be used to match strings or parts of strings. Python's `re` module provides functions to work with regular expressions.
+
+Regular expressions can be used to search, match, and manipulate text based on patterns. They are a powerful tool for text processing and can be used to extract specific information from text, validate input, and perform complex search and replace operations.
 
 1. Basic Patterns:
 
@@ -621,7 +656,7 @@ print("split:", re.split(pattern, text))
     split: ['', 'a', 'b', 'c']
 
 
-#### match() <a id="match"></a>
+### match() <a id="match"></a>
 
 The `match()` function is used to match a regular expression pattern at the beginning of a string. The `match()` function returns a `Match` object if the pattern matches the beginning of the string, or `None` if there is no match.
 
@@ -665,13 +700,15 @@ print("tuple:", tuple)
     tuple: (0, 9)
 
 
-### 4. Data Copying <a id="data-copying"></a>
+## 4. Data Copying <a id="data-copying"></a>
 
-Data copying is the process of creating a new copy of an existing data structure. In Python, data copying can be done using the `copy` module, the `copy()` method, or the `deepcopy()` method.
+Data copying is the process of creating a new copy of an existing data structure. In Python, data copying can be done using the `copy` module, the `copy()` method, or the `deepcopy()` method. There are two types of data copying: shallow copying and deep copying.
 
-#### Shallow Copy <a id="shallow-copy"></a>
+### Shallow Copy <a id="shallow-copy"></a>
 
 A shallow copy creates a new object but does not create copies of the objects found within the original object. Instead, it just copies the references to those objects. So, if the original object contains any mutable objects, changes made to these mutable objects in the copied object will reflect in the original object as well.
+
+In Python, shallow copying can be done using the `copy` module or the `copy()` method. The `copy` module provides a `copy()` function that can be used to create a shallow copy of an object. The `copy()` method can be used to create a shallow copy of a list, dictionary, or other mutable object.
 
 
 ```python
@@ -688,9 +725,11 @@ print(original_list)
     [1, 2, ['Changed', 4]]
 
 
-#### Deep Copy <a id="deep-copy"></a>
+### Deep Copy <a id="deep-copy"></a>
 
 A deep copy creates a new object and recursively copies all objects found within the original object. Thus, changes made to any level of the copied object will not affect the original object.
+
+In Python, deep copying can be done using the `copy` module or the `deepcopy()` method. The `copy` module provides a `deepcopy()` function that can be used to create a deep copy of an object. The `deepcopy()` method can be used to create a deep copy of a list, dictionary, or other mutable object.
 
 
 ```python

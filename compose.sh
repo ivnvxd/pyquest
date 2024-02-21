@@ -20,6 +20,8 @@ jupyter nbconvert --to markdown "jupyter/17_software_architecture.ipynb" --outpu
 jupyter nbconvert --to markdown "jupyter/18_devops.ipynb" --output "../markdown/18_devops.md"
 jupyter nbconvert --to markdown "jupyter/19_algorithms.ipynb" --output "../markdown/19_algorithms.md"
 
+echo "Successfully converted Jupyter Notebooks to Markdown"
+
 output_file="README.md"
 : > "$output_file"
 
