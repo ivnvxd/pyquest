@@ -1,4 +1,4 @@
-## Content
+## Chapters
 
 - [Part I. Data Structures and Data Types](#toc-1-ds-and-dt)
 - [Part II: Data Manipulation and Processing](#toc-2-dm-and-processing)
@@ -145,18 +145,18 @@
     - [base64](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#base64)
     - [Unicode](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/04_file_handling_io_serialization.ipynb#unicode)
 
-### [Part V: Exceptions and Error Handling](#5-exceptions-and-errors) <a id="toc-5-exceptions-and-errors"></a>
+### [Part V: Exceptions and Error Handling](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb) <a id="toc-5-exceptions-and-errors"></a>
 
-1. [Python Exceptions](#python-exceptions)
-    - [Built-in Exceptions](#built-in-exceptions)
-    - [Exception hierarchy](#exception-hierarchy)
-2. [Handling Exceptions](#handling-exceptions)
-    - [try, except, else, finally blocks](#try-except-else-finally-blocks)
-    - [Catching multiple exceptions](#catching-multiple-exceptions)
-3. [Raising Exceptions](#raising-exceptions)
-    - [raise statement](#raise-statement)
-    - [assert statement](#assert-statement)
-4. [User-Defined Exceptions](#user-defined-exceptions)
+1. [Python Exceptions](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#python-exceptions)
+    - [Built-in Exceptions](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#built-in-exceptions)
+    - [Exception hierarchy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#exception-hierarchy)
+2. [Handling Exceptions](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#handling-exceptions)
+    - [try, except, else, finally blocks](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#try-except-else-finally-blocks)
+    - [Catching multiple exceptions](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#catching-multiple-exceptions)
+3. [Raising Exceptions](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#raising-exceptions)
+    - [raise statement](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#raise-statement)
+    - [assert statement](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#assert-statement)
+4. [User-Defined Exceptions](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/05_exceptions_and_errors.ipynb#user-defined-exceptions)
 
 ### [Part VI: Functional Programming](#6-fp) <a id="toc-6-fp"></a>
 

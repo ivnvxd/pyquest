@@ -1,12 +1,24 @@
-## Part V: Exceptions and Error Handling <a id="5-exceptions-and-errors"></a>
+# Part V: Exceptions and Error Handling <a id="5-exceptions-and-errors"></a>
+
+1. [Python Exceptions](#python-exceptions)
+    - [Built-in Exceptions](#built-in-exceptions)
+    - [Exception hierarchy](#exception-hierarchy)
+2. [Handling Exceptions](#handling-exceptions)
+    - [try, except, else, finally blocks](#try-except-else-finally-blocks)
+    - [Catching multiple exceptions](#catching-multiple-exceptions)
+3. [Raising Exceptions](#raising-exceptions)
+    - [raise statement](#raise-statement)
+    - [assert statement](#assert-statement)
+4. [User-Defined Exceptions](#user-defined-exceptions)
+
 
 Python uses exceptions to manage errors that arise during execution. An exception is an event that disrupts the normal flow of a program's instructions. Python's approach to exceptions ensures that programs can deal with unforeseen errors gracefully and can recover from them.
 
-### 1. Python Exceptions <a id="python-exceptions"></a>
+## 1. Python Exceptions <a id="python-exceptions"></a>
 
-Python exceptions are errors detected during execution that interrupt the normal flow of a program. These errors can be caused by various issues, such as attempting to divide by zero, accessing a non-existent file, or trying to access a list element out of its bounds. When an exception occurs, the program immediately stops executing and raises an exception. If the exception is not handled, the program will crash.
+_Python exceptions_ are errors detected during execution that interrupt the normal flow of a program. These errors can be caused by various issues, such as attempting to divide by zero, accessing a non-existent file, or trying to access a list element out of its bounds. When an exception occurs, the program immediately stops executing and raises an exception. If the exception is not handled, the program will crash.
 
-#### Built-in Exceptions <a id="built-in-exceptions"></a>
+### Built-in Exceptions <a id="built-in-exceptions"></a>
 
 Python has a set of built-in exceptions that can be raised when an error occurs. These exceptions are defined in the `builtins` module and are inherited by all other exceptions.
 
@@ -36,7 +48,7 @@ print(divide(10, 0))
     Cannot divide by zero.
 
 
-#### Exception hierarchy <a id="exception-hierarchy"></a>
+### Exception hierarchy <a id="exception-hierarchy"></a>
 
 The exception hierarchy in Python organizes the various built-in exceptions into a structured tree, allowing for both specific and general exception handling strategies.
 
@@ -45,30 +57,30 @@ The base class for all built-in exceptions is `BaseException`. This class is inh
 Example of Exception Hierarchy:
 ```
 BaseException
- +-- SystemExit
- +-- KeyboardInterrupt
- +-- GeneratorExit
- +-- Exception
-      +-- StopIteration
-      +-- ArithmeticError
-      |    +-- FloatingPointError
-      |    +-- OverflowError
-      |    +-- ZeroDivisionError
-      +-- LookupError
-      |    +-- IndexError
-      |    +-- KeyError
-      +-- EnvironmentError
-           +-- IOError
-           +-- OSError
+├── SystemExit
+├── KeyboardInterrupt
+├── GeneratorExit
+└── Exception
+      ├── StopIteration
+      ├── ArithmeticError
+      │    ├── FloatingPointError
+      │    ├── OverflowError
+      │    └── ZeroDivisionError
+      ├── LookupError
+      │    ├── IndexError
+      │    └── KeyError
+      └── EnvironmentError
+           ├── IOError
+           └── OSError
 ```
 
 Users can define their own exceptions by inheriting from any existing exception class, typically Exception or one of its child classes, to create custom error conditions relevant to their applications.
 
-### 2. Handling Exceptions <a id="handling-exceptions"></a>
+## 2. Handling Exceptions <a id="handling-exceptions"></a>
 
 Handling exceptions in Python is crucial for writing robust and resilient programs. It allows your code to gracefully deal with unexpected situations without crashing. Python provides `try`, `except`, `else`, and `finally` blocks for this purpose.
 
-#### try, except, else, finally blocks <a id="try-except-else-finally-blocks"></a>
+### try, except, else, finally blocks <a id="try-except-else-finally-blocks"></a>
 
 - `try` Block: You start by wrapping the code that might raise an exception in a `try` block. This is the code that Python will attempt to execute, and if an exception occurs, Python looks for an `except` block to handle it.
 - `except` Block: The `except` block catches exceptions raised by the `try` block. You can specify the type of exception you want to catch, allowing for multiple `except` blocks to handle different exceptions differently. If an exception is caught, the code inside the `except` block is executed.
@@ -95,7 +107,7 @@ finally:
     This always executes.
 
 
-#### Catching multiple exceptions <a id="catching-multiple-exceptions"></a>
+### Catching multiple exceptions <a id="catching-multiple-exceptions"></a>
 
 You might encounter situations where a block of code could raise more than one type of exception. To handle this, Python allows you to catch multiple exceptions in a single `try` block. You can achieve this in two ways: by specifying multiple `except` blocks, each catching a different type of exception, or by catching multiple exceptions in a single `except` block using a tuple.
 
@@ -120,11 +132,11 @@ except (TypeError, OverflowError) as e:
     Division by zero is not allowed.
 
 
-### 3. Raising Exceptions <a id="raising-exceptions"></a>
+## 3. Raising Exceptions <a id="raising-exceptions"></a>
 
 Raising exceptions is a core aspect of Python programming, allowing you to explicitly signal an error condition when a specific issue occurs in your code. This can be particularly useful for enforcing constraints, indicating invalid states, or signaling errors in API usage to other developers.
 
-#### raise statement <a id="raise-statement"></a>
+### raise statement <a id="raise-statement"></a>
 
 The `raise` statement is used to trigger an exception in Python. You can raise a built-in exception or a user-defined exception by specifying the exception class or an instance of the exception. Optionally, you can add a message to provide more context about the error.
 
@@ -137,7 +149,7 @@ def divide(x, y):
     return x / y
 ```
 
-#### assert statement <a id="assert-statement"></a>
+### assert statement <a id="assert-statement"></a>
 
 The `assert` statement is a debugging aid that tests a condition as an expression. If the condition is `True`, nothing happens, and your program continues to execute. If the condition is `False`, Python raises an `AssertionError` exception. The `assert` statement can also include an optional message to be displayed with the error, making the cause of the assertion failure clearer.
 
@@ -164,7 +176,7 @@ except AssertionError as e:
     Cannot take the square root of a negative number.
 
 
-### 4. User-Defined Exceptions <a id="user-defined-exceptions"></a>
+## 4. User-Defined Exceptions <a id="user-defined-exceptions"></a>
 
 User-defined exceptions allow you to create and use custom exceptions that are specific to your application's requirements. By defining your own exceptions, you can make your code more readable and ensure that it handles errors and special conditions in a clear and consistent manner.
 
