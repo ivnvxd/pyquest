@@ -18,7 +18,7 @@ Now comes the time for daring, for adventuring into the unknown. *Keep this manu
 
 By the way, if you're preparing for a job interview, check out this list of crucial [Python Interview](Python_Interview.md) topics and [Coding Interview](Coding_Interview.md) cheatsheets.
 
-## Chapters
+## Parts
 
 - [Part I. Data Structures and Data Types](#toc-1-ds-and-dt)
 - [Part II: Data Manipulation and Processing](#toc-2-dm-and-processing)
@@ -204,23 +204,24 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 7. [Iterators](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/06_functional_programming.ipynb#iterators)
     - [Building an iterator](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/06_functional_programming.ipynb#building-iterator)
 
-### [Part VII: Python Standard Library](#7-standard-library) <a id="toc-7-standard-library"></a>
+### [Part VII: Python Standard Library](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb) <a id="toc-7-standard-library"></a>
 
-1. [Math](#math)
-2. [DateTime](#library-datetime)
-    - [Creating datetime variables](#creating-datetime-variables)
-    - [Datetime conversion](#datetime-conversion)
-    - [Datetime arithmetic](#datetime-arithmetic)
-    - [Timezones](#datetime-timezones)
-3. [Collections](#collections)
-    - [Counter](#collections-counter)
-    - [DefaultDict](#collections-defaultdict)
-    - [OrderedDict](#collections-ordereddict)
-    - [NamedTuple](#collections-namedtuple)
-    - [Deque](#collections-deque)
-4. [OS and Sys](#os-and-sys)
-    - [OS Module](#os-module)
-    - [Sys Module](#sys-module)
+1. [Math](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#math)
+2. [DateTime](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#library-datetime)
+    - [Creating datetime variables](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#creating-datetime-variables)
+    - [Datetime conversion](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#datetime-conversion)
+    - [Datetime arithmetic](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#datetime-arithmetic)
+    - [Timezones](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#datetime-timezones)
+    - [pytz](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#datetime-pytz)
+3. [Collections](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#collections)
+    - [Counter](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#collections-counter)
+    - [DefaultDict](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#collections-defaultdict)
+    - [OrderedDict](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#collections-ordereddict)
+    - [NamedTuple](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#collections-namedtuple)
+    - [Deque](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#collections-deque)
+4. [OS and Sys](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#os-and-sys)
+    - [OS Module](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#os-module)
+    - [Sys Module](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/07_standard_library.ipynb#sys-module)
 
 ### [Part VIII: Object-Oriented Programming](#toc-8-oop) <a id="toc-8-oop"></a>
 
