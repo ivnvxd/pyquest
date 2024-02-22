@@ -1,10 +1,19 @@
-## Part XVI: Python and Data Science <a id="16-data-science"></a>
+# Part XVI: Python and Data Science <a id="16-data-science"></a>
+
+1. [NumPy](#numpy)
+2. [Pandas](#pandas)
+3. [Matplotlib](#matplotlib)
+4. [SciPy](#scipy)
+5. [Scikit-Learn](#scikit-learn)
+6. [TensorFlow and Keras](#tensorflow-keras)
+7. [PyTorch](#pytorch)
+8. [Jupyter Notebook](#jupyter-notebook)
 
 Python is a popular language for data science. It has a rich ecosystem of libraries and tools for data analysis, machine learning, and visualization. 
 
-### 1. NumPy <a id="numpy"></a>
+## 1. NumPy <a id="numpy"></a>
 
-[NumPy](#https://numpy.org/), which stands for Numerical Python, is a fundamental package for scientific computing in Python. It provides support for large, multi-dimensional array and matrix data structures, along with a collection of mathematical functions to operate on these arrays efficiently. NumPy arrays are more efficient than Python's built-in list data structures, especially for large data sets, because they use much less memory and offer faster processing.
+[NumPy](https://numpy.org/), which stands for Numerical Python, is a fundamental package for scientific computing in Python. It provides support for large, multi-dimensional array and matrix data structures, along with a collection of mathematical functions to operate on these arrays efficiently. NumPy arrays are more efficient than Python's built-in list data structures, especially for large data sets, because they use much less memory and offer faster processing.
 
 _Key Features of NumPy:_
 
@@ -61,9 +70,9 @@ print("Matrix product:\n", np.dot(a, b))
      [43 50]]
 
 
-### 2. Pandas <a id="pandas"></a>
+## 2. Pandas <a id="pandas"></a>
 
-[Pandas](#https://pandas.pydata.org/) is a highly popular Python library for data manipulation and analysis. It provides powerful, easy-to-use data structures and data analysis tools, making it an indispensable tool for data scientists, analysts, and anyone working with data in Python. The core data structures in Pandas are the DataFrame and the Series, which allow for efficient storage and manipulation of tabular data and time series data, respectively.
+[Pandas](https://pandas.pydata.org/) is a highly popular Python library for data manipulation and analysis. It provides powerful, easy-to-use data structures and data analysis tools, making it an indispensable tool for data scientists, analysts, and anyone working with data in Python. The core data structures in Pandas are the DataFrame and the Series, which allow for efficient storage and manipulation of tabular data and time series data, respectively.
 
 _Key Features of Pandas:_
 
@@ -117,9 +126,19 @@ print(older_than_30)
     3  Linda   32  London
 
 
-### 3. Matplotlib <a id="matplotlib"></a>
+    /var/folders/6r/27vxsf6512zffvpt__9jvmcc0000gn/T/ipykernel_83487/4177702930.py:1: DeprecationWarning: 
+    Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+    (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+    but was not found to be installed on your system.
+    If this would cause problems for you,
+    please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+            
+      import pandas as pd  # pip install pandas
 
-[Matplotlib](#https://matplotlib.org/) is a powerful plotting library for Python that offers a wide range of static, animated, and interactive visualizations. It is the most widely used Python library for 2D graphics, providing the ability to create high-quality graphs, charts, figures, and plots for publication purposes. Matplotlib is highly customizable and works well with NumPy and Pandas data structures, making it a central tool for data visualization in the Python data science stack.
+
+## 3. Matplotlib <a id="matplotlib"></a>
+
+[Matplotlib](https://matplotlib.org/) is a powerful plotting library for Python that offers a wide range of static, animated, and interactive visualizations. It is the most widely used Python library for 2D graphics, providing the ability to create high-quality graphs, charts, figures, and plots for publication purposes. Matplotlib is highly customizable and works well with NumPy and Pandas data structures, making it a central tool for data visualization in the Python data science stack.
 
 _Key Features of Matplotlib:_
 
@@ -164,13 +183,13 @@ plt.show()
 
 
     
-![png](../markdown/16_data_science_files/../markdown/16_data_science_6_0.png)
+![png](../markdown/16_data_science_files/../markdown/16_data_science_8_0.png)
     
 
 
-### 4. SciPy <a id="scipy"></a>
+## 4. SciPy <a id="scipy"></a>
 
-[SciPy](#https://scipy.org/), short for Scientific Python, is an open-source Python library used for scientific and technical computing. It builds on the capabilities of NumPy, offering a broader range of advanced mathematical functions and algorithms that are essential in various scientific and engineering domains. SciPy is organized into subpackages covering different scientific computing domains, making it a versatile tool for tasks ranging from optimization, integration, interpolation, eigenvalue problems, algebra, Fourier transforms, signal and image processing, ODE (Ordinary Differential Equations) solvers, and more.
+[SciPy](https://scipy.org/), short for Scientific Python, is an open-source Python library used for scientific and technical computing. It builds on the capabilities of NumPy, offering a broader range of advanced mathematical functions and algorithms that are essential in various scientific and engineering domains. SciPy is organized into subpackages covering different scientific computing domains, making it a versatile tool for tasks ranging from optimization, integration, interpolation, eigenvalue problems, algebra, Fourier transforms, signal and image processing, ODE (Ordinary Differential Equations) solvers, and more.
 
 _Key Features of SciPy:_
 
@@ -215,9 +234,9 @@ print("Minimum value of the function:", result.fun)
     Minimum value of the function: -7.945823375615215
 
 
-### 5. Scikit-Learn <a id="scikit-learn"></a>
+## 5. Scikit-Learn <a id="scikit-learn"></a>
 
-[Scikit-learn](#) is an open-source machine learning library for Python that provides simple and efficient tools for data mining and data analysis. It is built on NumPy, SciPy, and matplotlib, offering a comprehensive range of algorithms for classification, regression, clustering, dimensionality reduction, model selection, and preprocessing. Scikit-learn is designed to be accessible and efficient, making it suitable for machine learning newcomers and experts alike. Its consistent API and its documentation's quality have contributed to its wide adoption in both academia and industry.
+[Scikit-learn](https://scikit-learn.org/stable/) is an open-source machine learning library for Python that provides simple and efficient tools for data mining and data analysis. It is built on NumPy, SciPy, and matplotlib, offering a comprehensive range of algorithms for classification, regression, clustering, dimensionality reduction, model selection, and preprocessing. Scikit-learn is designed to be accessible and efficient, making it suitable for machine learning newcomers and experts alike. Its consistent API and its documentation's quality have contributed to its wide adoption in both academia and industry.
 
 Key Features of Scikit-learn:
 
@@ -262,11 +281,11 @@ print(f"Model accuracy: {accuracy*100:.2f}%")
     Model accuracy: 100.00%
 
 
-### 6. TensorFlow and Keras <a id="tensorflow-keras"></a>
+## 6. TensorFlow and Keras <a id="tensorflow-keras"></a>
 
 TensorFlow and Keras are two key libraries in the Python ecosystem for building and training machine learning models, particularly in the domains of deep learning and artificial intelligence. TensorFlow, developed by the Google Brain team, is a comprehensive, open-source platform for machine learning. Keras, originally a standalone API, is now integrated into TensorFlow as `tf.keras`, making it the default high-level API for building and training neural network models in TensorFlow. This integration combines TensorFlow's scalability and performance with Keras's ease of use and accessibility.
 
-#### TensorFlow
+### TensorFlow
 
 [TensorFlow](#https://www.tensorflow.org/) is designed for both research and production, offering a flexible platform for the development of machine learning models. It allows users to create complex deep learning architectures, like convolutional neural networks (CNNs), recurrent neural networks (RNNs), and others. TensorFlow's architecture allows computation to be executed efficiently on various computing platforms, including CPUs, GPUs, and TPUs (Tensor Processing Units).
 
@@ -277,7 +296,7 @@ _Key Features of TensorFlow:_
 - **Scalability:** It is designed to scale from running on a single device to running across multiple CPUs, GPUs, or TPUs, making it suitable for both research and production.
 - **Tooling:** TensorFlow provides a rich ecosystem of tools, including TensorBoard for visualization, TensorFlow Extended (TFX) for production pipelines, and TensorFlow Hub for reusable model components.
 
-#### Keras
+### Keras
 
 [Keras](#https://keras.io/) is a high-level neural networks API that is user-friendly, modular, and extensible. It was developed with a focus on enabling fast experimentation, which is crucial in the research domain. By being integrated into TensorFlow as `tf.keras`, it provides a more streamlined API for model design and training while retaining the ability to access TensorFlow's powerful features when needed.
 
@@ -318,9 +337,9 @@ model = create_model()
 # model.evaluate(X_test, y_test)
 ```
 
-### 7. PyTorch <a id="pytorch"></a>
+## 7. PyTorch <a id="pytorch"></a>
 
-[PyTorch](#https://pytorch.org/) is an open-source machine learning library developed by Facebook's AI Research lab (FAIR) that provides a flexible and intuitive framework for deep learning research and application development. It is particularly known for its ease of use, computational efficiency, and dynamic computational graph that allows for flexible model architecture design. PyTorch has gained widespread popularity in the research community and industry for its simplicity, accessibility, and deep integration with the Python programming language.
+[PyTorch](https://pytorch.org/) is an open-source machine learning library developed by Facebook's AI Research lab (FAIR) that provides a flexible and intuitive framework for deep learning research and application development. It is particularly known for its ease of use, computational efficiency, and dynamic computational graph that allows for flexible model architecture design. PyTorch has gained widespread popularity in the research community and industry for its simplicity, accessibility, and deep integration with the Python programming language.
 
 _Key Features of PyTorch:_
 
@@ -378,14 +397,14 @@ optimizer.step()
 print(f"Loss: {loss.item()}")
 ```
 
-    Loss: 2.3174941539764404
+    Loss: 2.289994239807129
 
 
-### 7. Jupyter Notebook <a id="jupyter-notebook"></a>
+## 7. Jupyter Notebook <a id="jupyter-notebook"></a>
 
 _If you are reading this, you are already familiar with Jupyter Notebook! You might have noticed that this notebook is a mix of text and code, and you can run the code and see the output directly in the notebook._
 
-[Jupyter Notebook](#https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is widely used in data analysis, scientific research, and machine learning to create and share documents that contain live code, visualizations, and explanatory text. Jupyter Notebooks support over 40 programming languages, including Python, R, Julia, and Scala.
+[Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is widely used in data analysis, scientific research, and machine learning to create and share documents that contain live code, visualizations, and explanatory text. Jupyter Notebooks support over 40 programming languages, including Python, R, Julia, and Scala.
 
 _Key Features of Jupyter Notebook:_
 

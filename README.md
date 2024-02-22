@@ -449,16 +449,16 @@ By the way, if you're preparing for a job interview, check out this list of cruc
 4. [Kivy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#kivy)
 5. [PySimpleGUI](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#pysimplegui)
 
-### [Part XVI: Python and Data Science](#16-data-science) <a id="toc-16-data-science"></a>
+### [Part XVI: Python and Data Science](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb) <a id="toc-16-data-science"></a>
 
-1. [NumPy](#numpy)
-2. [Pandas](#pandas)
-3. [Matplotlib](#matplotlib)
-4. [SciPy](#scipy)
-5. [Scikit-Learn](#scikit-learn)
-6. [TensorFlow and Keras](#tensorflow-keras)
-7. [PyTorch](#pytorch)
-8. [Jupyter Notebook](#jupyter-notebook)
+1. [NumPy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#numpy)
+2. [Pandas](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#pandas)
+3. [Matplotlib](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#matplotlib)
+4. [SciPy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#scipy)
+5. [Scikit-Learn](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#scikit-learn)
+6. [TensorFlow and Keras](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#tensorflow-keras)
+7. [PyTorch](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#pytorch)
+8. [Jupyter Notebook](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/16_data_science.ipynb#jupyter-notebook)
 
 ### [Part XVII: Software Architecture](#17-architecture) <a id="toc-17-architecture"></a>
 
