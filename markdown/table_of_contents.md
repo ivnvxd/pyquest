@@ -546,9 +546,3 @@
     - [Dynamic Programming](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/19_algorithms.ipynb#dynamic-programming)
     - [Greedy Algorithms](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/19_algorithms.ipynb#greedy-algorithms)
     - [Backtracking](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/19_algorithms.ipynb#backtracking)
-
-### [Outro](#c-outro)
-
-### [Sources](#c-sources)
-
-### [License](#c-license)
