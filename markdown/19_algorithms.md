@@ -1,10 +1,42 @@
-## Part XIX: Algorithms <a id="19-algorithms"></a>
+# Part XIX: Algorithms <a id="19-algorithms"></a>
 
-### 1. Time Complexity and Big O Notation <a id="time-complexity-and-big-o-notation"></a>
+1. [Time Complexity and Big O Notation](#time-complexity-and-big-o-notation)
+    - [Time Complexity](#time-complexity)
+    - [Big O Notation](#big-o-notation)
+    - [Common Data Structure Time Complexities](#common-data-structure-time-complexities)
+2. [Sorting Algorithms](#sorting-algorithms)
+    - [Bubble Sort](#bubble-sort)
+    - [Insertion Sort](#insertion-sort)
+    - [Selection Sort](#selection-sort)
+    - [Quick Sort](#quick-sort)
+    - [Merge Sort](#merge-sort)
+    - [Heap Sort](#heap-sort)
+    - [Counting Sort](#counting-sort)
+    - [Radix Sort](#radix-sort)
+    - [Common Sorting Algorithms Time Complexities](#common-sorting-algorithms-time-complexities)
+3. [Searching Algorithms](#searching-algorithms)
+    - [Linear Search](#linear-search)
+    - [Binary Search](#binary-search)
+4. [Graph Algorithms](#graph-algorithms)
+    - [Depth-First Search (DFS)](#depth-first-search)
+        - [Preorder, Inorder, Postorder Traversal](#preorder-inorder-postorder)
+    - [Breadth-First Search (BFS)](#breadth-first-search)
+    - [Dijkstra's Algorithm](#dijkstras)
+    - [Bellman-Ford Algorithm](#bellman-ford)
+5. [Problem Solving Methods](#problem-solving-methods)
+    - [Two Pointers](#two-pointers)
+    - [Sliding Window](#sliding-window)
+    - [Divide and Conquer](#divide-and-conquer)
+    - [Recursion](#recursion)
+    - [Dynamic Programming](#dynamic-programming)
+    - [Greedy Algorithms](#greedy-algorithms)
+    - [Backtracking](#backtracking)
+
+## 1. Time Complexity and Big O Notation <a id="time-complexity-and-big-o-notation"></a>
 
 _Time complexity_ and _Big O_ notation are foundational concepts in computer science, particularly in the analysis of algorithms. They are used to describe the performance of algorithms and the amount of time they take to run as a function of the size of their input.
 
-#### Time Complexity <a id="time-complexity"></a>
+### Time Complexity <a id="time-complexity"></a>
 
 _Time complexity_ is a measure of the amount of computational time that an algorithm takes to complete as a function of the length of the input. It gives us an idea of the growth rate of the runtime of an algorithm as the size of input data increases. Time complexity is important because it helps us to predict the scalability of an algorithm and to determine whether it is practical for large datasets.
 
@@ -14,7 +46,7 @@ There are several types of time complexity measures, including:
 - **Average-case time complexity (𝛀 omega notation)**: The expected amount of time an algorithm will take to complete, over all possible inputs of a given size.
 - **Best-case time complexity (𝚯 theta notation)**: The minimum amount of time an algorithm could take to complete, which usually occurs under ideal conditions.
 
-#### Big O Notation <a id="big-o-notation"></a>
+### Big O Notation <a id="big-o-notation"></a>
 
 _Big O_ notation is a mathematical notation used to describe the upper bound of the time complexity of an algorithm. It expresses the worst-case scenario of an algorithm's growth rate, allowing us to compare the efficiency of different algorithms regardless of hardware or software differences. Big O notation focuses on the main factor that affects the growth rate, ignoring constants and smaller terms, which become negligible as the input size grows.
 
@@ -28,7 +60,7 @@ Here are some common Big O notations and their meanings:
 - **O(2^n)**: Exponential time - The execution time doubles with each addition to the input data set size. This is often seen in algorithms that generate all subsets of a set.
 - **O(n!)**: Factorial time - The execution time grows factorially with the increase in input data set size. This is typical in algorithms that generate all permutations of a set.
 
-#### Common Data Structure Time Complexities <a id="common-data-structure-time-complexities"></a>
+### Common Data Structure Time Complexities <a id="common-data-structure-time-complexities"></a>
 
 Here are the time complexities for common data structures:
 
@@ -46,13 +78,13 @@ Here are the time complexities for common data structures:
 | Balanced Tree (AVL, Red-Black Tree) | O(log n) | O(log n) | O(log n)  | O(log n)  | Maintains balance to ensure O(log n) operations. |
 | Heap (Binary)          | O(1)      | O(n)      | O(log n)  | O(log n)  | Min/Max value is O(1); finding arbitrary values is O(n). |
 
-### 2. Sorting Algorithms <a id="sorting-algorithms"></a>
+## 2. Sorting Algorithms <a id="sorting-algorithms"></a>
 
 _Sorting algorithms_ are used to rearrange a list of elements into a particular order, such as numerical, lexicographical, or some other order. Sorting is a fundamental operation in computer science and is used in a wide variety of applications, including searching, data analysis, and database operations.
 
 There are many different sorting algorithms, each with its own advantages and disadvantages. The choice of sorting algorithm depends on the size of the data set, the nature of the data, and the available resources. Here are some common sorting algorithms:
 
-#### Bubble Sort <a id="bubble-sort"></a>
+### Bubble Sort <a id="bubble-sort"></a>
 
 _Bubble Sort_ is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm is named for the way smaller elements "bubble" to the top of the list (beginning of the list) because, during each pass, the largest unsorted element bubbles up to its correct position.
 
@@ -100,7 +132,7 @@ print("Bubble sort:", arr)
     Bubble sort: [11, 12, 22, 25, 34, 64, 90]
 
 
-#### Insertion Sort <a id="insertion-sort"></a>
+### Insertion Sort <a id="insertion-sort"></a>
 
 _Insertion Sort_ is a simple and intuitive sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, its simplicity and the fact that it makes minimal number of swaps makes it efficient for small data sets and nearly sorted arrays. Moreover, it's stable, meaning that it maintains the relative order of equal elements.
 
@@ -145,7 +177,7 @@ print("Insertion sort:", arr)
     Insertion sort: [5, 6, 11, 12, 13]
 
 
-#### Selection Sort <a id="selection-sort"></a>
+### Selection Sort <a id="selection-sort"></a>
 
 _Selection Sort_ is a straightforward and intuitive sorting algorithm. The algorithm divides the input list into two parts: a sorted sublist of items which is built up from left to right at the front (left) of the list, and a sublist of the remaining unsorted items that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, swapping it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.
 
@@ -189,7 +221,7 @@ print("Selection sort:", arr)
     Selection sort: [11, 12, 22, 25, 64]
 
 
-#### Quick Sort <a id="quick-sort"></a>
+### Quick Sort <a id="quick-sort"></a>
 
 _Quick Sort_ is a highly efficient sorting algorithm and is based on the divide-and-conquer principle. It is able to sort large datasets significantly faster than similar algorithms, such as bubble sort, selection sort, and insertion sort, especially when the data is random. Quick Sort is also known as "partition-exchange sort."
 
@@ -284,7 +316,7 @@ print("Quick sort:", sorted_arr)
     Quick sort: [1, 1, 2, 3, 6, 8, 10]
 
 
-#### Merge Sort <a id="merge-sort"></a>
+### Merge Sort <a id="merge-sort"></a>
 
 _Merge Sort_ is a divide-and-conquer algorithm that divides the input array into two halves, recursively sorts the two halves, and then merges the two sorted halves. The main advantage of Merge Sort is its consistent _O(n log n)_ performance for sorting, making it efficient for large datasets. It's also stable, which means it preserves the input order of equal elements in the sorted output, an important property for certain applications.
 
@@ -343,7 +375,7 @@ print("Merge sort:", arr)
     Merge sort: [5, 6, 7, 11, 12, 13]
 
 
-#### Heap Sort <a id="heap-sort"></a>
+### Heap Sort <a id="heap-sort"></a>
 
 _Heap Sort_ is a comparison-based sorting algorithm that uses a binary heap data structure to create a sorted array. Unlike other sorting algorithms like bubble sort, selection sort, and insertion sort, heap sort has a better worst-case time complexity of _O(n log n)_. The key idea behind heap sort is to first transform the list into a max heap (or min heap, depending on the sorting order required), a complete binary tree where the largest (or smallest) element is at the root. The algorithm then repeatedly removes the largest (or smallest) element from the heap and rebuilds the heap, until all elements are removed from the heap and inserted into the array in sorted order.
 
@@ -409,7 +441,7 @@ print("Heap sort:", arr)
     Heap sort: [5, 6, 7, 11, 12, 13]
 
 
-#### Counting Sort <a id="counting-sort"></a>
+### Counting Sort <a id="counting-sort"></a>
 
 _Counting Sort_ is a non-comparison-based sorting algorithm that sorts the elements of an array by counting the number of occurrences of each unique element in the array. The algorithm then uses these counts to determine the position of each element in the output array. Counting Sort works best when the range of potential items in the input array (the difference between the maximum and minimum elements) is not significantly larger than the number of items. It is often used as a subroutine in more complex sorting algorithms, like Radix Sort, for sorting digits.
 
@@ -466,7 +498,7 @@ print("Counting sort:", arr)
     Counting sort: [1, 2, 2, 3, 3, 4, 8]
 
 
-#### Radix Sort <a id="radix-sort"></a>
+### Radix Sort <a id="radix-sort"></a>
 
 _Radix Sort_ is a non-comparison-based sorting algorithm that sorts numbers by processing individual digits. Unlike other sorting algorithms that compare entire numbers to each other, Radix Sort processes the integers digit by digit, starting from the least significant digit (LSD) to the most significant digit (MSD), or vice versa, depending on the implementation. It uses counting sort (or sometimes other stable sort algorithms) as a subroutine to sort the elements based on each digit.
 
@@ -538,7 +570,7 @@ print("Radix sort:", arr)
     Radix sort: [1, 23, 45, 121, 432, 564, 788]
 
 
-#### Common Sorting Algorithms Time Complexities <a id="common-sorting-algorithms-time-complexities"></a>
+### Common Sorting Algorithms Time Complexities <a id="common-sorting-algorithms-time-complexities"></a>
 
 Here are the time complexities for common sorting algorithms:
 
@@ -555,11 +587,11 @@ Here are the time complexities for common sorting algorithms:
 
 Stability: A sorting algorithm is said to be stable if two objects with equal keys appear in the same order in sorted output as they appear in the input array.
 
-### 3. Searching Algorithms <a id="searching-algorithms"></a>
+## 3. Searching Algorithms <a id="searching-algorithms"></a>
 
-Searching algorithms are designed to retrieve information or find an element from a data structure. The efficiency of a searching algorithm is crucial, especially when dealing with large datasets. There are various searching algorithms, each with its own strengths and weaknesses. The most commonly discussed searching algorithms are Linear Search and Binary Search.
+_Searching algorithms_ are designed to retrieve information or find an element from a data structure. The efficiency of a searching algorithm is crucial, especially when dealing with large datasets. There are various searching algorithms, each with its own strengths and weaknesses. The most commonly discussed searching algorithms are Linear Search and Binary Search.
 
-#### Linear Search <a id="linear-search"></a>
+### Linear Search <a id="linear-search"></a>
 
 _Linear Search_, also known as Sequential Search, is the simplest searching algorithm. It scans each element in the list sequentially to find a match with the target value.
 
@@ -595,7 +627,7 @@ print("Element found at index:", linear_search(arr, x))
     Element found at index: 3
 
 
-#### Binary Search <a id="binary-search"></a>
+### Binary Search <a id="binary-search"></a>
 
 _Binary Search_ is a much faster algorithm than Linear Search but requires that the array be sorted beforehand. It works by repeatedly dividing in half the portion of the list that could contain the item, until narrowing down the possible locations to just one.
 
@@ -641,11 +673,11 @@ print("Element found at index:", binary_search(arr, x))
     Element found at index: 3
 
 
-### 4. Graph Algorithms <a id="graph-algorithms"></a>
+## 4. Graph Algorithms <a id="graph-algorithms"></a>
 
 _Graph algorithms_ are a set of instructions for traversing, searching, and manipulating graphs. Graphs are a fundamental data structure in computer science and are used to model a wide variety of problems, including computer networks, social networks, transportation networks, and more. There are many different types of graph algorithms, each with its own set of applications and use cases.
 
-#### Depth-First Search (DFS) <a id="depth-first-search"></a>
+### Depth-First Search (DFS) <a id="depth-first-search"></a>
 
 _Depth-First Search_ (DFS) is a fundamental algorithm used to explore nodes and edges of a graph. It's a recursive algorithm that uses the idea of backtracking. It involves exhaustive searches of all the nodes by going ahead, if possible, else by backtracking.
 
@@ -704,7 +736,7 @@ dfs(visited, graph, "A")
     F
 
 
-##### Preorder, Inorder, Postorder Traversal <a id="preorder-inorder-postorder"></a>
+#### Preorder, Inorder, Postorder Traversal <a id="preorder-inorder-postorder"></a>
 
 In the context of trees, DFS can be used to traverse the nodes in different orders, such as Preorder, Inorder, and Postorder. These traversals are used to visit each node in a tree exactly once, and they differ in the order in which they visit the nodes.
 
@@ -769,7 +801,7 @@ postorder_traversal(root)
     Postorder traversal:
     D E B F C A 
 
-#### Breadth-First Search (BFS) <a id="breadth-first-search"></a>
+### Breadth-First Search (BFS) <a id="breadth-first-search"></a>
 
 _Breadth-First Search_ (BFS) is a fundamental algorithm for searching or traversing tree or graph data structures. It explores the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. BFS is particularly useful for finding the shortest path on unweighted graphs, as it guarantees the minimum number of edges that must be traversed to reach a node from the starting point.
 
@@ -836,7 +868,7 @@ bfs(graph, "A")
     BFS traversal starting from vertex 'A':
     A B C D E F G 
 
-#### Dijkstra's Algorithm <a id="dijkstras"></a>
+### Dijkstra's Algorithm <a id="dijkstras"></a>
 
 _Dijkstra's algorithm_ is a famous graph search algorithm that solves the shortest path problem for a graph with non-negative edge weights, producing a shortest path tree. This algorithm is widely used in networking for finding the shortest path between nodes in a network, such as the Internet routing protocols, and for solving various problems in geographical mapping, planning, and logistics.
 
@@ -917,7 +949,7 @@ print(dijkstra(graph, "A"))
     {'A': 0, 'B': 1, 'C': 3, 'D': 4}
 
 
-#### Bellman-Ford Algorithm <a id="bellman-ford"></a>
+### Bellman-Ford Algorithm <a id="bellman-ford"></a>
 
 The _Bellman-Ford algorithm_ is a graph search algorithm that calculates the shortest paths from a single source vertex to all other vertices in a weighted digraph (directed graph). Unlike Dijkstra's algorithm, which only works with graphs without negative weight edges, the Bellman-Ford algorithm can handle graphs with negative edge weights, making it more versatile for certain applications. The algorithm can also detect negative weight cycles in the graph.
 
@@ -979,11 +1011,11 @@ print(bellman_ford(graph, "A"))
     {'A': 0, 'B': -1, 'C': 2, 'D': -2, 'E': 1}
 
 
-### 5. Problem Solving Methods <a id="problem-solving-methods"></a>
+## 5. Problem Solving Methods <a id="problem-solving-methods"></a>
 
 Problem-solving methods in the context of algorithms and programming involve strategies and approaches for tackling computational problems. These methods are foundational to developing efficient and effective solutions for a wide range of challenges in computer science and software development.
 
-#### Two Pointers <a id="two-pointers"></a>
+### Two Pointers <a id="two-pointers"></a>
 
 _The Two Pointers technique_ is a strategy that uses two pointers to solve problems that involve arrays or lists. The technique is often used to optimize brute-force solutions by reducing the time complexity of the algorithm.
 
@@ -1041,7 +1073,7 @@ print("Pair found at indices:", findPair(arr, target))
     Pair found at indices: (1, 3)
 
 
-#### Sliding Window <a id="sliding-window"></a>
+### Sliding Window <a id="sliding-window"></a>
 
 _The Sliding Window technique_ is a strategy for solving problems that involve arrays, lists, or strings. It involves creating a window that slides over the array or list to find a solution, usually by keeping track of a subset of elements within the window.
 
@@ -1104,7 +1136,7 @@ print("Maximum sum of a subarray of size K:", maxSumSubarrayOfSizeK(arr, k))
     Maximum sum of a subarray of size K: 9
 
 
-#### Divide and Conquer <a id="divide-and-conquer"></a>
+### Divide and Conquer <a id="divide-and-conquer"></a>
 
 _The Divide and Conquer technique_ is a strategy for solving problems that involves breaking a problem into smaller subproblems, solving the subproblems independently, and then combining their solutions to solve the original problem.
 
@@ -1185,7 +1217,7 @@ print("Maximum contiguous sum is", max_sum)
     Maximum contiguous sum is 7
 
 
-#### Recursion <a id="recursion"></a>
+### Recursion <a id="recursion"></a>
 
 _Recursion_ is a programming technique in which a function calls itself to solve a problem. It's a powerful and elegant way to solve problems that can be broken down into smaller, similar subproblems.
 
@@ -1235,7 +1267,7 @@ print(factorial(5))  # Output: 120
     120
 
 
-#### Dynamic Programming <a id="dynamic-programming"></a>
+### Dynamic Programming <a id="dynamic-programming"></a>
 
 _Dynamic Programming (DP)_ is a method for solving complex problems by breaking them down into simpler subproblems. It's particularly useful for optimization problems, such as finding the shortest path, the longest common subsequence, or the minimum cost.
 
@@ -1308,7 +1340,7 @@ print(fib_tab(10))  # Output: 55
     55
 
 
-#### Greedy Algorithms <a id="greedy-algorithms"></a>
+### Greedy Algorithms <a id="greedy-algorithms"></a>
 
 _Greedy algorithms_ are a class of algorithms that make a series of choices, each of which is the best at the moment, with the hope that the series of best choices will lead to an optimal solution. Greedy algorithms are often used to solve optimization problems, such as finding the shortest path, the minimum spanning tree, or the minimum cost.
 
@@ -1371,7 +1403,7 @@ print("Maximum value in knapsack =", fractional_knapsack(value, weight, capacity
     Maximum value in knapsack = 240.0
 
 
-#### Backtracking <a id="backtracking"></a>
+### Backtracking <a id="backtracking"></a>
 
 _Backtracking_ is a general algorithmic technique that incrementally builds candidates to the solutions and abandons a candidate ("backtracks") as soon as it determines that the candidate cannot possibly be completed to a valid solution. It's often used to solve problems that involve finding all possible solutions to a problem, such as finding all permutations, combinations, or subsets of a set.
 
