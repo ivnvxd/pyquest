@@ -1,9 +1,52 @@
-## Part XIV: Networking and Web Development <a id="14-web"></a>
+# Part XIV: Networking and Web Development <a id="14-web"></a>
 
-### 1. HTTP <a id="http"></a>
+1. [HTTP](#http)
+    - [HTTP Methods](#http-methods)
+    - [HTTP Status Codes](#http-status-codes)
+    - [Cookies and Sessions](#cookies-and-sessions)
+    - [HTTPS and Security](#https-and-security)
+2. [Web Frameworks](#web-frameworks)
+    - [Django](#django)
+    - [Flask](#flask)
+    - [FastAPI](#fastapi)
+3. [APIs](#apis)
+    - [REST API](#rest-api)
+        - [OpenAPI (Swagger)](#openapi)
+    - [Authentication](#authentication)
+        - [JWT](#jwt)
+        - [OAuth](#oauth)
+    - [GraphQL](#graphql)
+4. [RPC (Remote Procedure Call)](#rpc)
+    - [XML-RPC and JSON-RPC](#xml-rpc-and-json-rpc)
+    - [gRPC](#grpc)
+5. [Web Servers](#web-servers)
+    - [WSGI and ASGI](#wsgi-and-asgi)
+    - [Reverse Proxy](#reverse-proxy)
+    - [Load Balancing](#load-balancing)
+    - [Caching](#caching)
+    - [Common Web Servers](#common-web-servers)
+        - [Nginx](#nginx)
+        - [Gunicorn](#gunicorn)
+        - [Caddy](#caddy)
+        - [Apache](#apache)
+6. [Real-Time Communication](#real-time-communication)
+    - [WebRTC (Web Real-Time Communication)](#webrtc)
+    - [WebSocket](#websocket)
+7. [Web Scraping](#web-scraping)
+    - [Beautiful Soup](#beautiful-soup)
+    - [Scrapy](#scrapy)
+    - [Selenium](#selenium)
+8. [Security](#web-security)
+    - [Cross-Site Scripting (XSS)](#xss)
+    - [Cross-Site Request Forgery (CSRF)](#csrf)
+    - [SQL Injection](#sql-injection)
+    - [Clickjacking](#clickjacking)
+    - [Content Security Policy (CSP)](#csp)
+9. [Frontend Development](#frontend-development)
+    - [Basic HTML, CSS, and JavaScript](#basic-html-css-js)
+    - [Frontend Frameworks](#frontend-frameworks)
 
-
-#### HTTP Basics <a id="http-basics"></a>
+## 1. HTTP <a id="http"></a>
 
 _HTTP_ (Hypertext Transfer Protocol) is the foundation of data communication on the World Wide Web. It's a protocol used for transmitting hypermedia documents, such as HTML. It follows a client-server model where the client sends an HTTP request to the server, and the server responds with an HTTP response.
 
@@ -47,7 +90,7 @@ conn.close()
         <meta name="viewport" conten
 
 
-#### HTTP Methods <a id="http-methods"></a>
+### HTTP Methods <a id="http-methods"></a>
 
 HTTP defines a set of request methods to indicate the desired action to be performed for a given resource. These methods are sometimes referred to as HTTP verbs. Each has a specific meaning and is chosen based on the action the client wants to perform.
 
@@ -96,38 +139,45 @@ response_options = requests.options("https://httpbin.org")
 print("OPTIONS:", response_options.headers)
 ```
 
-    GET: {'args': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65cd0d3a-5781899e3533e7b271113ea5'}, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/get'}
-    POST: {'args': {}, 'data': '', 'files': {}, 'form': {'key': 'value'}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '9', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65cd0d3b-180a176f62c9dd090d3a7bd0'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/post'}
-    PUT: {'args': {}, 'data': '', 'files': {}, 'form': {'key': 'new value'}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '13', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65cd0d3c-5a7b5f3b5f286ed42ee62d29'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/put'}
-    DELETE: {'args': {}, 'data': '', 'files': {}, 'form': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '0', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65cd0d3c-0b1be0df2d04e2f6712e9c1f'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/delete'}
-    PATCH: {'args': {}, 'data': '', 'files': {}, 'form': {'key': 'patched value'}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '17', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65cd0d3d-34cb9d443e190e5b39da6dbd'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/patch'}
-    HEAD: {'Date': 'Wed, 14 Feb 2024 18:58:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '308', 'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true'}
-    OPTIONS: {'Date': 'Wed, 14 Feb 2024 18:58:07 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '0', 'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Allow': 'HEAD, GET, OPTIONS', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS', 'Access-Control-Max-Age': '3600'}
+    GET: {'args': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65d74014-28d4eb0839cd6f6d283425ae'}, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/get'}
+    POST: {'args': {}, 'data': '', 'files': {}, 'form': {'key': 'value'}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '9', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65d74014-3336ccd97e06afb931cd302f'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/post'}
+    PUT: {'args': {}, 'data': '', 'files': {}, 'form': {'key': 'new value'}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '13', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65d74015-368e9e091724b5f2205a465c'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/put'}
+    DELETE: {'args': {}, 'data': '', 'files': {}, 'form': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '0', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65d74015-0f67d52950ce0515192b0f55'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/delete'}
+    PATCH: {'args': {}, 'data': '', 'files': {}, 'form': {'key': 'patched value'}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '17', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65d74017-2eabe3e90661543770dd9029'}, 'json': None, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/patch'}
+    HEAD: {'Date': 'Thu, 22 Feb 2024 12:37:44 GMT', 'Content-Type': 'application/json', 'Content-Length': '308', 'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true'}
+    OPTIONS: {'Date': 'Thu, 22 Feb 2024 12:37:44 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '0', 'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Allow': 'OPTIONS, HEAD, GET', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS', 'Access-Control-Max-Age': '3600'}
 
 
-#### HTTP Status Codes <a id="http-status-codes"></a>
+### HTTP Status Codes <a id="http-status-codes"></a>
 
-HTTP status codes are standard response codes given by web server software for every HTTP request made. These codes are part of the HTTP response, indicating whether a specific HTTP request has been successfully completed. The responses are grouped into five classes:
+HTTP status codes are standard response codes given by web server software for every HTTP request made. These codes are part of the HTTP response, indicating whether a specific HTTP request has been successfully completed. 
+
+_The responses are grouped into five classes:_
 
 _1. Informational responses (100–199)_
 - **100 Continue:** The initial part of a request has been received, and the client should continue with the request.
+- **101 Switching Protocols:** The server is switching protocols according to the Upgrade header sent by the client.
+- **102 Processing:** The server has received and is processing the request, but no response is available yet.
 
 _2. Successful responses (200–299)_
 - **200 OK:** The request has succeeded. The meaning of the success depends on the HTTP method.
 - **201 Created:** The request has succeeded, and a new resource has been created as a result.
+- **204 No Content:** The server successfully processed the request and is not returning any content.
 
 _3. Redirection messages (300–399)_
 - **301 Moved Permanently:** The URL of the requested resource has been changed permanently. The new URL is given in the response.
 - **302 Found:** This response code means that the URI of requested resource has been temporarily changed.
+- **304 Not Modified:** The resource has not been modified since the last request.
 
 _4. Client error responses (400–499)_
 - **400 Bad Request:** The server cannot or will not process the request due to something that is perceived to be a client error.
-- **404 Not Found:** The server can't find the requested resource.
 - **403 Forbidden:** The client does not have access rights to the content.
+- **404 Not Found:** The server can't find the requested resource.
 
 _5. Server error responses (500–599)_
 - **500 Internal Server Error:** The server encountered an unexpected condition that prevented it from fulfilling the request.
 - **503 Service Unavailable:** The server is not ready to handle the request, often due to maintenance or overloading.
+- **504 Gateway Timeout:** The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server.
 
 
 ```python
@@ -146,19 +196,19 @@ else:
     Not Found.
 
 
-#### Cookies and Sessions <a id="cookies-and-sessions"></a>
+### Cookies and Sessions <a id="cookies-and-sessions"></a>
 
 Cookies and sessions are mechanisms used on the internet to persist state information between the client and the server. They help in creating a personalized experience for users across web requests, which are inherently stateless in HTTP.
 
 _Cookies:_
 
-- **What are Cookies?** Cookies are small pieces of data stored on the client's computer by the web browser at the request of the server. They are sent back to the server with every request made by the browser, allowing the server to maintain state or remember specific information about the user across requests.
-- **Usage:** Cookies can store preferences, authentication tokens, and any other data that the server needs to remember about the client. They are commonly used for session management, personalization, and tracking user behavior.
+- Cookies are small pieces of data stored on the client's computer by the web browser at the request of the server. They are sent back to the server with every request made by the browser, allowing the server to maintain state or remember specific information about the user across requests.
+- Cookies can store preferences, authentication tokens, and any other data that the server needs to remember about the client. They are commonly used for session management, personalization, and tracking user behavior.
 
 _Sessions:_
 
-- **What are Sessions?** A session is a server-side storage of information that is desired to persist throughout the user's interaction with the web site or web application. Unlike cookies, session data is stored on the server. The server assigns a unique session ID for each user's session, which is then sent to the client as a cookie.
-- **Usage:** Sessions are used to store information such as user profiles, shopping cart contents, or any other data that should be accessible across multiple pages on a website. Because the data is stored server-side, sessions are considered more secure than storing sensitive data directly in cookies.
+- A session is a server-side storage of information that is desired to persist throughout the user's interaction with the web site or web application. Unlike cookies, session data is stored on the server. The server assigns a unique session ID for each user's session, which is then sent to the client as a cookie.
+- Sessions are used to store information such as user profiles, shopping cart contents, or any other data that should be accessible across multiple pages on a website. Because the data is stored server-side, sessions are considered more secure than storing sensitive data directly in cookies.
 
 _How They Work Together:_
 
@@ -166,7 +216,7 @@ _How They Work Together:_
 2. **Cookie Storage:** The browser stores the session ID cookie and sends it back to the server with every request.
 3. **Data Retrieval:** The server reads the session ID from the cookie to retrieve user-specific data stored in the session.
 
-#### HTTPS and Security <a id="https-and-security"></a>
+### HTTPS and Security <a id="https-and-security"></a>
 
 _HTTPS_ (Hypertext Transfer Protocol Secure) is the secure version of HTTP, the protocol over which data is sent between your browser and the website that you are connected to. The 'S' at the end of HTTPS stands for 'Secure'. It means all communications between your browser and the website are encrypted. HTTPS is often used to protect highly confidential online transactions like online banking and online shopping order forms.
 
@@ -194,9 +244,9 @@ Let's say you're logging into your bank's website. When you enter your login det
 - Your login information is encrypted with the bank's public key and sent over the internet.
 - Only the bank's server, which has the private key, can decrypt your login information and authenticate your session securely.
 
-### 2. Web Frameworks <a id="web-frameworks"></a>
+## 2. Web Frameworks <a id="web-frameworks"></a>
 
-Web frameworks are software libraries designed to support the development of web applications, web services, and web resources. They provide a standard way to build and deploy web applications on the internet. Web frameworks aim to automate the overhead associated with common activities performed in web development, such as routing HTTP requests, handling sessions and cookies, interacting with databases, and rendering HTML templates.
+_Web frameworks_ are software libraries designed to support the development of web applications, web services, and web resources. They provide a standard way to build and deploy web applications on the internet. Web frameworks aim to automate the overhead associated with common activities performed in web development, such as routing HTTP requests, handling sessions and cookies, interacting with databases, and rendering HTML templates.
 
 _Why Use a Web Framework?_
 
@@ -205,7 +255,7 @@ _Why Use a Web Framework?_
 - **Scalability:** Frameworks provide tools and libraries that make it easier to scale applications.
 - **Community and Support:** Using a popular framework gives you access to a large community for support, tutorials, plugins, and additional libraries.
 
-#### Django <a id="django"></a>
+### Django <a id="django"></a>
 
 [Django](#https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Founded by Adrian Holovaty and Simon Willison in 2005, Django aims to make it easier to build complex, database-driven websites with an emphasis on reusability and "pluggability" of components, less code, low coupling, rapid development, and the principle of don't repeat yourself (DRY).
 
@@ -273,7 +323,7 @@ urlpatterns = [
 
 When you visit `http://127.0.0.1:8000/hello/` in your browser, you'll see "Hello, world!".
 
-#### Flask <a id="flask"></a>
+### Flask <a id="flask"></a>
 
 [Flask](#https://flask.palletsprojects.com/) is a lightweight WSGI (Web Server Gateway Interface) web application framework written in Python. It is designed to make getting started with a web application quick and easy, with the ability to scale up to complex applications. Flask was created by Armin Ronacher and is based on the Werkzeug WSGI toolkit and Jinja2 template engine. It's considered a micro-framework because it does not require particular tools or libraries. This does not mean that Flask is lacking in functionality; rather, it suggests that Flask aims to keep the core simple but extensible.
 
@@ -294,12 +344,10 @@ Flask applications are Python modules, usually with a `flask.Flask` instance at 
 
 Flask uses a routing system to match URLs to functions in your application, which are called view functions. These view functions process requests and return responses to the client.
 
-Running the Flask application is straightforward:
-```bash
-python app.py
-```
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 from flask import Flask  # pip install flask
 
 app = Flask(__name__)
@@ -312,16 +360,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-    * Serving Flask app '__main__'
-    * Debug mode: on
-    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
-    * Running on http://127.0.0.1:5000
-    Press CTRL+C to quit
-    * Restarting with stat
-    * Debugger is active!
-    * Debugger PIN: 701-169-434
-
-#### FastAPI <a id="fastapi"></a>
+### FastAPI <a id="fastapi"></a>
 
 [FastAPI](#https://fastapi.tiangolo.com/) is a modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints. The framework is designed for ease of use, while also enabling the development of robust, production-ready APIs. FastAPI was created by Sebastián Ramírez and has rapidly gained popularity for its speed, ease of use, and scalability.
 
@@ -342,12 +381,10 @@ FastAPI applications define endpoints and their corresponding request handlers, 
 
 The use of Python type hints not only improves code quality and readability but also enables FastAPI to validate incoming request data, serialize response data, and generate detailed API documentation.
 
-Start the application using Uvicorn:
-```bash
-uvicorn main:app --reload
-```
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 from fastapi import FastAPI  # pip install fastapi uvicorn
 from pydantic import BaseModel
 
@@ -368,12 +405,7 @@ if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
 ```
 
-    INFO:     Started server process [46097]
-    INFO:     Waiting for application startup.
-    INFO:     Application startup complete.
-    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-
-### 3. APIs <a id="apis"></a>
+## 3. APIs <a id="apis"></a>
 
 _API_ stands for Application Programming Interface. It is a set of rules, protocols, and tools for building software and applications. An API specifies how software components should interact and can be used when programming graphical user interface (GUI) components, databases, web servers, or even microservices.
 
@@ -389,7 +421,7 @@ _Types of APIs:_
 2. **Library APIs:** A set of routines, protocols, and tools for building software and applications in a specific language or for a specific platform.
 3. **Operating System APIs:** Define how applications interact with the operating system, including operations like file handling, process management, and windowing.
 
-#### REST API <a id="rest-api"></a>
+### REST API <a id="rest-api"></a>
 
 _REST_ stands for Representational State Transfer. It is an architectural style for designing networked applications. REST uses a stateless communication protocol, typically HTTP, to interact with resources. These resources are manipulated using a set of standard operations such as GET, POST, PUT, DELETE, etc.
 
@@ -431,10 +463,10 @@ post = response.json()
 print(post)
 ```
 
-    {'args': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65cd0d40-4ba552c06c9cc7146d0266e9'}, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/get'}
+    {'args': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-65d74019-3f97ff7f13a9f9c36c603dc3'}, 'origin': '46.139.217.164', 'url': 'https://httpbin.org/get'}
 
 
-##### OpenAPI (Swagger) <a id="openapi"></a>
+#### OpenAPI (Swagger) <a id="openapi"></a>
 
 [OpenAPI](#https://www.openapis.org/), formerly known as Swagger, is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services. Initially part of the Swagger framework, it was donated to the OpenAPI Initiative (OAI), a project under the Linux Foundation, in 2015. The OpenAPI Specification (OAS) defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of a service without access to source code, documentation, or through network traffic inspection.
 
@@ -490,9 +522,9 @@ paths:
 
 This example shows a very basic OpenAPI definition for an API with a single endpoint (`/users`) that, when called with a `GET` request, returns a list of users.
 
-#### Authentication <a id="authentication"></a>
+### Authentication <a id="authentication"></a>
 
-Authentication is the process of verifying the identity of a user, device, or other entity in a computer system, often as a prerequisite to granting access to resources in that system. In the context of web applications and APIs, authentication is crucial for ensuring that only authorized users can access certain data or functionalities.
+_Authentication_ is the process of verifying the identity of a user, device, or other entity in a computer system, often as a prerequisite to granting access to resources in that system. In the context of web applications and APIs, authentication is crucial for ensuring that only authorized users can access certain data or functionalities.
 
 _Key Concepts and Methods:_
 
@@ -517,7 +549,7 @@ _How Authentication Works:_
 - **Authenticated Requests:** For subsequent requests, the client sends the token or session ID to the server.
 - **Verification and Access:** The server verifies the token or session ID and grants access if it's valid.
 
-##### JWT <a id="jwt"></a>
+#### JWT <a id="jwt"></a>
 
 [JWT](#https://jwt.io/), or JSON Web Token, is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
 
@@ -578,11 +610,11 @@ decoded = jwt.decode(token, secret, algorithms=["HS256"])
 print(decoded)
 ```
 
-    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzA3OTM3MDg4LCJleHAiOjE3MDc5Mzc2ODh9.W3QS34pvKxXLJUUMYn558nzxzJAOG7t-rUEWNPq3VvE
-    {'sub': '1234567890', 'name': 'John Doe', 'iat': 1707937088, 'exp': 1707937688}
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzA4NjA1NDY1LCJleHAiOjE3MDg2MDYwNjV9.1TGZ_vY-aBx_aEEwvxnAh58-V-LopkwLokTsX4CX_Jo
+    {'sub': '1234567890', 'name': 'John Doe', 'iat': 1708605465, 'exp': 1708606065}
 
 
-##### OAuth <a id="oauth"></a> 
+#### OAuth <a id="oauth"></a> 
 
 [OAuth](#https://oauth.net/2/) (Open Authorization) is an open standard for token-based authentication and authorization on the Internet. It allows an end user's account information to be used by third-party services, such as Facebook, Google, or Twitter, without exposing the user's password. OAuth acts as an intermediary on behalf of the end user, providing the service with an access token that authorizes specific account information to be shared.
 
@@ -626,7 +658,7 @@ OAuth is widely used in modern web applications for scenarios such as:
 
 OAuth provides a secure and efficient way to grant access rights to web applications and services without sharing password credentials, making it a fundamental technology in modern web development.
 
-#### GraphQL <a id="graphql"></a>
+### GraphQL <a id="graphql"></a>
 
 [GraphQL](#https://graphql.org/) is a query language for APIs and a runtime for executing those queries by using a type system you define for your data. Developed by Facebook in 2012 and released publicly in 2015, GraphQL provides a more efficient, powerful, and flexible alternative to the traditional REST API.
 
@@ -676,7 +708,7 @@ _Example of a GraphQL Query:_
 
 This query fetches a user by ID, including the user's name, age, email, and each of their posts' titles and comments' content.
 
-### 4. RPC (Remote Procedure Call) <a id="rpc"></a>
+## 4. RPC (Remote Procedure Call) <a id="rpc"></a>
 
 _RPC_, or Remote Procedure Call, is a protocol that allows a program to request a service from a software located on another computer on a network without having to understand the network's details. RPC abstracts the intricacies of the network by using standard procedure calls to communicate between a client and a server. This makes it appear as though the procedure (or function) executes locally, simplifying the process of creating distributed client/server applications.
 
@@ -704,11 +736,10 @@ _Advantages of RPC:_
 - **Abstraction:** Hides the complexity of the network, making it easier to develop distributed applications.
 - **Flexibility:** Supports multiple data serialization and transport protocols, accommodating various application needs.
 
-_Example of RPC in Python:_
-
-Below is a simplified example of how an RPC call might be structured in Python using a basic JSON-RPC package. This is for illustrative purposes and assumes a JSON-RPC server is set up to respond to `add` method calls.
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 import json
 import requests
 
@@ -729,7 +760,7 @@ result = json_rpc_call(url, "add", [1, 2])
 print("Result:", result.get("result"))
 ```
 
-#### XML-RPC and JSON-RPC <a id="xml-rpc-and-json-rpc"></a>
+### XML-RPC and JSON-RPC <a id="xml-rpc-and-json-rpc"></a>
 
 _XML-RPC_ and _JSON-RPC_ are two remote procedure call (RPC) protocols that use XML and JSON, respectively, to encode the calls and HTTP as a transport mechanism. They are both lightweight and simple to use, making them suitable for web applications and services.
 
@@ -769,7 +800,7 @@ _The server would respond with:_
 }
 ```
 
-#### gRPC <a id="grpc"></a>
+### gRPC <a id="grpc"></a>
 
 _gRPC_ is a high-performance, open-source framework designed for efficient communication between services. Developed by Google, it's built on top of the HTTP/2 protocol and uses Protocol Buffers (protobufs) as its interface definition language (IDL). gRPC is designed to work across multiple languages and platforms, making it an excellent choice for building scalable microservices architectures and distributed systems.
 
@@ -820,9 +851,9 @@ message HelloReply {
 }
 ```
 
-### 5. Web Servers <a id="web-servers"></a>
+## 5. Web Servers <a id="web-servers"></a>
 
-A web server is software and hardware that uses HTTP (Hypertext Transfer Protocol) and other protocols to respond to client requests made over the World Wide Web. The term "web server" can refer to the hardware (the computer) that hosts websites or the software (such as Apache or Nginx) that runs on that computer, processing web requests.
+A _Web server_ is software and hardware that uses HTTP (Hypertext Transfer Protocol) and other protocols to respond to client requests made over the World Wide Web. The term "web server" can refer to the hardware (the computer) that hosts websites or the software (such as Apache or Nginx) that runs on that computer, processing web requests.
 
 _Key Functions of a Web Server:_
 
@@ -839,7 +870,7 @@ In modern web applications, the role of a web server is often more complex than 
 - **Load Balancer:** Distributing incoming network traffic across multiple servers to ensure no single server becomes overwhelmed, improving the reliability and availability of applications.
 - **Caching:** Temporarily storing copies of files so that future requests for that data can be served faster.
 
-#### WSGI and ASGI <a id="wsgi-and-asgi"></a>
+### WSGI and ASGI <a id="wsgi-and-asgi"></a>
 
 _WSGI_, or the Web Server Gateway Interface, is a specification for a simple and universal interface between web servers and web applications or frameworks for the Python programming language. Defined in PEP 3333, WSGI was created as a way to promote web application portability across a variety of web servers.
 
@@ -863,7 +894,7 @@ _Comparison and Use Cases:_
 - **WSGI:** Best suited for traditional synchronous web applications and services where simplicity and compatibility with a wide range of servers and frameworks are important.
 - **ASGI:** Ideal for modern web applications that require real-time capabilities, asynchronous processing, or handling of long-lived connections, such as chat apps or live notifications.
 
-#### Reverse Proxy <a id="reverse-proxy"></a>
+### Reverse Proxy <a id="reverse-proxy"></a>
 
 A _reverse proxy_ is a server that sits between clients and backend servers, forwarding client requests to the appropriate backend server and returning the server's response to the client. It acts as an intermediary, handling requests on behalf of the client and providing additional services such as load balancing, caching, and SSL encryption.
 
@@ -886,7 +917,7 @@ _Use Case Example:_
 
 A common use case for a reverse proxy is in front of a web application where the reverse proxy acts to balance the load between multiple instances of the application. For example, a high-traffic website might deploy Nginx as a reverse proxy to distribute client requests evenly across ten web servers, ensuring no single server is overwhelmed and that client requests are handled efficiently and securely.
 
-#### Load Balancing <a id="load-balancing"></a>
+### Load Balancing <a id="load-balancing"></a>
 
 _Load balancing_ is the process of distributing incoming network traffic across multiple servers to ensure no single server becomes overwhelmed, improving the reliability and availability of applications. Load balancers are used to optimize resource utilization, maximize throughput, minimize response time, and avoid overload of any single server.
 
@@ -907,7 +938,7 @@ _Example Use Case:_
 
 A high-traffic e-commerce website uses a software load balancer to distribute incoming user requests across a cluster of web servers. The load balancer performs health checks to ensure traffic is only sent to servers that are up and running. During peak shopping periods, the load balancer helps maintain the website's performance and availability by preventing any single server from being overwhelmed, ensuring a smooth user experience.
 
-#### Caching <a id="caching"></a>
+### Caching <a id="caching"></a>
 
 _Caching_ is the process of storing copies of files or data in a cache, which is a temporary storage area, so that future requests for that data can be served faster. Caching can significantly improve the performance and scalability of web applications by reducing the load on backend servers and minimizing response times for clients.
 
@@ -933,9 +964,9 @@ _Example Use Case:_
 
 Consider a web application that displays user profiles. Without caching, every profile view might require a database query, significantly increasing load times and database load. By caching user profiles, subsequent requests for the same profiles can be served directly from the cache, drastically reducing response times and database load.
 
-#### Common Web Servers <a id="common-web-servers"></a>
+### Common Web Servers <a id="common-web-servers"></a>
 
-##### Nginx <a id="nginx"></a>
+#### Nginx <a id="nginx"></a>
 
 [Nginx](#https://www.nginx.com/) (pronounced as "Engine-X") is a high-performance, open-source web server software. It is also used as a reverse proxy, HTTP cache, and load balancer. Originally designed by Igor Sysoev to solve the C10k problem (handling 10,000 concurrent connections), Nginx has become known for its high scalability, reliability, and low resource consumption. It's widely used for serving static content, directing HTTP traffic, securing and encrypting communications, and improving the performance of web applications.
 
@@ -976,7 +1007,7 @@ server {
 
 This configuration tells Nginx to listen for HTTP requests on port 80 for `example.com` and forward those requests to `localhost:8000`, where the application server (like Gunicorn) is running.
 
-##### Gunicorn <a id="gunicorn"></a>
+#### Gunicorn <a id="gunicorn"></a>
 
 [Gunicorn](#https://gunicorn.org/) (Green Unicorn) is a Python WSGI (Web Server Gateway Interface) HTTP server for UNIX systems. It's a pre-fork worker model ported from Ruby's Unicorn project and is designed to serve Python web applications from various web frameworks, such as Django and Flask. Gunicorn is known for its simplicity, efficiency, and ability to scale.
 
@@ -999,7 +1030,7 @@ gunicorn --workers=4 --bind
 
 This command starts Gunicorn with four worker processes, binding to the default host and port.
 
-##### Caddy <a id="caddy"></a> 
+#### Caddy <a id="caddy"></a> 
 
 [Caddy](#https://caddyserver.com/) is a powerful, extensible, and open-source web server with automatic HTTPS built in. It's known for its simplicity and zero-configuration setup for many of its features, especially automatic SSL/TLS certificate issuance and renewal via Let's Encrypt. Caddy serves as a web server like Nginx and Apache, but it distinguishes itself with its focus on security, performance, and ease of use.
 
@@ -1039,7 +1070,7 @@ This simple configuration does the following:
 - Enables gzip compression for served content.
 - Configures PHP processing via FastCGI at `localhost:9000`.
 
-##### Apache <a id="apache"></a>
+#### Apache <a id="apache"></a>
 
 [Apache HTTP Server](#https://httpd.apache.org/), often referred to as Apache, is one of the world's most widely used web server software. Developed and maintained by the Apache Software Foundation, it has played a pivotal role in the growth of the World Wide Web since its inception in 1995. Apache is a free, open-source software that operates across a variety of operating systems, including Unix/Linux, Microsoft Windows, macOS, and more.
 
@@ -1083,9 +1114,9 @@ A simple VirtualHost configuration in Apache might look like this:
 
 This configuration tells Apache to serve the website `www.example.com` from the directory `/var/www/example`, allowing directory-specific `.htaccess` files to override global settings.
 
-### 6. Real-Time Communication <a id="real-time-communication"></a>
+## 6. Real-Time Communication <a id="real-time-communication"></a>
 
-Real-time communication (RTC) refers to any live telecommunications that occur without transmission delays. RTC is instant communication and can include media and data exchange such as voice, video, text, and file sharing, happening simultaneously and allowing users to interact instantly. This technology underpins many modern applications and services, including web conferencing, live streaming, instant messaging, and online gaming.
+_Real-time communication_ (RTC) refers to any live telecommunications that occur without transmission delays. RTC is instant communication and can include media and data exchange such as voice, video, text, and file sharing, happening simultaneously and allowing users to interact instantly. This technology underpins many modern applications and services, including web conferencing, live streaming, instant messaging, and online gaming.
 
 _Characteristics of Real-Time Communication:_
 
@@ -1107,7 +1138,7 @@ _Challenges in Real-Time Communication:_
 - **Latency Sensitivity:** Delays in transmission can significantly affect the quality of communication, making it critical to minimize latency.
 - **Security:** Ensuring secure transmission of sensitive data over real-time communication channels is paramount, requiring encryption and secure protocols.
 
-#### WebRTC (Web Real-Time Communication) <a id="webrtc"></a>
+### WebRTC (Web Real-Time Communication) <a id="webrtc"></a>
 
 [WebRTC](#https://webrtc.org/) is an open-source project that provides web browsers and mobile applications with real-time communication via simple application programming interfaces (APIs). It enables peer-to-peer communication, allowing direct audio, video, and data transfer between browsers and devices without the need for plugins or third-party software. Originally developed by Google, WebRTC has become a standard component of modern web browsers.
 
@@ -1139,7 +1170,7 @@ _Example Use Cases:_
 - **Live Streaming:** Allows for broadcasting live audio and video content to multiple users with minimal delay.
 - **Collaborative Tools:** Real-time collaborative applications, such as document editing and interactive whiteboards.
 
-#### WebSocket <a id="websocket"></a>
+### WebSocket <a id="websocket"></a>
 
 _WebSockets_ provide a persistent connection between a client and server, allowing for real-time, bi-directional communication. This protocol is particularly useful in web applications requiring real-time data updates, such as chat applications, live sports updates, or interactive games. Unlike traditional HTTP connections, which are stateless and closed after a transaction, WebSocket connections remain open, providing full-duplex communication channels over a single, long-lived connection.
 
@@ -1166,11 +1197,11 @@ _Use Cases for WebSockets_
 - **Online Gaming**: Real-time multiplayer games benefit from the low latency and continuous data exchange capabilities of WebSockets.
 - **Collaborative Editing**: Applications that allow multiple users to edit a document simultaneously, like online coding platforms or shared whiteboards.
 
-### 7. Web Scraping <a id="web-scraping"></a>
+## 7. Web Scraping <a id="web-scraping"></a>
 
 _Web scraping_ is the process of extracting data from websites. It involves fetching web pages, parsing the HTML content, and extracting useful information, often for purposes like data analysis, research, or content aggregation. Web scraping can be done manually, but it's often automated using software tools or custom scripts.
 
-#### Beautiful Soup <a id="beautiful-soup"></a>
+### Beautiful Soup <a id="beautiful-soup"></a>
 
 [Beautiful Soup](#https://www.crummy.com/software/BeautifulSoup/) is a Python library designed for quick turnaround projects like screen-scraping. It provides simple, Pythonic ways to navigate, search, and modify a parse tree: it can turn even invalid markup into a parse tree that you can search and modify. 
 
@@ -1213,7 +1244,7 @@ for link in soup.find_all("a"):
     http://example.com/tillie
 
 
-#### Scrapy <a id="scrapy"></a>
+### Scrapy <a id="scrapy"></a>
 
 [Scrapy](#https://scrapy.org/) is an open-source and collaborative framework written in Python, designed for extracting the data you need from websites in a fast, simple, yet extensible way. It's a powerful tool for web scraping but is also capable of more complex web crawling tasks.
 
@@ -1225,26 +1256,22 @@ _Key Features:_
 - **Extensibility**: You can plug in custom functionality through middlewares and extensions.
 - **High Performance**: It's asynchronous networking framework provides efficiency and the ability to handle large volumes of requests.
 
-_Basic Usage:_
-
-A simple Scrapy project involves creating a Spider, which is a Python class that defines how a certain site (or a group of sites) will be scraped.
 
 ```python
-import scrapy  #pip install scrapy
+import scrapy  # pip install scrapy
+
 
 class MySpider(scrapy.Spider):
-    name = 'example_spider'
-    start_urls = ['http://example.com']
+    name = "example_spider"
+    start_urls = ["http://example.com"]
 
     def parse(self, response):
         # Extracting data
-        title = response.css('title::text').get()
-        yield {'title': title}
+        title = response.css("title::text").get()
+        yield {"title": title}
 ```
 
-This spider starts with URLs defined in `start_urls`, makes requests to these URLs, and calls the `parse` method on the responses to extract data.
-
-#### Selenium <a id="selenium"></a>
+### Selenium <a id="selenium"></a>
 
 [Selenium](#https://www.selenium.dev/) is an open-source automated testing framework used primarily for web applications. While its main purpose is to automate web browsers for testing web applications, Selenium is also widely used for web scraping, especially for websites that render their content dynamically using JavaScript.
 
@@ -1280,18 +1307,18 @@ with webdriver.Chrome() as driver:
         print(headline.text)
 ```
 
-    European Court of Human Rights bans weakening of secure end-to-end encryption (eureporter.co)
-    Core Nginx developer announces fork, freenginx (nginx.org)
-    Show HN: Reor – An AI note-taking app that runs models locally (github.com/reorproject)
-    Reverse-engineering an encrypted IoT protocol (smlx.dev)
-    Conformant OpenGL 4.6 on the M1 (rosenzweig.io)
+    A peek at Intel's future foundry tech (ieee.org)
+    How to optimally trap points in high-dimensional spaces inside ellipsoids (adrianriv.com)
+    Auth0 OSS alternative Ory Kratos now with passwordless and SMS support (github.com/ory)
+    GIMP 2.99.18: The last development preview before 3.0 (gimp.org)
+    Interesting Uses of Ansible's ternary filter (zufallsheld.de)
 
 
-### 8. Security <a id="web-security"></a>
+## 8. Security <a id="web-security"></a>
 
 _Web security_ refers to the protection of websites and web applications from cyber threats, such as data breaches, malware, and denial-of-service attacks. It includes a range of practices, technologies, and policies designed to safeguard web servers, networks, and web applications from unauthorized access, data theft, and other security risks.
 
-#### Cross-Site Scripting (XSS) <a id="xss"></a>
+### Cross-Site Scripting (XSS) <a id="xss"></a>
 
 _Cross-Site Scripting (XSS)_ is a security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts can steal sensitive information, such as session cookies, or perform actions on behalf of the user, such as sending requests to the server.
 
@@ -1307,7 +1334,7 @@ _Preventing XSS:_
 - **Output Encoding**: Encode user-generated content before rendering it in the browser to prevent it from being interpreted as HTML or JavaScript.
 - **Content Security Policy (CSP)**: Implement a CSP to restrict the sources from which certain types of content can be loaded, reducing the risk of XSS attacks.
 
-#### Cross-Site Request Forgery (CSRF) <a id="csrf"></a>
+### Cross-Site Request Forgery (CSRF) <a id="csrf"></a>
 
 _Cross-Site Request Forgery (CSRF)_ is an attack that tricks the victim into submitting a malicious request to a web application, often without the victim's knowledge. This attack occurs when the victim is authenticated and has an active session with the target application.
 
@@ -1323,7 +1350,7 @@ _Preventing CSRF:_
 - **Same-Site Cookies**: Set the `SameSite` attribute on cookies to prevent them from being sent in cross-site requests, reducing the risk of CSRF attacks.
 - **Referrer Policy**: Use the `Referrer-Policy` HTTP header to control how much information is included in the `Referer` header, which can help prevent CSRF attacks.
 
-#### SQL Injection <a id="sql-injection"></a>
+### SQL Injection <a id="sql-injection"></a>
 
 _SQL Injection_ is a type of attack that allows attackers to execute malicious SQL statements in a web application's database. This can lead to unauthorized access to sensitive data, data manipulation, and other security breaches.
 
@@ -1339,7 +1366,7 @@ _Preventing SQL Injection:_
 - **Input Validation**: Validate and sanitize user input to ensure that it does not contain SQL code or special characters that could alter the query's behavior.
 - **Least Privilege**: Limit the database user's permissions to only the necessary operations, reducing the potential impact of a successful SQL injection attack.
 
-#### Clickjacking <a id="clickjacking"></a>
+### Clickjacking <a id="clickjacking"></a>
 
 _Clickjacking_ is a type of attack where an attacker tricks a user into clicking on a hidden or disguised element on a web page, often by overlaying the page with a transparent iframe. This can lead to unintended actions, such as clicking on a button or link that performs a malicious action.
 
@@ -1348,7 +1375,7 @@ _Preventing Clickjacking:_
 - **X-Frame-Options Header**: Set the `X-Frame-Options` HTTP header to `DENY` or `SAMEORIGIN` to prevent the page from being embedded in an iframe from a different origin.
 - **Content Security Policy (CSP)**: Implement a CSP with the `frame-ancestors` directive to control which domains are allowed to embed the page in an iframe.
 
-#### Content Security Policy (CSP) <a id="csp"></a>
+### Content Security Policy (CSP) <a id="csp"></a>
 
 _Content Security Policy (CSP)_ is an added layer of security that helps detect and mitigate certain types of attacks, including XSS and data injection attacks. It allows web developers to control the resources that a user agent is allowed to load for a given page, helping to prevent the execution of malicious scripts and unauthorized data access.
 
@@ -1366,11 +1393,13 @@ Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.exam
 
 This CSP header specifies that scripts can only be loaded from the same origin or from `https://apis.example.com`, stylesheets can only be loaded from the same origin or from `https://fonts.googleapis.com`, and images can only be loaded from the same origin, `data:` URIs, or `https://example.com`.
 
-### 9. Frontend Development <a id="frontend-development"></a>
+## 9. Frontend Development <a id="frontend-development"></a>
 
 _Frontend development_ refers to the practice of creating the user interface and user experience of a website or web application. It involves the use of HTML, CSS, and JavaScript to build the visual and interactive elements that users interact with in their web browsers.
 
-#### Basic HTML, CSS, and JavaScript <a id="basic-html-css-js"></a>
+Frontend development is a critical part of web development, as it directly impacts how users perceive and interact with a website or application. It encompasses a wide range of tasks, from designing the layout and appearance of a site to implementing interactive features and ensuring cross-browser compatibility.
+
+### Basic HTML, CSS, and JavaScript <a id="basic-html-css-js"></a>
 
 _HTML (HyperText Markup Language)_, _CSS (Cascading Style Sheets)_, and _JavaScript_ are the core technologies used to build web pages and web applications. They provide the foundation for creating the structure, style, and interactivity of web content.
 
@@ -1411,9 +1440,9 @@ Integrated Example:
 
 This integrated example uses HTML to structure the document, CSS for styling the body and h1 element, and JavaScript to change the text of the h1 element when the button is clicked.
 
-#### Frontend Frameworks <a id="frontend-frameworks"></a>
+### Frontend Frameworks <a id="frontend-frameworks"></a>
 
-_Frontend frameworks_ are collections of pre-written code that provide a foundation for building web applications. They typically include reusable components, libraries, and tools that help developers create user interfaces and manage application state more efficiently.
+_Frontend frameworks_ are collections of pre-written code that provide a foundation for building web applications. They typically include reusable components, libraries, and tools that help developers create user interfaces and manage application state more efficiently. There are several popular frontend frameworks, each with its own strengths and use cases.
 
 1. **React**: [React](#https://reactjs.org/) is a JavaScript library for building user interfaces. It allows developers to create reusable UI components and manage the state of the application efficiently. React is known for its component-based architecture and virtual DOM, which enables high-performance rendering of user interfaces.
 
