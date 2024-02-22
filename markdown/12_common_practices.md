@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
 ### PEP 8 <a id="pep-8"></a>
 
-_PEP 8_, or Python Enhancement Proposal 8, is the style guide for Python code, establishing a set of rules and best practices for formatting Python code. Its primary goal is to improve the readability and consistency of Python code across the vast Python ecosystem. Since Python places a significant emphasis on readability and simplicity, adhering to PEP 8 can make your code more accessible to other Python developers.
+[PEP 8](https://peps.python.org/pep-0008/), or Python Enhancement Proposal 8, is the style guide for Python code, establishing a set of rules and best practices for formatting Python code. Its primary goal is to improve the readability and consistency of Python code across the vast Python ecosystem. Since Python places a significant emphasis on readability and simplicity, adhering to PEP 8 can make your code more accessible to other Python developers.
 
 _Key Highlights of PEP 8:_
 
@@ -336,11 +336,11 @@ _Code formatters_ are tools that automatically format source code to adhere to a
 
 _Common Python Code Formatters:_
 
-- **black**: An opinionated code formatter that automatically formats Python code to adhere to PEP 8 style guidelines.
-- **ruff**: Fast Python linter and code formatter.
-- **isort**: A tool to sort and organize Python imports according to PEP 8 guidelines.
-- **autopep8**: A tool that automatically formats Python code to conform to the PEP 8 style guide.
-- **yapf**: Yet Another Python Formatter, a code formatter that takes a different approach to code formatting, focusing on being highly configurable and providing a consistent style.
+- [black](https://github.com/psf/black): An opinionated code formatter that automatically formats Python code to adhere to PEP 8 style guidelines.
+- [ruff](https://github.com/astral-sh/ruff): Fast Python linter and code formatter.
+- [isort](https://github.com/PyCQA/isort): A tool to sort and organize Python imports according to PEP 8 guidelines.
+- [autopep8](https://github.com/hhatto/autopep8): A tool that automatically formats Python code to conform to the PEP 8 style guide.
+- [yapf](https://github.com/google/yapf): Yet Another Python Formatter, a code formatter that takes a different approach to code formatting, focusing on being highly configurable and providing a consistent style.
 
 ## 3. Environment Management <a id="environment-management"></a>
 
@@ -352,11 +352,11 @@ A _virtual environment_ is a self-contained directory that contains a Python ins
 
 _Common Tools for Managing Virtual Environments:_
 
-- **venv**: A built-in module in Python 3 that can be used to create virtual environments.
-- **virtualenv**: A third-party tool that provides more features and flexibility for creating and managing virtual environments.
-- **conda**: A package, dependency, and environment management system that can be used to create and manage virtual environments for Python and other languages.
-- **pipenv**: A tool that combines `pip` and `virtualenv` to provide an easy way to manage project dependencies and virtual environments.
-- **poetry**: A modern dependency management tool for Python that allows you to declare and manage project dependencies and create virtual environments.
+- [venv](https://docs.python.org/3/library/venv.html): A built-in module in Python 3 that can be used to create virtual environments.
+- [virtualenv](https://virtualenv.pypa.io/en/latest/): A third-party tool that provides more features and flexibility for creating and managing virtual environments.
+- [conda](https://github.com/conda/conda): A package, dependency, and environment management system that can be used to create and manage virtual environments for Python and other languages.
+- [pipenv](https://pipenv.pypa.io/en/latest/): A tool that combines `pip` and `virtualenv` to provide an easy way to manage project dependencies and virtual environments.
+- [poetry](https://python-poetry.org/): A modern dependency management tool for Python that allows you to declare and manage project dependencies and create virtual environments.
 
 ```bash
 # Create a new virtual environment using venv

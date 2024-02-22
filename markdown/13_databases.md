@@ -120,7 +120,7 @@ DELETE FROM Employees WHERE EmployeeID = 1;
 
 ### SQLite <a id="sqlite"></a>
 
-_SQLite_ is a popular relational database management system that is distinguished by its simplicity, reliability, and ease of use. Unlike traditional client-server database systems such as MySQL or PostgreSQL, SQLite is serverless, self-contained, and requires no configuration, making it an ideal choice for applications that require a lightweight database solution.
+[SQLite](https://www.sqlite.org/) is a popular relational database management system that is distinguished by its simplicity, reliability, and ease of use. Unlike traditional client-server database systems such as MySQL or PostgreSQL, SQLite is serverless, self-contained, and requires no configuration, making it an ideal choice for applications that require a lightweight database solution.
 
 _Key Features of SQLite:_
 
@@ -175,7 +175,7 @@ conn.close()
 
 ### PostgreSQL <a id="postgresql"></a>
 
-_PostgreSQL_, often simply called Postgres, is an advanced, open-source relational database management system (RDBMS) known for its robustness, scalability, and compliance with SQL standards. It offers a sophisticated and powerful set of features designed to handle a wide range of workloads, from single machines to data warehouses or Web services with many concurrent users.
+[PostgreSQL](https://www.postgresql.org/), often simply called Postgres, is an advanced, open-source relational database management system (RDBMS) known for its robustness, scalability, and compliance with SQL standards. It offers a sophisticated and powerful set of features designed to handle a wide range of workloads, from single machines to data warehouses or Web services with many concurrent users.
 
 _Key Features of PostgreSQL:_
 
@@ -224,7 +224,7 @@ conn.close()
 
 ### MySQL <a id="mysql"></a>
 
-_MySQL_ is one of the world's most popular open-source relational database management systems (RDBMS). It is widely used for web databases and serves as the backbone for a variety of applications, ranging from small-scale projects to large-scale enterprise systems. MySQL is renowned for its reliability, ease of use, and performance.
+[MySQL](https://www.mysql.com/) is one of the world's most popular open-source relational database management systems (RDBMS). It is widely used for web databases and serves as the backbone for a variety of applications, ranging from small-scale projects to large-scale enterprise systems. MySQL is renowned for its reliability, ease of use, and performance.
 
 _Key Features of MySQL:_
 
@@ -308,7 +308,7 @@ _Use Cases:_
 
 ### MongoDB <a id="mongodb"></a>
 
-_MongoDB_ is a leading NoSQL database known for its flexibility, scalability, and performance. It is a document-oriented database that stores data in flexible, JSON-like documents, enabling the storage of complex hierarchies and arrays, making data aggregation and querying efficient and intuitive.
+[MongoDB](https://www.mongodb.com/) is a leading NoSQL database known for its flexibility, scalability, and performance. It is a document-oriented database that stores data in flexible, JSON-like documents, enabling the storage of complex hierarchies and arrays, making data aggregation and querying efficient and intuitive.
 
 _Key Features of MongoDB:_
 
@@ -351,7 +351,7 @@ for user in collection.find():
 
 ### Redis <a id="redis"></a>
 
-_Redis_ (Remote Dictionary Server) is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis is known for its high performance, scalability, and ease of use.
+[Redis](https://redis.io/) (Remote Dictionary Server) is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis is known for its high performance, scalability, and ease of use.
 
 _Key Features of Redis:_
 
@@ -389,7 +389,7 @@ print(r.get('foo'))  # Outputs: b'bar'
 
 ### Cassandra <a id="cassandra"></a>
 
-_Apache Cassandra_ is a highly scalable, high-performance distributed NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. It is particularly suited for applications requiring massive scalability and high availability without compromising performance. Cassandra's architecture allows it to distribute data across multiple nodes in a cluster, making it an excellent choice for systems that can't afford to lose data.
+[Apache Cassandra](https://cassandra.apache.org/) is a highly scalable, high-performance distributed NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. It is particularly suited for applications requiring massive scalability and high availability without compromising performance. Cassandra's architecture allows it to distribute data across multiple nodes in a cluster, making it an excellent choice for systems that can't afford to lose data.
 
 _Key Features of Cassandra:_
 
@@ -467,7 +467,7 @@ _Advantages of Using ORM:_
 
 ### SQLAlchemy <a id="sqlalchemy"></a>
 
-_SQLAlchemy_ is a powerful and flexible SQL toolkit and Object-Relational Mapping (ORM) library for Python. It provides a full suite of well-known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+[SQLAlchemy](https://www.sqlalchemy.org/) is a powerful and flexible SQL toolkit and Object-Relational Mapping (ORM) library for Python. It provides a full suite of well-known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
 
 _Key Features of SQLAlchemy:_
 
@@ -653,7 +653,7 @@ _Use Cases:_
 
 ### RabbitMQ <a id="rabbitmq"></a>
 
-_RabbitMQ_ is an open-source message broker software that facilitates the efficient transmission of messages between distributed systems, applications, and services. It implements the Advanced Message Queuing Protocol (AMQP) and supports multiple messaging protocols, making it highly versatile and suitable for a wide range of messaging needs. RabbitMQ is widely recognized for its reliability, scalability, and ease of integration, making it a popular choice for implementing complex messaging solutions in modern applications.
+[RabbitMQ](https://www.rabbitmq.com/) is an open-source message broker software that facilitates the efficient transmission of messages between distributed systems, applications, and services. It implements the Advanced Message Queuing Protocol (AMQP) and supports multiple messaging protocols, making it highly versatile and suitable for a wide range of messaging needs. RabbitMQ is widely recognized for its reliability, scalability, and ease of integration, making it a popular choice for implementing complex messaging solutions in modern applications.
 
 _Key Features of RabbitMQ:_
 
@@ -720,7 +720,7 @@ channel.start_consuming()
 
 ### Apache Kafka <a id="kafka"></a>
 
-_Apache Kafka_ is a distributed streaming platform that enables you to build real-time streaming data pipelines and applications. Initially developed by LinkedIn and later open-sourced as part of the Apache project, Kafka is designed to handle high volumes of data in a fault-tolerant and scalable manner. It can publish, subscribe to, store, and process streams of records in real time.
+[Apache Kafka](https://kafka.apache.org/) is a distributed streaming platform that enables you to build real-time streaming data pipelines and applications. Initially developed by LinkedIn and later open-sourced as part of the Apache project, Kafka is designed to handle high volumes of data in a fault-tolerant and scalable manner. It can publish, subscribe to, store, and process streams of records in real time.
 
 _Key Features of Apache Kafka:_
 
