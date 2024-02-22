@@ -1,10 +1,36 @@
-## Part XII: Common Practices <a id="12-common-practices"></a>
+# Part XII: Common Practices <a id="12-common-practices"></a>
 
-### 1. Logging <a id="logging"></a>
+1. [Logging](#logging)
+    - [Logging Levels](#logging-levels)
+    - [Logging Handlers](#logging-handlers)
+    - [Logging Formatters](#logging-formatters)
+2. [Code Style](#code-style)
+    - [PEP 8](#pep-8)
+    - [Docstrings](#docstrings)
+    - [Type Annotations](#type-annotations)
+    - [Linting](#linting)
+    - [Code Formatters](#code-formatters)
+3. [Environment Management](#environment-management)
+    - [Virtual Environments](#virtual-environments)
+    - [Dependency Management](#dependency-management)
+    - [Environment Variables](#environment-variables)
+        - [dotenv](#dotenv)
+4. [Profiling](#code-profiling)
+    - [Time Profiling (Performance Profiling)](#performance-profiling)
+    - [Memory Profiling](#memory-profiling)
+    - [Profiling Tools](#profiling-tools)
+        - [Performance Profiling Tools](#performance-profiling-tools)
+        - [Memory Profiling Tools](#memory-profiling-tools)
+5. [Code Review](#code-review)
+    - [Code Review Best Practices](#code-review-best-practices)
+    - [Code Review Tools](#code-review-tools)
 
-Logging is a common practice in software development. It is used to record the events that occur in the system. It is useful for debugging and monitoring the system. In Python, the `logging` module is used to log messages.
+## 1. Logging <a id="logging"></a>
 
-Key components of the `logging` module are:
+_Logging_ is a common practice in software development. It is used to record the events that occur in the system. It is useful for debugging and monitoring the system. In Python, the `logging` module is used to log messages.
+
+_Key components of the `logging` module are:_
+
 - **Loggers**: They are used to create log records. They are used to log messages.
 - **Handlers**: They are used to handle the log records. They are used to send the log records to the appropriate destination.
 - **Formatters**: They are used to format the log records. They are used to format the log records before they are sent to the destination.
@@ -25,10 +51,10 @@ logger = logging.getLogger(__name__)
 logger.info("This is an info message")
 ```
 
-    INFO:__main__:This is an info message
+    2024-02-22 12:42:32,865 - __main__ - INFO - This is an info message
 
 
-#### Logging Levels <a id="logging-levels"></a>
+### Logging Levels <a id="logging-levels"></a>
 
 The `logging` module provides several logging levels. The following are the most commonly used logging levels:
 
@@ -55,18 +81,18 @@ logging.critical("This is a critical message")
 # Depending on the level set in basicConfig, some of these messages may not be displayed.
 ```
 
-    DEBUG:root:This is a debug message
-    INFO:root:This is an info message
-    WARNING:root:This is a warning message
-    ERROR:root:This is an error message
-    CRITICAL:root:This is a critical message
+    2024-02-22 12:42:32,870 - root - INFO - This is an info message
+    2024-02-22 12:42:32,870 - root - WARNING - This is a warning message
+    2024-02-22 12:42:32,870 - root - ERROR - This is an error message
+    2024-02-22 12:42:32,871 - root - CRITICAL - This is a critical message
 
 
-#### Logging Handlers <a id="logging-handlers"></a>
+### Logging Handlers <a id="logging-handlers"></a>
 
 In Python's `logging` framework, handlers are responsible for dispatching the log messages to specific destinations. Each logger can have multiple handlers, allowing it to send logs to multiple outlets, such as the console, files, HTTP servers, or even more complex targets like log management systems.
 
-Commonly used handlers are:
+_Commonly used handlers are:_
+
 - `StreamHandler`: Sends log messages to a stream, typically `sys.stderr`.
 - `FileHandler`: Sends log messages to a file.
 - `RotatingFileHandler`: Sends log messages to a file, and creates a new file when the current file reaches a certain size.
@@ -109,18 +135,17 @@ logger.error("This is an error message")
 # but only error and critical messages will appear in the console.
 ```
 
-    DEBUG:__main__:This is a debug message
-    2024-02-13 13:33:15,901 - __main__ - ERROR - This is an error message
-    2024-02-13 13:33:15,901 - __main__ - ERROR - This is an error message
-    2024-02-13 13:33:15,901 - __main__ - ERROR - This is an error message
-    ERROR:__main__:This is an error message
+    2024-02-22 12:42:32,875 - __main__ - DEBUG - This is a debug message
+    2024-02-22 12:42:32,877 - __main__ - ERROR - This is an error message
+    2024-02-22 12:42:32,877 - __main__ - ERROR - This is an error message
 
 
-#### Logging Formatters <a id="logging-formatters"></a>
+### Logging Formatters <a id="logging-formatters"></a>
 
-Logging formatters in Python's logging framework are responsible for converting a log message into a specific format before it is output by a handler. The formatter specifies the layout of log messages, allowing developers to include information such as the time of the log message, the log level, the message itself, and other details like the logger's name and the source line number where the log call was made.
+_Logging formatters_ in Python's logging framework are responsible for converting a log message into a specific format before it is output by a handler. The formatter specifies the layout of log messages, allowing developers to include information such as the time of the log message, the log level, the message itself, and other details like the logger's name and the source line number where the log call was made.
 
-Common Elements in Log Formats:
+_Common Elements in Log Formats:_
+
 - `%(asctime)s`: The human-readable time at which the log record was created.
 - `%(name)s`: The name of the logger used to log the call.
 - `%(levelname)s`: The textual representation of the logging level (e.g., "DEBUG", "INFO").
@@ -150,22 +175,20 @@ logger.debug("This is a debug message")
 logger.info("This is an info message")
 ```
 
-    2024-02-13 13:33:15,906 - my_logger - DEBUG - This is a debug message
-    2024-02-13 13:33:15,906 - my_logger - DEBUG - This is a debug message
-    2024-02-13 13:33:15,906 - my_logger - DEBUG - This is a debug message
-    DEBUG:my_logger:This is a debug message
-    2024-02-13 13:33:15,907 - my_logger - INFO - This is an info message
-    2024-02-13 13:33:15,907 - my_logger - INFO - This is an info message
-    2024-02-13 13:33:15,907 - my_logger - INFO - This is an info message
-    INFO:my_logger:This is an info message
+    2024-02-22 12:42:32,882 - my_logger - DEBUG - This is a debug message
+    2024-02-22 12:42:32,882 - my_logger - DEBUG - This is a debug message
+    2024-02-22 12:42:32,885 - my_logger - INFO - This is an info message
+    2024-02-22 12:42:32,885 - my_logger - INFO - This is an info message
 
 
-### 2. Code Style <a id="code-style"></a>
+## 2. Code Style <a id="code-style"></a>
 
-Code style is a set of conventions for writing code. It is important to follow a consistent code style to make the code readable and maintainable. Python has a set of conventions for writing code, which is defined in PEP 8. PEP 8 is the official style guide for Python code.
+_Code style_ is a set of conventions for writing code. It is important to follow a consistent code style to make the code readable and maintainable. Python has a set of conventions for writing code, which is defined in PEP 8. PEP 8 is the official style guide for Python code.
 
-Example of Good Python Code Style:
+
 ```python
+%%script false --no-raise-error  # This cell is not executed because it is just an example
+
 # Import standard libraries first
 import os
 import sys
@@ -198,11 +221,12 @@ if __name__ == "__main__":
     main()
 ```
 
-#### PEP 8 <a id="pep-8"></a>
+### PEP 8 <a id="pep-8"></a>
 
-PEP 8, or Python Enhancement Proposal 8, is the style guide for Python code, establishing a set of rules and best practices for formatting Python code. Its primary goal is to improve the readability and consistency of Python code across the vast Python ecosystem. Since Python places a significant emphasis on readability and simplicity, adhering to PEP 8 can make your code more accessible to other Python developers.
+_PEP 8_, or Python Enhancement Proposal 8, is the style guide for Python code, establishing a set of rules and best practices for formatting Python code. Its primary goal is to improve the readability and consistency of Python code across the vast Python ecosystem. Since Python places a significant emphasis on readability and simplicity, adhering to PEP 8 can make your code more accessible to other Python developers.
 
-Key Highlights of PEP 8:
+_Key Highlights of PEP 8:_
+
 - **Indentation**: Use 4 spaces per indentation level. Avoid using tabs, or configure your editor to convert tabs to spaces.
 - **Line Length**: Limit all lines to a maximum of 79 characters for code and 72 for comments and docstrings to improve readability on smaller displays.
 - **Imports**: Should be on separate lines and grouped in the following order: standard library imports, related third party imports, and local application/library specific imports, with a blank line between each group.
@@ -214,10 +238,9 @@ Key Highlights of PEP 8:
 - **Comments**: Comments should be complete sentences and used sparingly, explaining the rationale for the decision or clarifying complex parts of the code.
 - **Docstrings**: Use docstrings for all public modules, functions, classes, and methods to describe what they do and how they do it.
 
+### Docstrings <a id="docstrings"></a>
 
-#### Docstrings <a id="docstrings"></a>
-
-Docstrings, or documentation strings, are literal strings used to document Python modules, functions, classes, and methods. They are enclosed in triple quotes (`"""Docstring here"""`) and are placed immediately after the definition of a function, class, module, or method. Docstrings are a key part of Python code documentation and can be accessed through the `.__doc__` attribute of the object they document or via the built-in `help()` function.
+_Docstrings_, or documentation strings, are literal strings used to document Python modules, functions, classes, and methods. They are enclosed in triple quotes (`"""Docstring here"""`) and are placed immediately after the definition of a function, class, module, or method. Docstrings are a key part of Python code documentation and can be accessed through the `.__doc__` attribute of the object they document or via the built-in `help()` function.
 
 
 ```python
@@ -255,18 +278,21 @@ class GeometryCalculator:
         pass
 ```
 
-#### Type Annotations <a id="type-annotations"></a>
+### Type Annotations <a id="type-annotations"></a>
 
-Type annotations in Python provide a way to explicitly state the expected data types of variables, function parameters, and return values. Type annotations are not enforced at runtime but can be used by third-party tools, IDEs, and linters for type checking, improving code readability, and aiding in debugging.
+_Type annotations_ in Python provide a way to explicitly state the expected data types of variables, function parameters, and return values. Type annotations are not enforced at runtime but can be used by third-party tools, IDEs, and linters for type checking, improving code readability, and aiding in debugging.
 
-Purpose of Type Annotations:
+_Purpose of Type Annotations:_
+
 - **Readability**: Make the code more readable by documenting the types of parameters and return values.
 - **Static Type Checking**: Enable static type checkers like `mypy` to verify that the code adheres to the specified types at compile time, catching type errors before runtime.
 - **IDE Support**: Improve support in integrated development environments (IDEs) for features like autocompletion, function signatures, and refactoring assistance.
 
-How to Use Type Annotations:
+_How to Use Type Annotations:_
+
 - **Variables**: Specify the type of a variable after its name followed by a colon and the type.
 - **Functions**: Annotate function parameters and return values using colons and the arrow (`->`) syntax respectively.
+- **Type Hints**: Use the `typing` module to specify more complex types, such as lists, dictionaries, and custom classes.
 
 
 ```python
@@ -294,35 +320,38 @@ scores: List[int] = [90, 95, 88]
 age: Optional[int] = None
 ```
 
-#### Linting <a id="linting"></a>
+### Linting <a id="linting"></a>
 
-Linting is the process of running a program that will analyze code for potential errors. Linters are tools that perform static analysis on source code to find programming errors, bugs, stylistic errors, and suspicious constructs. Linting tools can help enforce code style, improve code quality, and catch bugs early in the development process.
+_Linting_ is the process of running a program that will analyze code for potential errors. Linters are tools that perform static analysis on source code to find programming errors, bugs, stylistic errors, and suspicious constructs. Linting tools can help enforce code style, improve code quality, and catch bugs early in the development process.
 
-Common Python Linters:
+_Common Python Linters:_
+
 - **pylint**: A widely used linter that checks for errors, enforces coding standards, and looks for code smells.
 - **flake8**: Combines several tools including `pycodestyle`, `pyflakes`, and `mccabe` to check for PEP 8 violations, syntax errors, and cyclomatic complexity.
 - **mypy**: A static type checker that can be used to enforce type annotations and perform type checking on Python code.
 
-#### Code Formatters <a id="code-formatters"></a>
+### Code Formatters <a id="code-formatters"></a>
 
-Code formatters are tools that automatically format source code to adhere to a specific style guide or set of conventions. They can be used to enforce a consistent code style across a codebase, making the code more readable and maintainable.
+_Code formatters_ are tools that automatically format source code to adhere to a specific style guide or set of conventions. They can be used to enforce a consistent code style across a codebase, making the code more readable and maintainable.
 
-Common Python Code Formatters:
+_Common Python Code Formatters:_
+
 - **black**: An opinionated code formatter that automatically formats Python code to adhere to PEP 8 style guidelines.
 - **ruff**: Fast Python linter and code formatter.
 - **isort**: A tool to sort and organize Python imports according to PEP 8 guidelines.
 - **autopep8**: A tool that automatically formats Python code to conform to the PEP 8 style guide.
 - **yapf**: Yet Another Python Formatter, a code formatter that takes a different approach to code formatting, focusing on being highly configurable and providing a consistent style.
 
-### 3. Environment Management <a id="environment-management"></a>
+## 3. Environment Management <a id="environment-management"></a>
 
-Environment management in Python is the practice of managing multiple sets of Python and library versions to ensure compatibility and isolation between different projects. It's crucial for avoiding conflicts between project dependencies and for replicating production environments locally to debug issues accurately.
+_Environment management_ in Python is the practice of managing multiple sets of Python and library versions to ensure compatibility and isolation between different projects. It's crucial for avoiding conflicts between project dependencies and for replicating production environments locally to debug issues accurately.
 
-#### Virtual Environments <a id="virtual-environments"></a>
+### Virtual Environments <a id="virtual-environments"></a>
 
-A virtual environment is a self-contained directory that contains a Python installation for a particular version of Python, plus a number of additional packages. It allows you to work on a specific project without affecting other projects or the system-wide Python installation. Virtual environments are a best practice for Python development, as they help manage dependencies and isolate project-specific packages.
+A _virtual environment_ is a self-contained directory that contains a Python installation for a particular version of Python, plus a number of additional packages. It allows you to work on a specific project without affecting other projects or the system-wide Python installation. Virtual environments are a best practice for Python development, as they help manage dependencies and isolate project-specific packages.
 
-Common Tools for Managing Virtual Environments:
+_Common Tools for Managing Virtual Environments:_
+
 - **venv**: A built-in module in Python 3 that can be used to create virtual environments.
 - **virtualenv**: A third-party tool that provides more features and flexibility for creating and managing virtual environments.
 - **conda**: A package, dependency, and environment management system that can be used to create and manage virtual environments for Python and other languages.
@@ -337,9 +366,9 @@ python3 -m venv myenv
 source myenv/bin/activate
 ```
 
-#### Dependency Management <a id="dependency-management"></a>
+### Dependency Management <a id="dependency-management"></a>
 
-Dependency management in Python involves managing the libraries and packages that a project depends on. It includes installing, updating, and removing dependencies, as well as ensuring that the project's dependencies are compatible with each other and with the Python version being used.
+_Dependency management_ in Python involves managing the libraries and packages that a project depends on. It includes installing, updating, and removing dependencies, as well as ensuring that the project's dependencies are compatible with each other and with the Python version being used.
 
 1. **Virtual Environments**:
    - Use tools like `venv`, `virtualenv`, or others to isolate project dependencies. This prevents conflicts between projects and makes it easier to manage project-specific dependencies.
@@ -372,13 +401,16 @@ pip install -r requirements.txt
 pip install --upgrade requests
 ```
 
-#### Environment Variables <a id="environment-variables"></a>
+### Environment Variables <a id="environment-variables"></a>
 
-Environment variables are key-value pairs stored in the operating system's environment that can affect the way running processes will behave on a computer. In Python development, environment variables are often used to manage application settings, configurations, sensitive information (like API keys and database passwords), and to differentiate between development, testing, and production environments without hardcoding such data into source code.
+_Environment variables_ are key-value pairs stored in the operating system's environment that can affect the way running processes will behave on a computer. In Python development, environment variables are often used to manage application settings, configurations, sensitive information (like API keys and database passwords), and to differentiate between development, testing, and production environments without hardcoding such data into source code.
 
 Python's standard library includes the `os` module, which provides a way to access environment variables using `os.environ`. This acts like a Python dictionary, so you can use methods to get environment variable values, set default values if they don't exist, and check for their presence.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 import os
 
 # Accessing an environment variable (returns None if not found)
@@ -391,11 +423,14 @@ db_host = os.environ.get('DB_HOST', 'localhost')
 os.environ['NEW_VARIABLE'] = 'value'
 ```
 
-##### dotenv <a id="dotenv"></a>
+#### dotenv <a id="dotenv"></a>
 
 The `python-dotenv` package is a popular tool for managing environment variables in Python projects. It allows you to define environment variables in a `.env` file and load them into your Python environment. This is useful for keeping sensitive information out of your codebase and for managing different configurations across different environments.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 # Using python-dotenv to load variables from a .env file
 from dotenv import load_dotenv
 load_dotenv()  # This loads the environment variables from a .env file if present
@@ -404,15 +439,16 @@ api_key = os.environ.get('API_KEY')
 db_host = os.environ.get('DB_HOST', 'localhost')
 ```
 
-### 4. Profiling <a id="code-profiling"></a>
+## 4. Profiling <a id="code-profiling"></a>
 
-Profiling is the practice of measuring the performance of a program to identify its most time-consuming parts and to optimize them. Profiling can help you understand how your code is performing, identify bottlenecks, and make informed decisions about where to focus optimization efforts.
+_Profiling_ is the practice of measuring the performance of a program to identify its most time-consuming parts and to optimize them. Profiling can help you understand how your code is performing, identify bottlenecks, and make informed decisions about where to focus optimization efforts.
 
-#### Time Profiling (Performance Profiling) <a id="performance-profiling"></a>
+### Time Profiling (Performance Profiling) <a id="performance-profiling"></a>
 
-Time profiling is a type of profiling that measures the time taken by different parts of a program. It helps identify which parts of the code are consuming the most time and can be used to optimize the performance of the program.
+_Time profiling_ (or _Performance Profiling_) is a type of profiling that measures the time taken by different parts of a program. It helps identify which parts of the code are consuming the most time and can be used to optimize the performance of the program.
 
-Time Profiling importance:
+_Time Profiling importance:_
+
 - **Identifying Bottlenecks**: It helps identify the parts of the code that are consuming the most time and resources.
 - **Optimization**: It provides insights into which parts of the code need to be optimized for better performance.
 - **Resource Allocation**: It helps in better resource allocation and planning for the program.
@@ -450,61 +486,73 @@ cProfile.run("example_function()")
     
 
 
-#### Memory Profiling <a id="memory-profiling"></a>
+### Memory Profiling <a id="memory-profiling"></a>
 
-Memory profiling is the process of analyzing a program's memory usage over time to identify parts of the code that use excessive amounts of memory, have memory leaks, or could be optimized to use memory more efficiently. Understanding memory usage is crucial for developing efficient, scalable applications, especially in environments with limited resources or when dealing with large data sets.
+_Memory profiling_ is the process of analyzing a program's memory usage over time to identify parts of the code that use excessive amounts of memory, have memory leaks, or could be optimized to use memory more efficiently. Understanding memory usage is crucial for developing efficient, scalable applications, especially in environments with limited resources or when dealing with large data sets.
 
-Importance of Memory Profiling:
+_Importance of Memory Profiling:_
+
 - **Identifying Memory Leaks**: It helps identify parts of the code that are leaking memory.
 - **Optimization**: It provides insights into which parts of the code need to be optimized for better memory usage.
 - **Cost Efficiency**: In cloud-based and server environments, optimizing memory usage can lead to cost savings by requiring fewer resources to run applications.
 
+Python's standard library includes the `tracemalloc` module, which can be used to profile memory usage in Python programs. The `tracemalloc` module provides a way to trace memory allocations and deallocations in a program.
+
+
 ```python
-from memory_profiler import profile  # pip install memory_profiler
+import tracemalloc
 
+# Start tracing memory allocations
+tracemalloc.start()
 
-@profile
-def my_function():
-    a = [1] * (10**6)
-    b = [2] * (2 * 10**7)
-    del b
-    return a
+# Run some code
+a = [i for i in range(100000)]
+b = [i for i in range(100000, 200000)]
 
+# Take a snapshot of the current memory allocation
+snapshot = tracemalloc.take_snapshot()
 
-if __name__ == "__main__":
-    my_function()
+# Stop tracing memory allocations
+tracemalloc.stop()
+
+# Print out the statistics
+for stat in snapshot.statistics("lineno")[:3]:
+    print(stat)
 ```
 
-    Line #    Mem usage    Increment  Occurrences   Line Contents
-    =============================================================
-        4     48.3 MiB     48.3 MiB           1   @profile
-        5                                         def my_function():
-        6     55.9 MiB      7.6 MiB           1       a = [1] * (10**6)
-        7    208.5 MiB    152.6 MiB           1       b = [2] * (2 * 10**7)
-        8     55.9 MiB   -152.6 MiB           1       del b
-        9     55.9 MiB      0.0 MiB           1       return a
+    /var/folders/6r/27vxsf6512zffvpt__9jvmcc0000gn/T/ipykernel_44698/960184309.py:8: size=3907 KiB, count=100001, average=40 B
+    /var/folders/6r/27vxsf6512zffvpt__9jvmcc0000gn/T/ipykernel_44698/960184309.py:7: size=3899 KiB, count=99744, average=40 B
+    /opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/codeop.py:125: size=357 B, count=3, average=119 B
 
-#### Profiling Tools <a id="profiling-tools"></a>
 
-##### Performance Profiling Tools <a id="performance-profiling-tools"></a>
+### Profiling Tools <a id="profiling-tools"></a>
+
+There are several tools available for profiling Python code, including both performance profiling and memory profiling tools.
+
+#### Performance Profiling Tools <a id="performance-profiling-tools"></a>
+
+The following are some commonly used performance profiling tools for Python:
 
 - **cProfile**: A built-in Python module for profiling the time taken by different functions and methods in a program.
 - **line_profiler**: A module for profiling the time taken by individual lines of code in a program.
 - **Py-Spy**: A sampling profiler for Python programs. It can be used to profile CPU usage and memory usage of Python programs.
 - **SnakeViz**: A browser-based graphical viewer for the output of Python's cProfile module. It can be used to visualize and analyze the profiling data.
 
-##### Memory Profiling Tools <a id="memory-profiling-tools"></a>
+#### Memory Profiling Tools <a id="memory-profiling-tools"></a>
 
+For memory profiling, the following tools are commonly used:
+
+- **tracemalloc**: A built-in Python module for tracing memory allocations in a Python program. It can be used to identify memory leaks and inefficient memory usage.
 - **memory_profiler**: A module for monitoring memory usage of a Python program. It can be used to profile memory usage line by line.
 - **objgraph**: A module for visualizing Python object references and memory usage. It can be used to identify memory leaks and inefficient memory usage.
 - **Pympler**: A development tool to measure, monitor, and analyze the memory behavior of Python objects in a running Python application.
-- **tracemalloc**: A built-in Python module for tracing memory allocations in a Python program. It can be used to identify memory leaks and inefficient memory usage.
 
-### 5. Code Review <a id="code-review"></a>
+## 5. Code Review <a id="code-review"></a>
 
-Code review is a process in software development where developers review each other's code to find and fix bugs, improve code quality, and ensure that the code meets the project's requirements. Code reviews are an essential part of the software development process and can help identify issues early, improve code maintainability, and share knowledge among team members.
+_Code review_ is a process in software development where developers review each other's code to find and fix bugs, improve code quality, and ensure that the code meets the project's requirements. Code reviews are an essential part of the software development process and can help identify issues early, improve code maintainability, and share knowledge among team members.
 
-Benefits of Code Review:
+_Benefits of Code Review:_
+
 - **Quality Assurance**: Code reviews can help identify bugs and issues early in the development process.
 - **Knowledge Sharing**: Code reviews provide an opportunity for team members to share knowledge and learn from each other.
 - **Improving Code Quality**: Code reviews can help improve the overall quality of the codebase by identifying and fixing issues.
@@ -512,7 +560,9 @@ Benefits of Code Review:
 - **Consistency**: Code reviews can help ensure that the codebase follows consistent coding standards and best practices.
 - **Security**: Helps in identifying security vulnerabilities that could be exploited if left unchecked.
 
-#### Code Review Best Practices <a id="code-review-best-practices"></a>
+### Code Review Best Practices <a id="code-review-best-practices"></a>
+
+_Code review best practices_ are guidelines and recommendations for conducting effective code reviews. They help ensure that the code review process is productive, constructive, and beneficial for the development team.
 
 - **Set Clear Objectives**: Clearly define the goals and objectives of the code review, such as identifying bugs, improving code quality, and sharing knowledge.
 - **Review Small Changes**: Break down large changes into smaller, manageable pieces that can be reviewed more effectively.
@@ -525,9 +575,11 @@ Benefits of Code Review:
 - **Document Decisions**: Document decisions made during the code review process to provide context and reasoning for future reference.
 - **Be Open to Feedback**: Be open to receiving feedback and suggestions for improvement. Code reviews are an opportunity to learn and grow as a developer.
 
-#### Code Review Tools <a id="code-review-tools"></a>
+### Code Review Tools <a id="code-review-tools"></a>
 
-A Code Review Tool is a software application that facilitates the code review process by providing features such as code diffing, commenting, and discussion tracking.
+A _Code Review Tool_ is a software application that facilitates the code review process by providing features such as code diffing, commenting, and discussion tracking.
+
+_Common Code Review Tools:_
 
 - **GitHub Pull Requests**: GitHub provides a built-in code review feature through pull requests. It allows team members to review and discuss code changes before merging them into the main branch.
 - **GitLab Merge Requests**: GitLab provides a similar code review feature through merge requests. It allows team members to review and discuss code changes before merging them into the main branch.
