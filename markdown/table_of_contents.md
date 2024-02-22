@@ -306,21 +306,21 @@
 6. [Parallelism](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/10_concurrency.ipynb#parallelism)
     - [Parallelism vs Concurrency](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/10_concurrency.ipynb#parallelism-vs-concurrency)
 
-### [Part XI: Debugging and Testing](#11-debugging-and-testing) <a id="toc-11-debugging-and-testing"></a>
+### [Part XI: Debugging and Testing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb) <a id="toc-11-debugging-and-testing"></a>
 
-1. [Debugging](#debugging)
-    - [Debugging Techniques](#debugging-techniques)
-    - [pdb](#pdb)
-2. [Testing](#testing)
-    - [Unit Testing](#unit-testing)
-    - [Integration Testing](#integration-testing)
-    - [Functional Testing](#functional-testing)
-    - [Mocking](#mocking)
-3. [Test Driven Development (TDD)](#tdd)
-4. [Python Testing Frameworks](#testing-frameworks)
-    - [unittest](#unittest)
-    - [pytest](#pytest)
-    - [doctest](#doctest)
+1. [Debugging](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#debugging)
+    - [Debugging Techniques](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#debugging-techniques)
+    - [pdb](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#pdb)
+2. [Testing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#testing)
+    - [Unit Testing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#unit-testing)
+    - [Integration Testing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#integration-testing)
+    - [Functional Testing](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#functional-testing)
+    - [Mocking](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#mocking)
+3. [Test Driven Development (TDD)](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#tdd)
+4. [Python Testing Frameworks](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#testing-frameworks)
+    - [unittest](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#unittest)
+    - [pytest](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#pytest)
+    - [doctest](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/11_debugging_and_testing.ipynb#doctest)
 
 ### [Part XII: Common Practices](#12-common-practices) <a id="toc-12-common-practices"></a>
 
