@@ -1,10 +1,32 @@
-## Part XIII: Databases <a id="13-databases"></a>
+# Part XIII: Databases <a id="13-databases"></a>
 
-### 1. Databases Basics <a id="databases-basics"></a>
+1. [Databases Basics](#databases-basics)
+    - [Database Types](#database-types)
+    - [Database Models](#database-models)
+    - [ACID](#acid)
+2. [SQL](#sql)
+    - [SQLite](#sqlite)
+    - [PostgreSQL](#postgresql)
+    - [MySQL](#mysql)
+3. [NoSQL](#nosql)
+    - [MongoDB](#mongodb)
+    - [Redis](#redis)
+    - [Cassandra](#cassandra)
+4. [ORM (Object-Relational Mapping)](#orm)
+    - [SQLAlchemy](#sqlalchemy)
+    - [Django ORM](#django-orm)
+5. [Database Design](#database-design)
+    - [Normalization](#normalization)
+    - [Indexing](#indexing)
+6. [Messaging Systems](#messaging-systems)
+    - [RabbitMQ](#rabbitmq)
+    - [Apache Kafka](#kafka)
 
-A database is a collection of data that is stored and organized in a way that makes it easy to access, manage, and update. Databases are used in many applications, including websites, mobile apps, and desktop software. They are used to store data such as user information, product information, and other types of data.
+## 1. Databases Basics <a id="databases-basics"></a>
 
-#### Database Types <a id="database-types"></a>
+A _database_ is a collection of data that is stored and organized in a way that makes it easy to access, manage, and update. Databases are used in many applications, including websites, mobile apps, and desktop software. They are used to store data such as user information, product information, and other types of data.
+
+### Database Types <a id="database-types"></a>
 
 Databases can broadly be classified into two types:
 
@@ -12,7 +34,7 @@ Databases can broadly be classified into two types:
 
 - **NoSQL Databases**: Designed for unstructured or semi-structured data, NoSQL databases are more flexible in terms of the data model. They are categorized into document databases (e.g., MongoDB), key-value stores (e.g., Redis), wide-column stores (e.g., Cassandra), and graph databases.
 
-#### Database Models <a id="database-models"></a>
+### Database Models <a id="database-models"></a>
 
 The data model of a database defines how data is stored, organized, and manipulated. The most common models are:
 
@@ -24,19 +46,24 @@ The data model of a database defines how data is stored, organized, and manipula
 
 - **Graph Model**: Data is stored as nodes (entities), edges (relationships), and properties, ideal for interconnected data. This model is best for complex relationships between data.
 
-#### ACID <a id="acid"></a>
+The choice of the data model depends on the nature of the data and the requirements of the application.
 
-ACID stands for Atomicity, Consistency, Isolation, and Durability, ensuring database transactions are processed reliably:
+### ACID <a id="acid"></a>
 
-- **Atomicity**: Ensures that all parts of a transaction are completed successfully. If any part fails, the entire transaction is rolled back. (e.g., transferring money from one account to another should either succeed or fail completely, not leave the database in an inconsistent state.)
+_ACID_ stands for Atomicity, Consistency, Isolation, and Durability, ensuring database transactions are processed reliably:
 
-- **Consistency**: Ensures that database transactions move the database from one valid state to another, maintaining all predefined rules. (e.g., a database that tracks inventory should not allow a sale of more items than are in stock.)
+- **Atomicity**: Ensures that all parts of a transaction are completed successfully. If any part fails, the entire transaction is rolled back (e.g., transferring money from one account to another should either succeed or fail completely, not leave the database in an inconsistent state). Atomicity is achieved through the use of transactions.
 
-- **Isolation**: Ensures that transactions are executed in isolation from each other, preventing concurrent transactions from interfering with each other. (e.g., if two transactions are updating the same data, one should not interfere with the other.)
+- **Consistency**: Ensures that database transactions move the database from one valid state to another, maintaining all predefined rules (e.g., a database that tracks inventory should not allow a sale of more items than are in stock). Consistency is achieved through the use of constraints and triggers.
 
-- **Durability**: Ensures that once a transaction has been committed, it will remain so, even in the event of a power loss, crash, or error. (e.g., once a user receives a confirmation that a transaction has been completed, the data should not be lost.)
+- **Isolation**: Ensures that transactions are executed in isolation from each other, preventing concurrent transactions from interfering with each other (e.g., if two transactions are updating the same data, one should not interfere with the other). Isolation is achieved through the use of locks.
 
-```sql
+- **Durability**: Ensures that once a transaction has been committed, it will remain so, even in the event of a power loss, crash, or error (e.g., once a user receives a confirmation that a transaction has been completed, the data should not be lost). Durability is achieved through the use of write-ahead logging and other mechanisms.
+
+
+```python
+%%script false --no-raise-error  # This cell is not executed
+
 -- Start transaction
 START TRANSACTION;
 
@@ -50,9 +77,9 @@ UPDATE accounts SET balance = balance + 100 WHERE account_id = 'B';
 COMMIT;
 ```
 
-### 2. SQL <a id="sql"></a>
+## 2. SQL <a id="sql"></a>
 
-SQL, or Structured Query Language, is the standard programming language used to manage and manipulate relational databases. SQL is designed to enable users to perform a wide range of operations on data stored in a relational database management system (RDBMS). These operations include creating, querying, updating, and deleting data.
+_SQL_, or Structured Query Language, is the standard programming language used to manage and manipulate relational databases. SQL is designed to enable users to perform a wide range of operations on data stored in a relational database management system (RDBMS). These operations include creating, querying, updating, and deleting data.
 
 _Key Concepts of SQL:_
 
@@ -64,7 +91,10 @@ _Key Concepts of SQL:_
 - **Data Control Language (DCL)**: Includes commands like GRANT and REVOKE, which are used to control access to data in the database.
 - **Transactions**: SQL supports transactional control commands, such as BEGIN, COMMIT, and ROLLBACK, allowing for the management of transactional processing and ensuring data integrity.
 
-```sql
+
+```python
+%%script false --no-raise-error  # This cell is not executed
+
 -- Create a table
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
@@ -88,9 +118,9 @@ UPDATE Employees SET Age = 31 WHERE EmployeeID = 1;
 DELETE FROM Employees WHERE EmployeeID = 1;
 ```
 
-#### SQLite <a id="sqlite"></a>
+### SQLite <a id="sqlite"></a>
 
-SQLite is a popular relational database management system that is distinguished by its simplicity, reliability, and ease of use. Unlike traditional client-server database systems such as MySQL or PostgreSQL, SQLite is serverless, self-contained, and requires no configuration, making it an ideal choice for applications that require a lightweight database solution.
+_SQLite_ is a popular relational database management system that is distinguished by its simplicity, reliability, and ease of use. Unlike traditional client-server database systems such as MySQL or PostgreSQL, SQLite is serverless, self-contained, and requires no configuration, making it an ideal choice for applications that require a lightweight database solution.
 
 _Key Features of SQLite:_
 
@@ -108,7 +138,10 @@ _Use Cases:_
 - **Mobile Applications**: SQLite is extensively used in mobile app development, as it is supported natively by both Android and iOS platforms.
 - **Prototyping and Testing**: Developers often use SQLite for prototyping and testing due to its ease of setup and teardown.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 import sqlite3
 
 # Connect to or create a database file
@@ -140,9 +173,9 @@ print(cursor.fetchall())
 conn.close()
 ```
 
-#### PostgreSQL <a id="postgresql"></a>
+### PostgreSQL <a id="postgresql"></a>
 
-PostgreSQL, often simply called Postgres, is an advanced, open-source relational database management system (RDBMS) known for its robustness, scalability, and compliance with SQL standards. It offers a sophisticated and powerful set of features designed to handle a wide range of workloads, from single machines to data warehouses or Web services with many concurrent users.
+_PostgreSQL_, often simply called Postgres, is an advanced, open-source relational database management system (RDBMS) known for its robustness, scalability, and compliance with SQL standards. It offers a sophisticated and powerful set of features designed to handle a wide range of workloads, from single machines to data warehouses or Web services with many concurrent users.
 
 _Key Features of PostgreSQL:_
 
@@ -161,7 +194,10 @@ _Use Cases:_
 - **Enterprise Systems**: Its scalability, along with support for SQL and NoSQL data models, makes it suitable for enterprise applications and services.
 - **Data Warehousing and Analytics**: PostgreSQL's support for advanced analytics through extensions like PL/R, PL/Python, and its ability to handle large datasets efficiently, makes it a good choice for data warehousing.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 import psycopg2  # pip install psycopg2
 
 # Connect to your postgres DB
@@ -186,9 +222,9 @@ cur.close()
 conn.close()
 ```
 
-#### MySQL <a id="mysql"></a>
+### MySQL <a id="mysql"></a>
 
-MySQL is one of the world's most popular open-source relational database management systems (RDBMS). It is widely used for web databases and serves as the backbone for a variety of applications, ranging from small-scale projects to large-scale enterprise systems. MySQL is renowned for its reliability, ease of use, and performance.
+_MySQL_ is one of the world's most popular open-source relational database management systems (RDBMS). It is widely used for web databases and serves as the backbone for a variety of applications, ranging from small-scale projects to large-scale enterprise systems. MySQL is renowned for its reliability, ease of use, and performance.
 
 _Key Features of MySQL:_
 
@@ -205,7 +241,10 @@ _Use Cases:_
 - **Content Management Systems (CMS)**: MySQL is the preferred database for a range of CMS platforms, providing the necessary storage and retrieval capabilities for managing content.
 - **Logging Applications**: Its fast data insertion and retrieval capabilities make it suitable for logging information from various applications or systems.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 import mysql.connector  # pip install mysql-connector-python
 
 # Connect to the MySQL database
@@ -239,9 +278,9 @@ cursor.close()
 conn.close()
 ```
 
-### 3. NoSQL <a id="nosql"></a>
+## 3. NoSQL <a id="nosql"></a>
 
-NoSQL databases represent a broad class of database management systems that differ from traditional relational database management systems (RDBMS) in that they allow for the storage and retrieval of data in a format other than the tabular relations used in relational databases. The term "NoSQL" stands for "Not only SQL" to emphasize that they may support query languages that are not SQL-based. These databases are designed to excel in areas where relational databases might struggle, such as handling large volumes of unstructured data, scaling horizontally, and allowing for flexible data models.
+_NoSQL_ databases represent a broad class of database management systems that differ from traditional relational database management systems (RDBMS) in that they allow for the storage and retrieval of data in a format other than the tabular relations used in relational databases. The term "NoSQL" stands for "Not only SQL" to emphasize that they may support query languages that are not SQL-based. These databases are designed to excel in areas where relational databases might struggle, such as handling large volumes of unstructured data, scaling horizontally, and allowing for flexible data models.
 
 _Types of NoSQL Databases:_
 
@@ -267,9 +306,9 @@ _Use Cases:_
 - **Wide-Column Stores**: Used for analyzing large datasets, such as big data processing and time-series data.
 - **Graph Databases**: Perfect for social networks, fraud detection, and graph-based search.
 
-#### MongoDB <a id="mongodb"></a>
+### MongoDB <a id="mongodb"></a>
 
-MongoDB is a leading NoSQL database known for its flexibility, scalability, and performance. It is a document-oriented database that stores data in flexible, JSON-like documents, enabling the storage of complex hierarchies and arrays, making data aggregation and querying efficient and intuitive.
+_MongoDB_ is a leading NoSQL database known for its flexibility, scalability, and performance. It is a document-oriented database that stores data in flexible, JSON-like documents, enabling the storage of complex hierarchies and arrays, making data aggregation and querying efficient and intuitive.
 
 _Key Features of MongoDB:_
 
@@ -287,7 +326,10 @@ _Use Cases:_
 - **Mobile Applications**: Provides the scalability and flexibility needed to store and query data for mobile applications, accommodating rapid changes in data structure and volume.
 - **Real-Time Analytics**: The aggregation framework and indexing capabilities enable real-time analytics and data processing.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 from pymongo import MongoClient  # pip install pymongo
 
 # Connect to the MongoDB server
@@ -307,9 +349,9 @@ for user in collection.find():
     print(user)
 ```
 
-#### Redis <a id="redis"></a>
+### Redis <a id="redis"></a>
 
-Redis (Remote Dictionary Server) is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis is known for its high performance, scalability, and ease of use.
+_Redis_ (Remote Dictionary Server) is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis is known for its high performance, scalability, and ease of use.
 
 _Key Features of Redis:_
 
@@ -329,7 +371,10 @@ _Use Cases:_
 - **Queueing Systems**: Redis's list and sorted set data structures are used to implement reliable queueing systems.
 - **Leaderboards and Counting**: The sorted set data structure is particularly useful for applications like leaderboards in gaming, where scores need to be ranked in real time.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 import redis  # pip install redis
 
 # Connect to Redis server
@@ -342,9 +387,9 @@ r.set('foo', 'bar')
 print(r.get('foo'))  # Outputs: b'bar'
 ```
 
-#### Cassandra <a id="cassandra"></a>
+### Cassandra <a id="cassandra"></a>
 
-Apache Cassandra is a highly scalable, high-performance distributed NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. It is particularly suited for applications requiring massive scalability and high availability without compromising performance. Cassandra's architecture allows it to distribute data across multiple nodes in a cluster, making it an excellent choice for systems that can't afford to lose data.
+_Apache Cassandra_ is a highly scalable, high-performance distributed NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. It is particularly suited for applications requiring massive scalability and high availability without compromising performance. Cassandra's architecture allows it to distribute data across multiple nodes in a cluster, making it an excellent choice for systems that can't afford to lose data.
 
 _Key Features of Cassandra:_
 
@@ -362,7 +407,10 @@ _Use Cases:_
 - **Write-Heavy Applications**: Cassandra's architecture is optimized for high write throughput, making it ideal for logging and tracking data for large-scale systems.
 - **Real-Time Big Data Analytics**: The distributed nature of Cassandra, combined with its fast write and read capabilities, makes it suitable for real-time big data analytics applications.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 from cassandra.cluster import Cluster  # pip install cassandra-driver
 from cassandra.auth import PlainTextAuthProvider
 
@@ -399,9 +447,9 @@ for row in rows:
 cluster.shutdown()
 ```
 
-### 4. ORM (Object-Relational Mapping) <a id="orm"></a>
+## 4. ORM (Object-Relational Mapping) <a id="orm"></a>
 
-ORM, or Object-Relational Mapping, is a programming technique used to convert data between incompatible type systems in object-oriented programming languages. It creates a "virtual object database" that can be used from within a programming language. ORM is used in software development to facilitate the manipulation of data stored in relational databases (RDBMS) directly into object-oriented programming languages. This abstraction allows developers to work with data in their applications without having to write SQL queries or worry about the underlying database schema and data conversions.
+_ORM_, or Object-Relational Mapping, is a programming technique used to convert data between incompatible type systems in object-oriented programming languages. It creates a "virtual object database" that can be used from within a programming language. ORM is used in software development to facilitate the manipulation of data stored in relational databases (RDBMS) directly into object-oriented programming languages. This abstraction allows developers to work with data in their applications without having to write SQL queries or worry about the underlying database schema and data conversions.
 
 _Key Concepts of ORM:_
 
@@ -417,9 +465,9 @@ _Advantages of Using ORM:_
 - **Abstraction**: ORM provides a high level of abstraction from the database. This means that changes in the database schema can often be absorbed with minimal changes to the application code.
 - **Database Agnosticism**: Applications built using ORM can be relatively easy to port to different database systems.
 
-#### SQLAlchemy <a id="sqlalchemy"></a>
+### SQLAlchemy <a id="sqlalchemy"></a>
 
-SQLAlchemy is a powerful and flexible SQL toolkit and Object-Relational Mapping (ORM) library for Python. It provides a full suite of well-known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+_SQLAlchemy_ is a powerful and flexible SQL toolkit and Object-Relational Mapping (ORM) library for Python. It provides a full suite of well-known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
 
 _Key Features of SQLAlchemy:_
 
@@ -436,7 +484,10 @@ _SQLAlchemy Components:_
 - **SQL Expression Language**: Allows for the construction of SQL statements in a Pythonic way, providing flexibility and power in generating SQL queries.
 - **ORM**: Maps Python classes to database tables and objects to rows in those tables, abstracting away many of the database-specific details.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 from sqlalchemy import create_engine, Column, Integer, String  # pip install sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -474,9 +525,9 @@ print(f'User: {user.name}, Age: {user.age}')
 session.close()
 ```
 
-#### Django ORM <a id="django-orm"></a>
+### Django ORM <a id="django-orm"></a>
 
-Django ORM is a powerful component of the Django web framework that allows developers to interact with databases using Python code. It abstracts the complexities of SQL, enabling developers to create, retrieve, update, and delete database records without needing to write raw SQL queries. The ORM is designed to work with relational databases, such as SQLite, PostgreSQL, MySQL, and Oracle, providing a high-level API to manage database operations.
+_Django ORM_ is a powerful component of the Django web framework that allows developers to interact with databases using Python code. It abstracts the complexities of SQL, enabling developers to create, retrieve, update, and delete database records without needing to write raw SQL queries. The ORM is designed to work with relational databases, such as SQLite, PostgreSQL, MySQL, and Oracle, providing a high-level API to manage database operations.
 
 _Key Features of Django ORM:_
 
@@ -486,7 +537,10 @@ _Key Features of Django ORM:_
 - **Migrations**: Django includes a migrations framework to apply changes to the database schema (such as adding a field or creating a new model) through migration files, which are generated automatically by Django.
 - **Admin Interface**: Automatically generates a CRUD (Create, Read, Update, Delete) interface for models, making it easy to manage the data in your database through a web interface.
 
+
 ```python
+%%script false --no-raise-error  # This cell is not executed
+
 from django.db import models
 
 # Define a model
@@ -514,13 +568,13 @@ user.save()
 user.delete()
 ```
 
-### 5. Database Design <a id="database-design"></a>
+## 5. Database Design <a id="database-design"></a>
 
 Database design is the process of producing a detailed data model of a database. It involves defining the structure, relationships, and constraints of the data to be stored in the database. A well-designed database ensures that data is organized efficiently, accurately, and securely, and that it can be easily accessed and manipulated.
 
-#### Normalization <a id="normalization"></a>
+### Normalization <a id="normalization"></a>
 
-Normalization is a systematic approach in database design to minimize redundancy and avoid undesirable characteristics like Insertion, Update, and Deletion Anomalies. It involves organizing the fields and tables of a database to ensure that dependencies between them are properly handled. The primary goal is to separate data into different tables to reduce duplication and create a database that is flexible and efficient to query.
+_Normalization_ is a systematic approach in database design to minimize redundancy and avoid undesirable characteristics like Insertion, Update, and Deletion Anomalies. It involves organizing the fields and tables of a database to ensure that dependencies between them are properly handled. The primary goal is to separate data into different tables to reduce duplication and create a database that is flexible and efficient to query.
 
 Normalization is typically achieved through a series of steps, each referred to as a "normal form" (NF). Each normal form has specific requirements that must be met:
 
@@ -545,9 +599,9 @@ _Considerations:_
 
 While normalization is beneficial for maintaining data integrity and reducing redundancy, it may lead to performance issues in read-heavy databases because it can require multiple table joins to retrieve related data. In such cases, controlled denormalization (the process of intentionally adding some redundancy back into the database) might be considered to optimize read operations at the expense of additional complexity in data maintenance.
 
-#### Indexing <a id="indexing"></a>
+### Indexing <a id="indexing"></a>
 
-Indexing in databases is a technique used to speed up the retrieval of records from a database table by providing quick access to rows. Indexes are created using one or more columns of a database table, providing a pathway to quickly locate the data without scanning every row in a table every time a database table is accessed. Indexes are critical for improving the performance of search operations in large databases.
+_Indexing_ in databases is a technique used to speed up the retrieval of records from a database table by providing quick access to rows. Indexes are created using one or more columns of a database table, providing a pathway to quickly locate the data without scanning every row in a table every time a database table is accessed. Indexes are critical for improving the performance of search operations in large databases.
 
 _How Indexing Works:_
 
@@ -578,9 +632,9 @@ _Example Scenario:_
 
 Imagine a library database with a table containing millions of records about books. Searching for a book based on its ISBN without an index would require scanning the entire table. However, with an index on the ISBN column, the database can quickly locate the book without examining every record, drastically reducing search time.
 
-### 6. Messaging Systems <a id="messaging-systems"></a>
+## 6. Messaging Systems <a id="messaging-systems"></a>
 
-Messaging systems are software systems that enable the exchange of messages between distributed systems, services, or applications, allowing them to communicate and share data asynchronously. They play a crucial role in building scalable, decoupled, and resilient applications, especially in microservices architectures, distributed systems, and enterprise integration.
+_Messaging systems_ are software systems that enable the exchange of messages between distributed systems, services, or applications, allowing them to communicate and share data asynchronously. They play a crucial role in building scalable, decoupled, and resilient applications, especially in microservices architectures, distributed systems, and enterprise integration.
 
 _Key Concepts:_
 
@@ -597,9 +651,9 @@ _Use Cases:_
 - **Asynchronous Communication**: Enables applications to operate independently, without waiting for immediate responses, improving responsiveness and scalability.
 - **Event-Driven Architectures**: Facilitates the implementation of event-driven systems where actions are triggered by events or messages, rather than direct calls.
 
-#### RabbitMQ <a id="rabbitmq"></a>
+### RabbitMQ <a id="rabbitmq"></a>
 
-RabbitMQ is an open-source message broker software that facilitates the efficient transmission of messages between distributed systems, applications, and services. It implements the Advanced Message Queuing Protocol (AMQP) and supports multiple messaging protocols, making it highly versatile and suitable for a wide range of messaging needs. RabbitMQ is widely recognized for its reliability, scalability, and ease of integration, making it a popular choice for implementing complex messaging solutions in modern applications.
+_RabbitMQ_ is an open-source message broker software that facilitates the efficient transmission of messages between distributed systems, applications, and services. It implements the Advanced Message Queuing Protocol (AMQP) and supports multiple messaging protocols, making it highly versatile and suitable for a wide range of messaging needs. RabbitMQ is widely recognized for its reliability, scalability, and ease of integration, making it a popular choice for implementing complex messaging solutions in modern applications.
 
 _Key Features of RabbitMQ:_
 
@@ -625,9 +679,11 @@ _Use Cases:_
 - **Load Balancing**: Distributing tasks or messages across multiple worker instances to balance the load and optimize resource utilization.
 - **Decentralized System Communication**: Facilitating the flow of messages in microservices architectures, where services need to exchange data without direct dependencies.
 
-**Producer** (Send.py):
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+# Producer (send.py)
+
 import pika  # pip install pika
 
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
@@ -641,9 +697,11 @@ print(" [x] Sent 'Hello World!'")
 connection.close()
 ```
 
-**Consumer** (Receive.py):
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+# Consumer (receive.py)
+
 import pika
 
 def callback(ch, method, properties, body):
@@ -660,9 +718,9 @@ print(' [*] Waiting for messages. To exit press CTRL+C')
 channel.start_consuming()
 ```
 
-#### Apache Kafka <a id="kafka"></a>
+### Apache Kafka <a id="kafka"></a>
 
-Apache Kafka is a distributed streaming platform that enables you to build real-time streaming data pipelines and applications. Initially developed by LinkedIn and later open-sourced as part of the Apache project, Kafka is designed to handle high volumes of data in a fault-tolerant and scalable manner. It can publish, subscribe to, store, and process streams of records in real time.
+_Apache Kafka_ is a distributed streaming platform that enables you to build real-time streaming data pipelines and applications. Initially developed by LinkedIn and later open-sourced as part of the Apache project, Kafka is designed to handle high volumes of data in a fault-tolerant and scalable manner. It can publish, subscribe to, store, and process streams of records in real time.
 
 _Key Features of Apache Kafka:_
 
@@ -687,15 +745,17 @@ _Use Cases:_
 - **Event Sourcing**: Storing and processing event logs to reconstruct the state of an application at any point in time.
 - **Metrics and Monitoring**: Collecting and processing metrics and monitoring data from various sources.
 
-**Producer Example** (produce.py):
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+# Producer (produce.py)
+
 from kafka import KafkaProducer  # pip install kafka-python
 import json
 
 # Initialize a Kafka producer
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
-                         value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+                        value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 # Send a message
 producer.send('test', {'message': 'Hello Kafka!'})
@@ -704,17 +764,19 @@ producer.send('test', {'message': 'Hello Kafka!'})
 producer.flush()
 ```
 
-**Consumer Example** (consume.py):
 
 ```python
+%%script false --no-raise-error  # This cell is not executed
+# Consumer (consume.py)
+
 from kafka import KafkaConsumer
 import json
 
 # Initialize a Kafka consumer
 consumer = KafkaConsumer('test',
-                         bootstrap_servers=['localhost:9092'],
-                         auto_offset_reset='earliest',
-                         value_deserializer=lambda x: json.loads(x.decode('utf-8')))
+                        bootstrap_servers=['localhost:9092'],
+                        auto_offset_reset='earliest',
+                        value_deserializer=lambda x: json.loads(x.decode('utf-8')))
 
 # Read and print messages
 for message in consumer:
