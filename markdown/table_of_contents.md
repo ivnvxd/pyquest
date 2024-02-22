@@ -421,13 +421,13 @@
     - [Basic HTML, CSS, and JavaScript](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/14_networking_and_web.ipynb#basic-html-css-js)
     - [Frontend Frameworks](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/14_networking_and_web.ipynb#frontend-frameworks)
 
-### [Part XV: GUI Programming](#15-gui) <a id="toc-15-gui"></a>
+### [Part XV: GUI Programming](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb) <a id="toc-15-gui"></a>
 
-1. [Tkinter](#tkinter)
-2. [PyQT](#pyqt)
-3. [wxPython](#wxpython)
-4. [Kivy](#kivy)
-5. [PySimpleGUI](#pysimplegui)
+1. [Tkinter](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#tkinter)
+2. [PyQT](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#pyqt)
+3. [wxPython](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#wxpython)
+4. [Kivy](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#kivy)
+5. [PySimpleGUI](https://nbviewer.org/github/ivnvxd/pyquest/blob/main/jupyter/15_gui_programming.ipynb#pysimplegui)
 
 ### [Part XVI: Python and Data Science](#16-data-science) <a id="toc-16-data-science"></a>
 
