@@ -1,8 +1,48 @@
-## Part XVIII: DevOps <a id="18-devops"></a>
+# Part XVIII: DevOps <a id="18-devops"></a>
 
-### 1. Git <a id="git"></a>
+1. [Git](#git)
+    - [Git Tools](#git-tools)
+    - [Branching Models](#branching-models)
+    - [Git Best Practices](#git-best-practices)
+2. [Linux](#linux)
+    - [Basic Commands](#basic-commands)
+    - [File System Hierarchy](#file-system-hierarchy)
+    - [Shell Scripting](#shell-scripting)
+3. [Development Lifecycle](#development-lifecycle)
+    - [SDLC Models](#sdlc-models)
+    - [Agile](#agile)
+    - [Waterfall](#waterfall)
+4. [CI/CD](#cicd)
+    - [Continuous Integration](#continuous-integration)
+        - [Continuous Delivery](#continuous-delivery)
+    - [Continuous Deployment](#continuous-deployment)
+    - [CI/CD Pipeline](#cicd-pipeline)
+    - [CI/CD Tools](#cicd-tools)
+        - [Jenkins](#jenkins)
+        - [Travis CI](#travis-ci)
+        - [GitLab CI](#gitlab-ci)
+        - [GitHub Actions](#github-actions)
+5. [Containers](#containers)
+    - [Docker](#docker)
+        - [Docker Compose](#docker-compose)
+        - [Docker Swarm](#docker-swarm)
+    - [Kubernetes](#kubernetes)
+6. [Cloud](#cloud)
+    - [AWS](#aws)
+    - [Azure](#azure)
+    - [GCP](#gcp)
+    - [DigitalOcean](#digitalocean)
+7. [Infrastructure as Code](#infrastructure-as-code)
+    - [Terraform](#terraform)
+    - [Ansible](#ansible)
+8. [Monitoring](#monitoring)
+    - [Prometheus](#prometheus)
+    - [Grafana](#grafana)
+    - [ELK Stack](#elk-stack)
 
-Git is a distributed version control system. It is a tool that helps you to manage your codebase and collaborate with other developers. It is a very powerful tool and is used by many companies and open-source projects. It is a must-have skill for any developer.
+## 1. Git <a id="git"></a>
+
+[Git](https://git-scm.com/) is a distributed version control system. It is a tool that helps you to manage your codebase and collaborate with other developers. It is a very powerful tool and is used by many companies and open-source projects. It is a must-have skill for any developer.
 
 _Key Concepts:_
 
@@ -27,27 +67,27 @@ _Basic Commands:_
 - `git log`: View the commit history
 - `git diff`: View the changes between two commits
 
-#### Git Tools <a id="git-tools"></a>
+### Git Tools <a id="git-tools"></a>
 
-1. **GitHub**: A web-based platform for version control and collaboration. It provides a way to host and review code, manage projects, and build software. It is the most popular platform for hosting open-source projects. It is also used by many companies for hosting their private repositories.
+1. [GitHub](https://github.com/): A web-based platform for version control and collaboration. It provides a way to host and review code, manage projects, and build software. It is the most popular platform for hosting open-source projects. It is also used by many companies for hosting their private repositories.
     
     - **GitHub Actions**: A way to automate your workflow. It allows you to build, test, and deploy your code without leaving GitHub.
     - **GitHub Pages**: A way to host your website directly from your GitHub repository. It allows you to create a website for your project, documentation, or personal portfolio.
     - **GitHub Desktop**: A way to manage your repositories from your desktop. It allows you to clone, commit, and push changes to your repositories without using the command line.
 
-2. **GitLab**: A web-based platform for version control and collaboration. It provides a way to host and review code, manage projects, and build software. It is an alternative to GitHub and is used by many companies for hosting their private repositories.
+2. [GitLab](https://about.gitlab.com/): A web-based platform for version control and collaboration. It provides a way to host and review code, manage projects, and build software. It is an alternative to GitHub and is used by many companies for hosting their private repositories.
     
     - **GitLab CI/CD**: A way to automate your workflow. It allows you to build, test, and deploy your code without leaving GitLab.
     - **GitLab Pages**: A way to host your website directly from your GitLab repository. It allows you to create a website for your project, documentation, or personal portfolio.
 
-3. **Bitbucket**: A web-based platform for version control and collaboration. It provides a way to host and review code, manage projects, and build software. It is an alternative to GitHub and is used by many companies for hosting their private repositories.
+3. [Bitbucket](https://bitbucket.org/product): A web-based platform for version control and collaboration. It provides a way to host and review code, manage projects, and build software. It is an alternative to GitHub and is used by many companies for hosting their private repositories.
     
     - **Bitbucket Pipelines**: A way to automate your workflow. It allows you to build, test, and deploy your code without leaving Bitbucket.
     - **Bitbucket Pages**: A way to host your website directly from your Bitbucket repository. It allows you to create a website for your project, documentation, or personal portfolio.
 
-#### Branching Models <a id="branching-models"></a>
+### Branching Models <a id="branching-models"></a>
 
-Branching models in Git provide a structured way of managing code development, allowing multiple developers to work on a project simultaneously without interfering with each other’s work. They define how branches are created, used, and integrated back into the main codebase. Here are some of the most widely used Git branching models, each catering to different development workflows and project needs:
+_Branching models_ in Git provide a structured way of managing code development, allowing multiple developers to work on a project simultaneously without interfering with each other’s work. They define how branches are created, used, and integrated back into the main codebase. Here are some of the most widely used Git branching models, each catering to different development workflows and project needs:
 
 1. **Feature Branch Workflow**
 
@@ -80,7 +120,7 @@ _Choosing the Right Model_
 
 The choice of branching model depends on the project's requirements, team size, development practices, and release cycle. Smaller teams might prefer the simplicity of the Feature Branch Workflow or Trunk-Based Development, while larger teams or those with complex release processes might opt for Gitflow or Forking Workflow. It’s important to choose a model that supports your development workflow and enhances your team’s efficiency.
 
-#### Git Best Practices <a id="git-best-practices"></a>
+### Git Best Practices <a id="git-best-practices"></a>
 
 1. **Use Descriptive Commit Messages**: Write clear and descriptive commit messages that explain the purpose of the change. A good commit message helps others understand the context of the change and makes it easier to review and track changes over time.
 
@@ -102,11 +142,11 @@ The choice of branching model depends on the project's requirements, team size, 
 
 10. **Use Git LFS for Large Files**: Git Large File Storage (LFS) is an extension that allows large files to be stored outside the Git repository. Use Git LFS for large binary files, such as images, videos, and datasets, to avoid bloating the repository size.
 
-### 2. Linux <a id="linux"></a>
+## 2. Linux <a id="linux"></a>
 
 Linux is a family of open-source Unix-like operating systems based on the Linux kernel. It is widely used in server environments, cloud computing, and embedded systems. Linux is known for its stability, security, and flexibility, and it is the foundation of many popular operating systems, such as Ubuntu, Fedora, and CentOS.
 
-#### Basic Commands <a id="basic-commands"></a>
+### Basic Commands <a id="basic-commands"></a>
 
 1. **File and Directory Operations**
 
@@ -169,7 +209,7 @@ Linux is a family of open-source Unix-like operating systems based on the Linux 
     - `yum`: Yellowdog Updater Modified (RPM-based systems)
     - `dnf`: Dandified Yum (Fedora-based systems)
 
-#### File System Hierarchy <a id="file-system-hierarchy"></a>
+### File System Hierarchy <a id="file-system-hierarchy"></a>
 
 The Linux file system follows a hierarchical structure, with the root directory (`/`) at the top. Here are some of the most important directories in the Linux file system:
 
@@ -192,9 +232,9 @@ The Linux file system follows a hierarchical structure, with the root directory 
 17. **`/usr`**: User utilities and applications
 18. **`/var`**: Variable data
 
-#### Shell Scripting <a id="shell-scripting"></a>
+### Shell Scripting <a id="shell-scripting"></a>
 
-Shell scripting is a powerful method for automating tasks in Unix-like operating systems, including Linux and macOS. A shell script is a text file containing a sequence of commands that the shell can execute. These scripts can automate repetitive tasks, manage system operations, and more, making them a crucial tool for system administrators and developers.
+_Shell scripting_ is a powerful method for automating tasks in Unix-like operating systems, including Linux and macOS. A shell script is a text file containing a sequence of commands that the shell can execute. These scripts can automate repetitive tasks, manage system operations, and more, making them a crucial tool for system administrators and developers.
 
 _Basics of Shell Scripting:_
 
@@ -216,7 +256,10 @@ _Key Concepts in Shell Scripting:_
 
 - **Input and Output**: Shell scripts can handle input and output operations, redirecting output from a command to a file (`>` or `>>`), reading input from a file (`<`), or using pipes (`|`) to use the output of one command as the input to another.
 
-```bash
+
+```python
+%%script false --no-raise-error  # This cell is not executed because it will raise SyntaxError in Jupyter Notebook
+
 #!/bin/bash
 
 # Batch file rename
@@ -236,11 +279,11 @@ done
 echo "All files in $DIRECTORY have been renamed."
 ```
 
-### 3. Development Lifecycle <a id="development-lifecycle"></a>
+## 3. Development Lifecycle <a id="development-lifecycle"></a>
 
 The development lifecycle refers to the process of building, testing, and deploying software applications. It encompasses various stages, from planning and coding to testing, deployment, and maintenance. DevOps practices aim to streamline and automate the development lifecycle, enabling faster and more reliable software delivery.
 
-#### SDLC Models <a id="sdlc-models"></a>
+### SDLC Models <a id="sdlc-models"></a>
 
 _Software Development Life Cycle_ (SDLC) models provide a structured approach to software development. Different models cater to various project needs, complexity levels, and team dynamics.
 
@@ -258,7 +301,7 @@ _Most Common SDLC Models:_
 
 The choice of SDLC model depends on the project's requirements, team dynamics, and organizational culture. Agile methodologies are widely adopted due to their flexibility and adaptability to changing requirements. However, some projects, especially those with well-defined and stable requirements, might still benefit from a more traditional approach like the Waterfall model.
 
-#### Agile <a id="agile"></a>
+### Agile <a id="agile"></a>
 
 _Agile_ is a set of principles for software development under which requirements and solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer/end user. It advocates adaptive planning, evolutionary development, early delivery, and continual improvement, and it encourages flexible responses to change. The Agile Manifesto, introduced in 2001, lays the foundation for Agile software development and consists of four core values and twelve principles.
 
@@ -303,7 +346,7 @@ _Benefits of Agile:_
 - **Improved Quality**: By breaking down the project into manageable units, the team can focus on high-quality development, testing, and collaboration.
 - **Stakeholder Engagement**: Regular check-ins and collaborative planning provide transparency and increase the chances that the final product will meet stakeholders' expectations.
 
-#### Waterfall <a id="waterfall"></a>
+### Waterfall <a id="waterfall"></a>
 
 The _Waterfall_ model is a sequential and linear approach to software development and project management, where the process flows steadily downwards (like a waterfall) through several distinct phases. This model is one of the earliest methodologies used in software engineering and remains relevant for certain types of projects, particularly those with well-defined requirements and where changes are not expected to occur frequently.
 
@@ -349,7 +392,7 @@ _Ideal Use Cases:_
 
 The Waterfall model is best suited for projects where requirements are clear and unlikely to change, the project scope is fixed, and the technology is well-understood. It is often used in construction and manufacturing projects but can also apply to certain types of software development projects where a linear approach is advantageous.
 
-### 4. CI/CD <a id="cicd"></a>
+## 4. CI/CD <a id="cicd"></a>
 
 _CI/CD_ stands for Continuous Integration and Continuous Delivery or Continuous Deployment, which are key practices in modern software development methodologies like Agile. They aim to automate the software delivery process, improve product quality, and accelerate feedback and delivery cycles. CI/CD is a cornerstone of DevOps practices and is implemented through an automated pipeline.
 
@@ -362,7 +405,7 @@ _Benefits of CI/CD:_
 
 CI/CD embodies a philosophy of continuous improvement and efficiency in software development, leveraging automation to streamline the build, test, and deployment processes.
 
-#### Continuous Integration (CI) <a id="continuous-integration"></a>
+### Continuous Integration (CI) <a id="continuous-integration"></a>
 
 _Continuous Integration_ is a development practice where developers frequently integrate their code changes into a central repository, preferably multiple times a day. Each integration is automatically verified by building the project and running automated tests. This approach aims to detect and fix integration errors quickly, improve software quality, and reduce the time it takes to validate and release new software updates.
 
@@ -373,7 +416,7 @@ _Key aspects of CI include:_
 - **Automated Testing**: Run a suite of automated tests to validate the changes and ensure that the new code does not break or degrade the existing functionality.
 - **Immediate Feedback**: Provide immediate feedback to developers on the integration and test status, allowing quick action if there are any issues.
 
-##### Continuous Delivery (CD) <a id="continuous-delivery"></a>
+#### Continuous Delivery (CD) <a id="continuous-delivery"></a>
 
 _Continuous Delivery_ extends Continuous Integration by automatically deploying all code changes to a testing and/or production environment after the build stage. This allows teams to ensure that the software can be reliably released at any time. It aims to make deployments predictable and schedule them at a convenient time, reducing the risks associated with manual deployments and increasing deployment reliability.
 
@@ -383,7 +426,7 @@ _Key aspects of Continuous Delivery include:_
 - **Configuration Management**: Manage and automate the configuration of environments to ensure consistency across development, testing, and production.
 - **Rollback Strategies**: Implement strategies to quickly rollback changes if a deployment fails or introduces issues.
 
-#### Continuous Deployment <a id="continuous-deployment"></a>
+### Continuous Deployment <a id="continuous-deployment"></a>
 
 _Continuous Deployment_ goes one step further than Continuous Delivery. In this practice, every change that passes through the pipeline is automatically deployed to the production environment without explicit approval, making the entire process fully automated. This requires a highly sophisticated testing and monitoring environment to ensure that deployments do not degrade service quality.
 
@@ -393,7 +436,7 @@ _Key aspects of Continuous Deployment include:_
 - **High Confidence in Testing**: Maintain a high level of confidence in automated testing to ensure that only high-quality changes are deployed.
 - **Real-time Monitoring**: Implement real-time monitoring and logging to detect and respond to issues that arise after deployment quickly.
 
-#### CI/CD Pipeline <a id="cicd-pipeline"></a>
+### CI/CD Pipeline <a id="cicd-pipeline"></a>
 
 A _CI/CD pipeline_ is a series of steps that code changes go through to be built, tested, and deployed. It is a key component of CI/CD practices and is designed to automate the software delivery process. A typical CI/CD pipeline includes the following stages:
 
@@ -409,13 +452,13 @@ A _CI/CD pipeline_ is a series of steps that code changes go through to be built
 
 6. **Monitoring and Feedback**: After deployment, the application is monitored. Feedback from this stage can be used to identify issues early and inform future development.
 
-#### CI/CD Tools <a id="cicd-tools"></a>
+### CI/CD Tools <a id="cicd-tools"></a>
 
 Several tools are available to help implement CI/CD practices and build automated pipelines. These tools provide features for version control, build automation, testing, deployment, and monitoring.
 
-##### Jenkins <a id="jenkins"></a>
+#### Jenkins <a id="jenkins"></a>
 
-_Jenkins_ is an open-source automation server that helps automate the software development process, with capabilities for building, testing, and deploying software. It supports a wide range of plugins and integrations with other tools and platforms, making it a popular choice for CI/CD pipelines.
+[Jenkins](https://www.jenkins.io/) is an open-source automation server that helps automate the software development process, with capabilities for building, testing, and deploying software. It supports a wide range of plugins and integrations with other tools and platforms, making it a popular choice for CI/CD pipelines.
 
 _Key Features:_
 
@@ -456,9 +499,9 @@ pipeline {
 }
 ```
 
-##### Travis CI <a id="travis-ci"></a>
+#### Travis CI <a id="travis-ci"></a>
 
-_Travis CI_ is a cloud-based CI/CD service that integrates with GitHub repositories. It is designed to automate the build, test, and deployment process for projects hosted on GitHub.
+[Travis CI](https://www.travis-ci.com/) is a cloud-based CI/CD service that integrates with GitHub repositories. It is designed to automate the build, test, and deployment process for projects hosted on GitHub.
 
 Travis CI is configured using a `.travis.yml` file that is added to the root of your repository. When you push changes to GitHub, Travis CI automatically detects the changes, runs the configured pipelines, and reports the outcome back to GitHub.
 
@@ -480,7 +523,7 @@ script:
   - npm test
 ```
 
-##### GitLab CI <a id="gitlab-ci"></a>
+#### GitLab CI <a id="gitlab-ci"></a>
 
 _GitLab CI_ is a part of the GitLab platform and provides native support for CI/CD. It allows you to define, build, test, and deploy your application within GitLab itself.
 
@@ -513,7 +556,7 @@ test:
     - python -m unittest discover
 ```
 
-##### GitHub Actions <a id="github-actions"></a>
+#### GitHub Actions <a id="github-actions"></a>
 
 _GitHub Actions_ is a CI/CD service provided by GitHub. It allows you to automate your software development workflows directly within your GitHub repository.
 
@@ -549,7 +592,7 @@ jobs:
         echo test, and deploy your project.
 ```
 
-### 5. Containers <a id="containers"></a>
+## 5. Containers <a id="containers"></a>
 
 _Containers_ are a lightweight, portable, and self-sufficient unit that can run applications and services in any environment. They package everything an application needs to run, including the code, runtime, system tools, libraries, and settings, into a single image. Containers are widely used in modern software development and deployment, providing consistency across different environments and enabling efficient resource utilization.
 
@@ -573,9 +616,9 @@ _Benefits of Using Containers:_
 
 - **Scalability**: Containers can be easily scaled up or down to meet changing demand.
 
-#### Docker <a id="docker"></a>
+### Docker <a id="docker"></a>
 
-_Docker_ is a platform for developing, shipping, and running applications using containerization. It provides a way to package and run applications in isolated containers, making it easier to build, ship, and run applications in any environment. Docker is widely used in modern software development and deployment, providing a consistent environment for applications across different environments.
+[Docker](https://www.docker.com/) is a platform for developing, shipping, and running applications using containerization. It provides a way to package and run applications in isolated containers, making it easier to build, ship, and run applications in any environment. Docker is widely used in modern software development and deployment, providing a consistent environment for applications across different environments.
 
 _Core Components of Docker:_
 
@@ -641,9 +684,9 @@ docker run -p 4000:80 my-python-app
 
 This command maps port 4000 on the host to port 80 in the container, allowing you to access the Flask application by visiting http://localhost:4000 on your browser.
 
-##### Docker Compose <a id="docker-compose"></a>
+#### Docker Compose <a id="docker-compose"></a>
 
-_Docker Compose_ is a tool for defining and running multi-container Docker applications. It allows you to define a multi-container application in a single file, then spin up the entire application with a single command.
+[Docker Compose](https://docs.docker.com/compose/) is a tool for defining and running multi-container Docker applications. It allows you to define a multi-container application in a single file, then spin up the entire application with a single command.
 
 Docker Compose uses a YAML file to define the services, networks, and volumes required for the application. It simplifies the process of running multi-container applications by providing a single command to start, stop, and manage the entire application stack.
 
@@ -696,9 +739,9 @@ To use Docker Compose, follow these steps based on the example above:
 
 5. **Stop your application** by running `docker-compose down`. This command stops and removes the containers, networks, and volumes defined in your `docker-compose.yml` file.
 
-##### Docker Swarm <a id="docker-swarm"></a>
+#### Docker Swarm <a id="docker-swarm"></a>
 
-_Docker Swarm_ is a container orchestration platform provided by Docker. It allows you to create and manage a cluster of Docker hosts, providing a native way to orchestrate containers across multiple machines.
+[Docker Swarm](https://docs.docker.com/engine/swarm/) is a container orchestration platform provided by Docker. It allows you to create and manage a cluster of Docker hosts, providing a native way to orchestrate containers across multiple machines.
 
 Docker Swarm provides a simple and easy-to-use interface for managing a cluster of Docker hosts, allowing you to deploy and manage containerized applications at scale.
 
@@ -711,9 +754,9 @@ _Key Features of Docker Swarm:_
 - **Self-Healing**: Docker Swarm provides self-healing capabilities, automatically replacing containers that fail or become unresponsive.
 - **Secure by Default**: Docker Swarm provides secure communication between nodes and services by default, ensuring that your cluster is secure.
 
-#### Kubernetes <a id="kubernetes"></a>
+### Kubernetes <a id="kubernetes"></a>
 
-_Kubernetes_, often abbreviated as K8s, is an open-source platform designed to automate deploying, scaling, and operating application containers. It was originally developed by Google and is now maintained by the Cloud Native Computing Foundation. Kubernetes makes it easier for teams to manage containerized applications across a cluster of machines while providing mechanisms for application deployment, scaling, and maintenance.
+[Kubernetes](https://kubernetes.io/), often abbreviated as K8s, is an open-source platform designed to automate deploying, scaling, and operating application containers. It was originally developed by Google and is now maintained by the Cloud Native Computing Foundation. Kubernetes makes it easier for teams to manage containerized applications across a cluster of machines while providing mechanisms for application deployment, scaling, and maintenance.
 
 _Core Concepts of Kubernetes:_
 
@@ -761,7 +804,7 @@ spec:
             - containerPort: 80
 ```
 
-### 6. Cloud <a id="cloud"></a>
+## 6. Cloud <a id="cloud"></a>
 
 _Cloud computing_ refers to the delivery of computing services—including servers, storage, databases, networking, software, and more—over the internet. Cloud services are provided by cloud computing providers, who offer a range of services, including infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS).
 
@@ -782,9 +825,9 @@ _Key Benefits of Cloud Computing:_
 - **Security**: Cloud providers invest heavily in security, providing a secure environment for applications and data.
 - **Global Reach**: Cloud services are available from data centers around the world, allowing for global reach and low-latency access to resources.
 
-#### AWS <a id="aws"></a>
+### AWS <a id="aws"></a>
 
-_Amazon Web Services_ (AWS) is a comprehensive and broadly adopted cloud platform offered by Amazon. It provides over 200 fully featured services from data centers globally. AWS services can be used in various combinations to create scalable applications with high availability and reliability. It's designed to help individuals, companies, and governments, on a pay-as-you-go basis, to move faster, lower IT costs, and scale applications.
+[Amazon Web Services](https://aws.amazon.com/) (AWS) is a comprehensive and broadly adopted cloud platform offered by Amazon. It provides over 200 fully featured services from data centers globally. AWS services can be used in various combinations to create scalable applications with high availability and reliability. It's designed to help individuals, companies, and governments, on a pay-as-you-go basis, to move faster, lower IT costs, and scale applications.
 
 _Core AWS Services:_
 
@@ -797,9 +840,9 @@ _Core AWS Services:_
 
 AWS's extensive global cloud infrastructure allows it to offer high computing power, storage, and bandwidth at economies of scale that individual companies would find difficult to achieve on their own. This makes AWS a powerful platform for hosting applications, running large-scale data processing jobs, and building sophisticated, scalable applications.
 
-#### Azure <a id="azure"></a>
+### Azure <a id="azure"></a>
 
-_Microsoft Azure_, commonly referred to as Azure, is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers. It provides software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS) and supports many different programming languages, tools, and frameworks, including both Microsoft-specific and third-party software and systems.
+[Microsoft Azure](https://azure.microsoft.com/en-us), commonly referred to as Azure, is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers. It provides software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS) and supports many different programming languages, tools, and frameworks, including both Microsoft-specific and third-party software and systems.
 
 _Core Azure Services:_
 
@@ -814,7 +857,7 @@ Microsoft Azure competes with other major cloud service providers like Amazon We
 
 #### GCP <a id="gcp"></a>
 
-_Google Cloud Platform_ (GCP), offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube. GCP provides a range of services including computing, data storage, data analytics, and machine learning. It offers services that allow developers to build, test, and deploy applications on Google's highly-scalable and reliable infrastructure.
+[Google Cloud Platform](https://cloud.google.com/) (GCP), offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube. GCP provides a range of services including computing, data storage, data analytics, and machine learning. It offers services that allow developers to build, test, and deploy applications on Google's highly-scalable and reliable infrastructure.
 
 _Core GCP Services:_
 
@@ -827,9 +870,9 @@ _Core GCP Services:_
 
 GCP competes with other major cloud providers like Amazon Web Services (AWS) and Microsoft Azure, offering a robust platform for developers and businesses to build and scale applications in the cloud. Its strengths in data analytics, machine learning, and open-source technologies make it a compelling choice for organizations looking to leverage the latest in cloud technology.
 
-#### DigitalOcean <a id="digitalocean"></a>
+### DigitalOcean <a id="digitalocean"></a>
 
-_DigitalOcean_ is a cloud infrastructure provider that offers cloud services to help businesses deploy, manage, and scale applications that run simultaneously on multiple computers. It is known for its simplicity and being developer-friendly, targeting individual developers, startups, and small to medium-sized businesses with its straightforward and cost-effective cloud computing solutions. DigitalOcean primarily focuses on simplifying the complexities of infrastructure for developers, providing them with cloud services that can be deployed in minutes.
+[DigitalOcean](https://www.digitalocean.com/) is a cloud infrastructure provider that offers cloud services to help businesses deploy, manage, and scale applications that run simultaneously on multiple computers. It is known for its simplicity and being developer-friendly, targeting individual developers, startups, and small to medium-sized businesses with its straightforward and cost-effective cloud computing solutions. DigitalOcean primarily focuses on simplifying the complexities of infrastructure for developers, providing them with cloud services that can be deployed in minutes.
 
 _Key Features of DigitalOcean:_
 
@@ -841,7 +884,7 @@ _Key Features of DigitalOcean:_
 
 DigitalOcean has positioned itself as a cloud provider that offers simplicity, high performance, and cost-effectiveness, making cloud computing accessible to developers and small businesses. It continues to expand its services and features to support a wider range of computing needs while maintaining its user-friendly approach.
 
-### 7. Infrastructure as Code <a id="infrastructure-as-code"></a>
+## 7. Infrastructure as Code <a id="infrastructure-as-code"></a>
 
 _Infrastructure as Code (IaC)_ is the practice of managing and provisioning computing infrastructure through machine-readable definition files, rather than through physical hardware configuration or interactive configuration tools. IaC is a key DevOps practice and is used to automate and manage infrastructure, ensuring consistency and repeatability in the deployment and management of infrastructure resources.
 
@@ -855,9 +898,9 @@ _Key Benefits of Infrastructure as Code:_
 - **Version Control**: IaC files can be version-controlled, providing a history of changes and allowing for collaboration and review.
 - **Documentation**: IaC files serve as documentation for the infrastructure, providing a clear and concise definition of the infrastructure resources.
 
-#### Terraform <a id="terraform"></a>
+### Terraform <a id="terraform"></a>
 
-_Terraform_ is an open-source infrastructure as code software tool created by HashiCorp. It allows users to define and provision a data center infrastructure using a high-level configuration language known as HashiCorp Configuration Language (HCL), or optionally JSON. It enables users to define and provision a complete infrastructure stack using a single configuration file.
+[Terraform](https://www.terraform.io/) is an open-source infrastructure as code software tool created by HashiCorp. It allows users to define and provision a data center infrastructure using a high-level configuration language known as HashiCorp Configuration Language (HCL), or optionally JSON. It enables users to define and provision a complete infrastructure stack using a single configuration file.
 
 Terraform supports a wide range of cloud providers, including AWS, Azure, Google Cloud, and many others, as well as on-premises infrastructure. It provides a consistent workflow to manage infrastructure resources, allowing users to create, update, and delete resources in a declarative and automated manner.
 
@@ -881,9 +924,9 @@ resource "aws_instance" "example" {
 }
 ```
 
-#### Ansible <a id="ansible"></a>
+### Ansible <a id="ansible"></a>
 
-_Ansible_ is an open-source automation tool that provides a simple way to automate IT infrastructure, including configuration management, application deployment, and orchestration. It uses a simple and human-readable language called YAML to define automation tasks, making it easy to understand and use.
+[Ansible](https://www.ansible.com/) is an open-source automation tool that provides a simple way to automate IT infrastructure, including configuration management, application deployment, and orchestration. It uses a simple and human-readable language called YAML to define automation tasks, making it easy to understand and use.
 
 Ansible is agentless, meaning it does not require any software to be installed on the nodes it manages. It uses SSH to connect to remote nodes and execute tasks, making it easy to get started with and use across different environments.
 
@@ -911,15 +954,15 @@ _Key Features of Ansible:_
         state: started
 ```
 
-### 8. Monitoring <a id="monitoring"></a>
+## 8. Monitoring <a id="monitoring"></a>
 
 _Monitoring_ is the practice of observing and tracking the performance and health of systems, applications, and infrastructure. It involves collecting, analyzing, and visualizing data to ensure that systems are running smoothly and to identify and troubleshoot issues when they arise.
 
 Monitoring is a critical aspect of DevOps, as it provides visibility into the performance and availability of systems, allowing teams to detect and respond to issues quickly. It also provides valuable data for capacity planning, performance optimization, and trend analysis.
 
-#### Prometheus <a id="prometheus"></a>
+### Prometheus <a id="prometheus"></a>
 
-_Prometheus_ is an open-source monitoring and alerting toolkit designed for reliability and scalability. It is widely used for monitoring cloud-native applications and microservices, providing a flexible and powerful platform for collecting and querying metrics.
+[Prometheus](https://prometheus.io/) is an open-source monitoring and alerting toolkit designed for reliability and scalability. It is widely used for monitoring cloud-native applications and microservices, providing a flexible and powerful platform for collecting and querying metrics.
 
 Prometheus uses a pull-based model to collect metrics from targets, such as applications and infrastructure components. It stores these metrics in a time-series database, allowing for efficient querying and visualization of the data.
 
@@ -939,9 +982,9 @@ scrape_configs:
       - targets: ['example.com:8080']
 ```
 
-#### Grafana <a id="grafana"></a>
+### Grafana <a id="grafana"></a>
 
-_Grafana_ is an open-source platform for monitoring and observability, providing visualization and analytics for time-series data. It is commonly used to create dashboards for monitoring and analyzing metrics from various data sources, including Prometheus, Graphite, and Elasticsearch.
+[Grafana](https://grafana.com/) is an open-source platform for monitoring and observability, providing visualization and analytics for time-series data. It is commonly used to create dashboards for monitoring and analyzing metrics from various data sources, including Prometheus, Graphite, and Elasticsearch.
 
 Grafana provides a powerful and flexible platform for creating and sharing dashboards, allowing users to visualize and analyze data from multiple sources in a single interface.
 
@@ -966,13 +1009,13 @@ providers:
     path: /var/lib/grafana/dashboards
 ```
 
-#### ELK Stack <a id="elk-stack"></a>
+### ELK Stack <a id="elk-stack"></a>
 
 The _ELK Stack_ is a collection of three open-source tools designed to take data from any source and in any format and search, analyze, and visualize it in real time. The ELK Stack is made up of _Elasticsearch_, _Logstash_, and _Kibana_.
 
-- **Elasticsearch**: A distributed, RESTful search and analytics engine designed for horizontal scalability, reliability, and real-time search and analytics. It is used to store and index data, making it easy to search and analyze large volumes of data.
-- **Logstash**: A data processing pipeline that ingests data from multiple sources, transforms it, and then sends it to a "stash" like Elasticsearch. It is often used to collect logs, parse them, and then store them for later analysis.
-- **Kibana**: A data visualization and exploration tool that allows users to interact with data stored in Elasticsearch. It provides a flexible and intuitive interface for creating visualizations and dashboards to monitor and analyze data.
+- [Elasticsearch](https://www.elastic.co/): A distributed, RESTful search and analytics engine designed for horizontal scalability, reliability, and real-time search and analytics. It is used to store and index data, making it easy to search and analyze large volumes of data.
+- [Logstash](https://www.elastic.co/logstash): A data processing pipeline that ingests data from multiple sources, transforms it, and then sends it to a "stash" like Elasticsearch. It is often used to collect logs, parse them, and then store them for later analysis.
+- [Kibana](https://www.elastic.co/kibana): A data visualization and exploration tool that allows users to interact with data stored in Elasticsearch. It provides a flexible and intuitive interface for creating visualizations and dashboards to monitor and analyze data.
 
 The ELK Stack is commonly used for log analysis, monitoring, and observability, providing a powerful platform for collecting, analyzing, and visualizing log and event data.
 
